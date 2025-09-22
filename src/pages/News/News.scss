@@ -55,7 +55,7 @@
 
     &-btn {
       background-color: #060707;
-      border: 1px solid #9945FF;
+      border: 1px solid #58FF44;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -88,13 +88,13 @@
     cursor: pointer;
 
     &:hover {
-      color: #9945FF;
+      color: #58FF44;
     }
   }
 
   li {
     &.selected {
-      color: #9945FF;
+      color: #58FF44;
       font-weight: bold;
     }
   }

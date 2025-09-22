@@ -7,7 +7,7 @@ import { hrefs, mixins, routes, useScrollPosition} from "utils"
 
 import "./Header.scss"
 import { ReactComponent as Polygon } from "assets/icons/pyramide.svg"
-import LogoMobile from "assets/images/mobile-logo-arclaim.webp"
+import LogoMobile from "assets/images/cryptomesh-circle.webp"
 import Logo from "assets/images/logo-cryptomesh.webp"
 import { ReactComponent as Menu } from "assets/icons/3stripes.svg"
 import { ReactComponent as Close } from "assets/icons/whitecross.svg"
@@ -120,11 +120,11 @@ export const Header = (): JSX.Element => {
   ]
 
   const smallLinks = [
-    // {
-    //   title: "Roadmap",
-    //   link: `${routes.roadmap}?${search.toString()}`,
-    //   icon: <IconRoadmap />
-    // },
+    {
+      title: "Roadmap",
+      link: `${routes.roadmap}?${search.toString()}`,
+      icon: <IconRoadmap />
+    },
     {
       title: "News",
       link: `${routes.news}?${search.toString()}`,
@@ -135,54 +135,54 @@ export const Header = (): JSX.Element => {
       icon: <IconAnalytics />,
       href: hrefs.audit,
     },
-    // {
-    //   title: "Litepaper",
-    //   link: `${routes.docs}`,
-    //   icon: <IconDocs />
-    // },
+    {
+      title: "Litepaper",
+      link: `${routes.docs}`,
+      icon: <IconDocs />
+    },
 
     {
       title: "FAQ",
       link: `${routes.faq}?${search.toString()}`,
       icon: <IconFaq />
     },
-    // {
-    //   title: "Blog",
-    //   link: `${routes.blog}?${search.toString()}`,
-    //   icon: <IconBlog />
-    // },
-    // {
-    //   title: "Mission",
-    //   link: `${routes.careers}?${search.toString()}`,
-    //   icon: <IconCareers />
-    // },
-    // {
-    //   title: "Careers",
-    //   link: `${routes.jobs}?${search.toString()}`,
-    //   icon: <IconJobs />
-    // },
-    // {
-    //   title: "Brand Kit",
-    //   link: `${routes.brand}?${search.toString()}`,
-    //   icon: <IconBrand />
-    // },
-    // {
-    //   title: "Service",
-    //   link: `${routes.docs}?${search.toString()}`,
-    //   icon: <IconDocs />,
-    //   dropdownItems: [
-    //     { title: "Dev API", href: `${routes.devapipage}?${search.toString()}` },
-    //     { title: "Data Oracles", href: `${routes.chainlinkOracles}?${search.toString()}` },
-    //     { title: "Project Incubation", href: `${routes.cryptoIncubator}?${search.toString()}` },
-    //     { title: "Whitelabel Crypto Validator", href: `${routes.whitelabelValidators}?${search.toString()}` },
-    //   ],
-    // },
-    // {
-    //   title: "DAO",
-    //   link: `${routes.docs}?${search.toString()}`,
-    //   disabled: true,
-    //   icon: <IconDocs />
-    // },
+    {
+      title: "Blog",
+      link: `${routes.blog}?${search.toString()}`,
+      icon: <IconBlog />
+    },
+    {
+      title: "Mission",
+      link: `${routes.careers}?${search.toString()}`,
+      icon: <IconCareers />
+    },
+    {
+      title: "Careers",
+      link: `${routes.jobs}?${search.toString()}`,
+      icon: <IconJobs />
+    },
+    {
+      title: "Brand Kit",
+      link: `${routes.brand}?${search.toString()}`,
+      icon: <IconBrand />
+    },
+    {
+      title: "Service",
+      link: `${routes.docs}?${search.toString()}`,
+      icon: <IconDocs />,
+      dropdownItems: [
+        { title: "Dev API", href: `${routes.devapipage}?${search.toString()}` },
+        { title: "Data Oracles", href: `${routes.chainlinkOracles}?${search.toString()}` },
+        { title: "Project Incubation", href: `${routes.cryptoIncubator}?${search.toString()}` },
+        { title: "Whitelabel Crypto Validator", href: `${routes.whitelabelValidators}?${search.toString()}` },
+      ],
+    },
+    {
+      title: "DAO",
+      link: `${routes.docs}?${search.toString()}`,
+      disabled: true,
+      icon: <IconDocs />
+    },
   ]
 
   const

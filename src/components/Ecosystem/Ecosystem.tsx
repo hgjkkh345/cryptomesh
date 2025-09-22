@@ -19,7 +19,7 @@ export const Ecosystem = (): JSX.Element => {
     },
     {
       title: "Regular Security Audits",
-      desc: "To maintain the highest security standards, Bitstaker.io undergoes routine security audits conducted by industry-leading experts. These audits help us identify and address potential vulnerabilities, ensuring the ongoing safety and reliability of our platform.",
+      desc: "To maintain the highest security standards, Cryptomesh.io undergoes routine security audits conducted by industry-leading experts. These audits help us identify and address potential vulnerabilities, ensuring the ongoing safety and reliability of our platform.",
       icon: img3,
     },
   ]

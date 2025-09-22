@@ -16,7 +16,7 @@ body {
 }
 
 .connectkit-btn {
-  --wui-color-accent-100: #9945FF !important;
+  --wui-color-accent-100: #58FF44 !important;
 
   .primary {
     padding: 4px 10px;
@@ -24,7 +24,7 @@ body {
     height: auto !important;
   }
   button {
-    background-color: #9945FF !important;
+    background-color: #58FF44 !important;
   }
 }
 
@@ -181,7 +181,7 @@ input[type=number] {
 
     &:hover {
       path {
-        fill: #9945FF;
+        fill: #58FF44;
       }
     }
 
@@ -192,7 +192,7 @@ input[type=number] {
 }
 
 a {
-  color: #9945FF;
+  color: #58FF44;
 }
 
 .links-global {

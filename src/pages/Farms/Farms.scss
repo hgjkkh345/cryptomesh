@@ -83,12 +83,13 @@
           transition: 0.1s;
 
           &.active {
-            border-color: #9945FF;
-            background-color: #9945FF;
+            border-color: #58ff44;
+            background-color: #58ff44;
+            color: #000000;
           }
 
           &:hover {
-            border-color: #9945FF;
+            border-color: #58ff44;
           }
         }
       }

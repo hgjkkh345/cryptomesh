@@ -115,19 +115,17 @@ export const RefWorks = (): JSX.Element => {
       <ul className="ref-works-ul">
         <li>The liquidity profit Cryptomesh.io receive from your referral (Total Referral Commission)</li>
         <li>The total number of friends you&apos;ve referred to Cryptomesh.io (Referral Badges)</li>
+        <li> $10 bonus per successful referral (*T&Cs apply)</li>
       </ul>
       <h3 className="ref-works-title-2 big">Payout</h3>
       <p className="ref-works-p small">
-        The bonus is paid out every hour, based on your referrals&apos; assets and referral progress badges. The bonus
-        will be settled with the tokens pledged by your recommended friends, for example, if he is pledged ETH, then you
-        will receive native tokens.
+        The bonus is paid out every Monday, based on your referrals' assets and referral progress badges. The bonus payouts are in the coins that your referred friend is earning from. One exception is Liquidity Mining, where we assess the total value in DFI, so the payouts will also be in DFI.
       </p>
       <h3 className="ref-works-title-2">How do I join the Cryptomesh.io referral program?</h3>
       <p className="ref-works-p small">
-        Anyone who stakes on a Cryptomesh.io address is eligible to join our referral program and earn rewards.
+        Anyone who has a verified Cake DeFi account is eligible to join our referral program and earn rewards.
         <br />
-        The number of successful referrals is determined by the number of referral accounts with active funds of $100 or
-        more.
+        The number of successful referral is determined by the number of referred accounts that have USD 50 active funds or above.
         <br />
         For more information on how referral rewards are calculated, please see{" "}
         <button onClick={onScroll}>this FAQ.</button>

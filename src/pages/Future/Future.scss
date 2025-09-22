@@ -89,12 +89,12 @@
         transition: 0.1s;
 
         &.active {
-          border-color: #9945FF;
-          background-color: #9945FF;
+          border-color: #58ff44;
+          background-color: #58ff44;
         }
 
         &:hover {
-          border-color: #9945FF;
+          border-color: #58ff44;
         }
       }
     }
@@ -143,7 +143,7 @@
           font-weight: 500;
           font-size: 16px;
           line-height: 150%;
-          color: #9945FF;
+          color: #58ff44;
           text-decoration: none;
         }
       }
@@ -165,7 +165,7 @@
         background-color: rgba(5, 5, 7, 0.1);
         border-radius: 32px;
         padding: 40px 32px;
-        border: 1px solid #9945FF;
+        border: 1px solid #58ff44;
         background-size: 150%;background-position: center;
 
         @include respond(md) {

@@ -147,7 +147,7 @@ export const Roadmap = (): JSX.Element => {
         }
       </div>
       <section className='roadmap-main'>
-        <h3 data-aos="fade-up">Cryptomesh.io.com - guarded launch</h3>
+        <h3 data-aos="fade-up">Cryptomesh.io - guarded launch</h3>
         <h1 data-aos="fade-up">Autopilot&apos;s roadmap to launch</h1>
         <p data-aos="fade-up">
           Follow the progress of the guarded launch as we test the integrity of Autopilot&apos;s

@@ -105,7 +105,7 @@
         flex-direction: column;
         align-items: center;
         padding-top: 80px;
-        border-left: 1px solid #9945FF;
+        border-left: 1px solid #58ff44;
 
         @include respond(md) {
           padding-top: 20px;
@@ -124,7 +124,7 @@
         &-line {
           width: 50px;
           height: 1px;
-          background: #9945FF;
+          background: #58ff44;
           margin-top: 43px;
           margin-right: 8px;
 
