@@ -1,0 +1,90 @@
+@import "src/styles/mixins";
+@import "src/styles/constants";
+
+.custom-input {
+  padding: 12px 16px;
+  mix-blend-mode: normal;
+  width: -webkit-fill-available;
+  font-family: $default-font;
+  font-weight: 400;
+  border-radius: 30px;
+  border: 1px solid #636380;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
+  background: #202028;
+  letter-spacing: 1px;
+  transition: 0.1s;
+  color: #ffff;
+  outline: none;
+
+  &.isError {
+    border: 1px solid #ffcd06;
+  }
+
+  &-label {
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  &-append {
+    position: absolute;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    bottom: 3px;
+    right: 10px;
+    z-index: 2;
+  }
+
+  &-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+  }
+
+  &-search {
+    position: absolute;
+    top: 11px;
+    left: 13px;
+  }
+
+  &::placeholder {
+    color: #fff;
+  }
+
+  &.margin {
+    margin: 20px 0;
+  }
+
+  &.dark {
+    border-radius: 30px;
+    padding: 16px;
+    background: #202028;
+    border: 1px solid #636380;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 121%;
+    letter-spacing: -0.02em;
+
+    &::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &.search {
+    padding: 12px 16px 12px 38px;
+    font-weight: 300;
+  }
+}
+
+.custom-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+

@@ -1,0 +1,257 @@
+@import "src/styles/mixins";
+
+.roadmap {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+
+  @include respond(md) {
+    overflow-y: hidden;
+  }
+
+  &-blur {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    z-index: 0;
+    left: 0;
+  }
+
+  &-bg-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 110%;
+    z-index: -1;
+  }
+  &-img {
+    display: none;
+  }
+
+  &-main {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 20px 50px 20px;
+    max-width: 1050px;
+    margin: auto;
+
+    @include respond(md) {
+      padding: 10px 15px;
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.29em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.6;
+      margin: 0;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 12px 0;
+
+      @include respond(md) {
+       font-size: 30px;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #fff;
+      margin: 0;
+      max-width: 700px;
+
+      @include respond(md) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-journey {
+    position: relative;
+    padding-bottom: 30px;
+    z-index: 1;
+    &-content {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: flex-start;
+      position: relative;
+
+      @include respond(md) {
+        margin: auto;
+        padding: 0 20px;
+        gap: 10px;
+      }
+
+      &-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+        border-left: 1px solid #9945FF;
+
+        @include respond(md) {
+          padding-top: 20px;
+        }
+      }
+
+      &-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 60px;
+        max-width: 1200px;
+        @include respond(md) {
+          margin-bottom: 30px;
+        }
+
+        &-line {
+          width: 50px;
+          height: 1px;
+          background: #9945FF;
+          margin-top: 43px;
+          margin-right: 8px;
+
+          @include respond(md) {
+            width: 20px;
+            margin-top: 20px;
+          }
+        }
+
+        &-icon {
+          margin-top: 25px;
+          margin-right: 12px;
+          @include respond(md) {
+            margin-top: 6px;
+          }
+
+        }
+
+        &-block {
+          border: 1px solid #636380;
+          background:  rgba(14, 14, 21, 0.8);
+          border-radius: 20px;
+          align-items: flex-start;
+          padding: 24px;
+          display: flex;
+          width: 100%;
+          gap: 12px;
+          margin-bottom: 20px;
+
+          @include respond(md) {
+           padding: 14px;
+            width: auto;
+            margin-bottom: 10px;
+          }
+
+          h5 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 150%;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0 0 12px 0;
+
+            @include respond(md) {
+              font-size: 16px;
+            }
+          }
+
+          p {
+            opacity: 0.6;
+            white-space: pre-wrap;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            color: #fff;
+
+            @include respond(md) {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &-data {
+          width: 100%;
+
+          @include respond(md) {
+            width: auto;
+          }
+          &-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            @include respond(md) {
+              gap: 10px;
+            }
+
+            p {
+              margin: 0;
+              opacity: 0.6;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 150%;
+              text-transform: uppercase;
+              color: #fff;
+
+              @include respond(md) {
+                font-size: 14px;
+              }
+            }
+          }
+
+          h2 {
+            margin: 12px 0;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 150%;
+            text-transform: uppercase;
+            color: #fff;
+
+            @include respond(md) {
+              font-size: 18px;
+            }
+          }
+
+          .roadmap-journey-content-item-data-header-end {
+            opacity: 1;
+            border-radius: 6px;
+            padding: 6px 12px;
+            text-transform: uppercase;
+            width: fit-content;
+            background: rgba(22, 107, 255, 0.18);
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 145%;
+
+            &.progress {
+              background: #306bc3;
+            }
+
+            &.notStarted {
+              background: rgba(22, 107, 255, 0.58);
+              opacity: 0.4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

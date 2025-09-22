@@ -1,0 +1,28 @@
+@import "src/styles/mixins";
+
+.white-label-faq {
+
+ .white-label-faq-title {
+   text-align: center;
+
+   @include respond(md){
+     width: 250px;
+     margin: auto;
+     margin-bottom: 20px;
+   }
+
+
+ }
+  h3 {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 132%;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 12px;
+
+    @include respond(md) {
+      font-size: 26px;
+    }
+  }
+}

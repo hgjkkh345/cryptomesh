@@ -1,0 +1,95 @@
+@import "src/styles/mixins";
+
+.collapse-wrapper {
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+  width: 100%;
+  border-radius: 30px;
+  margin: 0 auto 20px auto;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(5, 5, 7, 0.1);
+  backdrop-filter: blur(10px);
+  .collapse-title {
+    height: 66px;
+    margin-top: 1px;
+    display: flex;
+    border-radius: 32px;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    transition: 0.5s;
+    padding: 18px 24px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    background-color: initial;
+    color: #fff;
+    outline: none;
+    position: relative;
+    text-align: left;
+
+
+    @include respond(md) {
+      padding: 16px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .collapse-arrow {
+    transition: 0.5s;
+    min-width: 10px;
+    min-height: 10px;
+
+    @include respond(md) {
+      margin-left: 10px;
+    }
+  }
+
+  .collapse-content {
+    border-radius: 0 0 18px 18px;
+    border-right: 1px solid rgba(31, 35, 41, 0.1);
+    border-bottom: 1px solid rgba(31, 35, 41, 0.1);
+    border-left: 1px solid rgba(31, 35, 41, 0.1);
+    z-index: 1;
+    max-height: 0;
+    transition: 0.7s;
+
+    &-desc {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      color: #fff;
+      padding: 20px 24px;
+      white-space: pre-wrap;
+      margin: 0;
+
+      @include respond(md) {
+      }
+    }
+  }
+
+  &.open {
+    .collapse-content {
+      max-height: 400px;
+
+      @include respond(md) {
+        max-height: 2550px;
+        transition: 1s;
+      }
+    }
+    .collapse-title {
+      background: #58ff44;
+    }
+    .collapse-arrow {
+      transform: rotate(180deg);
+
+      path {
+        fill-opacity: 1;
+      }
+    }
+  }
+}

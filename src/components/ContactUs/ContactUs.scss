@@ -1,0 +1,119 @@
+@import "src/styles/mixins";
+
+.ContactUs {
+  width: 750px;
+  background-color: #2A1D3E;
+  box-shadow: 0 4px 20px rgba(153, 69, 255, 0.15);
+  border-radius: 20px 20px 20px 20px;
+  padding-bottom: 30px;
+  margin: 40px auto 50px;
+
+  @include respond(md) {
+    width: auto;
+  }
+
+
+  .contactUs__title {
+    text-align: center;
+    padding-top: 10px;
+
+    @include respond(md) {
+      margin-top: 0;
+    }
+
+  }
+
+  .contactHightlight {
+    background: linear-gradient(154deg, #58ff44 16.07%, #FF5EFF 83.87%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .contactUs__desc {
+    text-align: center;
+    margin: 0 auto;
+    width: 450px;
+    font-size: 1rem;
+    margin-bottom: 50px;
+
+    @include respond(md) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+
+  }
+  .contactUs-content {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+    background: linear-gradient(145deg, #58ff44, #5B21B6);
+    border-radius: 20px 20px 20px 20px;
+    padding: 50px 40px 40px 20px;
+
+    @include respond(md) {
+      padding: 30px;
+      width: 70%;
+      margin: 0 auto;
+      gap: 5px;
+    }
+
+  }
+
+  .name-number {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    @include respond(md) {
+      gap: 5px;
+    }
+  }
+  .email-telegram {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    @include respond(md) {
+      gap: 5px;
+    }
+  }
+
+  .contact-input, .message-line {
+    width: 75%;
+    margin: auto;
+  }
+
+  .contactUs-btn {
+    cursor: pointer;
+    border-radius: 40px;
+    padding: 10px 40px 10px 40px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 310px;
+    background: linear-gradient(135deg, #58ff44, #FF5EFF);
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include respond(md) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+
+  @include respond(md) {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+}

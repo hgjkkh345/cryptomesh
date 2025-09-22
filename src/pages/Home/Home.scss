@@ -1,0 +1,49 @@
+@import "src/styles/mixins";
+
+.home {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+
+  @include respond(md) {
+   overflow-y: hidden;
+  }
+
+  &-video {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 0;
+    left: 0;
+
+    @include respond(xxlg) {
+      min-height: 900px;
+      width: 100%;
+      left: unset;
+    }
+
+    @include respond(lg) {
+      left: 0;
+      height: 100%;
+      width: auto;
+    }
+    @include respond(md) {
+      left: -120%;
+    }
+    //@include respond(sm) {
+    //  height: 100%;
+    //  width: auto;
+    //}
+  }
+  &-bg-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 110%;
+    z-index: -1;
+  }
+  &-img {
+    display: none;
+  }
+}

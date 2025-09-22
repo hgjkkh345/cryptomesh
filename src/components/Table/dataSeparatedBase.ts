@@ -1,0 +1,68 @@
+import img1 from "assets/icons/all-chains/base1.svg";
+
+const tokensText = [
+  {
+    token: "ETH(Base)",
+    tokenDesc: "Base is an optimistic rollup, utilizing the OP Stack. Rollups process transactions off-chain in batches, reducing transaction costs and putting less stress on the network. With OP Stack, transactions get bundled to reduce cost. This process is executed on the Base mainnet, but finalized on the Ethereum mainnet. Therefore, Base uses the security of the Ethereum blockchain.",
+    site: "https://www.ethereum.org/",
+  },
+];
+
+export const poolDataSeparatedBase = [
+  {
+    icon: img1,
+    name: "Base",
+    token: "ETH(Base)",
+    network: "Base",
+    id: "ethereum",
+    address: "0x6404b20b5a8493c426b6efbe52809b206b26d393",
+    addAddress: null,
+    quantity: "0.3-5",
+    percent: "0.8",
+    day: "14",
+    index: 1,
+    text: tokensText[0],
+  },
+  {
+    icon: img1,
+    name: "Base",
+    token: "ETH(Base)",
+    network: "Base",
+    id: "ethereum",
+    address: "0x675d5cebae87ecb8acc7f057e95156f7be9697d1",
+    addAddress: null,
+    quantity: "3-10",
+    percent: "2",
+    day: "30",
+    index: 2,
+    text: tokensText[0],
+  },
+  {
+    icon: img1,
+    name: "Base",
+    token: "ETH(Base)",
+    network: "Base",
+    id: "ethereum",
+    address: "0xc32df201476bb79318c32fd696b2ccdcc5f9a909",
+    addAddress: null,
+    quantity: "5-25",
+    percent: "5",
+    day: "60",
+    index: 3,
+    text: tokensText[0],
+  },
+  {
+    icon: img1,
+    name: "Base",
+    token: "ETH(Base)",
+    network: "Base",
+    id: "ethereum",
+    address: "0x9b4a1130c5d943ff9d97d0fc7c58d09df9ad9fa1",
+    addAddress: null,
+    quantity: "9-50",
+    percent: "8.5",
+    day: "90",
+    text: tokensText[0],
+    index: 4,
+  },
+];

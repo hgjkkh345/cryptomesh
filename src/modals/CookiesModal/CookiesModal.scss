@@ -1,0 +1,49 @@
+@import "src/styles/mixins";
+
+.cookies-modal {
+  position: fixed;
+  z-index: 11;
+  bottom: 50px;
+  padding: 16px;
+  background: #FFFFFF;
+  box-shadow: 0 64px 64px -48px rgba(15, 15, 15, 0.08);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  left: calc(50% - 320px);
+
+  &-info {
+    margin-right: 25px;
+
+    &-title {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: #060707;
+      margin: 0;
+    }
+
+    &-desc {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: rgba(31, 35, 41, 0.5);
+      margin: 0;
+
+      &-link {
+        color: #0FA79F;
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+
+    &-btn {
+      margin-right: 12px;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+import img1 from "assets/icons/all-chains/matic-new.svg";
+
+const tokensText = [
+  {
+    token: "POL",
+    tokenDesc: "The Polygon Ecosystem Token serves as a utility token within the expansive Polygon network. This digital asset plays a crucial role in facilitating a wide range of operations and services across the Polygon ecosystem. Its primary functions include staking, where token holders can lock up their tokens as a form of security and in return, participate in the network's consensus mechanisms. This not only helps in securing the network but also rewards the stakeholders with additional tokens based on the amount staked.",
+    site: "https://polygon.technology/",
+  },
+];
+
+export const poolDataSeparatedPol = [
+  {
+    icon: img1,
+    name: "Polygon",
+    token: "POL",
+    network: "Polygon",
+    id: "polygon-ecosystem-token",
+    address: "0x01ce88498ed095d386e09834d32fd8f1fecd184a",
+    addAddress: null,
+    quantity: "15000-30000",
+    index: 1,
+    percent: "1.5",
+    day: "14",
+    text: tokensText[0],
+  },
+  {
+    icon: img1,
+    name: "Polygon",
+    token: "POL",
+    network: "Polygon",
+    id: "polygon-ecosystem-token",
+    address: "0x980868189786e79ca3e8f1e5f98ef6a4f8fd1880",
+    addAddress: null,
+    quantity: "25000-40000",
+    percent: "3.7",
+    day: "30",
+    index: 2,
+    text: tokensText[0],
+  },
+  {
+    icon: img1,
+    name: "Polygon",
+    token: "POL",
+    network: "Polygon",
+    id: "polygon-ecosystem-token",
+    address: "0xb55703d907c93cfc1632c994a0202e42877c07ff",
+    addAddress: null,
+    quantity: "40000-100000",
+    percent: "9.3",
+    day: "60",
+    index: 3,
+    text: tokensText[0],
+  },
+  {
+    icon: img1,
+    name: "Polygon",
+    token: "POL",
+    network: "Polygon",
+    id: "polygon-ecosystem-token",
+    address: "0x61063a2942bdf99033d4a29b7b1e3e91c92621ff",
+    addAddress: null,
+    quantity: "100000-300000",
+    percent: "16",
+    day: "90",
+    text: tokensText[0],
+    index: 4,
+  },
+];

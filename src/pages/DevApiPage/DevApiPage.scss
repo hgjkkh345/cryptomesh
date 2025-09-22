@@ -1,0 +1,46 @@
+@import "src/styles/mixins";
+
+.dev-api-page {
+  padding: 48px 20px;
+  margin: auto;
+  max-width: 1200px;
+
+  @include respond(md) {
+    padding: 48px 10px;
+  }
+
+  .dev-api-page-titledesc {
+    text-align: center;
+  }
+
+  .locations-bluemap-title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    color: #fff;
+    position: absolute;
+    align-content: center;
+    margin-bottom: 50px;
+    width: -webkit-fill-available;
+    text-align: center;
+
+    @include respond(md) {
+      width: auto;
+      margin-top: -30px;
+    }
+  }
+
+  .bluemap-part {
+    width: 100%;
+  }
+
+  .blue-map-image {
+    width: 100%;
+    margin-bottom: 40px;
+    margin-top: 70px;
+  }
+}
+
+.heading-title {
+  text-align: center;
+}

@@ -1,0 +1,161 @@
+import img1 from "assets/icons/poolIcons/eth-poolcoin.svg"
+import img2 from "assets/icons/poolIcons/tether-poolcoin.svg"
+import img3 from "assets/icons/poolIcons/usdc-poolcoin.svg"
+import img5 from "assets/icons/poolIcons/uni-poolcoin.svg"
+import img6 from "assets/icons/poolIcons/link-poolcoin.svg"
+import img7 from "assets/icons/poolIcons/wbtc-poolcoin.png"
+import img9 from "assets/images/solana-logo.png"
+
+export const poolData = [
+  {
+    icon: img1,
+    name: "Ethereum",
+    token: "ETH",
+    network: "Ethereum",
+    id: "ethereum",
+    addresses: [
+      "0xa1abfa21f80ecf401bd41365adbb6fef6fefdf09",
+      "0xef110ca3c34a5074d455d687ac98f40c03d16173",
+      "0x6bfad42cfc4efc96f529d786d643ff4a8b89fa52",
+      "0x4c18e3a2e35ad4f324ecd34c88074271d0643edf",
+    ],
+    quantity: ["0.3-5", "3-10", "5-25", "9-50"],
+    percents: ["0.8", "2", "5", "8.5"],
+    days: ["14", "30", "60", "90"],
+  },
+  {
+    icon: img2,
+    name: "Tether",
+    token: "USDT",
+    id: "tether",
+    network: "Ethereum",
+    addresses: [
+      "0x051f1d88f0af5763fb888ec4378b4d8b29ea3319",
+      "0x290d7c4a8b0343605330fb1f7bab174655c4c1b7",
+      "0xc0947c152cd08f423b34a890126074d2648941ab",
+      "0xc2e246f77be48c18c013ce5ab99346eec15dfd74",
+      "0xf81993e841797faa177473933f3ea4f5718d0f80",
+    ],
+    addAddress: [
+      "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    ],
+    quantity: ["5000-10000", "10000-30000", "20000-50000", "30000-100000"],
+    percents: ["0.7", "1.6", "4", "6.5"],
+    days: ["14", "30", "60", "90"],
+  },
+  {
+    icon: img3,
+    name: "USD Coin",
+    id: "usd-coin",
+    network: "Ethereum",
+    token: "USDC",
+    addresses: [
+      "0x6bd0a0e3874e756cb361910b807f4465c095325f",
+      "0xdf4b81124f9640a6e3f077b04cd767b8531211a2",
+      "0x2db60257e3c7cefd0ff66ebbedefd7cd6c65f037",
+      "0x7f86bf177dd4f3494b841a37e810a34dd56c829b",
+    ],
+    addAddress: [
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    ],
+    quantity: ["3000-10000", "10000-30000", "20000-50000", "30000-100000"],
+    percents: ["1.2", "2.5", "6", "10"],
+    days: ["14", "30", "60", "90"],
+  },
+  {
+    icon: img5,
+    name: "Uniswap",
+    token: "UNI",
+    network: "Ethereum",
+    id: "uniswap",
+    addresses: [
+      "0x1d42064fc4beb5f8aaf85f4617ae8b3b5b8bd801",
+      "0xd11aae487b1eaccdbb9fb021c0e84b4f030c0d9c",
+      "0x678e94e3fd84e19da4fa59f0898a109acea86cfe",
+      "0xbd02c51150a4ab6ce97b9de2025644594f3e75b8",
+    ],
+    addAddress: [
+      "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+      "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+      "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+      "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+    ],
+    quantity: ["400-1000", "1000-3500", "2000-10000", "5000-30000"],
+    percents: ["2", "5", "11", "17"],
+    days: ["14", "30", "60", "90"],
+  },
+  {
+    icon: img6,
+    name: "Chainlink",
+    token: "LINK",
+    network: "Ethereum",
+    id: "chainlink",
+
+    addresses: [
+      "0x8d9dcab8c99930d3476a99b19943901f3c32e5fb",
+      "0xa5a05c967cbc75a4329790389fdb569b1956f235",
+      "0x51c72848c68a965f66fa7a88855f9f7784502a7f",
+      "0x8ab96777100aa0735509d8921e3e852bbb3f53a0",
+    ],
+    addAddress: [
+      "0x514910771af9ca656af840dff83e8264ecf986ca",
+      "0x514910771af9ca656af840dff83e8264ecf986ca",
+      "0x514910771af9ca656af840dff83e8264ecf986ca",
+      "0x514910771af9ca656af840dff83e8264ecf986ca",
+    ],
+    quantity: ["500-2000", "2000-5000", "3000-10000", "5000-30000"],
+    percents: ["1.5", "3.5", "9", "14"],
+    days: ["14", "30", "60", "90"],
+  },
+  {
+    icon: img7,
+    name: "Wrapped Bitcoin",
+    token: "WBTC",
+    network: "Ethereum",
+    id: "wrapped-bitcoin",
+    addresses: [
+      "0x0ef6aeb825dc4c9983d551f8afefaae9d79165c6",
+      "0x7704d01908afd31bf647d969c295bb45230cd2d6",
+      "0x24f3b37934d1ab26b7bda7f86781c90949ae3a79",
+      "0x051f1d88f0af5763fb888ec4378b4d8b29ea3319",
+    ],
+    addAddress: [
+      "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+    ],
+    quantity: ["0.05-0.15", "0.15-0.3", "0.3-0.5", "0.5-50"],
+    percents: ["0.4", "1", "2.5", "4"],
+    days: ["14", "30", "60", "90"],
+  },
+  {
+    icon: img9,
+    name: "Wrapped SOL",
+    token: "WSOL",
+    network: "Ethereum",
+    id: "solana",
+    addresses: [
+      "0x24f3b37934d1ab26b7bda7f86781c90949ae3a79",
+      "0x0c3226485eb4b88616b49bfec50843fa90893ee0",
+      "0xfa61d61db727573c9bd8e447122b2350ccef9d61",
+      "0x127452f3f9cdc0389b0bf59ce6131aa3bd763598",
+    ],
+    addAddress: [
+      "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+      "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+      "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+      "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+    ],
+    quantity: ["10-100", "100-200", "150-500", "300-1000"],
+    percents: ["0.88", "2.2", "5.5", "9.35"],
+    days: ["14", "30", "60", "90"],
+  },
+]

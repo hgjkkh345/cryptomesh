@@ -1,0 +1,170 @@
+@import "src/styles/mixins";
+
+.collapse-table-wrapper {
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+  border-radius: 30px;
+  width: 100%;
+  margin: 0 auto 12px auto;
+  backdrop-filter: blur(12px);
+  background: rgba(14, 14, 21, 0.8);
+  border: 1px solid #636380;
+  padding-right: 3px;
+
+  &.hide {
+    display: none;
+  }
+
+  @include respond(md) {
+    white-space: nowrap;
+  }
+
+  .cancel-btn {
+    margin-left: 10px;
+    @include respond(md) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+  }
+
+  .info-btn {
+    border: none;
+    cursor: pointer;
+    background-color: initial;
+    padding: 5px;
+
+    svg {
+      margin: 0 !important;
+    }
+  }
+
+  .cancel-btns {
+    display: flex;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+  }
+
+  .collapse-table-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+    background-color: initial;
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: relative;
+    text-align: left;
+
+    @include respond(md) {
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 11px;
+      height: 126px;
+      line-height: 100%;
+      padding: 16px 40px 16px 10px;
+    }
+
+
+    &-left {
+      display: flex;
+      align-items: center;
+      width: 240px;
+
+      &-img {
+        width: 34px;
+        height: 34px;
+      }
+      @include respond(md) {
+        width: 170px;
+        white-space: normal;
+        text-align: center;
+        min-width: 170px;
+      }
+    }
+  }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    background: #fff;
+    transition: 0.3s;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    @include respond(md) {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .restake {
+    margin-top: 15px;
+
+    label {
+      justify-content: flex-end;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  &-name {
+    margin-left: 12px;
+    @include respond(md) {
+      margin-left: 5px;
+    }
+  }
+
+  &-other {
+    width: 13%;
+
+    @include respond(md) {
+      text-align: center;
+      margin-right: 10px;
+      width: 80px;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+    &-title {
+      opacity: 0.7;
+      font-size: 14px;
+
+      @include respond(md) {
+        margin-bottom: 2px;
+        font-size: 10px;
+      }
+    }
+    &-value {
+      font-size: 14px;
+
+      @include respond(md) {
+        font-size: 10px;
+      }
+    }
+  }
+}

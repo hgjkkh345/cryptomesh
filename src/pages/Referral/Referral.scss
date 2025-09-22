@@ -1,0 +1,12 @@
+@import "src/styles/mixins";
+
+.referral-page {
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 228px;
+
+  @include respond(md) {
+    margin-left: 0;
+  }
+}

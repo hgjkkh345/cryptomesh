@@ -1,0 +1,140 @@
+@import "src/styles/mixins";
+
+.features {
+  padding: 100px 96px;
+  z-index: 2;
+  display: flex;
+  position: relative;
+  gap: 100px;
+
+  @include respond(md) {
+    padding: 30px 15px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &-title {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 16px 0;
+
+    @include respond(md) {
+      font-size: 26px;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &-desc {
+    font-weight: 400;
+    font-size: 20px;
+    opacity: 0.6;
+    color: #fff;
+    margin: 0;
+
+    @include respond(md) {
+      font-size: 13px;
+      margin: 0 0 26px 0;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px;
+
+    @include respond(md) {
+      gap: 20px;
+      flex-direction: column;
+    }
+
+    &-item {
+      position: relative;
+      border-radius: 32px;
+      padding: 32px;
+      width: 40%;
+      backdrop-filter: blur(10px);
+      background: rgba(5, 5, 7, 0.1);
+      border: 1px solid #58ff44;
+      @include respond(md) {
+        margin-right: 0;
+        padding: 12px;
+        width: auto;
+      }
+
+      &-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &-icon {
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          min-width: 44px;
+          height: 44px;
+          background: #fff;
+        }
+      }
+
+      &-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 127%;
+        white-space: pre-wrap;
+        color: #fff;
+        margin-bottom: 15px;
+
+        @include respond(md) {
+          white-space: pre-wrap;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      &-desc {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 157%;
+        text-align: justify;
+        color: #fff;
+        margin: 0;
+        padding-top: 15px;
+        min-height: 75px;
+
+        @include respond(md) {
+          margin-bottom: 14px;
+          width: auto;
+          min-height: auto;
+          height: auto;
+        }
+      }
+
+
+      &-link {
+        background: linear-gradient(94deg, #58ff44 -0.74%, #0570ab 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 600;
+        padding: 8px 0;
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        cursor: pointer;
+        border: 1px solid #2CB3FF;
+        background-color: #FCFCFD;
+        position: relative;
+        border-radius: 14px;
+      }
+    }
+  }
+}

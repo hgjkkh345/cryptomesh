@@ -1,0 +1,69 @@
+@import "src/styles/mixins";
+
+.tokens-data {
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin-left: 228px;
+
+  @include respond(md) {
+    margin-left: 0;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    min-height: calc(100vh - 330px);
+    padding: 124px 46px;
+    margin: auto;
+    max-width: 1303px;
+
+    gecko-coin-heatmap-widget {
+      width: 100%;
+
+      .gecko-chart {
+        width: 100%;
+        min-height: 700px;
+      }
+    }
+    @include respond(md) {
+      height: auto;
+      padding: 70px 15px;
+    }
+
+    &-data {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &-widget {
+        height: 450px;
+      }
+      .TokenOptions__OnHover-sc-xx1k3q-2 {
+        display: none;
+      }
+      .scrollbar {
+        height: 230px !important;
+
+        @include respond(md) {
+        }
+      }
+      @include respond(md) {
+        flex-direction: column-reverse;
+      }
+    }
+    &-title {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      text-align: center;
+      margin: 0 0 44px 0;
+
+      @include respond(md) {
+        font-size: 26px;
+        margin: 0 0 16px 0;
+      }
+    }
+  }
+}

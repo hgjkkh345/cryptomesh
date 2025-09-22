@@ -1,0 +1,375 @@
+@import "src/styles/mixins";
+
+.collapse-table-expanded-wrapper {
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+  width: 100%;
+  margin: 30px auto 12px auto;
+  border: 1px solid #202028;
+  background:  #0f0f12;
+  border-radius: 28px;
+  padding-right: 3px;
+
+  &.hide {
+    display: none;
+  }
+
+  @include respond(md) {
+    white-space: nowrap;
+  }
+
+  .cancel-btn {
+    margin-left: 10px;
+    @include respond(md) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+  }
+
+  .info-btn {
+    border: none;
+    cursor: pointer;
+    background-color: initial;
+    padding: 5px;
+
+    svg {
+      margin: 0 !important;
+    }
+  }
+
+  .cancel-btns {
+    display: flex;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+  }
+
+  .collapse-table-expanded-title {
+    display: flex;
+    align-items: center;
+    width: calc(100%);
+    justify-content: space-between;
+    transition: 0.3s;
+    background-color: initial;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    outline: none;
+    border: none;
+    position: relative;
+    text-align: left;
+
+    @include respond(md) {
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 11px;
+      height: 126px;
+      line-height: 100%;
+      padding: 16px 40px 16px 10px;
+    }
+
+
+    &-left {
+      display: flex;
+      align-items: center;
+      width: 270px;
+
+      &-img {
+        width: 34px;
+        height: 34px;
+      }
+      @include respond(md) {
+        width: 170px;
+        white-space: normal;
+        text-align: center;
+        min-width: 170px;
+      }
+    }
+  }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    background: #fff;
+    transition: 0.3s;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    @include respond(md) {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .restake {
+    margin-top: 15px;
+
+    label {
+      justify-content: flex-end;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  &-name {
+    margin-left: 12px;
+    @include respond(md) {
+      margin-left: 5px;
+    }
+  }
+
+  &-other {
+    width: 20%;
+
+    @include respond(md) {
+      text-align: center;
+      margin-right: 10px;
+      width: 80px;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+    &-title {
+      opacity: 0.7;
+      font-size: 14px;
+
+      @include respond(md) {
+        margin-bottom: 2px;
+        font-size: 10px;
+      }
+    }
+    &-value {
+      font-size: 14px;
+
+      @include respond(md) {
+        font-size: 10px;
+      }
+    }
+  }
+
+
+  .collapse-table-expanded-content {
+    background: #0f0f12;
+    border-radius: 0 0 30px 30px;
+    margin-right: -4px;
+    padding: 15px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+
+    &-left {
+      min-width: 324px;
+      width: 324px;
+      margin-right: 24px;
+
+      @include respond(md) {
+        width: 100%;
+        margin-right: 0;
+        min-width: unset;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+
+        @include respond(md) {
+          margin-bottom: 7px;
+        }
+
+        &-label {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 18px;
+          color: #fff;
+        }
+
+        &-value {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 22px;
+          text-align: right;
+          color: #fff;
+        }
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        background-color: initial;
+        border: none;
+        padding: 0;
+        text-decoration: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #58ff44;
+
+        @include respond(md) {
+          width: 33.3%;
+          justify-content: center;
+          font-size: 11px;
+          line-height: 16px;
+
+          &:last-child {
+            margin-bottom: 10px !important;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          margin-left: 6px;
+
+          @include respond(md) {
+            width: 13px;
+            height: 13px;
+            margin-left: 4px;
+          }
+        }
+      }
+
+      &-btn {
+        border: 1px solid #58ff44;
+        border-radius: 36px;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        background-color: initial;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #58ff44;
+
+        svg {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &-right {
+      width: 100%;
+      &-block {
+        border: 1px solid #58ff44;
+        border-radius: 10px;
+        padding: 16px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 32px);
+
+        &.withdrawal {
+          @include respond(md) {
+            flex-wrap: wrap;
+
+            .collapse-table-expanded-content-right-block-right {
+              justify-content: space-between;
+              width: 100%;
+            }
+          }
+        }
+
+        &.hide {
+          display: none;
+        }
+
+        @include respond(md) {
+          border: 1px solid #242642;
+          padding: 10px;
+          width: calc(100% - 20px);
+          margin-bottom: 15px;
+        }
+
+        &-left {
+          &-title {
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 18px;
+            color: #fff;
+          }
+
+          .custom-input {
+            width: 80%;
+          }
+
+          &-value {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: #fff;
+
+            span {
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 14px;
+              color: rgba(255, 255, 255, 0.7);
+            }
+          }
+          &-value-2 {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            color: #fff;
+            opacity: 0.7;
+          }
+        }
+
+        &-right {
+          display: flex;
+          align-items: center;
+
+          .collapse-table-expanded-content-right-block-left-value {
+            text-align: right;
+          }
+
+          svg {
+            margin: 0 16px;
+
+            @include respond(md) {
+              margin: 0 10px;
+            }
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,124 @@
+@import "src/styles/mixins";
+@import "src/styles/constants";
+
+.simple-button {
+  background-color: #58ff44;
+  border-radius: 36px;
+  padding: 12px 22px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  transition: .3s;
+
+  &-overflow {
+    flex-direction: column;
+    flex: none;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &-first {
+    transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    transition: 0.3s;
+    display: block;
+  }
+
+  &-end {
+    transform: translate3d(0px, 120%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    transition: 0.3s;
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: #58ff44;
+    .simple-button-first {
+      transform: translate3d(0px, -120%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+    .simple-button-end {
+      transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+  }
+
+  svg {
+    min-width: 20px;
+    margin-left: -5px;
+  }
+
+  &.colored {
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &.white {
+    background-color: #fff;
+    color: #58ff44;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &.outlined {
+    background-color: initial;
+    color: #fff;
+    border: 1px solid #58ff44;
+    padding: 12px 22px;
+  }
+
+  &.border {
+    background-color: initial;
+    color: #fff;
+    border: 2px solid #58ff44;
+
+    &:hover {
+      border-color: #58ff44;
+    }
+
+    &:disabled {
+      color: #99B9B9 !important;
+      border-color: #99B9B9 !important;
+      cursor: not-allowed !important;
+    }
+  }
+
+  &.yellow {
+    border: 1px solid #ffcd06;
+    background-color: initial;
+    cursor: not-allowed;
+    color: #715c05;
+  }
+  &.danger {
+    border: 1px solid #ffcd06;
+    background-color: initial;
+    color: #715c05;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+  }
+}

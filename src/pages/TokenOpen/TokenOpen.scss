@@ -1,0 +1,149 @@
+@import "src/styles/mixins";
+
+.page-token {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 228px;
+
+  @include respond(md) {
+    margin-left: 0;
+  }
+  &-content {
+    padding: 48px 20px;
+
+    @include respond(md) {
+      padding: 30px 20px 20px 20px;
+    }
+
+    &-breadcrumbs {
+      display: flex;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      align-items: center;
+
+      &-item {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #fff;
+        opacity: 0.8;
+        padding: 5px 0;
+        border: 0;
+        cursor: pointer;
+        background-color: initial;
+        transition: 0.1s;
+        margin-right: 12px;
+
+        &:hover {
+          color: rgba(31, 35, 41, 0.8);
+        }
+
+        &.active {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 160%;
+          letter-spacing: -0.03em;
+          color: #fff;
+          opacity: 1;
+        }
+      }
+
+      svg {
+        margin-right: 12px;
+      }
+
+      &-percents {
+        padding: 2px 8px;
+        background: #060707;
+        border-radius: 20px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: -0.03em;
+        color: #ffff;
+      }
+    }
+
+    &-data {
+      display: flex;
+      gap: 20px;
+
+      @include respond(md) {
+        flex-direction: column;
+      }
+      &-text {
+        padding-top: 20px;
+        max-width: 320px;
+        &-title {
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 160%;
+          letter-spacing: -0.03em;
+          color: #fff;
+          margin: 0 0 12px 0;
+        }
+
+        &-block {
+          border-radius: 30px;
+          padding: 16px;
+          background: #202028;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid  #636380;
+        }
+
+        &-p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 160%;
+          letter-spacing: -0.03em;
+          white-space: pre-wrap;
+          color: #fff;
+          opacity: 0.6;
+          margin: 0 0 32px 0;
+        }
+      }
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @include respond(md) {
+          //flex-direction: column;
+          gap: 10px;
+        }
+
+        &-img {
+          width: 48px;
+        }
+
+        h1 {
+          margin: 0;
+          font-weight: 500;
+          font-size: 36px;
+          line-height: 160%;
+          letter-spacing: -0.03em;
+          color: #fff;
+
+          @include respond(md) {
+            font-size: 20px;
+          }
+        }
+      }
+      &-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+
+  }
+}

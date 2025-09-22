@@ -1,0 +1,51 @@
+@import "src/styles/mixins";
+
+.article {
+  width: 42%;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #060707;
+  box-shadow: rgba(255, 255, 255, 0.3) 0 4px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #fff;
+  padding-bottom: 30px;
+
+  img {
+    max-height: 300px;
+
+    @include respond(md) {
+      width: 100%;
+      max-height: unset;
+    }
+  }
+
+  dl {
+    padding: 0 20px;
+  }
+
+  dt {
+    font-size: 20px;
+  }
+
+  dd {
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  &-footer {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+    bottom: 10px;
+  }
+
+  @include respond(md) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,79 @@
+@import "src/styles/mixins";
+
+@mixin white-gradient {
+  background: linear-gradient(to right,  rgba(14, 14, 21, 0.8) 0%,rgba(14, 14, 21, 0) 100%);
+}
+
+.carousel__wrapper {
+  position: relative;
+  width: 100%;
+
+  .slide {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px 20px 15px;
+
+    @include respond(md) {
+      margin: 0 5px 10px 5px;
+      border-radius: 10px;
+    }
+  }
+
+  .slide-img {
+    height: 100%;
+  }
+
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+
+    @include respond(md) {
+      width: 40px;
+    }
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  @keyframes animateContainer {
+    from {
+      transform: translateX(calc(100vw));
+    }
+    to {
+      transform: translateX(calc(-100%));
+    }
+  }
+
+  &-ticker {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 60px;
+  }
+  &-content {
+    position: absolute;
+    display: flex;
+    transform: translateX(calc(100vw));
+    animation: animateContainer 18s linear forwards infinite;
+
+    @include respond(md) {
+      animation: animateContainer 10s linear forwards infinite;
+    }
+  }
+}

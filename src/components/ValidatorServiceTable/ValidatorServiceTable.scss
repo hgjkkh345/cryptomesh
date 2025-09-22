@@ -1,0 +1,130 @@
+@import "src/styles/mixins";
+
+.ValidatorServiceTable {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  box-shadow: 0 3px 3px #9945ff;
+  border-radius: 40px 40px 40px 40px;
+  width: 950px;
+  max-height: 180px;
+  background: linear-gradient(154deg, #8035b6 16.07%, #7333c3 83.87%), #ffffff;
+  overflow: hidden;
+  margin: 50px auto;
+
+
+  @include respond(md) {
+    flex-direction: column;
+    width: 80%;
+    max-height: 350px;
+    padding: 20px 15px 140px 15px;
+    align-items: center;
+    margin: 20px auto;
+  }
+
+  .RightTableImage {
+    display: flex;
+    width: 200px;
+    height: auto;
+    margin-left: -70px;
+    margin-right: 10px;
+    object-fit: cover;
+
+    @include respond(md) {
+      margin: 0;
+      align-self: flex-start;
+      position: absolute;
+      bottom: -120px;
+      right: -140px;
+      left: unset;
+      z-index: -1;
+    }
+  }
+
+  .validator-service-table-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  .DescValidator {
+    font-size: 16px;
+    width: 750px;
+
+    @include respond(md) {
+      width: 300px;
+      font-size: 0.9rem;
+
+      margin: 0 auto;
+    }
+  }
+  .TitleValidator {
+    padding-top: 11px;
+    margin-bottom: 0;
+
+    @include respond(md) {
+      margin: 0;
+      font-size: 1.8rem;
+      padding-top: 0;
+      overflow: visible;
+    }
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 132%;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 12px;
+
+    @include respond(md) {
+      font-size: 26px;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    margin: 0 0 40px;
+
+    @include respond(md) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.ValidatorServiceTable-without-title {
+  @include respond(md) {
+    height: 180px;
+    margin-top: 30px;
+
+  }
+
+  .DescValidator {
+    @include respond(md) {
+      width: 80%;
+      overflow: visible;
+      margin: 0 auto;
+      margin-top: -222px;
+      z-index: 1;
+    }
+  }
+
+    .RightTableImage {
+      @include respond(md) {
+        width: 150px;
+        margin-top: 100px;
+        transform: rotate(30deg);
+        z-index: 0;
+        position: relative;
+      }
+    }
+}
+
+

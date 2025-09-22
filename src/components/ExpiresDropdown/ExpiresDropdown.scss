@@ -1,0 +1,117 @@
+@import "src/styles/mixins";
+
+.expires-dropdown {
+  z-index: 2;
+  position: relative;
+  width: 230px;
+  margin-left: 20px;
+
+  &-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9E9FF;
+    border: 1px solid #F9E9FF;
+    border-radius: 20px;
+    padding: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.15s;
+    line-height: 16px;
+    color: #060707;
+
+    &-name {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: #060707;
+      white-space: nowrap;
+      margin-right: 10px;
+
+      @include respond(md) {
+        display: none;
+        white-space: unset;
+      }
+    }
+  }
+
+  &-content {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.15s;
+    width: 176px;
+    height: 235px;
+    position: absolute;
+    top: 47px;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid #58ff44;
+    box-shadow: 0 64px 64px -48px rgba(15, 15, 15, 0.08);
+    border-radius: 20px;
+    padding: 10px;
+
+    &-item {
+      background-color: initial;
+      border: none;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      width: 100%;
+      cursor: pointer;
+      color: #060707;
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.disabled {
+        cursor: default;
+        position: relative;
+
+        &:hover {
+          .expires-dropdown-content-item-coming {
+            display: block;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-header {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: #8F9194;
+      margin-bottom: 12px;
+    }
+  }
+
+  &.mobileRight {
+    @include respond(md) {
+      .expires-dropdown-content {
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+
+  &.active {
+    .expires-dropdown-trigger {
+      border: 1px solid #58ff44;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .expires-dropdown-content {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

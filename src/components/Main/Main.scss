@@ -1,0 +1,112 @@
+@import "src/styles/mixins";
+
+.type::after {
+  content: '+++';
+  color: #fff;
+}
+.main {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 100px 50px 40px 50px;
+  z-index: 3;
+  position: relative;
+
+  @include respond(md) {
+    padding: 28px 15px;
+    flex-direction: column;
+  }
+
+  &-left {
+    &-first {
+      color: #58ff44;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 24px */
+      letter-spacing: -0.6px;
+      margin-bottom: 6px;
+
+      @include respond(md) {
+        font-size: 16px;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      max-width: 800px;
+      margin: 0 0 12px 0;
+
+
+      @include respond(md) {
+        max-width: unset;
+        font-size: 30px;
+      }
+
+      &-animate {
+        position: relative;
+        display: inline-block;
+        width: 240px;
+        color: #58ff44;
+        @include respond(md) {
+          width: 167px;
+        }
+      }
+      .colored {
+        background: linear-gradient(94deg, #58ff44 -0.74%, #58ff44 100%);
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &-desc {
+      margin: 0 0 50px 0;
+      color: rgba(255, 255, 255, 0.5);
+
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 32px */
+      letter-spacing: -0.6px;
+    }
+
+    &-buttons {
+      display: flex;
+      margin-bottom: 64px;
+      z-index: 100;
+      position: relative;
+      gap: 20px;
+
+      @include respond(md) {
+        margin-bottom: 34px;
+      }
+
+      &-item {
+        width: 129px;
+        height: 48px;
+        background: #fff;
+        border-radius: 36px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        color: #060707;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+
+      }
+    }
+  }
+
+}

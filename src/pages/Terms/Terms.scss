@@ -1,0 +1,101 @@
+@import "src/styles/mixins";
+
+.terms {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 228px;
+
+  @include respond(md) {
+    margin-left: 0;
+  }
+
+  &.privacy {
+    background-size: cover;
+  }
+
+  &-content {
+    padding: 80px 20px;
+    margin: auto;
+    max-width: 1200px;
+
+    &-title {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0;
+    }
+
+    &-updated {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 12px 0 40px 0;
+    }
+
+    &-title-2 {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 40px 0 0 0;
+    }
+
+    &-subtitle-2 {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 20px 0 12px 0;
+    }
+
+    &-ul {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+      padding-left: 0;
+
+      li {
+        margin-left: 30px;
+        text-align: left;
+      }
+    }
+
+    &-subtitle {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 40px 0 12px 0;
+    }
+
+    &-desc {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: #fff;
+      opacity: 0.8;
+      margin: 0;
+    }
+
+    &-last-desc {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 160%;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 40px 0 0 0;
+    }
+  }
+}

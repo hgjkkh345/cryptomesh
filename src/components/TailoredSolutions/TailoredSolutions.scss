@@ -1,0 +1,150 @@
+@import "src/styles/mixins";
+
+.tailored-solutions {
+
+  .tailored-solutions-title {
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .tailored-solutions-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+    width: 1000px;
+
+    @include respond(md) {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+  .tailored-solutions-content-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 312px;
+    gap: 20px;
+  }
+  .tailored-solutions-image {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    object-fit: contain;
+    border-radius: 15px 15px 15px 15px;
+
+    align-items: center;
+  }
+  .tailored-solutions-desc {
+    text-align: center;
+    font-size: 16px;
+
+    @include respond(md) {
+      flex-direction: column;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+}
+
+
+  span {
+    background: linear-gradient(154deg, #58ff44 16.07%, #FF5EFF 83.87%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.tailored-solutions-for-dev-api {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  .tailored-solutions-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    @include respond(md) {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+
+  .tailored-solutions-content-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .tailored-solutions-titledesc {
+    text-align: center;
+    margin-bottom: 0;
+
+    @include respond(md) {
+      margin-top: 0;
+    }
+  }
+
+  .tailored-solutions-desc {
+    height: 120px;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    @include respond(md) {
+      height: unset;
+    }
+  }
+}
+.tailored-solutions-for-crypto-incubator {
+
+  .tailored-solutions-content {
+    gap: 80px;
+    margin-left: 50px;
+
+    @include respond(md) {
+      flex-direction: column;
+      max-width: 100%;
+      margin: 0 auto;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .tailored-solutions-content-item {
+
+    @include respond(md) {
+      width: 365px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .tailored-solutions-image {
+    width: 200px;
+  }
+
+  .tailored-solutions-titledesc {
+    font-size: 24px;
+    margin-bottom: 0;
+
+    @include respond(md) {
+      margin-top: -10px;
+    }
+  }
+
+  .tailored-solutions-desc {
+    width: 350px;
+
+    @include respond(md) {
+      margin-bottom: 0;
+      margin-top: -10px;
+
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "src/styles/mixins";
+
+.swap-mover {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  background-color: initial;
+  border: none;
+  z-index: 1;
+  width: 236px;
+  min-width: 236px;
+  margin-right: 16px;
+
+  @include respond(md) {
+    margin-left: 16px;
+    margin-right: 0;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 160%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    &-img {
+      width: 34px;
+      height: 34px;
+      margin-right: 10px;
+    }
+  }
+
+  &-data {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -0.03em;
+    color: #fff;
+
+    &-price {
+      &.green {
+        color: #027344;
+      }
+      &.red {
+        color: #DE0101;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 14px 14px;
+    border-radius: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: linear-gradient(135deg, #191b2d 0%, rgba(11, 10, 22, 0.7) 100%);;
+
+    @include respond(md) {
+      align-items: flex-start;
+    }
+  }
+}

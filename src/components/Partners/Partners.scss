@@ -1,0 +1,78 @@
+@import "src/styles/mixins";
+
+.partners {
+  padding: 80px 20px;
+  z-index: 2;
+  background-color: rgba(14, 14, 21, 0.8);
+  position: relative;
+
+  @include respond(md) {
+    padding: 30px 15px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  &-header {
+    display: flex;
+    max-width: 1300px;
+    align-items: flex-end;
+    margin: 0 auto 40px auto;
+    gap: 60px;
+
+    @include respond(md) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 40px;
+    color: #fff;
+    margin: 0;
+
+    @include respond(md) {
+      font-size: 26px;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &-desc {
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.7;
+    margin: 0;
+    max-width: 647px;
+
+    @include respond(md) {
+      font-size: 13px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: auto;
+    gap: 16px;
+
+    @include respond(md) {
+      gap: 6px;
+    }
+
+    &-item {
+      padding: 24px 32px;
+      border-radius: 36px;
+      background: rgba(37, 113, 234, 0.10);
+
+      backdrop-filter: blur(9px);
+      @include respond(md) {
+        transform: scale(0.8);
+      }
+    }
+  }
+}

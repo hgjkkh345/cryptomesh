@@ -1,0 +1,240 @@
+@import "src/styles/mixins";
+
+.ref-works {
+  padding: 70px 38px 0 38px;
+  z-index: 2;
+  margin: auto;
+  max-width: 1300px;
+  position: relative;
+
+  @include respond(md) {
+    padding: 30px 20px 0 20px;
+  }
+
+  &-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 16px 0;
+
+    @include respond(md) {
+      font-size: 30px;
+      margin: 0 0 14px 0;
+    }
+  }
+
+  &-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #fff;
+    opacity: 0.6;
+    margin: 0 0 46px 0;
+
+    @include respond(md) {
+      font-size: 14px;
+      margin: 0 0 26px 0;
+    }
+  }
+
+  &-content {
+    border-radius: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: linear-gradient(135deg, #191b2d 0%, rgba(11, 10, 22, 0.7) 100%);
+    padding: 24px;
+    position: relative;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+
+      &-block {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 160%;
+        letter-spacing: -0.03em;
+        color: #fff;
+        width: 216px;
+
+        @include respond(md) {
+          width: auto;
+          font-size: 16px;
+          line-height: 120%;
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.10);
+      padding: 12px;
+      margin-bottom: 12px;
+
+      @include respond(md) {
+        flex-direction: column;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-left {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 670px;
+
+        &-number {
+          width: 38px;
+          min-width: 38px;
+          height: 38px;
+          background: #58ff44;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 160%;
+          text-align: center;
+          letter-spacing: -0.03em;
+          color: #fff;
+        }
+
+        &-users {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          margin-bottom: -6px;
+        }
+
+        &-person {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(22, 107, 255, 0.18);
+          border-radius: 100%;
+          margin-bottom: 6px;
+          margin-left: 10px;
+        }
+      }
+
+      &-border {
+        background: #fff;
+        width: 92px;
+        height: 1px;
+        margin-left: auto;
+        margin-right: 24px;
+
+        @include respond(md) {
+          width: 100%;
+          margin: 13px 0;
+        }
+      }
+
+      &-right {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: -0.03em;
+        white-space: nowrap;
+        color: #fff;
+
+        @include respond(md) {
+          width: 100%;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &-p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    margin: 46px 0;
+    color: #fff;
+    opacity: 0.6;
+
+    @include respond(md) {
+      margin: 26px 0;
+    }
+
+    button {
+      background-color: initial;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+      text-align: center;
+      letter-spacing: -0.03em;
+      color: #fff;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    &.small {
+      margin-top: 0;
+    }
+  }
+
+  &-title-2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 16px 0;
+
+    @include respond(md) {
+      font-size: 22px;
+      margin: 0 auto 16px auto;
+      max-width: 300px;
+    }
+
+    &.big {
+      margin: 46px 0 16px 0;
+
+      @include respond(md) {
+        margin: 26px auto 16px auto;
+      }
+    }
+  }
+
+  &-ul {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    opacity: 0.6;
+
+    li {
+      width: fit-content;
+    }
+  }
+
+  @include respond(md) {
+  }
+}

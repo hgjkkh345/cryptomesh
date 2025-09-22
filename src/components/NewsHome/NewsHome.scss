@@ -1,0 +1,147 @@
+@import "src/styles/mixins";
+
+.news-home {
+  padding: 10px 96px 60px 96px;
+  z-index: 3;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  max-width: 1300px;
+  margin: auto;
+
+  @include respond(md) {
+    padding: 30px 15px;
+  }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  p {
+    margin-top: 40px;
+  }
+
+  &-input {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    max-width: 628px;
+
+    .custom-input-wrapper {
+      @include respond(md) {
+        width: 90% !important;
+      }
+    }
+
+    @include respond(md) {
+      padding: 0 20px;
+    }
+    .simple-button {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 171%;
+    }
+  }
+  &-title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #fff;
+    margin: 0 0 16px 0;
+
+    @include respond(md) {
+      font-size: 26px;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.4;
+    text-align: center;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    gap: 0 32px;
+
+    @include respond(md) {
+      gap: 20px 0;
+      flex-direction: column;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      background: rgba(14, 14, 21, 0.8);
+      position: relative;
+      border-radius: 36px;
+      text-decoration: none;
+      overflow: hidden;
+      width: 100%;
+      padding-bottom: 10px;
+      justify-content: space-between;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      img {
+        width: 100%;
+        max-height: 230px;
+      }
+
+      &-title {
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin: 6px 20px;
+
+        @include respond(md) {
+          font-size: 20px;
+          margin-bottom: 4px;
+          height: unset;
+        }
+      }
+
+      &-desc {
+        font-weight: 400;
+        max-width: 336px;
+        width: 336px;
+        font-size: 14px;
+        letter-spacing: -0.03em;
+        color: #fff;
+        height: 200px;
+        margin: 6px 20px;
+
+        @include respond(md) {
+          height: auto;
+        }
+      }
+
+      &-footer {
+        font-size: 14px;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin: 0 20px 6px 20px;
+
+        b {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

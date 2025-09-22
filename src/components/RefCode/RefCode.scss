@@ -1,0 +1,109 @@
+@import "src/styles/mixins";
+
+.ref-code {
+  padding: 0 38px;
+  min-height: 65vh;
+
+  @include respond(md) {
+   padding: 0 15px;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &-block-place {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+
+  &-block {
+    border-radius: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: linear-gradient(135deg, #191b2d 0%, rgba(11, 10, 22, 0.7) 100%);;
+    padding: 26px;
+    width: 44%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    @include respond(md) {
+      width: calc(100% - 30px);
+      padding: 15px;
+    }
+
+    &.full {
+      @include respond(md) {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+
+        .simple-button {
+          margin: auto;
+        }
+      }
+    }
+
+    &-desc {
+      @include respond(md) {
+        font-size: 14px;
+      }
+    }
+    &-left-title {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: rgba(255, 255, 255, 0.5);
+
+      @include respond(md) {
+        font-size: 14px;
+      }
+    }
+
+    &-left-value {
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+
+      &.small-one {
+        @include respond(md) {
+          font-size: 13px;
+        }
+      }
+
+      @include respond(md) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-flex {
+    display: flex;
+    gap: 24px;
+
+    @include respond(md) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}

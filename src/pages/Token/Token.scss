@@ -1,0 +1,147 @@
+@import "src/styles/mixins";
+
+.swap {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &-content {
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    min-height: 100%;
+    max-width: 1200px;
+    padding: 44px 96px;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-scroll {
+      overflow: scroll;
+      position: relative;
+      padding: 2px;
+
+      &-content {
+        transition: 0.5s;
+        display: flex;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+
+      &-item {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        padding: 0;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        background: #000;
+
+        &:first-child {
+          margin-right: 8px;
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    @include respond(md) {
+      height: auto;
+      padding: 70px 15px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #060707;
+      margin: 0;
+
+      @include respond(md) {
+        font-size: 26px;
+        margin: 0 0 16px 0;
+      }
+    }
+    &-subtitle {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #060707;
+      margin: 32px 0 35px 0;
+
+      @include respond(md) {
+        font-size: 26px;
+        margin: 10px 0 16px 0;
+      }
+    }
+
+    &-flex {
+      display: flex;
+
+      @include respond(md) {
+        flex-direction: column;
+      }
+    }
+
+    &-breadcrumbs {
+      display: flex;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      align-items: center;
+
+      &-item {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgba(31, 35, 41, 0.6);
+        padding: 5px 0;
+        border: 0;
+        cursor: pointer;
+        background-color: initial;
+        transition: 0.1s;
+        margin-right: 12px;
+
+        &:hover {
+          color: rgba(31, 35, 41, 0.8);
+        }
+
+        &.active {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 160%;
+          letter-spacing: -0.03em;
+          color: #060707;
+        }
+      }
+
+      svg {
+        margin-right: 12px;
+      }
+
+      &-percents {
+        padding: 2px 8px;
+        background: #E3F8FE;
+        border-radius: 20px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: -0.03em;
+        color: #060707;
+      }
+    }
+
+    &-charts {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

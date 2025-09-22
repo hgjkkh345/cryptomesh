@@ -1,0 +1,190 @@
+@import "src/styles/mixins";
+
+.service-header {
+  padding-top: 20px;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  box-shadow: 0 3px 3px #9945ff;
+  overflow: hidden;
+  border-radius: 40px;
+  width: 900px;
+  background: linear-gradient(154deg, #7818af 16.07%, #6a16cf 83.87%), #ffffff;
+  margin: 50px auto 70px;
+
+  @include respond(md) {
+    flex-direction: column;
+    padding-top: 10px;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .service-header-top {
+    display: flex;
+    flex-direction: row;
+    padding: 0 70px;
+
+    @include respond(md) {
+      padding: 0 10px;
+    }
+  }
+
+  .heading-service {
+    @include respond(md) {
+      text-align: center;
+    }
+  }
+
+  .service-header-top-left {
+    @include respond(md) {
+      button {
+        margin: auto;
+      }
+    }
+
+    span {
+      background: linear-gradient(154deg, #58ff44 16.07%, #FF5EFF 83.87%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .DescLine {
+    font-size: 1rem;
+
+    @include respond(md) {
+      text-align: center;
+    }
+  }
+  .RightMainImage {
+    display: flex;
+    padding: 0;
+    width: 400px;
+
+    @include respond(md) {
+      display: none;
+    }
+  }
+
+  .service-header-bottom {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    width: fit-content;
+    border-radius: 0 40px 0 0;
+    background: linear-gradient(154deg, #58ff44 16.07%, #FF7AD9 83.87%), #FFF;
+    padding: 20px 70px;
+    margin-top: 20px;
+
+    h1 {
+      margin: 0;
+    }
+
+    @include respond(md) {
+      padding: 0 10px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: transparent;
+      border-radius: 50%;
+      left: 0;
+      top: -80px;
+      box-shadow: -40px 40px 0 0 #58ff44;
+      @include respond(md) {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: transparent;
+      border-radius: 50%;
+      right: -80px;
+      bottom: 0;
+      box-shadow: -40px 40px 0 0 #FF7AD9;
+
+      @include respond(md) {
+        display: none;
+      }
+    }
+
+    @include respond(md) {
+      flex-direction: column;
+      border-radius: 40px;
+      width: auto;
+    }
+
+  }
+  .service-header-bottom-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    @include respond(md) {
+      padding: 10px;
+      flex-direction: column;
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+
+    &-btn {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border: 0.501px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50px;
+        pointer-events: none;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+        border: 0.501px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50px;
+        pointer-events: none;
+      }
+    }
+  }
+  .service-header-bottom-right {
+    flex-direction: row;
+    width: 100px;
+    height: 100px;
+
+    @include respond(md) {
+      display: none;
+    }
+
+  }
+  .buttonTitle {
+    @include respond(md) {
+      width: auto;
+      text-align: center;
+      margin-bottom: -20px;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "src/styles/mixins";
+
+.pool-table {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 16px auto;
+
+  &-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: linear-gradient(135deg, #191b2d 0%, rgba(11, 10, 22, 0.7) 100%);;
+    border-radius: 36px;
+
+    &-scroll {
+      width: 100%;
+      @include respond(md) {
+        overflow: scroll;
+      }
+    }
+
+    @include respond(md) {
+      align-items: flex-start;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+
+  table {
+    width: 100%;
+
+    @include respond(md) {
+      min-width: 700px;
+    }
+
+    th {
+      font-weight: 600;
+      text-align: left;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: #fff;
+      padding: 16px 0;
+    }
+
+    td {
+      padding: 16px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    tr {
+      cursor: pointer;
+    }
+  }
+
+  .simple-button {
+    @include respond(md) {
+      width: 100%;
+    }
+  }
+}

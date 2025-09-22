@@ -1,0 +1,30 @@
+@import "src/styles/mixins";
+
+.faq {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &-content {
+    padding: 48px 20px;
+    margin: auto;
+    max-width: 1200px;
+
+    @include respond(md) {
+      padding: 30px 20px 20px 20px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 120%;
+      text-align: center;
+      color: #fff;
+      margin: 0 0 32px 0;
+
+      @include respond(md) {
+        font-size: 30px;
+        margin: 0 0 22px 0;
+      }
+    }
+  }
+}

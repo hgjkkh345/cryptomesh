@@ -1,0 +1,79 @@
+@import "src/styles/mixins";
+
+.table {
+  margin: auto;
+  position: relative;
+
+  @include respond(md) {
+    max-width: unset;
+    padding: 20px 10px;
+  }
+
+  .table-titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px;
+  }
+
+  .table-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    color: #6a60ab;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    z-index: 2;
+
+    @include respond(md) {
+      flex-direction: column;
+      padding-bottom: 10px;
+      top: 0;
+      left: 0;
+    }
+
+    &-left {
+      &-title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 160%;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin: 0;
+
+        @include respond(md) {
+          font-size: 20px;
+          white-space: nowrap;
+        }
+      }
+
+      &-desc {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: -0.03em;
+        color: rgba(255, 255, 255, 0.4);
+        margin: 0;
+        max-width: 550px;
+
+        @include respond(md) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+
+      @include respond(md) {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  }
+}

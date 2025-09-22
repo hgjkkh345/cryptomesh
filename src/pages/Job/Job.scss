@@ -1,0 +1,151 @@
+@import "src/styles/mixins";
+
+.job {
+  overflow: hidden;
+  &-content {
+    padding: 120px 20px 0 20px;
+
+    @include respond(md) {
+      padding: 80px 20px 0 20px;
+    }
+
+    &-block {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      margin-bottom: 150px;
+      justify-content: space-between;
+      gap: 20px;
+
+      @include respond(md) {
+        flex-direction: column;
+        justify-content: unset;
+      }
+
+      h1 {
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #fff;
+        margin-top: 10px;
+        position: relative;
+        width: fit-content;
+
+        @include respond(md) {
+          font-size: 28px;
+        }
+
+        &:before {
+          content: ' ';
+          display: block;
+          width: 19px;
+          height: 56px;
+          background: #9945FF;
+          position: absolute;
+          right: -30px;
+          opacity: 0;
+          transition: 0.3s;
+
+          @include respond(md) {
+            height: 30px;
+            width: 6px;
+            right: -10px;
+          }
+        }
+
+        &.active {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+
+      &-items {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 800px;
+
+        @include respond(md) {
+          gap: 10px;
+          width: unset;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 183%;
+          color: #fff;
+          margin: 0;
+
+          @include respond(md) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      &-investors {
+        display: flex;
+        flex-wrap: wrap;
+
+        .job-content-block-item{
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 24px;
+          max-width: unset;
+
+          @include respond(md) {
+            padding: 10px;
+          }
+          &:hover {
+            text-decoration: none;
+          }
+
+          p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 0 22px 0;
+
+            @include respond(md) {
+              font-size: 12px;
+              margin: 0 0 10px 0;
+            }
+          }
+
+          img {
+            height: 42px;
+            max-width: 253px;
+            filter: brightness(0) invert(1);
+
+            @include respond(md) {
+              height: 24px;
+              max-width: 140px;
+            }
+          }
+        }
+      }
+
+      &-item {
+        font-weight: 600;
+        font-size: 30px;
+        text-decoration: none;
+        max-width: 700px;
+        line-height: 137%;
+        color: #fff;
+        transition: 0.3s;
+
+        @include respond(md) {
+          max-width: 90%;
+          font-size: 20px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

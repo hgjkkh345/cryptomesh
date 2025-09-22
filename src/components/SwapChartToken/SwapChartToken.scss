@@ -1,0 +1,92 @@
+@import "src/styles/mixins";
+
+.swap-chart-token {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    @include respond(md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    &-date {
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: #fff;
+
+      @include respond(md) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &-tabs {
+    display: flex;
+    align-items: center;
+
+    @include respond(md) {
+      margin-bottom: 10px;
+    }
+
+    &-item {
+      border: 1px solid #1e1e1e;
+      border-radius: 32px;
+      padding: 6px 18px;
+      background-color: initial;
+      margin-left: 8px;
+      font-weight: 500;
+      font-size: 12px;
+      cursor: pointer;
+      line-height: 160%;
+      letter-spacing: -0.03em;
+      color: #fff;
+      transition: 0.1s;
+
+      &.active {
+        background-color: #58ff44;
+        color: #000;
+        border-color: #58ff44;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 36px;
+    padding: 24px;
+    background: #FFFFFF;
+
+    &-scroll {
+      width: 100%;
+      @include respond(md) {
+        overflow: scroll;
+      }
+    }
+
+    @include respond(md) {
+      align-items: flex-start;
+    }
+
+  }
+
+}

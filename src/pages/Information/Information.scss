@@ -1,0 +1,133 @@
+@import "src/styles/mixins";
+
+.information {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 228px;
+
+  @include respond(md) {
+    margin-left: 0;
+  }
+  &-content {
+    padding: 28px 20px 60px 20px;
+    .simple-button {
+      margin: 20px auto;
+    }
+
+    &-contract {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      height: 43px;
+      background: #2c656c;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      text-align: center;
+      margin-bottom: 12px;
+      color: #fff;
+
+      &-blocks {
+        display: flex;
+        gap: 12px;
+
+        @include respond(md) {
+          flex-direction: column;
+        }
+
+        &-item {
+          border-radius: 20px;
+          overflow: hidden;
+          width: 100%;
+
+          &-title {
+            padding: 4px 15px 4px 15px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 150%;
+            text-align: center;
+            color: #25282f;
+            margin: 0;
+
+            &.red {
+              background: #f01580;
+            }
+
+            &.orange {
+              background: #f8a060;
+            }
+            &.blue {
+              background: #4ebfff;
+            }
+            &.green {
+              background: #67cd72;
+            }
+          }
+
+          &-desc {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            height: 86px;
+            margin: 0;
+          }
+        }
+      }
+
+      &-dis {
+        font-weight: 500;
+        font-size: 14px;
+        background: #9945FF;
+        line-height: 157%;
+        color: #fff;
+        border-radius: 0 0 8px 0;
+        padding: 2px 10px;
+        width: fit-content;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &-p {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        background: linear-gradient(135deg, #191b2d 0%, rgba(11, 10, 22, 0.7) 100%);
+        padding: 24px 32px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 178%;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+
+        a {
+          color: #fff;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+        }
+
+        ul {
+          padding: 0 20px;
+        }
+      }
+    }
+
+
+    &-left {
+      &-title {
+        font-weight: 500;
+        font-size: 24px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        margin-top: 40px;
+      }
+    }
+
+    @include respond(md) {
+      padding: 10px 20px 20px 20px;
+    }
+  }
+}

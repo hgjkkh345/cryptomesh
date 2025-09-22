@@ -1,0 +1,86 @@
+@import "src/styles/mixins";
+
+.ref-blocks {
+  padding: 0 20px;
+
+  &-title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 46px 0;
+
+    @include respond(md) {
+      font-size: 30px;
+      margin: 0 0 26px 0;
+    }
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+
+    &-item {
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 330.67px;
+      height: 300px;
+      backdrop-filter: blur(10px);
+      background: rgba(5, 5, 7, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      margin-right: 32px;
+
+      @include respond(md) {
+        margin-right: 0;
+        height: auto;
+        margin-bottom: 16px;
+      }
+
+      &-title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 148%;
+        text-align: center;
+        color: #fff;
+        margin: 20px 0 6px 0;
+      }
+
+      &-icon {
+        width: 76px;
+        height: 76px;
+        min-height: 76px;
+        border-radius: 100%;
+        background-color:  linear-gradient(135deg, #191b2d 0%, rgba(11, 10, 22, 0.7) 100%);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-desc {
+        margin: 0;
+        font-weight: 400;
+        font-size: 12px;
+        opacity: 0.6;
+        line-height: 160%;
+        text-align: center;
+        letter-spacing: -0.03em;
+        color: #fff;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
