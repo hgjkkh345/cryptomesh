@@ -80,7 +80,7 @@ export const Footer = (): JSX.Element => {
         </div>
         <div className='footer-list'>
           Email:
-          <a className="footer-left-link" href='mailto:support@lounge.finance'>support@lounge.finance</a>
+          <a className="footer-left-link" href='mailto:support@cryptomesh.io'>support@cryptomesh.io</a>
           Address:
           <address>70 City Road,Southbank Melbourne, VIC 3006
             Australia</address>

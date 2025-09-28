@@ -18,7 +18,7 @@ import "./Home.scss"
 import { getFromLocalStorage, setToLocalStorage, useScrollPosition } from "../../utils"
 import {preloadDataBsc} from "../SwapInfo/preloadDataBsc";
 import {preloadData} from "../SwapInfo/preloadData";
-import imgMainBgSrc from "../../assets/images/space-background.webp";
+import imgMainBgSrc from "../../assets/images/bg-cryptomesh.webp";
 import {useAccount} from "wagmi";
 import {getChainId} from "@wagmi/core";
 import {config} from "../../index";
