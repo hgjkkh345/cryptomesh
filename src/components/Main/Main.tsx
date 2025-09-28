@@ -4,7 +4,7 @@ import "./Main.scss"
 import {  useSearchParams } from "react-router-dom"
 import { routes } from "../../utils"
 import { useMedia } from "use-media"
-import srcPath from "assets/pdfs/arclaim.pdf"
+import srcPath from "assets/pdfs/cryptomesh-pdf1.pdf"
 import {SimpleButton} from "../SimpleButton";
 import { TypeAnimation } from 'react-type-animation';
 

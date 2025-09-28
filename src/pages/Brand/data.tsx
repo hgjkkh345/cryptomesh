@@ -1,7 +1,7 @@
 
 
 
-import img1Src from 'assets/images/brand/arclaimbrand1.webp'
+import img1Src from 'assets/images/logo-cryptomesh.webp'
 import img2Src from 'assets/images/brand/arclaimbrand2.webp'
 import img3Src from 'assets/images/brand/arclaimbrand3.webp'
 import img4Src from 'assets/images/brand/arclaimbrand4.webp'

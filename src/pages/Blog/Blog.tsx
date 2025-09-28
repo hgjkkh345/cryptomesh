@@ -3,8 +3,8 @@ import {Footer, Header, Loading, SimpleButton} from "components"
 
 import "./Blog.scss"
 import imgMainBgSrc from "assets/images/space-background.webp"
-import featuredSrc from "assets/images/twitter-arclaim-logo.webp"
-import logoSrc from "assets/images/mobile-logo-arclaim.webp"
+import featuredSrc from "assets/images/cryptomesh-twitter.webp"
+import logoSrc from "assets/images/cryptomesh-circle.webp"
 import {Link, useParams} from "react-router-dom";
 import {blogData} from "./data";
 import {BlogPostComp} from "../../components/BlogPost";

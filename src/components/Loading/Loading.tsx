@@ -1,7 +1,7 @@
 import React from "react"
 
 import "./Loading.scss"
-import imgLogo from "../../assets/images/mobile-logo-arclaim.webp";
+import imgLogo from "../../assets/images/cryptomesh-circle.webp";
 
 export const Loading = (): JSX.Element => (
   <div className="loading" >

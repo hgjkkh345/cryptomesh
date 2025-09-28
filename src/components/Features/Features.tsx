@@ -43,7 +43,7 @@ export const Features = (): JSX.Element => {
       img: img4,
       title: "Rewarding\n" +
         "Referral Program",
-      desc: "Share the benefits of Bitstaker.io with\n" +
+      desc: "Share the benefits of Cryptomesh.io with\n" +
         "friends and earn valuable rewards! Invite\n" +
         "your network to join our platform and\n" +
         "receive generous referal bonuses as they\n" +

@@ -1,4 +1,4 @@
-import img1Src from 'assets/images/twitter-arclaim-logo.webp'
+import img1Src from 'assets/images/cryptomesh-twitter.webp'
 import img2Src from 'assets/images/blog/first-q.webp'
 import img3Src from 'assets/images/blog/chain-link-new.webp'
 import img4Src from 'assets/images/blog/blog-coin1.webp'
