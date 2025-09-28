@@ -119,7 +119,7 @@ export const RefWorks = (): JSX.Element => {
       </ul>
       <h3 className="ref-works-title-2 big">Payout</h3>
       <p className="ref-works-p small">
-        The bonus is paid out every Monday, based on your referrals' assets and referral progress badges. The bonus payouts are in the coins that your referred friend is earning from. One exception is Liquidity Mining, where we assess the total value in DFI, so the payouts will also be in DFI.
+        The bonus is paid out every Monday, based on your referrals&apos; assets and referral progress badges. The bonus payouts are in the coins that your referred friend is earning from. One exception is Liquidity Mining, where we assess the total value in DFI, so the payouts will also be in DFI.
       </p>
       <h3 className="ref-works-title-2">How do I join the Cryptomesh.io referral program?</h3>
       <p className="ref-works-p small">
