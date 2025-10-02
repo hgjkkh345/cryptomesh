@@ -28,7 +28,7 @@ export const Terms = (): JSX.Element => {
           below). These Terms also include any guidelines, announcements, additional terms, policies, and disclaimers
           made available or issued by us from time to time. These Terms constitute a binding and enforceable legal
           contract between(“Company”, “Cryptomesh.io Finance”, “we”, “us”) and you, an end user of the services (“you” or
-          “User”) at https://Cryptomesh.io.com/ (“Services”). By accessing, using or clicking on our website (and all
+          “User”) at https://Cryptomesh.io/ (“Services”). By accessing, using or clicking on our website (and all
           related subdomains) or its mobile applications (“Website”) or accessing, using or attempting to use the
           Services, you agree that you have read, understood, and to are bound by these Terms and that you comply with
           the requirements listed herein. If you do not agree to all of these Terms or comply with the requirements
@@ -372,8 +372,8 @@ export const Terms = (): JSX.Element => {
         <p className="terms-content-desc">
           All notices, requests, demands, and determinations for us under these Terms (other than routine operational
           communications) shall be sent to{" "}
-          <a href="mailto:support@arclaim.com" target="_blank" rel="noopener noreferrer">
-            support@arclaim.com
+          <a href="mailto:support@cryptomesh.io" target="_blank" rel="noopener noreferrer">
+            support@cryptomesh.io
           </a>
         </p>
         <h3 className="terms-content-subtitle">17. Assignment</h3>

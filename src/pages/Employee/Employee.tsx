@@ -26,9 +26,9 @@ export const Employee = (): JSX.Element => {
           “<b><i>Program</i></b>”), as revised or modified from time to time, is a legally binding agreement between
           Cryptomesh.io Trading Inc., a Delaware corporation (“<b><i>Cryptomesh.io</i></b>” or the “<b><i>Company</i></b>”), and you (“<b><i>Referrer</i></b>”
           and together with Cryptomesh.io, the “<b><i>Parties</i></b>”). This Program incorporates and supplements Cryptomesh.io’s Terms
-          of Use, available at https://Cryptomesh.io.com/terms (the “<b><i>Terms</i></b>”), other than with respect to the
+          of Use, available at https://Cryptomesh.io/terms (the “<b><i>Terms</i></b>”), other than with respect to the
           exclusion of US Persons (as defined therein), who shall be eligible to participate in this Program, and
-          Privacy Policy, available at https://Cryptomesh.io.com/privacy (the “<b><i>Privacy Policy</i></b>”), to which
+          Privacy Policy, available at https://Cryptomesh.io/privacy (the “<b><i>Privacy Policy</i></b>”), to which
           Referrer agrees that Referrer is bound and is a party, and the terms of which apply to this Program. Please
           review the Terms carefully to understand Referrer’s rights and obligations, including with respect to
           governing law, arbitration, venue for dispute resolution and other dispute resolution matters, prohibited
@@ -124,12 +124,12 @@ export const Employee = (): JSX.Element => {
                 </p></li>
                 <li><p>To ensure that an application will satisfy the requirement set forth in Section 5(a), Candidates
                   must (i)&nbsp;<b>first</b>, submit their application for a specific role at Cryptomesh.io, using this
-                  link:&nbsp;<a href="https://Cryptomesh.io.com/careers">https://Cryptomesh.io.com/careers</a>.
+                  link:&nbsp;<a href="https://Cryptomesh.io/careers">https://Cryptomesh.io/careers</a>.
                   (ii)&nbsp;<b>second</b>, in the application, select from the drop down that this is a “Referral” and
                   submit details (name and email) about the Referrer. Any qualifying referral information must be
                   submitted prior or in connection with the initial communication (including email or phone) between the
                   Candidate and any member of the Cryptomesh.io’s human resources department. If there are any questions, feel
-                  free to reach out to&nbsp;<a href="mailto:support@arclaim.com">support@arclaim.com</a>. Any
+                  free to reach out to&nbsp;<a href="mailto:support@cryptomesh.io">support@cryptomesh.io</a>. Any
                   qualifying referral information must be submitted prior or in connection with the initial
                   communication (including email or phone) between the Candidate and any member of the Cryptomesh.io’s human
                   resources department.

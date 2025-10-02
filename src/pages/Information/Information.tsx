@@ -63,7 +63,7 @@ export const Information = (): JSX.Element => {
           </div>
 
           <p className='information-content-contract-p'>
-            Rewards are distributed according to the impact of the vulnerability based on the <a>Cryptomesh.io.com
+            Rewards are distributed according to the impact of the vulnerability based on the <a>Cryptomesh.io
             Vulnerability Severity Classification System V2.2</a>. This is a simplified 5-level scale, with separate
             scales for websites/apps and smart contracts/blockchains, encompassing everything from consequence of
             exploitation to privilege required to likelihood of a successful exploit.
@@ -150,10 +150,10 @@ export const Information = (): JSX.Element => {
               <li>Public disclosure of an unpatched vulnerability in an embargoed bounty</li>
               <br/>
 
-              <li><Link to={routes.bugBountyTerms}>Any other actions prohibited by the Cryptomesh.io.com Rules</Link></li>
+              <li><Link to={routes.bugBountyTerms}>Any other actions prohibited by the Cryptomesh.io Rules</Link></li>
             </ul>
           </p>
-          <SimpleButton text='Submit Bug' link="https://forms.gle/c175nkRLW4tCwn9C8"/>
+          <SimpleButton text='Submit Bug' link="https://forms.gle/w7hH72PKSv3LAyF9A"/>
         </div>
       </div>
       <Footer/>

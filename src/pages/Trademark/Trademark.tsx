@@ -38,7 +38,7 @@ export const Trademark = (): JSX.Element => {
           2. Cryptomesh.io logos.
           <br/>
           If you want to report misuse of a Cryptomesh.io&apos;s Labs trademark, please contact us at <a
-          href='mailto:support@arclaim.com'>support@arclaim.com</a>
+          href='mailto:support@cryptomesh.io'>support@cryptomesh.io</a>
         </p>
         <h3 className="terms-content-subtitle">Acceptable Uses</h3>
         <p className="terms-content-desc">
@@ -87,7 +87,7 @@ export const Trademark = (): JSX.Element => {
         </p>
         <h3 className="terms-content-subtitle">All other uses of a Cryptomesh.io trademark require our prior written permission.</h3>
         <p className="terms-content-desc">
-          Contact us at support@arclaim.com for more information.
+          Contact us at support@cryptomesh.io for more information.
         </p>
         <h3 className="terms-content-subtitle">Unacceptable Uses</h3>
         <p className="terms-content-desc">

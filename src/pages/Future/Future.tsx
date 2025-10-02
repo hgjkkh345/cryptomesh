@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import {Footer, Header, Loading, SimpleButton} from "components"
-import imgMainSrc from "assets/images/smart-guys.webp"
+import imgMainSrc from "assets/images/smart-guys1.webp"
 import imgFutureBgSrc from "assets/images/future-back-dots.webp"
 import img1Src from "assets/icons/careers/heart1.svg"
 import img2Src from "assets/icons/careers/cola-burger.svg"

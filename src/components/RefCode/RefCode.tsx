@@ -38,12 +38,12 @@ export const RefCode = ({ users }: Props): JSX.Element => {
         <div className="ref-code-block-left">
           <div className="ref-code-block-left-title">Your code</div>
           <div className="ref-code-block-left-value big">
-            https://Cryptomesh.io.com/...{`${address?.slice(address?.length - 10, address?.length)}`}
+            https://Cryptomesh.io/...{`${address?.slice(address?.length - 10, address?.length)}`}
           </div>
         </div>
         <SimpleButton
           onClick={() => {
-            copyToClipboard(`https://Cryptomesh.io.com/?ref=${address}` || "")
+            copyToClipboard(`https://Cryptomesh.io/?ref=${address}` || "")
           }}
           text="Copy"
           variant="colored"

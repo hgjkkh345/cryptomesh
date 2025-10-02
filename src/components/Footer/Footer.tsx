@@ -82,8 +82,7 @@ export const Footer = (): JSX.Element => {
           Email:
           <a className="footer-left-link" href='mailto:support@cryptomesh.io'>support@cryptomesh.io</a>
           Address:
-          <address>70 City Road,Southbank Melbourne, VIC 3006
-            Australia</address>
+          <address>Level 30, Collins Place, 35 Collins St, Melbourne, Australia</address>
           <p className="footer-reserved">Copyright © 2024 Cryptomesh.io. All rights reserved</p>
         </div>
       </div>

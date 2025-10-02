@@ -65,7 +65,7 @@ export const Privacy = (): JSX.Element => {
           </li>
           <li>
             Website refers to Cryptomesh.io, accessible from <a
-            href="https://Cryptomesh.io.com/">https://Cryptomesh.io.com/</a>
+            href="https://Cryptomesh.io/">https://Cryptomesh.io/</a>
           </li>
           <li>
             You means the individual accessing or using the Service, or the company, or other legal entity on behalf of

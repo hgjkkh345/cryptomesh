@@ -23,16 +23,16 @@ export const BugBountyTerms = (): JSX.Element => {
       <article className="terms-content"><h1
         className="terms-content-title">Bug Bounty Program Terms and Conditions</h1>
         <div className="LegalDocumentContent__Legal-sc-1nv2gkj-0 OyWDD"><p>PARTICIPATION IN THE BUG BOUNTY PROGRAM IS
-          SUBJECT TO COMPLIANCE WITH THE <a href="https://Cryptomesh.io.com/terms?"><u>TERMS OF USE</u></a> OF Cryptomesh.io TRADING
+          SUBJECT TO COMPLIANCE WITH THE <a href="https://Cryptomesh.io/terms?"><u>TERMS OF USE</u></a> OF Cryptomesh.io TRADING
           INC.</p><p>These Bug Bounty Program Terms and Conditions (these “Bug Bounty Terms”) apply to, and will govern,
           all vulnerabilities that are discovered by you and reported to Cryptomesh.io Trading Inc. (“Cryptomesh.io”) in accordance with
           these Bug Bounty Terms (the “Bug Bounty Program”). In the event of a conflict between these Bug Bounty Terms
-          and the <a href="https://Cryptomesh.io.com/terms?"><u>Terms of Use</u></a> of Cryptomesh.io (the “Terms of Use”), or any
+          and the <a href="https://Cryptomesh.io/terms?"><u>Terms of Use</u></a> of Cryptomesh.io (the “Terms of Use”), or any
           other previously published Cryptomesh.io program, the terms of these Bug Bounty Terms will govern to the extent of such
           conflict. Please read these Bug Bounty Terms carefully before you participate in the Bug Bounty Program. By
           participating in the Bug Bounty Program, you represent and agree to be bound by these Bug Bounty Terms. By
           participating in the Bug Bounty Program, you agree to the Terms of Use and the <a
-            href="https://Cryptomesh.io.com/privacy?"><u>Privacy Policy</u></a> (the “Privacy Policy”). If you do not agree
+            href="https://Cryptomesh.io/privacy?"><u>Privacy Policy</u></a> (the “Privacy Policy”). If you do not agree
           with the Terms of Use or Privacy Policy, then you should immediately stop using or accessing the Services and
           participating in the Bug Bounty Program. </p><p>Cryptomesh.io&apos;s decision with respect to paying or not paying a bug
           bounty is entirely discretionary, and shall not in any circumstance be construed as an admission or concession
@@ -48,7 +48,7 @@ export const BugBountyTerms = (): JSX.Element => {
               case “you” (except as used in this paragraph) will mean the foregoing entity if you are participating in
               the Bug Bounty Program as an entity;</p></li>
             <li><p>be the first person to report or disclose the vulnerability to Cryptomesh.io in accordance with these Bug
-              Bounty Terms, including by emailing sufficient information to support@arclaim.com&nbsp;</p></li>
+              Bounty Terms, including by emailing sufficient information to support@cryptomesh.io&nbsp;</p></li>
             <li><p>provide sufficient information to enable Cryptomesh.io to reproduce and fix the applicable vulnerability;</p>
             </li>
             <li><p>not engage in any unlawful conduct when discovering, reporting or disclosing the vulnerability to
@@ -102,7 +102,7 @@ export const BugBountyTerms = (): JSX.Element => {
           </ul>
           <p>Cryptomesh.io reserves the right to determine whether a vulnerability is eligible for a payment under the Bug Bounty
             Program in its sole discretion.</p><h2><b>3. DISCLOSURE AND REPORTING REQUIREMENTS</b></h2><p>Any
-            vulnerability discovered must be only reported to the following email: support@arclaim.com, and must
+            vulnerability discovered must be only reported to the following email: support@cryptomesh.io, and must
             comply with all other requirements in this Bug Bounty Program.</p><p>The vulnerability must not have been or
             be disclosed publicly or to any other persons before Cryptomesh.io has been notified, has fixed the issue, and has
             granted permission, if at all, for such disclosure. The disclosure to Cryptomesh.io must be made within twenty-four

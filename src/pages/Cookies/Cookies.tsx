@@ -25,7 +25,7 @@ export const Cookies = (): JSX.Element => {
           The Cryptomesh.io Finance (&quot;Cryptomesh.io&quot;) is committed to protecting and respecting your privacy. This
           Cookie
           Policy describes what information is collected using cookies and how that information is used in connection
-          with <a href="https://Cryptomesh.io.com/">https://Cryptomesh.io.com/</a> (the &quot;Site&quot;). This
+          with <a href="https://Cryptomesh.io/">https://Cryptomesh.io/</a> (the &quot;Site&quot;). This
           Cookie
           Policy may be modified from time to time which will be indicated by changing the date at the top of this page.
           This policy should be read together with the Privacy Policy. Your use of the Site is at all times subject to
@@ -85,8 +85,8 @@ export const Cookies = (): JSX.Element => {
         <h3 className="terms-content-subtitle">8. Questions</h3>
         <p className="terms-content-desc">
           If you have any questions about this cookie policy, please contact us by email at{" "}
-          <a target="_blank" rel="noreferrer noopener" href="mailto:support@arclaim.com">
-            support@arclaim.com
+          <a target="_blank" rel="noreferrer noopener" href="mailto:support@cryptomesh.io">
+            support@cryptomesh.io
           </a>
           .
         </p>
