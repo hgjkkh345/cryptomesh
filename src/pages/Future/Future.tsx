@@ -69,37 +69,32 @@ export const Future = (): JSX.Element => {
     {
       title: 'Health',
       icon: img1Src,
-      desc: 'We offer top-tier health, dental, and\n' +
-        'vision insurance.',
+      desc: 'We provide comprehensive medical, dental, and vision coverage to keep you at your best.',
     },
     {
       title: 'Food',
       icon: img2Src,
-      desc: 'Enjoy fully catered lunch and snacks\n' +
-        'every day each week.',
+      desc: 'Delight in daily catered lunches and a variety of snacks throughout the week.',
     },
     {
       title: 'Vacation',
       icon: img3Src,
-      desc: 'Take as much time off as you need to be productive.',
+      desc: 'Enjoy flexible time off so you can recharge and stay at your best.',
     },
     {
       title: 'Ownership',
       icon: img4Src,
-      desc: 'Meaningful equity and competitive\n' +
-        'compensation.',
+      desc: 'We offer significant equity alongside a competitive salary package.',
     },
     {
       title: 'Wellness',
       icon: img5Src,
-      desc: 'Monthly fitness, wellness, and gym\n' +
-        'reimbursements.',
+      desc: 'Receive monthly reimbursements for fitness, wellness activities, and gym memberships.',
     },
     {
       title: 'Relaxation',
       icon: img6Src,
-      desc: 'Events, offsites, and board game\n' +
-        'nights with the team!',
+      desc: 'Enjoy team events, offsites, and fun board game nights together.',
     },
   ]
 
@@ -126,28 +121,19 @@ export const Future = (): JSX.Element => {
           <div className='future-content-blocks-item' style={{backgroundImage: `url(${imgFutureBgSrc})`}}>
             <h3>Immediate Impact</h3>
             <p>
-              We want to build technology that is
-              impactful and useful today. We are part of
-              the first generation of decentralized
-              financial tools, accessible to everyone.
+              Our goal is to create technology that delivers value right now. As part of the pioneering wave of decentralized financial tools, we’re making them available and accessible to all.
             </p>
           </div>
           <div className='future-content-blocks-item' style={{backgroundImage: `url(${imgFutureBgSrc})`}}>
             <h3>Incredible people</h3>
             <p>
-              We do our best work when we are happy.
-              You will join a team of optimistic thinkers,
-              who are equipped with the talent and
-              capabilities to change the world.
+              We thrive when we’re fulfilled and motivated. You’ll be part of a team of positive, forward-thinking individuals whose skills and vision have the power to make a real difference.
             </p>
           </div>
           <div className='future-content-blocks-item' style={{backgroundImage: `url(${imgFutureBgSrc})`}}>
             <h3>Cutting-edge tech</h3>
             <p>
-              We are implementing first-of-its-kind ideas
-              at every layer of the product stack, from
-              frontend engineering to smart contract
-              design. Learn with us!
+              We’re bringing groundbreaking ideas to life across every layer of our product — from frontend development to smart contract architecture. Come learn and grow with us!
             </p>
           </div>
         </div>

@@ -8,37 +8,37 @@ export const validatorServiceTable = [
   {
     image: sextagram,
     title: 'Handling of Your Operations',
-    description: 'Our VaaS allows an entity to hand-off the technical infrastructure element of running a validator to us and instead focus on other aspects of the business, or maybe even enjoy some additional time off! We allow for a fully customisable experience for the owner of the brand who still maintain full control of the operation, all while leveraging our base infrastructure underpinning their validator.',
+    description: 'With our Validator-as-a-Service (VaaS), you can delegate the technical infrastructure of running a validator to us, freeing you to focus on other aspects of your business—or even take some well-deserved time off! Our service is fully customizable, letting brand owners maintain complete control over operations while leveraging our robust underlying infrastructure.',
 
   },
   {
     image: key,
     title: 'Security is Key – Your Private Keys Stay Yours',
-    description: 'Although the operations are handed to us, we never ask for your private keys. We will help you all along the way to set up what is needed all while you keep a hold of your keys. We believe that security is paramount in this space. The safeguarding and confidentiality of your assets should always remain in your possession.',
+    description: 'While we handle the operations, your private keys always remain under your control. We guide you through setup and management without ever requesting access to your keys. At Cryptomesh.io, we believe security is paramount, and the protection and confidentiality of your assets should always stay in your hands.',
 
   },
   {
     image: laptop,
     title: '24/7 Monitoring of Your Operation',
-    description: 'Our DevOps team monitor our systems 24/7. This allows for us to diagnose any issues in the shortest amount time as possible to ensure as little downtime. This service is extended to our partners who opt to choose us as their VaaS provider.',
+    description: 'Our DevOps team monitors systems around the clock, enabling rapid issue detection and minimal downtime. This continuous monitoring service is also available to partners who choose us as their VaaS provider.',
 
   },
   {
     image: lock,
     title: 'Access to Our Secure Infrastructure\n',
-    description: 'As a Whitelabel Validator client, you gain exclusive access to our secure and reliable infrastructure. Benefit from the stability of our operational setup without the need to invest in and maintain your infrastructure. Focus on your project\'s growth while we handle the intricacies of the underlying infrastructure.',
+    description: 'As a Whitelabel Validator client, you gain exclusive access to our secure and reliable infrastructure. Enjoy the stability of our operational setup without the need to invest in or maintain your own hardware. Focus on growing your project while we manage the complexities of the underlying infrastructure.',
 
   },
   {
     image: sheild,
     title: 'AuthZ Governance Operations\n',
-    description: 'To facilitate your validators\' governance operations, we operate through AuthZ (Authorization). This approach ensures that you retain authority over decision-making processes, allowing you to exercise governance rights without compromising security. AuthZ provides a secure framework for managing permissions and access controls.',
+    description: 'We use AuthZ (Authorization) to support your validators’ governance operations. This ensures you maintain full authority over decision-making while keeping security intact. AuthZ provides a secure framework for managing permissions and access controls.',
 
   },
   {
     image: swine,
     title: 'Flexible Commission Splits',
-    description: 'Recognizing the diverse needs of our clients, we offer flexible commission splits. Tailor the fee structure that aligns with your business model and objectives. Our goal is to empower you with choices, ensuring that our Whitelabel Validator services are not only robust but also flexible to accommodate your unique requirements.',
+    description: 'We offer flexible commission splits to suit the diverse needs of our clients. Customize the fee structure to align with your business model and objectives. Our goal is to provide robust Whitelabel Validator services that adapt to your unique requirements.',
 
   },
 ];

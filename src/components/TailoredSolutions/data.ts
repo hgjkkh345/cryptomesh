@@ -12,17 +12,17 @@ import partnershipincubation3 from "assets/images/partnership-incubation3.webp"
 export const tailoredsolutionsData = [
   {
     image: tailored1,
-    desc: 'We have developed a customised solution to provide accurate price feeds for BTC, SOL with the aims of adding wBTC, wSOL, and more!',
+    desc: 'We’ve developed a customized solution to deliver accurate price feeds for BTC and SOL, with plans to add wBTC, wSOL, and more!',
     titledesc: ''
   },
   {
     image: tailored2,
-    desc: 'Through our collaboration with Agoric and the DCF, we have created a Decentralised Oracle Network for their Inter Protocol Vaults.',
+    desc: 'Through our collaboration with Agoric and the DCF, we’ve built a Decentralized Oracle Network to support their Inter Protocol Vaults.',
     titledesc: ''
   },
   {
     image: tailored3,
-    desc: 'We supply the vaults with accurate and timely information relating to certain assets that are used as collateral to mint their Collateralised Stablecoin called ‘IST’.',
+    desc: 'We provide the vaults with accurate and timely data on specific assets used as collateral to mint their collateralized stablecoin, IST.',
     titledesc: ''
   },
 ];
@@ -30,12 +30,12 @@ export const tailoredsolutionsData = [
 export const devapiData = [
   {
     image: heartapi,
-    desc: 'We recognize that consistent uptime is critical for APIs and nodes. That’s why our dedicated team of over 10 on-call DevOps engineers is available 24/7 to ensure your operations run reliably and without interruption.',
+    desc: 'We understand that consistent uptime is crucial for APIs and nodes. That’s why our team of over 10 on-call DevOps engineers is available 24/7 to ensure your operations run smoothly and without interruption.',
     titledesc: 'Robust Tooling and Continuous Monitoring'
   },
   {
     image: databaseapi,
-    desc: 'Built on our privately operated Tier 3 datacenter, our infrastructure delivers exceptional reliability, performance, and security — without any dependence on third-party cloud providers. This fully self-hosted environment gives your project a stable and resilient foundation, with complete control at every layer.',
+    desc: 'Our infrastructure is built on a privately operated Tier 3 datacenter, offering outstanding reliability, performance, and security—completely independent of third-party cloud providers. This fully self-hosted setup provides your project with a stable, resilient foundation and full control at every layer.',
     titledesc: 'Self-Hosted Tier 3 Datacenter'
   },
 

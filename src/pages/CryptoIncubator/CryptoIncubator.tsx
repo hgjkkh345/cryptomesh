@@ -20,7 +20,7 @@ export const CryptoIncubator = (): JSX.Element => {
       <div className="crypto-incubator">
         <ServiceHeader
           title={`Blockchain Innovations from <span>Concept</span> to <span>Execution</span>`}
-          desc="At Cryptomesh.io, we specialise in project incubation services, dedicated to nurturing blockchain initiatives and fostering their growth into successful ventures. With our expertise and resources, we provide the support needed to transform your blockchain ideas into reality."
+          desc="At Cryptomesh.io, we specialize in project incubation, helping blockchain initiatives grow into successful ventures. With our expertise and resources, we provide the guidance and support needed to turn your blockchain ideas into reality."
           image={cryptoincubatorrocket} />
         <OurApproach />
         <TailoredSolutions variant="for-crypto-incubator" title={`Why Choose <span>Cryptomesh.io?</span>`} data={projectIncubatorData} />

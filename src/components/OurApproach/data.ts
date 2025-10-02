@@ -6,17 +6,17 @@ import strategicguidance from "assets/images/strategicguidance.webp"
 export const OurApproachdata = [
   {
     title: 'Network Access',
-    description: 'Leveraging our extensive network within the blockchain ecosystem, we connect you with industry partners, investors, and mentors to help accelerate your project\'s growth.',
+    description: 'Through our extensive blockchain ecosystem network, we connect you with industry partners, investors, and mentors to accelerate your project’s growth.',
     image: networkaccess,
   },
   {
     title: 'Technical Support',
-    description: 'From architecture design to smart contract development, our technical experts provide the necessary support to bring your blockchain solution to life.',
+    description: 'Our technical experts provide comprehensive support—from architecture design to smart contract development—to bring your blockchain solution to life.',
     image: techsupport,
   },
   {
     title: 'Strategic Guidance',
-    description: 'Our experienced team works closely with you to develop a comprehensive roadmap for your blockchain project, outlining key milestones and strategies for success.',
+    description: 'Our experienced team collaborates with you to create a detailed roadmap for your blockchain project, highlighting key milestones and strategies for success.',
     image: strategicguidance,
   },
 ];

@@ -19,7 +19,7 @@ export const ChainlinkOracles = (): JSX.Element => {
       <div className="chainlink-oracles">
         <ServiceHeader
           title="Chainlink Oracles solutions for your Data Oracle needs"
-          desc="Chainlink Oracles are at the heart of our services at Cryptomesh.io. We collaborate with Chainlink and other operators in Chainlink Decentralized Oracle Networks to provide tailored solutions for your Oracle needs. Whether it's creating a customized Oracle solution, acting as a maintainer, or offering consultation services, we leverage Chainlink’s industry-leading software to ensure secure and reliable data feeds for your network."
+          desc="At Cryptomesh.io, Chainlink Oracles form the core of our services. We work with Chainlink and other operators in Decentralized Oracle Networks to deliver tailored solutions for your Oracle requirements. Whether it’s building a custom Oracle solution, serving as a maintainer, or providing consultation, we use Chainlink’s industry-leading technology to ensure secure and reliable data feeds for your network."
           image={dataoracles} />
         <TailoredSolutions title={"Tailored Solutions"} data={tailoredsolutionsData} />
         {/*<LatestArticles />*/}

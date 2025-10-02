@@ -18,7 +18,7 @@ export const WhitelabelValidators = (): JSX.Element => {
     <div className="whitelabel-validators ">
       <Header/>
       <div className="whitelabel-validators-content">
-        <ServiceHeader title="Unlock Tailored Staking Infrastructure With Our Whitelabel Validators" desc="We offer Whitelabel Validator services which can be tailored to your needs thanks to our customizable approach, allowing you to seamlessly make use of our robust, secure, and discrete infrastructure." image={WhitelabelValidatorsImage}  />
+        <ServiceHeader title="Unlock Tailored Staking Infrastructure With Our Whitelabel Validators" desc="We provide Whitelabel Validator services that can be customized to your needs, enabling seamless use of our robust, secure, and discreet infrastructure." image={WhitelabelValidatorsImage}  />
       </div>
       <h1 className="heading-title">Validator Service</h1>
       {validatorServiceTable.map((item, index) => (
