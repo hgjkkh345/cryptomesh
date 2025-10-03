@@ -2,7 +2,7 @@ export const jobs = [
   {
     id: 'developer',
     title: 'Lead Software Engineer - Developer Infrastructure',
-    place: 'New York, NY',
+    place: 'Melbourne, Australia',
     type: 'Engineering',
     desc: `<div class="job__description body">
       
@@ -57,7 +57,7 @@ export const jobs = [
   {
     id: 'infrastructure-engineer',
     title: 'Lead Trading Infrastructure Engineer',
-    place: 'New York, NY',
+    place: 'Melbourne, Australia',
     type: 'Engineering',
     desc: `<div class="job__description body">
       
@@ -96,7 +96,7 @@ export const jobs = [
   {
     id: 'designer',
     title: 'Senior Product Designer',
-    place: 'New York, NY',
+    place: 'Melbourne, Australia',
     type: 'Design',
     desc: `<div class="job__description body">
       
@@ -140,7 +140,7 @@ export const jobs = [
   {
     id: 'backend',
     title: 'Senior Software Engineer - Backend',
-    place: 'New York, NY',
+    place: 'Melbourne, Australia',
     type: 'Engineering',
     desc: `<div class="job__description body">
       
@@ -184,7 +184,7 @@ export const jobs = [
   {
     id: 'frontend',
     title: 'Software Engineer - Frontend',
-    place: 'New York, NY',
+    place: 'Melbourne, Australia',
     type: 'Engineering',
     desc: `<div class="job__description body">
       
@@ -228,7 +228,7 @@ export const jobs = [
   {
     id: 'software-engineer',
     title: 'Staff Software Engineer',
-    place: 'New York, NY',
+    place: 'Melbourne, Australia',
     type: 'Engineering',
     desc: `<div class="job__description body">
       

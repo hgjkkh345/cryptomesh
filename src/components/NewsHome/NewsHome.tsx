@@ -33,7 +33,7 @@ export const NewsHome = (): JSX.Element => {
   ]
   return (
     <div className="news-home">
-      <h3 data-aos="fade-up" className="news-home-title">Our News</h3>
+      {/*<h3 data-aos="fade-up" className="news-home-title">Our News</h3>*/}
       {/*<div data-aos="fade-up" className="news-home-content">*/}
       {/*  {blocks.map((block, index) => (*/}
       {/*    <a href={block.link} target='_blank' rel='noreferrer noopener' key={index} className="news-home-content-item">*/}
@@ -46,9 +46,9 @@ export const NewsHome = (): JSX.Element => {
       {/*    </a>*/}
       {/*  ))}*/}
       {/*</div>*/}
-      <div className='news-home-btn'>
-        <SimpleButton text='More News' href={routes.news} variant='colored'/>
-      </div>
+      {/*<div className='news-home-btn'>*/}
+      {/*  <SimpleButton text='More News' href={routes.news} variant='colored'/>*/}
+      {/*</div>*/}
     </div>
   )
 }
