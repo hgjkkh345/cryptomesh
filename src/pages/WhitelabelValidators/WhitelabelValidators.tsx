@@ -3,7 +3,7 @@ import { Footer, Header } from "../../components"
 import "./WhitelabelValidators.scss"
 
 import { ServiceHeader } from "../../components/ServiceHeader"
-import WhitelabelValidatorsImage from "../../assets/images/WhitelabelValidatorsImage.webp"
+import WhitelabelValidatorsImage from "../../assets/images/turkshield.webp"
 import { validatorServiceTable } from "../../components/ValidatorServiceTable/data"
 import { ValidatorServiceTable } from "../../components/ValidatorServiceTable"
 import { LatestArticles } from "../../components/LatestArticles"

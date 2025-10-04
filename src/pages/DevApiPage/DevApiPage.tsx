@@ -6,7 +6,7 @@ import { ServiceHeader } from "../../components/ServiceHeader"
 import { TailoredSolutions } from "../../components/TailoredSolutions"
 import { devapiData } from "../../components/TailoredSolutions/data"
 import { WhiteLabelFAQ } from "../../components/WhiteLabelFAQ"
-import devapipagesix from "../../assets/images/devapipagesix.webp"
+import devapipagesix from "../../assets/images/sixx.webp"
 import { ValidatorServiceTable } from "../../components/ValidatorServiceTable"
 import devapishield from "../../assets/images/devapishield.webp"
 
