@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import {Footer, Header} from "components"
 
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 
 export const BugBountyTerms = (): JSX.Element => {
   useEffect(() => {

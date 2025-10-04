@@ -14,7 +14,7 @@ import img5Src from "assets/icons/roadmap-icons/scroll.svg"
 import img6Src from "assets/icons/roadmap-icons/figures.svg"
 import imgDoneSrc from "assets/icons/roadmap-icons/complete.svg"
 import imgUndoneSrc from "assets/icons/roadmap-icons/nodone.svg"
-import imgMainBgSrc from "../../assets/images/space-background.webp";
+import imgMainBgSrc from "../../assets/images/image.webp";
 import cn from "classnames";
 
 export const Roadmap = (): JSX.Element => {

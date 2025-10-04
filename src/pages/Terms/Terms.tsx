@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer } from "components"
 
 import "./Terms.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 
 export const Terms = (): JSX.Element => {
   useEffect(() => {

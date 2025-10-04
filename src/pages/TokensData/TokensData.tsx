@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { Header, Footer } from "components"
 import "./TokensData.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 
 export const TokensData = (): JSX.Element => {
   useEffect(() => {

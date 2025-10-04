@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import {Footer, Header, Loading, SimpleButton} from "components"
 
 import "./Brand.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 import { brandData } from "./data"
 import { BrandModal } from "../../modals"
 

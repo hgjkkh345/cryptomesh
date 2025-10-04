@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import {Header, Footer, SwapTable, SwapChartRight, SwapMover, SwapTablePairs, Loading} from "components"
 
 import "./SupportedTokens.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 import { ReactComponent as Arrow } from "assets/icons/arrow-greybird-right.svg"
 import { apiCoin } from "../../service/api/apiCoinGecko"
 import { useNavigate, useSearchParams } from "react-router-dom"

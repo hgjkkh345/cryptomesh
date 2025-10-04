@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import {Footer, Header, Loading, SimpleButton} from "components"
 
 import "./Information.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 import {ReactComponent as Icon1} from "assets/icons/information-icons/coins-small.svg"
 import {ReactComponent as Icon2} from "assets/icons/information-icons/file-1.svg"
 import {ReactComponent as Icon3} from "assets/icons/information-icons/user-icon.svg"

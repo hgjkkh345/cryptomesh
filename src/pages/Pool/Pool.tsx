@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer, PoolItem, PoolTable, Input, NetworkDropdown, PoolItemStaked } from "components"
 
 import "./Pool.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 import cn from "classnames"
 import { apiCoin } from "../../service/api/apiCoinGecko"
 import { api } from "../../service/api/api"

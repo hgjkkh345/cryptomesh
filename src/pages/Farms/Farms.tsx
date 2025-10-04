@@ -3,7 +3,7 @@ import { Header, Footer, Table } from "components"
 import { CancelModal } from "../../modals"
 
 import "./Farms.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 import cn from "classnames"
 
 const tabs = ["All Pools", "Staked Pools"]

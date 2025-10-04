@@ -1,7 +1,7 @@
 import React from "react"
 import { Header, Footer } from "components"
 import "./Swap.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 
 export const Swap = (): JSX.Element => {
 

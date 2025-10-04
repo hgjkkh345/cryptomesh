@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import {Header, Footer, Loading, NewsPreview, Input} from "components"
 
 import "./News.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 import {ReactComponent as Arrow} from "assets/icons/arrow-greybird-right.svg"
 import {apiNews} from "../../service/api/apiNews";
 import {INews} from "../../utils";

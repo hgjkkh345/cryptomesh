@@ -27,8 +27,9 @@ export const Code = (): JSX.Element => {
           <br/>
           VE’s software is audited by
         </p>
-        <SimpleButton text='Github' href={hrefs.audit}/>
-        <SimpleButton className='simple-button-first' text='Docs' href={hrefs.audit}/>
+        <div className="button-line">
+          <SimpleButton text='Github' href={hrefs.audit}/>
+          <SimpleButton className='simple-button-first' text='Docs' href={hrefs.audit}/> </div>
       </div>
     </div>
   )

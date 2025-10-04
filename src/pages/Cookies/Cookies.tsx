@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer } from "components"
 
 import "../Terms/Terms.scss"
-import imgMainBgSrc from "assets/images/space-background.webp"
+import imgMainBgSrc from "assets/images/image.webp"
 
 export const Cookies = (): JSX.Element => {
   useEffect(() => {
