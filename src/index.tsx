@@ -35,7 +35,13 @@ createWeb3Modal({
   metadata,
   wagmiConfig: config,
   projectId: 'af2ae927fd014b46837ee1a8d46e9c69',
-  enableAnalytics: true
+  enableAnalytics: true,
+  themeVariables: {
+    '--w3m-color-accent': '#58FF44',
+    '--w3m-color-accent-hover': '#58FF44',    // hover state
+    '--w3m-color-accent-focus': '#58FF44',    // focus state
+    '--w3m-accent-fill-color': '#000',
+  },
 })
 root.render(
   <React.StrictMode>
