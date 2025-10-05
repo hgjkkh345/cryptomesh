@@ -1,6 +1,6 @@
 import React from "react"
 
-import imgSrc from "assets/images/referral-speaker.png"
+import imgSrc from "assets/images/referral-speaker.webp"
 import "./RefMain.scss"
 import { SimpleButton } from "../SimpleButton"
 import { scrollToElement } from "../../utils"
