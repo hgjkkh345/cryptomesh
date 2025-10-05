@@ -196,18 +196,18 @@ export const CollapseTableExpanded = ({
 
   const getPercentUsdc = () => {
     if (plan === '14') {
-      return 0.012
+      return 0.024
     }
     if (plan === '30') {
-      return 0.025
+      return 0.05
     }
     if (plan === '60') {
-      return 0.06
+      return 0.12
     }
     if (plan === '90') {
-      return 0.1
+      return 0.2
     }
-    return 0.012
+    return 0.024
   }
   const getPercentUsdt = () => {
     if (plan === '14') {
@@ -227,18 +227,18 @@ export const CollapseTableExpanded = ({
 
   const getPercentSol = () => {
     if (plan === '14') {
-      return 0.0088
+      return 0.0044
     }
     if (plan === '30') {
-      return 0.022
+      return 0.011
     }
     if (plan === '60') {
-      return 0.055
+      return 0.0275
     }
     if (plan === '90') {
-      return 0.935
+      return 0.4675
     }
-    return 0.0088
+    return 0.0044
   }
   const getPercentWbtc = () => {
     if (plan === '14') {

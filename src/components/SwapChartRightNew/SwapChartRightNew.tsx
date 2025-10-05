@@ -66,11 +66,11 @@ function randomNumber(min, max) {
 const generateLabelsForWbtc = () => {
   const howManyDaysToDisplay = 20
 
-  return Array.from(Array(howManyDaysToDisplay).keys()).map(i => (i + 16).toString())
+  return Array.from(Array(howManyDaysToDisplay).keys()).map(i => (i + 19).toString())
 }
 
 export const SwapChartRightNew = ({ totalEth, totalArb, totalAvax, totalBase, totalBnb, totalFan, totalManta, totalOpt, totalPol }: Props): JSX.Element => {
-  const labels = ['Dec 23','Jan 24','Feb 24','Mar 24','Apr 24','May 24','Jun 24','Jul 24','Aug 24','Sep 24','Oct 24','Nov 24','Dec 24','Jan 25', 'Feb 25', 'Mar 25', 'Apr 25', 'May 25', 'Jun 25', 'Jul 25'].reverse()
+  const labels = ['Dec 23','Jan 24','Feb 24','Mar 24','Apr 24','May 24','Jun 24','Jul 24','Aug 24','Sep 24','Oct 24','Nov 24','Dec 24','Jan 25', 'Feb 25', 'Mar 25', 'Apr 25', 'May 25', 'Jun 25', 'Jul 25','Aug 25', 'Sep 25', 'Oct 25'].reverse()
 
   const [data, setData] = useState<any>({
     labels,
