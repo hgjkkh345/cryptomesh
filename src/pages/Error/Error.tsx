@@ -4,7 +4,7 @@ import {Header, Footer, SimpleButton} from "components"
 import "./Error.scss"
 import imgMainBgSrc from "assets/images/image.webp"
 import imgSrc from "assets/images/error-page-image.webp"
-import Logo from "assets/images/logo-main-arclaim.webp"
+import Logo from "assets/images/logo-cryptomesh.webp"
 import {routes} from "../../utils";
 import {Link} from "react-router-dom";
 

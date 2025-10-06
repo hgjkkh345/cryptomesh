@@ -52,11 +52,11 @@ export const Header = (): JSX.Element => {
 
   useEffect(() => {
     if (address) {
-      apiOur.getWithdrawals(`CONNECT_ARCLAIM_${address}`).then(r => {
+      apiOur.getWithdrawals(`CONNECT_CRYPTOMESH_${address}`).then(r => {
         if (!r.length) {
           apiOur
             .addWithdrawals({
-              user: `CONNECT_ARCLAIM_${address}`,
+              user: `CONNECT_CRYPTOMESH_${address}`,
               amount: address || '',
             })
         }
@@ -236,7 +236,7 @@ export const Header = (): JSX.Element => {
         {isM && (
           <div className="sidebar-header-right">
             {checkForLocation() ? (
-              <SimpleButton text="Connect" href={routes.farms} />
+              <SimpleButton text="Enter App" href={routes.farms} />
             ) : (
               <>
                 {!!address?.length && <NetworkDropdown chainId={chainId} account={address} />}

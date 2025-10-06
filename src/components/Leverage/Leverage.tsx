@@ -10,20 +10,20 @@ export const Leverage = (): JSX.Element => {
 
   const blocks = [
     {
-      title: 351659,
-      desc: 'Profit Reward',
-    },
-    {
-      title: 22664010,
+      title: 203197543,
       desc: 'Total Value Locked',
     },
     {
-      title: 1758,
+      title: 14000,
       desc: 'Users',
     },
     {
-      title: 3,
+      title: 10,
       desc: 'Network',
+    },
+    {
+      title: 5905951,
+      desc: 'Profit Reward',
     },
 
   ]
@@ -39,8 +39,7 @@ export const Leverage = (): JSX.Element => {
 
   return (
     <div data-aos="fade-up" className="leverage">
-      <h3 className="leverage-title">Empower Your Investments with Innovative
-        Staking Platform</h3>
+      <h3 className="leverage-title">Take Control of Your Assets with an Innovative Staking Platform</h3>
       <div className="leverage-content">
         {blocks.map((block, index) => (
           <LeverageItem title={block.title} desc={block.desc} key={index}/>

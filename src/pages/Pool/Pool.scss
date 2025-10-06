@@ -9,7 +9,12 @@
   @include respond(md) {
     margin-left: 0;
   }
-
+.pool-content-header-tabs-item.active {
+  color: #000;
+}
+  .pool-content-header-tabs-item {
+    color: #fff;
+  }
   &-content {
     max-width: 1300px;
     margin: auto;

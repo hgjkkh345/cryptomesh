@@ -31,7 +31,7 @@ export const Main = (): JSX.Element => {
             Read docs
           </a>
         ) : (
-          <SimpleButton variant='outlined' text='Read docs' href={`${routes.docs}?${search.toString()}`} />
+          <SimpleButton variant='outlined' text='Litepaper' href={`${routes.docs}?${search.toString()}`} />
         )}
       </div>
     </main>

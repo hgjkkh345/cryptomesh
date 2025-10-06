@@ -4,6 +4,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  .pool-content-header-tabs-item.active {
+    color: #000;
+  }
+  .pool-content-header-tabs-item {
+    color: #fff;
+  }
+
   &-content {
     margin: auto;
     position: relative;

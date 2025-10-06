@@ -46,36 +46,36 @@ export const Footer = (): JSX.Element => {
                 Terms & Conditions
               </Link>
             </li>
-            {/*<li>*/}
-            {/*  <a className="footer-left-link" href={hrefs.rpcEndpoints} target="_blank" rel="noreferrer noopener">*/}
-            {/*    RPC Endpoints*/}
-            {/*  </a>*/}
-            {/*</li>*/}
+            <li>
+              <a className="footer-left-link" href={hrefs.rpcEndpoints} target="_blank" rel="noreferrer noopener">
+                RPC Endpoints
+              </a>
+            </li>
             <li>
               <Link className="footer-left-link" to={`${routes.cookies}?${search.toString()}`}>
                 Cookie Policy
               </Link>
             </li>
-            {/*<li>*/}
-            {/*  <Link className="footer-left-link" to={`${routes.trademark}?${search.toString()}`}>*/}
-            {/*    Trademark*/}
-            {/*  </Link>*/}
-            {/*</li>*/}
-            {/*<li>*/}
-            {/*  <Link className="footer-left-link" to={`${routes.bugBountyTerms}?${search.toString()}`}>*/}
-            {/*    Bug Bounty Terms*/}
-            {/*  </Link>*/}
-            {/*</li>*/}
-            {/*<li>*/}
-            {/*  <Link className="footer-left-link" to={`${routes.employReferralProgram}?${search.toString()}`}>*/}
-            {/*    Employee Referral Program*/}
-            {/*  </Link>*/}
-            {/*</li>*/}
-            {/*<li>*/}
-            {/*  <Link className="footer-left-link" to={`${routes.promotion}?${search.toString()}`}>*/}
-            {/*    Promotion and Marketing Services*/}
-            {/*  </Link>*/}
-            {/*</li>*/}
+            <li>
+              <Link className="footer-left-link" to={`${routes.trademark}?${search.toString()}`}>
+                Trademark
+              </Link>
+            </li>
+            <li>
+              <Link className="footer-left-link" to={`${routes.bugBountyTerms}?${search.toString()}`}>
+                Bug Bounty Terms
+              </Link>
+            </li>
+            <li>
+              <Link className="footer-left-link" to={`${routes.employReferralProgram}?${search.toString()}`}>
+                Employee Referral Program
+              </Link>
+            </li>
+            <li>
+              <Link className="footer-left-link" to={`${routes.promotion}?${search.toString()}`}>
+                Promotion and Marketing Services
+              </Link>
+            </li>
           </ul>
         </div>
         <div className='footer-list'>
