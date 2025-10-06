@@ -24,8 +24,8 @@ export const Employee = (): JSX.Element => {
         className="terms-content-title">Employee Referral Program</h1>
         <div className="LegalDocumentContent__Legal-sc-1nv2gkj-0 OyWDD"><p>This Employee Referral Program (this
           “<b><i>Program</i></b>”), as revised or modified from time to time, is a legally binding agreement between
-          Cryptomesh.io Trading Inc., a Delaware corporation (“<b><i>Cryptomesh.io</i></b>” or the “<b><i>Company</i></b>”), and you (“<b><i>Referrer</i></b>”
-          and together with Cryptomesh.io, the “<b><i>Parties</i></b>”). This Program incorporates and supplements Cryptomesh.io’s Terms
+         Cryptomesh Trading Inc., a Delaware corporation (“<b><i>Cryptomesh.io</i></b>” or the “<b><i>Company</i></b>”), and you (“<b><i>Referrer</i></b>”
+          and together with Cryptomesh, the “<b><i>Parties</i></b>”). This Program incorporates and supplements Cryptomesh Terms
           of Use, available at https://Cryptomesh.io/terms (the “<b><i>Terms</i></b>”), other than with respect to the
           exclusion of US Persons (as defined therein), who shall be eligible to participate in this Program, and
           Privacy Policy, available at https://Cryptomesh.io/privacy (the “<b><i>Privacy Policy</i></b>”), to which
@@ -35,23 +35,23 @@ export const Employee = (): JSX.Element => {
           activities, indemnification, disclosures and disclaimers, limitations of liability, and exclusions of
           consequential damages and other claims.</p><p>Participating in this Program indicates Referrer’s acceptance of
           this Program, as well as the Terms and the Privacy Policy, and establishes a binding and executed written
-          agreement between Referrer and Cryptomesh.io. If Referrer does not accept this Program or the Terms, Referrer may not
+          agreement between Referrer and Cryptomesh. If Referrer does not accept this Program or the Terms, Referrer may not
           participate in this Program.</p>
           <ol>
-            <li><p><b>Purpose and Services</b>. Cryptomesh.io is strongly committed to attracting and retaining talented
-              professionals. Accordingly, Cryptomesh.io makes this Program available to Referrer for the purpose of referring
-              qualified candidates (“<i><b>Candidates</b></i>”) to Cryptomesh.io (the “<i><b>Services</b></i>”).
+            <li><p><b>Purpose and Services</b>.Cryptomesh is strongly committed to attracting and retaining talented
+              professionals. Accordingly,Cryptomesh makes this Program available to Referrer for the purpose of referring
+              qualified candidates (“<i><b>Candidates</b></i>”) to Cryptomesh (the “<i><b>Services</b></i>”).
             </p></li>
             <li><p><b>Referrer Eligibility</b>. Subject to the Terms and the preamble herein, only the following
               individuals will be eligible to participate in this Program:
             </p>
               <ol>
-                <li><p>A person who is not an employee of Cryptomesh.io;</p></li>
+                <li><p>A person who is not an employee ofCryptomesh;</p></li>
                 <li><p>A person who is of legal age in the jurisdiction in which such individual resides, and in any
                   case at least eighteen (18) years old;</p></li>
                 <li><p>A person who is not associated with, employed by or a consultant of a staffing or recruiting
                   agency or other third party that is, at the time of such referral or payment for such referral,
-                  providing Cryptomesh.io recruiting services;</p></li>
+                  providing Cryptomesh recruiting services;</p></li>
                 <li><p>A person that is able to provide the necessary tax documentation required by the Company,
                   according to local law, and in the Company’s discretion;</p></li>
                 <li><p>A person that is not foreign or domestic government official or employee;</p></li>
@@ -73,15 +73,15 @@ export const Employee = (): JSX.Element => {
                   confirming the status of the Candidate and requesting certain tax documentation
                 </p></li>
                 <li><p>Referrer will receive the Service Fee within thirty (30) days after the Initial Period and the
-                  completion of any required tax forms requested by Cryptomesh.io.
+                  completion of any required tax forms requested by Cryptomesh.
                 </p></li>
                 <li><p>Referrer will be solely responsible for all income tax liabilities that arise from or in any way
-                  relate to any Service Fee that Cryptomesh.io conveys to Referrer, including income taxes, sales, personal
-                  property, use, VAT, excise, withholding and self-employment taxes. Cryptomesh.io has the right to withhold from
+                  relate to any Service Fee that Cryptomesh conveys to Referrer, including income taxes, sales, personal
+                  property, use, VAT, excise, withholding and self-employment taxes. Cryptomesh has the right to withhold from
                   any amounts payable to Referrer such foreign, federal, state or local taxes as may be required to be
                   withheld under any applicable laws. Referrer must report the value of the benefit or reward Referrer
-                  receives from Cryptomesh.io to any applicable government authority, and complete any required tax forms that
-                  Cryptomesh.io requests be completed prior to receiving the Service Fee, and after receiving the Service Fee, as
+                  receives from Cryptomesh to any applicable government authority, and complete any required tax forms that
+                 Cryptomesh requests be completed prior to receiving the Service Fee, and after receiving the Service Fee, as
                   applicable.
                 </p></li>
               </ol>
@@ -89,12 +89,12 @@ export const Employee = (): JSX.Element => {
             <li><p><b>Candidate Requirements</b>. You may only refer:
             </p>
               <ol>
-                <li><p>any individual who is not the Referrer or a current employee or contractor of Cryptomesh.io;
+                <li><p>any individual who is not the Referrer or a current employee or contractor of Cryptomesh;
                 </p></li>
                 <li><p>any individual who is not subject to any non-compete agreements or any other similar agreements
-                  that would prevent Cryptomesh.io from hiring such individual;
+                  that would prevent Cryptomesh from hiring such individual;
                 </p></li>
-                <li><p>any individual whose employment at Cryptomesh.io you are not restricted from soliciting pursuant to any
+                <li><p>any individual whose employment at Cryptomesh you are not restricted from soliciting pursuant to any
                   non-solicitation agreement or similar agreement;</p></li>
                 <li><p>any individual that has not applied to a position at the Company or has not been in engaged with
                   the Company&apos;s recruiting personnel within the 180 days prior to a referral;
@@ -123,39 +123,39 @@ export const Employee = (): JSX.Element => {
                   (whether email, phone, or application).
                 </p></li>
                 <li><p>To ensure that an application will satisfy the requirement set forth in Section 5(a), Candidates
-                  must (i)&nbsp;<b>first</b>, submit their application for a specific role at Cryptomesh.io, using this
+                  must (i)&nbsp;<b>first</b>, submit their application for a specific role at Cryptomesh, using this
                   link:&nbsp;<a href="https://Cryptomesh.io/careers">https://Cryptomesh.io/careers</a>.
                   (ii)&nbsp;<b>second</b>, in the application, select from the drop down that this is a “Referral” and
                   submit details (name and email) about the Referrer. Any qualifying referral information must be
                   submitted prior or in connection with the initial communication (including email or phone) between the
-                  Candidate and any member of the Cryptomesh.io’s human resources department. If there are any questions, feel
+                  Candidate and any member of theCryptomesh’s human resources department. If there are any questions, feel
                   free to reach out to&nbsp;<a href="mailto:support@cryptomesh.io">support@cryptomesh.io</a>. Any
                   qualifying referral information must be submitted prior or in connection with the initial
-                  communication (including email or phone) between the Candidate and any member of the Cryptomesh.io’s human
+                  communication (including email or phone) between the Candidate and any member of the Cryptomesh’s human
                   resources department.
                 </p></li>
-                <li><p>In the event that a Candidate receives an offer from Cryptomesh.io, and thereafter accepts such offer and
-                  becomes an employee of the Company, Cryptomesh.io will promptly provide notice to the Referrer of such
+                <li><p>In the event that a Candidate receives an offer from Cryptomesh, and thereafter accepts such offer and
+                  becomes an employee of the Company, Cryptomesh will promptly provide notice to the Referrer of such
                   Candidate’s status, and the timeline for the Initial Period (defined above). Referrers should not
-                  contact Cryptomesh.io requesting such information.
+                  contact Cryptomesh requesting such information.
 
                 </p></li>
                 <li><p>If two or more Referrers refer the same Candidate, then only the first Referrer provided by such
                   Candidate will be eligible for the referral bonus. There is no limit to the number of referrals that a
                   Referrer can make.
                 </p></li>
-                <li><p>Cryptomesh.io reserves the right, in its sole discretion, to (i) review the circumstances with respect to
+                <li><p>Cryptomesh reserves the right, in its sole discretion, to (i) review the circumstances with respect to
                   each referral and determine whether such referral, and the Referrer, qualify for a referral bonus, and
                   (ii) determine whether the Candidate will receive an offer or other consideration, including any
                   screening.
                 </p></li>
-                <li><p>Referrer should not submit Candidate information directly to Cryptomesh.io; any such submission of
+                <li><p>Referrer should not submit Candidate information directly to Cryptomesh; any such submission of
                   personal information is potentially a violation of privacy laws, will not qualify as a referral under
-                  the Program and all associated personal records will be promptly destroyed by Cryptomesh.io.
+                  the Program and all associated personal records will be promptly destroyed by Cryptomesh.
                 </p></li>
               </ol>
             </li>
-            <li><p><b>Termination</b>. Notwithstanding any other provision of this Program or the Terms, Cryptomesh.io reserves
+            <li><p><b>Termination</b>. Notwithstanding any other provision of this Program or the Terms, Cryptomesh reserves
               the right to terminate this Program, or limit, deny or terminate your participation in this Program in its
               sole discretion at any time without notice to you.
             </p></li>
@@ -178,7 +178,7 @@ export const Employee = (): JSX.Element => {
             <li><p><b>Severability</b>. If any provision of this Program is invalid, illegal or unenforceable in any
               jurisdiction, such invalidity, illegality or unenforceability will not affect any other term or provision
               of this Program or invalidate or render unenforceable such term or provision in any other jurisdiction.
-              Upon such determination that any term or other provision is invalid, illegal or unenforceable, Cryptomesh.io will
+              Upon such determination that any term or other provision is invalid, illegal or unenforceable, Cryptomesh will
               in good faith modify this Program so as to effect the original intent of this Program as closely as
               possible in order that the transactions contemplated hereby be consummated as originally contemplated to
               the greatest extent possible.
@@ -193,7 +193,7 @@ export const Employee = (): JSX.Element => {
               all prior and contemporaneous understandings, agreements, representations and warranties, both written and
               oral, with respect to such subject matter.
             </p></li>
-            <li><p><b>Assignment</b>. Cryptomesh.io may assign this Program or assign, subcontract, delegate, license or
+            <li><p><b>Assignment</b>.Cryptomesh may assign this Program or assign, subcontract, delegate, license or
               sublicense any or all of its rights and obligations hereunder. This Program is personal to you and cannot
               be assigned or transferred by you. Any attempted assignment or transfer in violation of this Section 11
               will be null and void.
@@ -206,19 +206,19 @@ export const Employee = (): JSX.Element => {
               “without limitation”; and (d) the use of “or” is not intended to be exclusive.
             </p></li>
             <li><p><b>Communications</b>. You consent to receive all communications, agreements, documents, receipts,
-              notices and disclosures (collectively, “<i><b>Communications</b></i>”) that Cryptomesh.io provides in connection
-              with this Program electronically. You agree that Cryptomesh.io may provide Communications to you by posting them on
+              notices and disclosures (collectively, “<i><b>Communications</b></i>”) that Cryptomesh provides in connection
+              with this Program electronically. You agree that Cryptomesh may provide Communications to you by posting them on
               the Site (as defined in the Terms), by emailing them to you at the email address you provide in connection
-              with providing the Services, if any, or by sending them via the Telegram channel last used between Cryptomesh.io
+              with providing the Services, if any, or by sending them via the Telegram channel last used between Cryptomesh
               and Referrer. You should maintain copies of Communications by printing a paper copy or saving an
-              electronic copy. You may contact Cryptomesh.io with questions or complaints at legal@arclaim.exchange.
+              electronic copy. You may contact Cryptomesh with questions or complaints at legal@cryptomesh.exchange.
             </p></li>
             <li><p><b>No Equitable Remedies</b>. You will not be entitled to any equitable remedy by reason of any
               breach of this Program, and you agree not seek, any equitable relief, whether injunctive or otherwise.
             </p></li>
-            <li><p><b>Other Remedies</b>. Any right or remedy of Cryptomesh.io set forth in this Program or the Terms is in
+            <li><p><b>Other Remedies</b>. Any right or remedy of Cryptomesh set forth in this Program or the Terms is in
               addition to, and not in lieu of, any other right or remedy whether described in this Program or the Terms,
-              under applicable law, at law, or in equity. The failure or delay of Cryptomesh.io in exercising any right, power or
+              under applicable law, at law, or in equity. The failure or delay of Cryptomesh in exercising any right, power or
               privilege under this Program or the Terms will not operate as a waiver thereof.
             </p></li>
             <li><p><b>No Third-Party Beneficiaries</b>. You agree that, except as otherwise expressly provided in this
@@ -228,7 +228,7 @@ export const Employee = (): JSX.Element => {
             <li><p><b>Conflicts</b>. In the event of a conflict between this Program and the Terms, the terms of this
               Program will govern to the extent of such conflict.
             </p></li>
-            <li><p><b>Modifications</b>. Cryptomesh.io may revise or modify this Program at any time by posting the changes or
+            <li><p><b>Modifications</b>. Cryptomesh may revise or modify this Program at any time by posting the changes or
               the updated Program on the webpage on which it is displayed. Your participation in this Program after the
               date any such changes become effective constitutes your acceptance of the modified and new terms of this
               Program.

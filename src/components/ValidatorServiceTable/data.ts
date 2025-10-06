@@ -14,7 +14,7 @@ export const validatorServiceTable = [
   {
     image: key,
     title: 'Security is Key – Your Private Keys Stay Yours',
-    description: 'While we handle the operations, your private keys always remain under your control. We guide you through setup and management without ever requesting access to your keys. At Cryptomesh.io, we believe security is paramount, and the protection and confidentiality of your assets should always stay in your hands.',
+    description: 'While we handle the operations, your private keys always remain under your control. We guide you through setup and management without ever requesting access to your keys. At Cryptomesh, we believe security is paramount, and the protection and confidentiality of your assets should always stay in your hands.',
 
   },
   {

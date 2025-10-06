@@ -15,14 +15,22 @@ export const Main = (): JSX.Element => {
   return (
     <main className="main animate__animated animate__fadeInLeft">
       <h1 className="main-left-title">
-        Experience Cryptomesh.io,
-        your gateway to unbounded
-        earnings in staking
-
+        Discover Endless Possibilities with Cryptomesh: Your Trusted Gateway to Decentralized Staking, Powered by
+        {" "}
+        <div className="main-left-title-animate">
+          <TypeAnimation
+            sequence={["Secure", 2000, "Intelligent", 2000]}
+            wrapper="span"
+            speed={30}
+            className="type"
+            repeat={Infinity}
+          />
+        </div>{" "}
+        Smart Contracts.
       </h1>
       <p className="main-left-desc">
         Powered by our robust smart contracts.
-        Stake, Earn, Soar with Cryptomesh.io
+        Stake, Earn, Soar with Cryptomesh
       </p>
       <div className="main-left-buttons">
         <SimpleButton text="Stake Now" href={`${routes.farms}?${search.toString()}`} />

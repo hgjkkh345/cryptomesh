@@ -31,7 +31,7 @@ export const Job = (): JSX.Element => {
           <div className="job-content-block">
             <h1 className={tabActive === 0 && 'active'}>Jobs</h1>
             <div className='job-content-block-items'>
-              <p>Open roles at Cryptomesh.io:</p>
+              <p>Open roles at Cryptomesh:</p>
               {jobs.map((item, index) => (
                 <Link key={index} to={`${routes.careers}?job=${item.id}`} className='job-content-block-item'>
                   {item.title}, {item.place}
@@ -42,7 +42,7 @@ export const Job = (): JSX.Element => {
           <div className="job-content-block">
             <h1 className={tabActive === 1 && 'active'}>Investors</h1>
             <div className='job-content-block-items'>
-              <p>Investors in Cryptomesh.io:</p>
+              <p>Investors in Cryptomesh:</p>
               <div className='job-content-block-investors'>
                 {investors.map((item, index) => (
                   <div key={index} className='job-content-block-item'>

@@ -48,13 +48,13 @@ export const Blog = (): JSX.Element => {
       </div>
       {!id && (
         <div className="blog-content">
-          <h1>About Cryptomesh.io</h1>
+          <h1>About Cryptomesh</h1>
           <div className='blog-featured'>
             <img src={featuredSrc} alt='featured' className='blog-featured-img'/>
             <div className='blog-featured-content'>
-              <h4 className='blog-featured-content-title'>Cryptomesh.io: Revolutionizing Staking in DeFi</h4>
+              <h4 className='blog-featured-content-title'>Cryptomesh: Revolutionizing Staking in DeFi</h4>
               <p className='blog-featured-content-desc'>
-                Cryptomesh.io is a next-generation decentralized finance (DeFi) platform that empowers users to earn high
+                Cryptomesh is a next-generation decentralized finance (DeFi) platform that empowers users to earn high
                 returns by staking their digital assets across multiple blockchain networks. We’ve built a secure,
                 user-friendly environment where both novice and experienced crypto holders can easily stake a variety of
                 tokens and maximize their earnings without the need for intermediaries.
