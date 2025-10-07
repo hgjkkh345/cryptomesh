@@ -1,5 +1,5 @@
-# robots.txt file of https://arclaim.com/
+# robots.txt file of https://cryptomesh.io/
 User-agent: *
 Allow: /
 
-Sitemap: https://arclaim.com/sitemap.xml
+Sitemap: https://cryptomesh.io/sitemap.xml
