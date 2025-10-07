@@ -28,6 +28,12 @@
         display: flex;
       }
     }
+    .pool-content-header-tabs-item.active {
+      color: #000;
+    }
+    .pool-content-header-tabs-item {
+      color: #fff;
+    }
 
     &-buttons {
       display: flex;

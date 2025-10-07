@@ -20,10 +20,10 @@ export const CryptoIncubator = (): JSX.Element => {
       <div className="crypto-incubator">
         <ServiceHeader
           title={`Blockchain Innovations from <span>Concept</span> to <span>Execution</span>`}
-          desc="At Cryptomesh.io, we specialize in project incubation, helping blockchain initiatives grow into successful ventures. With our expertise and resources, we provide the guidance and support needed to turn your blockchain ideas into reality."
+          desc="At Cryptomesh, we specialize in project incubation, helping blockchain initiatives grow into successful ventures. With our expertise and resources, we provide the guidance and support needed to turn your blockchain ideas into reality."
           image={cryptoincubatorrocket} />
         <OurApproach />
-        <TailoredSolutions variant="for-crypto-incubator" title={`Why Choose <span>Cryptomesh.io?</span>`} data={projectIncubatorData} />
+        <TailoredSolutions variant="for-crypto-incubator" title={`Why Choose <span>Cryptomesh?</span>`} data={projectIncubatorData} />
         {/*<LatestArticles />*/}
         <WhiteLabelFAQ />
         {/*<StakingGuides />*/}
@@ -33,3 +33,4 @@ export const CryptoIncubator = (): JSX.Element => {
     </div>
   )
 }
+

@@ -14,7 +14,7 @@ export const Promotion = (): JSX.Element => {
         {
           // @ts-ignore
           (<gecko-coin-price-marquee-widget
-            coin-ids="bitcoin,ethereum,weth,binancecoin,usd-coin,uniswap,chainlink,wrapped-bitcoin,tether,pancakeswap-token,baby-doge-coin,trust-wallet-token,stepn,coin98,aptos,optimism,matic-network,avalanche-2,arbitrum,chainlink,manta-network,fantom,Cryptomesh.io-chain"
+            coin-ids="bitcoin,ethereum,weth,binancecoin,usd-coin,uniswap,chainlink,wrapped-bitcoin,tether,pancakeswap-token,baby-doge-coin,trust-wallet-token,stepn,coin98,aptos,optimism,matic-network,avalanche-2,arbitrum,chainlink,manta-network,fantom,Cryptomesh-chain"
             currency="usd"
             dark-mode="true"
             locale="en"/>)
@@ -25,12 +25,12 @@ export const Promotion = (): JSX.Element => {
         <div className="LegalDocumentContent__Legal-sc-1nv2gkj-0 OyWDD"><p>This Master Agreement for Promotion and
           Marketing
           Services (the &quot;<b><i>Agreement</i></b>&quot;), as revised or amended from time to time is entered into between you
-          (the &quot;<b><i>Service Provider</i></b>&quot; or “<b><i>you</i></b>”) and Cryptomesh.io Trading Inc., a Delaware corporation (&quot;<b><i>Client</i></b>&quot;,
-          “<b><i>Cryptomesh.io</i></b>”, or the “<b><i>Company</i></b>”, together with Service Provider, the
+          (the &quot;<b><i>Service Provider</i></b>&quot; or “<b><i>you</i></b>”) and Cryptomesh Trading Inc., a Delaware corporation (&quot;<b><i>Client</i></b>&quot;,
+          “<b><i>Cryptomesh</i></b>”, or the “<b><i>Company</i></b>”, together with Service Provider, the
           “<b><i>parties</i></b>”), and is acknowledged and agreed to by the parties at the first to occur of the full
           execution of this Agreement or its Statement of Work, or your receipt and acceptance of any payment in
           exchange for performance of the Services (defined below) (“<b><i>Effective Date</i></b>”).&nbsp;&nbsp;</p>
-          <p>This Agreement incorporates and supplements Cryptomesh.io’s <a href="/terms">Terms of Use</a> (the “<b><i>Terms</i></b>”),
+          <p>This Agreement incorporates and supplements Cryptomesh’s <a href="/terms">Terms of Use</a> (the “<b><i>Terms</i></b>”),
             and <a href="/privacy">Privacy Policy</a> (the “<b><i>Privacy Policy</i></b>”), and <a
               href="/trademark">Trademark</a> (“<b><i>Competition
               Terms</i></b>”), in each case, to which Service Provider agrees that Service Provider is bound and is a
@@ -121,10 +121,10 @@ export const Promotion = (): JSX.Element => {
                   representations, or warranties in connection with Client</p></li>
                 <li><p><code>1.8 </code>If Service Provider is headquartered or located or has any offices in, or is a
                   resident of, the United States, then, Service Provider will include in any public postings or
-                  published statements the following: “Cryptomesh.io perpetual contracts are unavailable in the United States.”
+                  published statements the following: “Cryptomesh perpetual contracts are unavailable in the United States.”
                   If Service Provider is not headquartered or located and does not have offices in, and is not a
                   resident of, the United States, then, with any post or published statement on a medium targeted at the
-                  United States, Service Provider will post therewith the following: “Cryptomesh.io perpetual contracts are
+                  United States, Service Provider will post therewith the following: “Cryptomesh perpetual contracts are
                   unavailable in the United States.”</p></li>
               </ul>
             </li>
@@ -277,7 +277,7 @@ export const Promotion = (): JSX.Element => {
                       imitate, or resemble the Site or the look and feel of the Site. Service Provider will not copy the
                       Site or any portions thereof, including any of Client’s trademarks (or licensed trademarks) or
                       other intellectual property, or display them on Service Provider’s own site or subdomain or use
-                      them in any way without Cryptomesh.io’s prior express written consent.</p></li>
+                      them in any way without Cryptomesh’s prior express written consent.</p></li>
                     <li><p><code>(i) </code>Service Provider, and to its knowledge, its directors, officers, employees,
                       agents, Service Providers or representatives, is not, and are not, owned or controlled by a person
                       that (a) is the subject of any sanctions administered or enforced by the U.S. Department of
@@ -290,10 +290,10 @@ export const Promotion = (): JSX.Element => {
                       result in a violation of Sanctions by any person.</p></li>
                     <li><p><code>(j) </code>Service Provider must not (a) use cookie stuffing techniques that set the
                       tracking cookie without the potential participant’s actively pursuing the products and services;
-                      (b) bid on or use Cryptomesh.io’s trademarks (or licensed trademarks) or misspelled keywords for the
+                      (b) bid on or use Cryptomesh’s trademarks (or licensed trademarks) or misspelled keywords for the
                       purpose of pay-per-click on internet search engines; (c)engage in domain forwarding (<i>i.e.</i>,
                       purchasing a domain and setting it to forward directly to the Client’s products); (d) engage in
-                      any marketing activity that may harm the reputation or credibility of Cryptomesh.io or the Cryptomesh.io protocol,
+                      any marketing activity that may harm the reputation or credibility of Cryptomesh or the Cryptomesh protocol,
                       including using low-quality marketing materials, or advertising on any website that promotes
                       violence, discrimination based on race, sex, religion, nationality, disability, sexual orientation
                       or age, or any illegal activities, or violates the intellectual property or other rights of a
@@ -642,7 +642,7 @@ export const Promotion = (): JSX.Element => {
           </ul>
           <h1><u><b>EXHIBIT B</b></u></h1><h2><b>Statement of Work</b></h2><p>[<i>Exhibit B intentionally left blank</i>]
           </p><h1><u><b>Exhibit C</b></u></h1><h2><b>Social Media and Promotion Endorsement Policy</b></h2><h3>Purpose
-            and Scope</h3><p>Cryptomesh.io Trading Inc., a Delaware corporation (“<b><i>Cryptomesh.io</i></b>” or the
+            and Scope</h3><p>Cryptomesh Trading Inc., a Delaware corporation (“<b><i>Cryptomesh</i></b>” or the
             “<b><i>Company</i></b>” or “<b><i>us</i></b>”), is committed to transparency and honesty in all of its
             advertising messages and promotional communications with consumers. One of the most common ways to advertise
             and market products and services in social media is to use third party endorsements. Like other types of
@@ -806,17 +806,17 @@ export const Promotion = (): JSX.Element => {
             Endorser.</p><p>Statements about the material connection should identify and disclose the nature of the
             connection, such as:</p><p>For receipt of free products:</p>
           <ul>
-            <li><p>I received consideration from Cryptomesh.io Trading Inc.;&nbsp;</p></li>
+            <li><p>I received consideration from Cryptomesh Trading Inc.;&nbsp;</p></li>
           </ul>
           <p>For paid Sponsored Endorsers:</p>
           <ul>
-            <li><p>I have partnered with Cryptomesh.io to promote its products and services; or</p></li>
-            <li><p>I am a paid brand ambassador for Cryptomesh.io.</p></li>
+            <li><p>I have partnered with Cryptomesh to promote its products and services; or</p></li>
+            <li><p>I am a paid brand ambassador for Cryptomesh.</p></li>
           </ul>
           <p>For receipt of a prize to be given away in a contest:</p>
           <ul>
-            <li><p>Cryptomesh.io is providing prize money for this program at no cost to me; or</p></li>
-            <li><p>This program is not administered or sponsored by Cryptomesh.io or its affiliates, but solely by your company
+            <li><p>Cryptomesh is providing prize money for this program at no cost to me; or</p></li>
+            <li><p>This program is not administered or sponsored by Cryptomesh or its affiliates, but solely by your company
               name.</p></li>
           </ul>
           <p>For incentivized consumer reviews:&nbsp;</p>
@@ -835,15 +835,15 @@ export const Promotion = (): JSX.Element => {
             <li><p>#ad</p></li>
             <li><p>#paid</p></li>
             <li><p>#sponsored</p></li>
-            <li><p>#Arclaimambassador</p></li>
-            <li><p>#Arclaimendorser</p></li>
+            <li><p>#Cryptomeshambassador</p></li>
+            <li><p>#Cryptomeshendorser</p></li>
           </ul>
           <p>Avoid ambiguous hashtags to identify material connections, such as:</p>
           <ul>
             <li><p>#sp</p></li>
             <li><p>#spon</p></li>
-            <li><p>#thanksArclaim</p></li>
-            <li><p>#teamArclaim</p></li>
+            <li><p>#thanksCryptomesh</p></li>
+            <li><p>#teamCryptomesh</p></li>
             <li><p>#ambassador</p></li>
             <li><p>#consultant</p></li>
             <li><p>#partner</p></li>

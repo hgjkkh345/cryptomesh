@@ -17,13 +17,13 @@ export const DevApiPage = (): JSX.Element => {
       <div className="dev-api-page">
         <ServiceHeader
           title="Unlock the Power of Our Developer APIs"
-          desc="At Cryptomesh.io, we provide high-performance, secure infrastructure capable of handling over 4 billion requests per month, giving developers seamless access to blockchain data."
+          desc="At Cryptomesh, we provide high-performance, secure infrastructure capable of handling over 4 billion requests per month, giving developers seamless access to blockchain data."
           image={devapipagesix} />
         <div className="dev-api-page-titledesc">
           <h1 className="dev-api-page-title">Our Offering</h1>
           <p className="dev-api-page-desc">Our powerful, dedicated hardware delivers exceptional performance without sacrificing security.</p>
         </div>
-        <ValidatorServiceTable variant="without-title" desc="Delegators enjoy the advantages of our dedicated bare-metal infrastructure, hosted in a privately operated data center in Wellington. This setup enhances security and data privacy by maintaining full control over the hardware environment. For uninterrupted service and reliable disaster recovery, we also operate multiple co-located servers with real-time backups and system redundancy." image= {devapishield}  />
+        <ValidatorServiceTable variant="without-title" desc="Delegators enjoy the advantages of our dedicated bare-metal infrastructure, hosted in a privately operated data center in Melbourne. This setup enhances security and data privacy by maintaining full control over the hardware environment. For uninterrupted service and reliable disaster recovery, we also operate multiple co-located servers with real-time backups and system redundancy." image= {devapishield}  />
         <TailoredSolutions variant="for-dev-api"  data={devapiData} />
         <h1 className="locations-bluemap-title">Locations</h1>
         <div className="bluemap-part">

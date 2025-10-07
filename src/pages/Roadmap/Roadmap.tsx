@@ -24,12 +24,12 @@ export const Roadmap = (): JSX.Element => {
   }, [])
   const journeyItems = [
     {
-      title: "Cryptomesh.io Platform Launch and Multichain Staking Integration Completed on BSC and Ethereum",
+      title: "Cryptomesh Platform Launch and Multichain Staking Integration Completed on BSC and Ethereum",
       end: "COMPLETED",
       icon: img1Src,
       items: [
         {
-          title: 'Launch of Cryptomesh.io platform supporting staking on multiple chains.',
+          title: 'Launch of Cryptomesh platform supporting staking on multiple chains.',
           end: 'COMPLETED'
         },
         {
@@ -97,7 +97,7 @@ export const Roadmap = (): JSX.Element => {
       ]
     },
     {
-      title: "Cryptomesh.io Plans for Compliance, Governance, and Expansion with New Chain Integrations and Community-Driven Improvements",
+      title: "Cryptomesh Plans for Compliance, Governance, and Expansion with New Chain Integrations and Community-Driven Improvements",
       end: "not started",
       icon: img6Src,
       items: [
@@ -147,7 +147,7 @@ export const Roadmap = (): JSX.Element => {
         }
       </div>
       <section className='roadmap-main'>
-        <h3 data-aos="fade-up">Cryptomesh.io - guarded launch</h3>
+        <h3 data-aos="fade-up">Cryptomesh - guarded launch</h3>
         <h1 data-aos="fade-up">Autopilot&apos;s roadmap to launch</h1>
         <p data-aos="fade-up">
           Follow the progress of the guarded launch as we test the integrity of Autopilot&apos;s

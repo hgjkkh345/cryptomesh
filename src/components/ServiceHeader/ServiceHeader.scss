@@ -8,11 +8,12 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  box-shadow: 0 3px 3px #9945ff;
+  box-shadow: 0 3px 3px #0f422e;
   overflow: hidden;
   border-radius: 40px;
   width: 900px;
-  background: linear-gradient(154deg, #7818af 16.07%, #6a16cf 83.87%), #ffffff;
+  background: linear-gradient(154deg, #1a5a3f 16%, #0f422e 84%);
+
   margin: 50px auto 70px;
 
   @include respond(md) {
@@ -48,8 +49,12 @@
     }
 
     span {
-      background: linear-gradient(154deg, #58ff44 16.07%, #FF5EFF 83.87%);
-      background-clip: text;
+      //background: linear-gradient(154deg, #ff6600 16%, #ffd700 84%);
+    background: linear-gradient(40deg, #c2185b 30%, #ffd700 74%);
+
+
+
+    background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -81,7 +86,17 @@
     gap: 50px;
     width: fit-content;
     border-radius: 0 40px 0 0;
-    background: linear-gradient(154deg, #58ff44 16.07%, #FF7AD9 83.87%), #FFF;
+    background: linear-gradient(154deg, #3ad033 16%, #efd109 84%), #fff;
+
+
+
+
+
+
+
+
+
+
     padding: 20px 70px;
     margin-top: 20px;
 
@@ -102,7 +117,7 @@
       border-radius: 50%;
       left: 0;
       top: -80px;
-      box-shadow: -40px 40px 0 0 #58ff44;
+      box-shadow: -40px 40px 0 0 #3ad033;
       @include respond(md) {
         display: none;
       }
@@ -117,7 +132,7 @@
       border-radius: 50%;
       right: -80px;
       bottom: 0;
-      box-shadow: -40px 40px 0 0 #FF7AD9;
+      box-shadow: -40px 40px 0 0 #efd109;
 
       @include respond(md) {
         display: none;

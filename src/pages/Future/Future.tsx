@@ -150,40 +150,40 @@ export const Future = (): JSX.Element => {
             </div>
           ))}
         </div>
-        <h2>
-          Press
-        </h2>
-        <p className='future-desc'>
-          Recent highlights from mainstream news outlets.
-        </p>
-        <div className='future-content-blocks-3'>
-          <div className='future-content-blocks-3-item' style={{backgroundImage: `url(${imgBgSrc})`}}>
-            <h3>Forbes</h3>
-            <p>
-              How A 19-Person Cryptocurrency Startup
-              Surpassed Coinbase In Daily Trading
-              Volume
-            </p>
-            <a href='https://www.digitaljournal.com/pr/news/revupmarketer/bitstaker-secures-4-million-seed-1740095196.html' target='_blank' rel='nofollow noreferrer'>Read article →</a>
-          </div>
-          <div className='future-content-blocks-3-item' style={{backgroundImage: `url(${imgBgSrc})`}}>
-            <h3>Bloomberg</h3>
-            <p>
-              DeFi Upstart dYdX Briefly Overtook
-              Coinbase in Crypto Trading
-            </p>
-            <a href='https://www.binance.com/en/square/post/13511364826689' target='_blank' rel='nofollow noreferrer'>Read article →</a>
-          </div>
-          <div className='future-content-blocks-3-item' style={{backgroundImage: `url(${imgBgSrc})`}}>
-            <h3>Bankless</h3>
-            <p>
-              Antonio Juliano discusses dYdX’s parabolic
-              growth, plans for its token, and the future
-              of decentralized derivatives.
-            </p>
-            <a href='https://coinmarketcap.com/community/articles/66def904ef79387705a9d114/' target='_blank' rel='nofollow noreferrer'>Read article →</a>
-          </div>
-        </div>
+        {/*<h2>*/}
+        {/*  Press*/}
+        {/*</h2>*/}
+        {/*  <p className='future-desc'>*/}
+        {/*    Recent highlights from mainstream news outlets.*/}
+        {/*  </p>*/}
+        {/*  <div className='future-content-blocks-3'>*/}
+        {/*    <div className='future-content-blocks-3-item' style={{backgroundImage: `url(${imgBgSrc})`}}>*/}
+        {/*      <h3>Forbes</h3>*/}
+        {/*      <p>*/}
+        {/*        How A 19-Person Cryptocurrency Startup*/}
+        {/*        Surpassed Coinbase In Daily Trading*/}
+        {/*        Volume*/}
+        {/*      </p>*/}
+        {/*      <a href='https://www.digitaljournal.com/pr/news/revupmarketer/bitstaker-secures-4-million-seed-1740095196.html' target='_blank' rel='nofollow noreferrer'>Read article →</a>*/}
+        {/*    </div>*/}
+        {/*    <div className='future-content-blocks-3-item' style={{backgroundImage: `url(${imgBgSrc})`}}>*/}
+        {/*      <h3>Bloomberg</h3>*/}
+        {/*      <p>*/}
+        {/*        DeFi Upstart dYdX Briefly Overtook*/}
+        {/*        Coinbase in Crypto Trading*/}
+        {/*      </p>*/}
+        {/*      <a href='https://www.binance.com/en/square/post/13511364826689' target='_blank' rel='nofollow noreferrer'>Read article →</a>*/}
+        {/*    </div>*/}
+        {/*    <div className='future-content-blocks-3-item' style={{backgroundImage: `url(${imgBgSrc})`}}>*/}
+        {/*      <h3>Bankless</h3>*/}
+        {/*      <p>*/}
+        {/*        Antonio Juliano discusses dYdX’s parabolic*/}
+        {/*        growth, plans for its token, and the future*/}
+        {/*        of decentralized derivatives.*/}
+        {/*      </p>*/}
+        {/*      <a href='https://coinmarketcap.com/community/articles/66def904ef79387705a9d114/' target='_blank' rel='nofollow noreferrer'>Read article →</a>*/}
+        {/*    </div>*/}
+        {/*</div>*/}
         <h2>
           Open Roles
         </h2>

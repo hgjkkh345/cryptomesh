@@ -13,7 +13,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 const metadata = {
   name: 'Cryptomesh.io',
   description: 'Cryptomesh.io',
-  url: 'https://arclaim.com/', // origin must match your domain & subdomain
+  url: 'https://cryptomesh.io/', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 

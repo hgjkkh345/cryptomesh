@@ -17,8 +17,8 @@ export const WhiteLabelFAQdata = [
 
   },
   {
-    title: 'How does Cryptomesh.io stand out from other blockchain consulting firms?',
-    description: 'Cryptomesh.io stands out through deep expertise and a holistic approach. We provide end-to-end solutions, covering strategy, technical advisory, and full implementation, with every solution tailored to your specific business goals and challenges.',
+    title: 'How does Cryptomesh stand out from other blockchain consulting firms?',
+    description: 'Cryptomesh stands out through deep expertise and a holistic approach. We provide end-to-end solutions, covering strategy, technical advisory, and full implementation, with every solution tailored to your specific business goals and challenges.',
 
   },
 ];

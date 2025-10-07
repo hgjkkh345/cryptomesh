@@ -1,11 +1,11 @@
 export const hrefs = {
   facebook: "",
   instagram: "",
-  twitter: "https://x.com/ArClaim_",
+  twitter: "https://x.com/cryptomesh_io",
   youtube: "",
   discord: "",
   scan: "",
-  telegram: "https://t.me/Cryptomesh.io",
+  telegram: "https://t.me/cryptomesh_io",
   linkedIn: "",
   reddit: "",
   medium: "",

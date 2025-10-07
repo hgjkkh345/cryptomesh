@@ -2,7 +2,7 @@
 
 .ContactUs {
   width: 750px;
-  background-color: #2A1D3E;
+  background-color: #103824;
   box-shadow: 0 4px 20px rgba(153, 69, 255, 0.15);
   border-radius: 20px 20px 20px 20px;
   padding-bottom: 30px;
@@ -24,7 +24,7 @@
   }
 
   .contactHightlight {
-    background: linear-gradient(154deg, #58ff44 16.07%, #FF5EFF 83.87%);
+    background: linear-gradient(40deg, #c2185b 30%, #ffd700 74%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -51,7 +51,8 @@
     align-items: center;
     margin: 0 auto;
     gap: 15px;
-    background: linear-gradient(145deg, #58ff44, #5B21B6);
+    background: linear-gradient(154deg, #3ad033 16%, #efd109 84%), #fff;
+
     border-radius: 20px 20px 20px 20px;
     padding: 50px 40px 40px 20px;
 
@@ -97,8 +98,9 @@
     font-weight: bold;
     font-size: 1.2rem;
     margin-left: 310px;
-    background: linear-gradient(135deg, #58ff44, #FF5EFF);
+    background: linear-gradient(145deg, #c2185b 20%, #e33b7c 80%);
     color: #fff;
+
     border: none;
     transition: all 0.3s ease-in-out;
 
