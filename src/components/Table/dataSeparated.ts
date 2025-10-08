@@ -427,7 +427,7 @@ export const poolDataSeparated = [
     token: "WSOL",
     network: "Ethereum",
     id: "solana",
-    address: "0xfa61d61db727573c9bd8e447122b2350ccef9d61",
+    address: "0x8710a3e791e21c968f2374d00eeefbc85dbc5fee",
     addAddress: "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
     quantity: "150-500",
     percent: "5.5",
