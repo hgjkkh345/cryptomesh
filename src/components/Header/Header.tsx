@@ -146,11 +146,11 @@ export const Header = (): JSX.Element => {
       link: `${routes.faq}?${search.toString()}`,
       icon: <IconFaq />
     },
-    {
-      title: "Blog",
-      link: `${routes.blog}?${search.toString()}`,
-      icon: <IconBlog />
-    },
+    // {
+    //   title: "Blog",
+    //   link: `${routes.blog}?${search.toString()}`,
+    //   icon: <IconBlog />
+    // },
     {
       title: "Mission",
       link: `${routes.careers}?${search.toString()}`,
