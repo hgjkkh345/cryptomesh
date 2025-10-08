@@ -27,7 +27,7 @@ export const Terms = (): JSX.Element => {
           These terms and conditions (“Terms”) govern the use of the Website (defined below) and the Services (defined
           below). These Terms also include any guidelines, announcements, additional terms, policies, and disclaimers
           made available or issued by us from time to time. These Terms constitute a binding and enforceable legal
-          contract between(“Company”, “Cryptomesh.io Finance”, “we”, “us”) and you, an end user of the services (“you” or
+          contract between(“Company”, “Cryptomesh Finance”, “we”, “us”) and you, an end user of the services (“you” or
           “User”) at https://Cryptomesh.io/ (“Services”). By accessing, using or clicking on our website (and all
           related subdomains) or its mobile applications (“Website”) or accessing, using or attempting to use the
           Services, you agree that you have read, understood, and to are bound by these Terms and that you comply with
@@ -48,7 +48,7 @@ export const Terms = (): JSX.Element => {
         </p>
         <h3 className="terms-content-subtitle">2. Eligibility</h3>
         <p className="terms-content-desc">
-          By accessing, using, or clicking on the Cryptomesh.io website and using or attempting to use our Services, you
+          By accessing, using, or clicking on the Cryptomesh website and using or attempting to use our Services, you
           represent and warrant that:
           <br/>
           (a) as an individual, legal person, or other organization, you have full legal capacity and authority to agree
@@ -66,7 +66,7 @@ export const Terms = (): JSX.Element => {
           represent and warrant that you have all the necessary rights and authorizations to bind such legal entity; and
           <br/>
           (f) you are solely responsible for use of the Services and, if applicable, for all activities that occur on or
-          through your Cryptomesh.io user account.
+          through your Cryptomesh user account.
         </p>
         <h3 className="terms-content-subtitle">3. Identity Verification</h3>
         <p className="terms-content-desc">
@@ -114,7 +114,7 @@ export const Terms = (): JSX.Element => {
           (b) violate applicable laws or regulations in any manner;
           <br/>
           (c) infringe any proprietary rights, including but not limited to copyrights, patents, trademarks, or trade
-          secrets of Cryptomesh.io Finance;
+          secrets of Cryptomesh Finance;
           <br/>
           (d) use our Website or use the Services to transmit any data or send or upload any material that contains
           viruses, Trojan horses, worms, time-bombs, keystroke loggers, spyware, adware, or any other harmful programmes
@@ -153,7 +153,7 @@ export const Terms = (): JSX.Element => {
           of the Website or Services, or any other person’s use of the Website or Services; or
           <br/>
           (n) forge headers, impersonate, or otherwise manipulate identification, to disguise your identity or the
-          origin of any messages or transmissions you send to Cryptomesh.io Finance or the Website. By accessing the
+          origin of any messages or transmissions you send to Cryptomesh Finance or the Website. By accessing the
           Services,
           you agree that we have the right to investigate any violation of these Terms, unilaterally determine whether
           you have violated these Terms, and take actions under relevant regulations without your consent or prior
@@ -162,7 +162,7 @@ export const Terms = (): JSX.Element => {
         <h3 className="terms-content-subtitle">5. Company Services and Staking</h3>
         <p className="terms-content-desc">
           We provide a staking or deposit service in which Users can deposit their chosen cryptocurrency to receive a
-          liquid staking token representing a share of a stake pool on the Cryptomesh.io platform. Users are required to
+          liquid staking token representing a share of a stake pool on the Cryptomesh platform. Users are required to
           input
           the amount of their chosen cryptocurrency to be staked on the platform by connecting our Website with their
           compatible wallet. Once the staking instructions are confirmed, the system will record such instructions and
@@ -179,7 +179,7 @@ export const Terms = (): JSX.Element => {
           <br/>
           <br/>
           In the event that you wish to unstake or withdraw your liquid staking tokens and receive the rewards, you will
-          provide unstaking instructions through our Website, whereby Cryptomesh.io performs a swap using the liquidity
+          provide unstaking instructions through our Website, whereby Cryptomesh performs a swap using the liquidity
           pool.
           Following this swap, you will receive the equivalent amount of your original cryptocurrency according to the
           liquid staking tokens that the user instructs to convert minus a swap fee transaction. You acknowledge and
@@ -189,16 +189,16 @@ export const Terms = (): JSX.Element => {
           periodically.
           <br/>
           <br/>
-          You acknowledge and agree that Cryptomesh.io reserves the right to amend any terms related to any specific
+          You acknowledge and agree that Cryptomesh reserves the right to amend any terms related to any specific
           staking
           protocol implemented by us at any time in our sole discretion. We shall not be liable for any losses due to
           your misunderstanding of the terms and conditions of our staking protocol terms and changes to such terms.
         </p>
         <h3 className="terms-content-subtitle">6. Termination</h3>
         <p className="terms-content-desc">
-          Cryptomesh.io Finance may terminate, suspend, or modify your access to Website and/or the Services, or any
+          Cryptomesh Finance may terminate, suspend, or modify your access to Website and/or the Services, or any
           portion
-          thereof, immediately and at any point, at its sole discretion. Cryptomesh.io Finance will not be liable to you
+          thereof, immediately and at any point, at its sole discretion. Cryptomesh Finance will not be liable to you
           or to
           any third party for any termination, suspension, or modification of your access to the Services. Upon
           termination of your access to the Services, these Terms shall terminate, except for those clauses that
@@ -213,18 +213,18 @@ export const Terms = (): JSX.Element => {
           <br/>
           <br/>
           TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF TITLE,
-          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND/OR NON-INFRINGEMENT. Cryptomesh.io FINANCE DOES NOT MAKE
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND/OR NON-INFRINGEMENT. CRYPTOMESH FINANCE DOES NOT MAKE
           ANY
           REPRESENTATIONS OR WARRANTIES THAT ACCESS TO THE WEBSITE, ANY PART OF THE SERVICES, INCLUDING MOBILE SERVICES,
           OR ANY OF THE MATERIALS CONTAINED THEREIN, WILL BE CONTINUOUS, UNINTERRUPTED, TIMELY, OR ERROR-FREE AND WILL
-          NOT BE LIABLE FOR ANY LOSSES RELATING THERETO. Cryptomesh.io FINANCE DOES NOT REPRESENT OR WARRANT THAT THE
+          NOT BE LIABLE FOR ANY LOSSES RELATING THERETO. CRYPTOMESH FINANCE DOES NOT REPRESENT OR WARRANT THAT THE
           WEBSITE,
-          THE SERVICES OR ANY MATERIALS OF Cryptomesh.io FINANCE ARE ACCURATE, COMPLETE, RELIABLE, CURRENT, ERROR-FREE, OR
+          THE SERVICES OR ANY MATERIALS OF CRYPTOMESH FINANCE ARE ACCURATE, COMPLETE, RELIABLE, CURRENT, ERROR-FREE, OR
           FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
           <br/>
           <br/>
           ANY PERFORMANCE OR NON-PERFORMANCE OF THE SERVICES, OR ANY OTHER PRODUCT, SERVICE OR OTHER ITEM PROVIDED BY OR
-          ON BEHALF OF Cryptomesh.io FINANCE OR ITS AFFILIATES;
+          ON BEHALF OF CRYPTOMESH FINANCE OR ITS AFFILIATES;
           <br/>
           (a) ANY AUTHORIZED OR UNAUTHORIZED USE OF THE WEBSITE OR SERVICES, OR IN CONNECTION WITH THIS AGREEMENT;
           <br/>
@@ -234,10 +234,10 @@ export const Terms = (): JSX.Element => {
           <br/>
           (d) ANY DAMAGES INCURRED BY ANY ACTIONS, OMISSIONS OR VIOLATIONS OF THESE TERMS BY ANY THIRD PARTIES; OR
           <br/>
-          (e) ANY DAMAGE CAUSED BY ILLEGAL ACTIONS OF OTHER THIRD PARTIES OR ACTIONS WITHOUT AUTHORIZED BY Cryptomesh.io
+          (e) ANY DAMAGE CAUSED BY ILLEGAL ACTIONS OF OTHER THIRD PARTIES OR ACTIONS WITHOUT AUTHORIZED BY CRYPTOMESH
           FINANCE.
           <br/>
-          (f) EVEN IF Cryptomesh.io FINANCE KNEW OR SHOULD HAVE KNOWN OF THE POSSIBILITY OF SUCH DAMAGES AND
+          (f) EVEN IF CRYPTOMESH FINANCE KNEW OR SHOULD HAVE KNOWN OF THE POSSIBILITY OF SUCH DAMAGES AND
           NOTWITHSTANDING
           THE FAILURE OF ANY AGREED OR OTHER REMEDY OF ITS ESSENTIAL PURPOSE, EXCEPT TO THE EXTENT OF A FINAL JUDICIAL
           DETERMINATION THAT SUCH DAMAGES WERE A RESULT OF OUR GROSS NEGLIGENCE, ACTUAL FRAUD, WILLFUL MISCONDUCT OR
@@ -253,7 +253,7 @@ export const Terms = (): JSX.Element => {
           All present and future copyright, title, interests in and to the Services, registered and unregistered
           trademarks, design rights, unregistered designs, database rights and all other present and future intellectual
           property rights and rights in the nature of intellectual property rights that exist in or in relation to the
-          use and access of the Website and the Services are owned by or otherwise licensed to Cryptomesh.io Finance.
+          use and access of the Website and the Services are owned by or otherwise licensed to Cryptomesh Finance.
           Subject
           to your compliance with these Terms, we grant you a non-exclusive, non-sub license, and any limited license to
           merely use or access the Website and the Services in the permitted hereunder.
@@ -279,14 +279,14 @@ export const Terms = (): JSX.Element => {
         </p>
         <h3 className="terms-content-subtitle">9. Independent Parties</h3>
         <p className="terms-content-desc">
-          Cryptomesh.io Finance is an independent contractor but not an agent of you in the performance of these Terms.
+          Cryptomesh Finance is an independent contractor but not an agent of you in the performance of these Terms.
           These
           Terms shall not be interpreted as facts or evidence of an association, joint venture, partnership or franchise
           between the parties.
         </p>
         <h3 className="terms-content-subtitle">10. Indemnification</h3>
         <p className="terms-content-desc">
-          You agree to indemnify and hold harmless Cryptomesh.io Finance and its affiliates and their respective
+          You agree to indemnify and hold harmless Cryptomesh Finance and its affiliates and their respective
           shareholders,
           members, directors, officers, employees, attorneys, agents, representatives, suppliers or contractors from and
           against any potential or actual claims, actions, proceedings, investigations, demands, suits, costs, expenses
@@ -301,10 +301,10 @@ export const Terms = (): JSX.Element => {
           Website or Services.
           <br/>
           <br/>
-          If you are obligated to indemnify Cryptomesh.io Finance and its affiliates and their respective shareholders,
+          If you are obligated to indemnify Cryptomesh Finance and its affiliates and their respective shareholders,
           members, directors, officers, employees, attorneys, agents, representatives, suppliers or contractors pursuant
-          to these Terms, Cryptomesh.io Finance will have the right, in its sole discretion, to control any action or
-          proceeding and to determine whether Cryptomesh.io Finance wishes to settle, and if so, on what terms.
+          to these Terms, Cryptomesh Finance will have the right, in its sole discretion, to control any action or
+          proceeding and to determine whether Cryptomesh Finance wishes to settle, and if so, on what terms.
           <br/>
           <br/>
           Your obligations under this indemnification provision will continue even after these Terms have expired or
@@ -312,24 +312,24 @@ export const Terms = (): JSX.Element => {
         </p>
         <h3 className="terms-content-subtitle">11. Confidentiality</h3>
         <p className="terms-content-desc">
-          You acknowledge that the Services contain Cryptomesh.io Finance’s and its affiliates’ trade secrets and
+          You acknowledge that the Services contain Cryptomesh Finance’s and its affiliates’ trade secrets and
           confidential
           information. You agree to hold and maintain the Services in confidence, and not to furnish any other person
           any confidential information of the Services or the Website. You agree to use a reasonable degree of care to
-          protect the confidentiality of the Services. You will not remove or alter any of Cryptomesh.io Finance’s or its
+          protect the confidentiality of the Services. You will not remove or alter any of Cryptomesh Finance’s or its
           affiliates’ proprietary notices. Your obligations under this provision will continue even after these Terms
           have expired or been terminated.
         </p>
         <h3 className="terms-content-subtitle">12. Anti-Money Laundering</h3>
         <p className="terms-content-desc">
-          Cryptomesh.io Finance expressly prohibits and rejects the use of the Website or the Services for any form of
+          Cryptomesh Finance expressly prohibits and rejects the use of the Website or the Services for any form of
           illicit
           activity, including money laundering, terrorist financing or trade sanctions violations. By using the Website
           or the Services, you represent that you are not involved in any such activity.
         </p>
         <h3 className="terms-content-subtitle">13. Force Majeure</h3>
         <p className="terms-content-desc">
-          Cryptomesh.io Finance shall have no liability to you if it is prevented from or delayed in performing its
+          Cryptomesh Finance shall have no liability to you if it is prevented from or delayed in performing its
           obligations or from carrying on its Services and business, by acts, events, omissions or accidents beyond its
           reasonable control, including, without limitation, strikes, failure of a utility service or telecommunications
           network, act of God, war, riot, civil commotion, malicious damage, compliance with any law or governmental
@@ -379,8 +379,8 @@ export const Terms = (): JSX.Element => {
         <h3 className="terms-content-subtitle">17. Assignment</h3>
         <p className="terms-content-desc">
           You may not assign or transfer any right to use the Services or any of your rights or obligations under these
-          Terms without prior written consent from Cryptomesh.io Finance, including any right or obligation related to the
-          enforcement of laws or the change of control. Cryptomesh.io Finance may assign or transfer any or all of its
+          Terms without prior written consent from Cryptomesh Finance, including any right or obligation related to the
+          enforcement of laws or the change of control. Cryptomesh Finance may assign or transfer any or all of its
           rights
           or obligations under these Terms, in whole or in part, without notice or obtaining your consent or approval.
         </p>
@@ -401,7 +401,7 @@ export const Terms = (): JSX.Element => {
           TRANSACTIONS OF ENCRYPTED OR DIGITAL TOKENS OR CRYPTOCURRENCIES WITH A CERTAIN VALUE THAT ARE BASED ON
           BLOCKCHAIN AND CRYPTOGRAPHY TECHNOLOGIES AND ARE ISSUED AND MANAGED IN A DECENTRALIZED FORM (“DIGITAL
           CURRENCIES”); (B) YOU SHALL ASSUME ALL RISKS RELATED TO THE USE OF THE SERVICES AND TRANSACTIONS OF DIGITAL
-          CURRENCIES; AND (C) Cryptomesh.io FINANCE SHALL NOT BE LIABLE FOR ANY SUCH RISKS OR ADVERSE OUTCOMES. AS WITH
+          CURRENCIES; AND (C) CRYPTOMESH FINANCE SHALL NOT BE LIABLE FOR ANY SUCH RISKS OR ADVERSE OUTCOMES. AS WITH
           ANY
           ASSET, THE VALUES OF DIGITAL CURRENCIES ARE VOLATILE AND MAY FLUCTUATE SIGNIFICANTLY AND THERE IS A
           SUBSTANTIAL RISK OF ECONOMIC LOSS WHEN PURCHASING, HOLDING OR INVESTING IN DIGITAL CURRENCIES.

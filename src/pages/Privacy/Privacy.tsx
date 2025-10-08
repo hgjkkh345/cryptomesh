@@ -42,7 +42,7 @@ export const Privacy = (): JSX.Element => {
           </li>
           <li>
             Company (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-            this Agreement) refers to Cryptomesh.io.
+            this Agreement) refers to Cryptomesh.
           </li>
           <li>
             Cookies are small files that are placed on Your computer, mobile device or any other device by a website,
@@ -64,8 +64,8 @@ export const Privacy = (): JSX.Element => {
             Service infrastructure itself (for example, the duration of a page visit).
           </li>
           <li>
-            Website refers to Cryptomesh.io, accessible from <a
-            href="https://Cryptomesh.io/">https://Cryptomesh.io/</a>
+            Website refers to Cryptomesh, accessible from <a
+            href="https://cryptomesh.io/">https://cryptomesh.io/</a>
           </li>
           <li>
             You means the individual accessing or using the Service, or the company, or other legal entity on behalf of

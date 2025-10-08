@@ -24,9 +24,9 @@ export const Employee = (): JSX.Element => {
         className="terms-content-title">Employee Referral Program</h1>
         <div className="LegalDocumentContent__Legal-sc-1nv2gkj-0 OyWDD"><p>This Employee Referral Program (this
           “<b><i>Program</i></b>”), as revised or modified from time to time, is a legally binding agreement between
-         Cryptomesh Trading Inc., a Delaware corporation (“<b><i>Cryptomesh.io</i></b>” or the “<b><i>Company</i></b>”), and you (“<b><i>Referrer</i></b>”
+         Cryptomesh Trading Inc., a Delaware corporation (“<b><i>Cryptomesh</i></b>” or the “<b><i>Company</i></b>”), and you (“<b><i>Referrer</i></b>”
           and together with Cryptomesh, the “<b><i>Parties</i></b>”). This Program incorporates and supplements Cryptomesh Terms
-          of Use, available at https://Cryptomesh.io/terms (the “<b><i>Terms</i></b>”), other than with respect to the
+          of Use, available at https://cryptomesh.io/terms (the “<b><i>Terms</i></b>”), other than with respect to the
           exclusion of US Persons (as defined therein), who shall be eligible to participate in this Program, and
           Privacy Policy, available at https://Cryptomesh.io/privacy (the “<b><i>Privacy Policy</i></b>”), to which
           Referrer agrees that Referrer is bound and is a party, and the terms of which apply to this Program. Please
@@ -46,7 +46,7 @@ export const Employee = (): JSX.Element => {
               individuals will be eligible to participate in this Program:
             </p>
               <ol>
-                <li><p>A person who is not an employee ofCryptomesh;</p></li>
+                <li><p>A person who is not an employee of Cryptomesh;</p></li>
                 <li><p>A person who is of legal age in the jurisdiction in which such individual resides, and in any
                   case at least eighteen (18) years old;</p></li>
                 <li><p>A person who is not associated with, employed by or a consultant of a staffing or recruiting
@@ -128,10 +128,10 @@ export const Employee = (): JSX.Element => {
                   (ii)&nbsp;<b>second</b>, in the application, select from the drop down that this is a “Referral” and
                   submit details (name and email) about the Referrer. Any qualifying referral information must be
                   submitted prior or in connection with the initial communication (including email or phone) between the
-                  Candidate and any member of theCryptomesh’s human resources department. If there are any questions, feel
+                  Candidate and any member of the Cryptomesh human resources department. If there are any questions, feel
                   free to reach out to&nbsp;<a href="mailto:support@cryptomesh.io">support@cryptomesh.io</a>. Any
                   qualifying referral information must be submitted prior or in connection with the initial
-                  communication (including email or phone) between the Candidate and any member of the Cryptomesh’s human
+                  communication (including email or phone) between the Candidate and any member of the Cryptomesh human
                   resources department.
                 </p></li>
                 <li><p>In the event that a Candidate receives an offer from Cryptomesh, and thereafter accepts such offer and

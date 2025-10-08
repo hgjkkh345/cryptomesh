@@ -24,12 +24,10 @@ export const Code = (): JSX.Element => {
           <br/>
           Securely execute interchain strategies with noncustodial vaults - your keys, your crypto.
           <br/>
-          <br/>
-          Cryptomesh software is audited by
         </p>
         <div className="button-line">
           {/*<SimpleButton text='Github' href={hrefs.audit}/>*/}
-          <SimpleButton className='simple-button-first' text='Docs' href={hrefs.audit}/> </div>
+          <SimpleButton className='simple-button-first' text='Audit' href={hrefs.audit}/> </div>
       </div>
     </div>
   )

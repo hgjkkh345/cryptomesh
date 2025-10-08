@@ -22,10 +22,10 @@ export const Cookies = (): JSX.Element => {
       <div className="terms-content">
         <h1 className="terms-content-title">Cookie Policy</h1>
         <p className="terms-content-desc">
-          The Cryptomesh.io Finance (&quot;Cryptomesh.io&quot;) is committed to protecting and respecting your privacy. This
+          The Cryptomesh Finance (&quot;Cryptomesh&quot;) is committed to protecting and respecting your privacy. This
           Cookie
           Policy describes what information is collected using cookies and how that information is used in connection
-          with <a href="https://Cryptomesh.io/">https://Cryptomesh.io/</a> (the &quot;Site&quot;). This
+          with <a href="https://cryptomesh.io/">https://cryptomesh.io/</a> (the &quot;Site&quot;). This
           Cookie
           Policy may be modified from time to time which will be indicated by changing the date at the top of this page.
           This policy should be read together with the Privacy Policy. Your use of the Site is at all times subject to
@@ -55,14 +55,14 @@ export const Cookies = (): JSX.Element => {
         </p>
         <h3 className="terms-content-subtitle">4. What types of cookies are used VIA the SITE?</h3>
         <p className="terms-content-desc">
-          Cryptomesh.io restricts its use of cookies. Cryptomesh.io does not collect cookies via the Site.
+          Cryptomesh restricts its use of cookies. Cryptomesh does not collect cookies via the Site.
         </p>
         <h3 className="terms-content-subtitle">5. How long will cookies stay on my browsing Device?</h3>
         <p className="terms-content-desc">
           In general, the length of time a cookie will stay on your browsing device depends on whether it is a
           &quot;persistent&quot; or &quot;session&quot; cookie. Session cookies will only stay on your device until you
           stop browsing. Persistent cookies stay on your browsing device after you have finished browsing until they
-          expire or are deleted. As no first-party cookies are collected, your browsing device will not have Cryptomesh.io
+          expire or are deleted. As no first-party cookies are collected, your browsing device will not have Cryptomesh
           cookies.
         </p>
         <h3 className="terms-content-subtitle">6. How to manage cookies from the site?</h3>

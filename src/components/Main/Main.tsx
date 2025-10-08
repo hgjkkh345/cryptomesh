@@ -36,7 +36,7 @@ export const Main = (): JSX.Element => {
         <SimpleButton text="Stake Now" href={`${routes.farms}?${search.toString()}`} />
         {isM ? (
           <a download href={srcPath} className="main-left-buttons-item right">
-            Read docs
+            Litepaper
           </a>
         ) : (
           <SimpleButton variant='outlined' text='Litepaper' href={`${routes.docs}?${search.toString()}`} />
