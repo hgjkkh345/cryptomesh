@@ -31,7 +31,6 @@ export const DevApiPage = (): JSX.Element => {
         </div>
 
 
-        {/*<LatestArticles />*/}
         <WhiteLabelFAQ />
         {/*<StakingGuides />*/}
         <ContactUs />

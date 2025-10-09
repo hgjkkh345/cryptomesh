@@ -6,7 +6,6 @@ import { ServiceHeader } from "../../components/ServiceHeader"
 import cryptoincubatorrocket from "../../assets/images/rockett.webp"
 import { TailoredSolutions } from "../../components/TailoredSolutions"
 import { projectIncubatorData } from "../../components/TailoredSolutions/data"
-import { LatestArticles } from "../../components/LatestArticles"
 import { WhiteLabelFAQ } from "../../components/WhiteLabelFAQ"
 import { StakingGuides } from "../../components/StakingGuides"
 import { OurApproach } from "../../components/OurApproach"
@@ -24,7 +23,6 @@ export const CryptoIncubator = (): JSX.Element => {
           image={cryptoincubatorrocket} />
         <OurApproach />
         <TailoredSolutions variant="for-crypto-incubator" title={`Why Choose <span>Cryptomesh?</span>`} data={projectIncubatorData} />
-        {/*<LatestArticles />*/}
         <WhiteLabelFAQ />
         {/*<StakingGuides />*/}
         <ContactUs />

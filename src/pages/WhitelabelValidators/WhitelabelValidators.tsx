@@ -6,7 +6,6 @@ import { ServiceHeader } from "../../components/ServiceHeader"
 import WhitelabelValidatorsImage from "../../assets/images/turkshield.webp"
 import { validatorServiceTable } from "../../components/ValidatorServiceTable/data"
 import { ValidatorServiceTable } from "../../components/ValidatorServiceTable"
-import { LatestArticles } from "../../components/LatestArticles"
 import { WhiteLabelFAQ } from "../../components/WhiteLabelFAQ"
 import {StakingGuides} from "../../components/StakingGuides"
 import { ContactUs } from "../../components/ContactUs"
@@ -24,7 +23,6 @@ export const WhitelabelValidators = (): JSX.Element => {
       {validatorServiceTable.map((item, index) => (
         <ValidatorServiceTable key={index} title={item.title} desc={item.description} image={item.image}/>
       ))}
-      {/*<LatestArticles />*/}
       <WhiteLabelFAQ />
       {/*<StakingGuides />*/}
       <ContactUs />
