@@ -23,9 +23,9 @@ export const blogData = [
   {
     id: 'quarter-3',
     image: img8Src,
-    title: "Cryptomesh Q2 2025 Report: Accelerating Growth and Expanding Horizons",
+    title: "Cryptomesh Q3 2025 Report: Accelerating Growth and Expanding Horizons",
     text: `<p>
-As we close Q2 2025, Cryptomesh continues its trajectory of unparalleled growth, innovation, and commitment to delivering top-tier staking solutions. Here's a look at our key achievements this quarter:<br/><br/><br/>
+As we close Q3 2025, Cryptomesh continues its trajectory of unparalleled growth, innovation, and commitment to delivering top-tier staking solutions. Here's a look at our key achievements this quarter:<br/><br/><br/>
       <strong>1. Total Value Locked (TVL) Reaches $230 Million</strong><br/><br/>
       Cryptomesh’s TVL has soared to an impressive $230 million, reflecting the growing trust and adoption of our platform. Highlights include:<br/>
       <ul>
@@ -59,9 +59,9 @@ As we close Q2 2025, Cryptomesh continues its trajectory of unparalleled growth,
   {
     id: 'review-2',
     image: img7Src,
-    title: "Cryptomesh Q1 2025 Review: Game-Changing Integrations, Partnerships, and Explosive TVL Growth",
+    title: "Cryptomesh Q2 2025 Review: Game-Changing Integrations, Partnerships, and Explosive TVL Growth",
     text: `<p>
-As Q1 2025 wraps up, Cryptomesh has taken bold steps to redefine the decentralized finance (DeFi) landscape. From powerful integrations to groundbreaking projects, this quarter was all about innovation and growth. Here are the key highlights:<br/><br/>
+As Q2 2025 wraps up, Cryptomesh has taken bold steps to redefine the decentralized finance (DeFi) landscape. From powerful integrations to groundbreaking projects, this quarter was all about innovation and growth. Here are the key highlights:<br/><br/>
       <strong>1. Securing Data with <strong>IPFS</strong> Integration</strong><br/><br/>
       This quarter, we integrated the InterPlanetary File System (<strong>IPFS</strong>) into Cryptomesh, boosting data security and decentralization. With <strong>IPFS</strong>, platform data is stored and accessed more securely, delivering enhanced efficiency and reliability for users.<br/><br/>
       <strong>2. Strengthened Collaboration with Uniswap</strong><br/><br/>
@@ -72,7 +72,7 @@ Additionally, we’re exploring cross-chain bridge technology to make staking ac
       <strong>3. Building the Future: DAO and Cross-Chain Innovations</strong><br/><br/>
       We are actively crafting DAO governance functionality, targeting a March-April 2025 launch. This milestone will give the community a voice in platform decisions, aligning Cryptomesh with the spirit of decentralized governance. <br/> Additionally, we’re exploring cross-chain bridge technology to make staking across multiple chains even more accessible. While a timeline isn’t set, it’s a key focus area for future development.<br/><br/>
       <strong>4. TVL Growth Soars by 41%</strong><br/><br/>
-      Cryptomesh's Total Value Locked (TVL) skyrocketed to $220 million in Q1 2025—an astounding 41% surge from Q4 2024’s $156 million. This exponential growth showcases user confidence and increasing adoption of Cryptomesh’s multi-chain staking services.<br/><br/>
+      Cryptomesh's Total Value Locked (TVL) skyrocketed to $220 million in Q2 2025—an astounding 41% surge from Q4 2024’s $156 million. This exponential growth showcases user confidence and increasing adoption of Cryptomesh’s multi-chain staking services.<br/><br/>
       <strong>Looking Ahead</strong><br/><br/>
       Cryptomesh remains dedicated to scaling the platform, forging strategic alliances, and delivering transformative solutions. Upcoming launches, including DAO governance and cross-chain capabilities, position us for even greater success in the DeFi space.<br/>
 We extend our heartfelt thanks to our ever-supportive community. Stay connected for more updates as we shape the future of decentralized staking together.
@@ -121,12 +121,12 @@ Stay tuned as we continue to improve and evolve our platform to meet the needs o
   {
     id: "review",
     image: img6Src,
-    title: "Cryptomesh 2024 Q4 Review: Unprecedented Growth and Strategic Milestones",
+    title: "Cryptomesh 2024 Q1 Review: Unprecedented Growth and Strategic Milestones",
     text: `<p>
 As the first quarter of 2024 comes to a close, Cryptomesh is thrilled to reflect on a period of transformative growth and achievements. From impressive Total Value Locked (TVL) growth to groundbreaking partnerships, our platform has set a solid foundation for continued success in the decentralized finance (DeFi) space. Here’s an overview of our Q1 2024 highlights:
       <br/><br/>
       <strong>1. Remarkable TVL Growth: A 50% Increase</strong><br/><br/>
-      This quarter, Cryptomesh achieved an extraordinary 50% increase in TVL, soaring from $104 million in Q3 2024 to $156 million by the end of Q4 2024. This surge underscores the growing trust in our platform and the robust staking opportunities we provide. The rise in TVL reflects both the expansion of our user base and heightened staking activity across multiple blockchain networks.
+      This quarter, Cryptomesh achieved an extraordinary 50% increase in TVL, soaring from $104 million in 2024 to $156 million by the end of Q4 2024. This surge underscores the growing trust in our platform and the robust staking opportunities we provide. The rise in TVL reflects both the expansion of our user base and heightened staking activity across multiple blockchain networks.
       <br/><br/>
       <strong>2. ARB Staking Pool Launch and $1.5 Million TVL</strong><br/><br/>
       One of our major milestones was the optimization and launch of the ARB staking pool. This pool has quickly gained traction, reaching a $1.5 million TVL in record time. The ARB pool exemplifies our ability to deliver seamless and rewarding staking experiences, cementing Cryptomesh’s position as a trusted platform for diverse staking solutions.

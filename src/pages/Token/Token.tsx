@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer, SwapTablePairs, SwapChartToken, SwapToken, TokenLockedSmall, Loading } from "components"
 
 import "./Token.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 import { ReactComponent as ArrowBread } from "assets/icons/arrow-bird-right.svg"
 import { apiCoin } from "../../service/api/apiCoinGecko"
 import {  routes } from "../../utils"

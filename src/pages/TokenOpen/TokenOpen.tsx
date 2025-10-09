@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import {Header, Footer, SimpleButton, Loading} from "components"
 
 import "./TokenOpen.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 import { ReactComponent as ArrowBread } from "assets/icons/arrow-bird-right.svg"
 import { ReactComponent as Copy } from "assets/icons/copy-text-icon.svg"
 import { ReactComponent as ArrowOperator } from "assets/icons/arrow-slim-right.svg"

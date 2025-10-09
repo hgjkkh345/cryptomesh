@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer, SwapPair, Loading, SwapChartPools, TokenLocked } from "components"
 
 import "./PoolInfo.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 import { ReactComponent as ArrowBread } from "assets/icons/arrow-bird-right.svg"
 import { apiCoin } from "../../service/api/apiCoinGecko"
 import { useNavigate, useParams, useSearchParams } from "react-router-dom"

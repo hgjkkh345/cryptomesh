@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import {Header, Footer, RefMain, RefBlocks, RefFAQ, RefTable, RefWorks, Loading, RefCode} from "components"
 
 import "./Referral.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 import { apiOur, IRefUser } from "../../service/api/apiOur"
 import {useAccount} from "wagmi";
 import {getChainId} from "@wagmi/core";

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import {Footer, Header, Loading, SimpleButton} from "components"
 
 import "./Blog.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 import featuredSrc from "assets/images/cryptomesh-twitter.webp"
 import logoSrc from "assets/images/cryptomesh-circle.webp"
 import {Link, useParams} from "react-router-dom";

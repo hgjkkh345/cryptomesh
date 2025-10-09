@@ -1,9 +1,9 @@
-import sextagram from "assets/images/sextagram.webp"
-import key from "assets/images/key.webp"
-import laptop from "assets/images/laptop.webp"
-import lock from "assets/images/lock.webp"
-import sheild from "assets/images/sheild.webp"
-import swine from "assets/images/swine.webp"
+import sextagram from "assets/images/tinygear.webp"
+import key from "assets/images/simplekey.webp"
+import laptop from "assets/images/minicomputer.webp"
+import lock from "assets/images/redlockblachhole.webp"
+import sheild from "assets/images/turqoiseshield.webp"
+import swine from "assets/images/pinkponypig.webp"
 export const validatorServiceTable = [
   {
     image: sextagram,

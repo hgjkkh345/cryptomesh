@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer } from "components"
 
 import "../Terms/Terms.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 
 export const Trademark = (): JSX.Element => {
   useEffect(() => {

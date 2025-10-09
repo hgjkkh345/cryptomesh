@@ -1,11 +1,11 @@
-import tailored1 from "assets/images/tailored1.webp"
-import tailored2 from "assets/images/tailored2.webp"
-import tailored3 from "assets/images/tailored3.webp"
-import heartapi from "assets/images/heartapi.webp"
-import databaseapi from "assets/images/databaseapi.webp"
-import solutionsincubation1 from "assets/images/solutions-incubation1.webp"
-import experianceincubation2 from "assets/images/experiance-incubation2.webp"
-import partnershipincubation3 from "assets/images/partnership-incubation3.webp"
+import tailored1 from "assets/images/yellowcubepinkdot.webp"
+import tailored2 from "assets/images/pinkdonut.webp"
+import tailored3 from "assets/images/yellow-purple-chain.webp"
+import heartapi from "assets/images/heartofanoldman.webp"
+import databaseapi from "assets/images/apifolder.webp"
+import solutionsincubation1 from "assets/images/purplestarflag.webp"
+import experianceincubation2 from "assets/images/exp-incub.webp"
+import partnershipincubation3 from "assets/images/twobluehands.webp"
 
 
 
