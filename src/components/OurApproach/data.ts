@@ -1,6 +1,6 @@
-import networkaccess from "assets/images/networkaccess.webp"
+import networkaccess from "assets/images/connectingdots.webp"
 import techsupport from "assets/images/techsupport.webp"
-import strategicguidance from "assets/images/strategicguidance.webp"
+import strategicguidance from "assets/images/gobletoffire.webp"
 
 
 export const OurApproachdata = [

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer, SwapTable, SwapChartRight, SwapMover, SwapTablePairs } from "components"
 
 import "./SwapInfo.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 import cn from "classnames"
 import { apiCoin } from "../../service/api/apiCoinGecko"
 import { useNavigate, useSearchParams } from "react-router-dom"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Header, Footer, SwapTable, SwapChartRight, SwapMover, SwapTablePairs } from "components"
 
 import "./Protocol.scss"
-import imgMainBgSrc from "assets/images/image.webp"
+import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
 import { ReactComponent as Arrow } from "assets/icons/arrow-greybird-right.svg"
 import cn from "classnames"
 import { apiCoin } from "../../service/api/apiCoinGecko"

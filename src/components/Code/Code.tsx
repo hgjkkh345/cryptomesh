@@ -1,6 +1,6 @@
 import React from "react"
 import "./Code.scss"
-import srcCodeImage from 'assets/images/code-screen.webp'
+import srcCodeImage from 'assets/images/typecode.webp'
 import img1Src from "../../assets/images/cryptomesh-swap-screen.webp";
 import {SimpleButton} from "../SimpleButton";
 import {hrefs, routes} from "../../utils";
