@@ -1,8 +1,8 @@
 import React from "react"
 
-import img1 from "assets/images/article-1.png"
-import img2 from "assets/images/article-2.png"
-import img3 from "assets/images/article-3.png"
+import img1 from "assets/images/cryptomesh-kucoin.png"
+import img2 from "assets/images/cryptomesh-ccp.png"
+import img3 from "assets/images/cryptomesh-binance.png"
 import "./NewsHome.scss"
 import {SimpleButton} from "../SimpleButton";
 import {routes} from "../../utils";
@@ -10,45 +10,45 @@ import {routes} from "../../utils";
 export const NewsHome = (): JSX.Element => {
   const blocks = [
     {
-      title: "Cryptomesh.io Secures $3 Million in Seed Funding to Advance DeFi Staking Innovations and Global Growth",
-      desc: "Cryptomesh.io, a rising leader in decentralized finance (DeFi), has successfully raised $3 million in seed funding, reflecting growing investor confidence in its potential to revolutionize the DeFi staking landscape. This investment will support Cryptomesh.io's plans for global expansion, platform enhancements, and the introduction of innovative solutions for the DeFi ecosystem.",
-      link: "https://www.binance.com/en/square/post/26401282888306",
-      source: "Binance",
-      icon: img2,
+      title: "Cryptomesh Completes $2.5M A-Round Funding to Advance DeFi Staking Transition; TVL Reaches $150M",
+      desc: "In accordance with Biji.com, DeFi staking platform Cryptomesh has raised $2.5 million in its A-round funding, with undisclosed investors.",
+      link: "https://www.kucoin.com/news/flash/cryptomesh-completes-2-5m-a-round-funding-to-advance-defi-staking-transition-tvl-reaches-150m?lang=en_US&",
+      source: "Kukoin",
+      icon: img1,
     },
     {
-      title: "Cryptomesh.io: Transforming DeFi Staking",
-      desc: "Cryptomesh.io is at the forefront of decentralized finance (DeFi) staking, emerging as a top choice for secure and high-yield staking solutions globally. By integrating multi-chain support, cutting-edge technology, and a seamless user experience, Cryptomesh.io is setting a new standard for staking platforms.",
-      icon: img1,
-      link: "https://coinmarketcap.com/community/articles/68651f6abaae432cd57dc958/",
+      title: "Cryptomesh: Transforming DeFi Staking",
+      desc: "Cryptomesh is leading the way in decentralized finance (DeFi) staking, becoming a preferred platform for secure and high-yield staking solutions worldwide. With multi-chain support, advanced technology, and a smooth user experience, Cryptomesh is redefining what users can expect from a staking platform.",
+      icon: img2,
+      link: "https://coinmarketcap.com/community/articles/68eb68164355c11ecf50866e/",
       source: 'CoinMarketCap',
     },
     {
-      title: "Cryptomesh.io Surpasses $215 Million in TVL, Redefining DeFi Staking Innovation",
-      desc: "Wellington, New Zealand - July 3, 2025. Cryptomesh.io, a leading multi-chain staking platform built primarily on Ethereum, achieves a monumental milestone, surpassing $215 million in Total Value Locked (TVL). This landmark accomplishment solidifies Cryptomesh.io's role as a trailblazer in the decentralized finance (DeFi) ecosystem, underscoring its rapid growth and transformative approach to staking solutions. By blending cutting-edge technology with user-centric design, Cryptomesh.io sets a new standard for interoperability, security, and accessibility in DeFi staking.",
-      link: "https://www.barchart.com/story/news/33231776/arclaim-surpasses-215-million-in-tvl-redefining-defi-staking-innovation",
-      source: 'Barchart',
+      title: "Cryptomesh Secures $2.5 Million in Seed Funding to Transform DeFi Staking and Drive Global Growth",
+      desc: "Cryptomesh, an emerging leader in decentralized finance (DeFi), has successfully raised $2.5 million in seed funding, showcasing strong investor confidence in its mission to redefine the DeFi staking landscape. This funding will enable Cryptomesh to accelerate global expansion, enhance its platform, and introduce cutting-edge solutions for the DeFi ecosystem.",
+      link: "https://www.binance.com/en/square/post/30914228790330?_ul=aHR0cHM6Ly9hcHAuYmluYW5jZS5jb20vdW5pLXFyL2NhcnQvMzA5MTQyMjg3OTAzMzA_dWNvPWNaZlJtVWZ2dlBNczliRTAtRUtST1EmdWM9YXBwX3NxdWFyZV9zaGFyZV9saW5rJnVzPWNvcHlsaW5rJnI9TWFjaCZsPWVu&ref=Mach&utm_campaign=app_square_share_link&utm_content=cZfRmUfvvPMs9bE0-EKROQ&utm_source=copylink",
+      source: 'Binance',
       icon: img3,
     },
   ]
   return (
     <div className="news-home">
-      {/*<h3 data-aos="fade-up" className="news-home-title">Our News</h3>*/}
-      {/*<div data-aos="fade-up" className="news-home-content">*/}
-      {/*  {blocks.map((block, index) => (*/}
-      {/*    <a href={block.link} target='_blank' rel='noreferrer noopener' key={index} className="news-home-content-item">*/}
-      {/*      <div className="news-home-content-item-icon">*/}
-      {/*        <img alt="news-home" src={block.icon}/>*/}
-      {/*      </div>*/}
-      {/*      <div className="news-home-content-item-title">{block.title}</div>*/}
-      {/*      <div className="news-home-content-item-desc">{block.desc}</div>*/}
-      {/*      <div className="news-home-content-item-footer">From <b>{block.source}</b></div>*/}
-      {/*    </a>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
-      {/*<div className='news-home-btn'>*/}
-      {/*  <SimpleButton text='More News' href={routes.news} variant='colored'/>*/}
-      {/*</div>*/}
+      <h3 data-aos="fade-up" className="news-home-title">Our News</h3>
+      <div data-aos="fade-up" className="news-home-content">
+        {blocks.map((block, index) => (
+          <a href={block.link} target='_blank' rel='noreferrer noopener' key={index} className="news-home-content-item">
+            <div className="news-home-content-item-icon">
+              <img alt="news-home" src={block.icon}/>
+            </div>
+            <div className="news-home-content-item-title">{block.title}</div>
+            <div className="news-home-content-item-desc">{block.desc}</div>
+            <div className="news-home-content-item-footer">From <b>{block.source}</b></div>
+          </a>
+        ))}
+      </div>
+      <div className='news-home-btn'>
+        <SimpleButton text='More News' href={routes.news} variant='colored'/>
+      </div>
     </div>
   )
 }
