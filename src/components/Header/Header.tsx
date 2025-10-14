@@ -27,7 +27,7 @@ import { ReactComponent as IconFaq } from "assets/icons/links/questions-faa.svg"
 import { ReactComponent as IconDocs } from "assets/icons/links/document-paper.svg"
 import { ReactComponent as IconCareers } from "assets/icons/links/cv-icon.svg"
 import { ReactComponent as IconJobs } from "assets/icons/links/guy-plus.svg"
-// import { ReactComponent as IconBlog } from "assets/icons/links/blog-book.svg"
+import { ReactComponent as IconBlog } from "assets/icons/links/blog-book.svg"
 import { ReactComponent as IconProtocol } from "assets/icons/links/rollpaper-1.svg"
 import { ReactComponent as IconBug } from "assets/icons/links/protect-icon.svg"
 import { ReactComponent as IconBrand } from "assets/icons/links/brand-lightning.svg"
@@ -146,11 +146,11 @@ export const Header = (): JSX.Element => {
       link: `${routes.faq}?${search.toString()}`,
       icon: <IconFaq />
     },
-    // {
-    //   title: "Blog",
-    //   link: `${routes.blog}?${search.toString()}`,
-    //   icon: <IconBlog />
-    // },
+    {
+      title: "Blog",
+      link: `${routes.blog}?${search.toString()}`,
+      icon: <IconBlog />
+    },
     {
       title: "Mission",
       link: `${routes.careers}?${search.toString()}`,

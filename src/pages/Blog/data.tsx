@@ -53,7 +53,7 @@ As we close Q3 2025, Cryptomesh continues its trajectory of unparalleled growth,
        Cryptomesh remains steadfast in its mission to redefine decentralized staking. The upcoming quarters will focus on scaling our platform, introducing innovative pools, and deepening user engagement.<br/>
        We thank our ever-growing community for their unwavering support and trust. Stay tuned for more updates as we continue to revolutionize the DeFi staking landscape together.
     </p>`,
-    date: 'June 15, 2025',
+    date: 'September 15, 2025',
     time: '6 min read time'
   },
   {
@@ -77,7 +77,7 @@ Additionally, we’re exploring cross-chain bridge technology to make staking ac
       Cryptomesh remains dedicated to scaling the platform, forging strategic alliances, and delivering transformative solutions. Upcoming launches, including DAO governance and cross-chain capabilities, position us for even greater success in the DeFi space.<br/>
 We extend our heartfelt thanks to our ever-supportive community. Stay connected for more updates as we shape the future of decentralized staking together.
     </p>`,
-    date: 'April 5, 2025',
+    date: 'July 5, 2025',
     time: '6 min read time'
   },
   {
@@ -115,7 +115,7 @@ Through <strong>IPFS</strong>, Cryptomesh ensures that platform data and user in
 The combination of <strong>IPFS</strong> and Ethereum smart contracts signals a future where decentralized applications become more resilient and accessible. Cryptomesh is proud to lead the way, ensuring that our users benefit from cutting-edge technology and a secure staking experience.<br/>
 Stay tuned as we continue to improve and evolve our platform to meet the needs of our thriving community. 🚀
     </p>`,
-    date: 'February 28, 2025',
+    date: 'May 28, 2025',
     time: '9 min read time'
   },
   {
@@ -123,7 +123,7 @@ Stay tuned as we continue to improve and evolve our platform to meet the needs o
     image: img6Src,
     title: "Cryptomesh 2025 Q1 Review: Unprecedented Growth and Strategic Milestones",
     text: `<p>
-As the first quarter of 2024 comes to a close, Cryptomesh is thrilled to reflect on a period of transformative growth and achievements. From impressive Total Value Locked (TVL) growth to groundbreaking partnerships, our platform has set a solid foundation for continued success in the decentralized finance (DeFi) space. Here’s an overview of our Q1 2024 highlights:
+As the first quarter of 2025 comes to a close, Cryptomesh is thrilled to reflect on a period of transformative growth and achievements. From impressive Total Value Locked (TVL) growth to groundbreaking partnerships, our platform has set a solid foundation for continued success in the decentralized finance (DeFi) space. Here’s an overview of our Q1 2025 highlights:
       <br/><br/>
       <strong>1. Remarkable TVL Growth: A 50% Increase</strong><br/><br/>
       This quarter, Cryptomesh achieved an extraordinary 50% increase in TVL, soaring from $104 million in 2024 to $156 million by the end of Q4 2024. This surge underscores the growing trust in our platform and the robust staking opportunities we provide. The rise in TVL reflects both the expansion of our user base and heightened staking activity across multiple blockchain networks.
@@ -153,11 +153,11 @@ These alliances ensure that Cryptomesh remains at the forefront of DeFi innovati
       Cryptomesh’s rapid expansion has been accompanied by significant investments in platform development and security. From infrastructure upgrades to rigorous security audits, we are dedicated to ensuring a secure, scalable, and user-friendly environment for all our stakeholders.
       <br/><br/>
       <strong>Looking Ahead</strong><br/><br/>
-      Cryptomesh’s first-quarter achievements signal a promising future. The 114% TVL growth, launch of new staking pools, and strategic partnerships mark just the beginning of our journey in 2024. As we continue to push boundaries in the DeFi space, we remain committed to delivering innovative staking solutions, expanding blockchain integrations, and fostering a thriving community.<br/><br/>
+      Cryptomesh’s first-quarter achievements signal a promising future. The 114% TVL growth, launch of new staking pools, and strategic partnerships mark just the beginning of our journey in 2025. As we continue to push boundaries in the DeFi space, we remain committed to delivering innovative staking solutions, expanding blockchain integrations, and fostering a thriving community.<br/><br/>
 Thank you to our growing community for your trust and support. Together, we are redefining what’s possible in decentralized finance.<br/><br/>
 Stay tuned as we build on this momentum in the months ahead! 🚀
     </p>`,
-    date: 'January 7, 2025',
+    date: 'April 7, 2025',
     time: '7 min read time'
   },
   {
@@ -206,7 +206,7 @@ With four LINK staking pools available, users can select the option that aligns 
       This partnership with Chainlink represents a major milestone for Cryptomesh as we continue to innovate and expand our platform. The integration of Chainlink’s trusted oracle network and the successful launch of LINK staking pools demonstrate our commitment to enhancing the staking experience for our users.<br/><br/>
 We’re excited to see our community engage with these new opportunities and look forward to future collaborations with Chainlink to bring even more groundbreaking features to Cryptomesh. Together, we’re shaping the future of decentralized staking.
     </p>`,
-    date: 'November 25, 2025',
+    date: 'February 25, 2025',
     time: '8 min read time'
   },
   {
@@ -236,7 +236,7 @@ For example, the value of staked assets can shift due to market fluctuations. Wi
 As we expand, we aim to enhance our offerings further, introducing innovative tools and features that empower our users to make well-informed decisions. By working closely with industry-leading partners, Cryptomesh is not only building a more robust platform but also positioning itself for sustained success in the evolving DeFi landscape.
 Thank you to our users for trusting Cryptomesh as your preferred staking platform. Together, we’re shaping the future of decentralized finance.
     </p>`,
-    date: 'November 7, 2024',
+    date: 'February 7, 2025',
     time: '7 min read time'
   },
   {
@@ -266,7 +266,7 @@ Our growth on the BNB Chain has been equally impressive. Cryptomesh currently su
 As we prepare to launch the ARB Staking Pool and continue expanding our ecosystem, we extend our gratitude to our community for their unwavering trust and support. Cryptomesh remains dedicated to providing a secure, intuitive, and profitable staking experience for all.<br/><br/>
 Stay tuned for more exciting developments as we continue building a platform that empowers our users and redefines staking in the DeFi space.
     </p>`,
-    date: 'October 5, 2024',
+    date: 'January 5, 2025',
     time: '5 min read time'
   },
 ]
