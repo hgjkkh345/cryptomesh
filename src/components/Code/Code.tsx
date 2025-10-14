@@ -19,11 +19,7 @@ export const Code = (): JSX.Element => {
         <img src={srcCodeImage} alt='code'/>
         <h3>Secure</h3>
         <p data-aos="fade-up-right" className="swap-home-desc">
-          Security is paramount for DeFi and embedded in Cryptomesh DNA. Securely execute interchain strategies with noncustodial vaults - your keys, your crypto. Cryptomesh software is audited by InterFi Network.
-          <br/>
-          <br/>
-          Securely execute interchain strategies with noncustodial vaults - your keys, your crypto.
-          <br/>
+          Security is paramount for DeFi and embedded in Cryptomesh DNA. Securely execute interchain strategies with noncustodial vaults - your keys, your crypto.
         </p>
         <div className="button-line">
           {/*<SimpleButton text='Github' href={hrefs.audit}/>*/}
