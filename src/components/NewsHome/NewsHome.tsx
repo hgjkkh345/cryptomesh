@@ -1,7 +1,7 @@
 import React from "react"
 
 import img1 from "assets/images/cryptomesh-kucoin.png"
-import img2 from "assets/images/cryptomesh-ccp.png"
+import img2 from "assets/images/ccp-new.png"
 import img3 from "assets/images/cryptomesh-binance.png"
 import "./NewsHome.scss"
 import {SimpleButton} from "../SimpleButton";
@@ -17,10 +17,10 @@ export const NewsHome = (): JSX.Element => {
       icon: img1,
     },
     {
-      title: "Cryptomesh: Transforming DeFi Staking",
-      desc: "Cryptomesh is leading the way in decentralized finance (DeFi) staking, becoming a preferred platform for secure and high-yield staking solutions worldwide. With multi-chain support, advanced technology, and a smooth user experience, Cryptomesh is redefining what users can expect from a staking platform.",
+      title: "How Cryptomesh’s $2.5M Funding is Revolutionizing DeFi Staking",
+      desc: "OKX - Discover how Cryptomesh's $2.5M funding is transforming DeFi staking with innovative solutions, enhancing rewards and reshaping the decentralized finance landscape.",
       icon: img2,
-      link: "https://coinmarketcap.com/community/articles/68eb68164355c11ecf50866e/",
+      link: "https://www.okx.com/learn/cryptomesh-funding-defi-staking",
       source: 'CoinMarketCap',
     },
     {
