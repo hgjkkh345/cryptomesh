@@ -3,6 +3,8 @@ import React from "react"
 import img1 from "assets/images/cryptomesh-kucoin.png"
 import img2 from "assets/images/ccp-new.png"
 import img3 from "assets/images/cryptomesh-binance.png"
+import img4 from "assets/images/CoinMarketCap.png"
+import img5 from "assets/images/bitget.png"
 import "./NewsHome.scss"
 import {SimpleButton} from "../SimpleButton";
 import {routes} from "../../utils";
@@ -17,10 +19,10 @@ export const NewsHome = (): JSX.Element => {
       icon: img1,
     },
     {
-      title: "How Cryptomesh’s $2.5M Funding is Revolutionizing DeFi Staking",
-      desc: "OKX - Discover how Cryptomesh's $2.5M funding is transforming DeFi staking with innovative solutions, enhancing rewards and reshaping the decentralized finance landscape.",
-      icon: img2,
-      link: "https://www.okx.com/learn/cryptomesh-funding-defi-staking",
+      title: "Cryptomesh: Transforming DeFi Staking",
+      desc: "Cryptomesh is leading the way in decentralized finance (DeFi) staking, becoming a preferred platform for secure and high-yield staking solutions worldwide. With multi-chain support, advanced technology, and a smooth user experience, Cryptomesh is redefining what users can expect from a staking platform.",
+      icon: img4,
+      link: "https://coinmarketcap.com/community/articles/68eb68164355c11ecf50866e/",
       source: 'CoinMarketCap',
     },
     {
@@ -29,6 +31,20 @@ export const NewsHome = (): JSX.Element => {
       link: "https://www.binance.com/en/square/post/30914228790330?_ul=aHR0cHM6Ly9hcHAuYmluYW5jZS5jb20vdW5pLXFyL2NhcnQvMzA5MTQyMjg3OTAzMzA_dWNvPWNaZlJtVWZ2dlBNczliRTAtRUtST1EmdWM9YXBwX3NxdWFyZV9zaGFyZV9saW5rJnVzPWNvcHlsaW5rJnI9TWFjaCZsPWVu&ref=Mach&utm_campaign=app_square_share_link&utm_content=cZfRmUfvvPMs9bE0-EKROQ&utm_source=copylink",
       source: 'Binance',
       icon: img3,
+    },
+    {
+      title: "How Cryptomesh’s $2.5M Funding is Revolutionizing DeFi Staking",
+      desc: "OKX - Discover how Cryptomesh's $2.5M funding is transforming DeFi staking with innovative solutions, enhancing rewards and reshaping the decentralized finance landscape.",
+      icon: img2,
+      link: "https://www.okx.com/learn/cryptomesh-funding-defi-staking",
+      source: 'OKX',
+    },
+    {
+      title: "Multichain staking platform Cryptomesh completes $2.5 million Series A financing",
+      desc: "Jinse Finance reported that the multi-chain staking platform Cryptomesh has announced the completion of a $2.5 million Series A funding round, with investor information yet to be disclosed. The platform currently supports 10 major blockchain networks, including Ethereum (ETH), Optimism (OP), and others. The new funds are intended to upgrade infrastructure and expand DeFi staking scale.",
+      icon: img5,
+      link: "https://www.bitget.com/news/detail/12560605011201",
+      source: 'Bitget',
     },
   ]
   return (

@@ -73,8 +73,9 @@
 
   &-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 0 32px;
+    gap: 20px;
 
     @include respond(md) {
       gap: 20px 0;
@@ -89,10 +90,11 @@
       border-radius: 36px;
       text-decoration: none;
       overflow: hidden;
-      width: 100%;
       padding-bottom: 10px;
       justify-content: space-between;
       transition: 0.5s;
+      width: fit-content;
+      max-width: 370px;
 
       &:hover {
         transform: translateY(-10px);
@@ -119,12 +121,12 @@
 
       &-desc {
         font-weight: 400;
-        max-width: 336px;
-        width: 336px;
+        max-width: 330px;
+        width: 330px;
         font-size: 14px;
         letter-spacing: -0.03em;
         color: #fff;
-        height: 200px;
+        height: 180px;
         margin: 6px 20px;
 
         @include respond(md) {
