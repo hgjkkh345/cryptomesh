@@ -5,6 +5,7 @@ import img2 from "assets/images/ccp-new.png"
 import img3 from "assets/images/cryptomesh-binance.png"
 import img4 from "assets/images/CoinMarketCap.png"
 import img5 from "assets/images/bitget.png"
+import img6 from "assets/images/phemex.png"
 import "./NewsHome.scss"
 import {SimpleButton} from "../SimpleButton";
 import {routes} from "../../utils";
@@ -45,6 +46,13 @@ export const NewsHome = (): JSX.Element => {
       icon: img5,
       link: "https://www.bitget.com/news/detail/12560605011201",
       source: 'Bitget',
+    },
+    {
+      title: "Cryptomesh Introduces Flexible Ethereum Staking Plan",
+      desc: "Cryptomesh's new Ethereum staking plan removes the 32 ETH minimum, allowing users to stake any amount with competitive rewards and robust security.",
+      icon: img6,
+      link: "https://phemex.com/news/article/cryptomesh-introduces-flexible-ethereum-staking-plan-29268",
+      source: 'Phemex',
     },
   ]
   return (
