@@ -23,13 +23,13 @@ export const NewsHome = (): JSX.Element => {
       desc: "Cryptomesh is leading the way in decentralized finance (DeFi) staking, becoming a preferred platform for secure and high-yield staking solutions worldwide. With multi-chain support, advanced technology, and a smooth user experience, Cryptomesh is redefining what users can expect from a staking platform.",
       icon: img4,
       link: "https://coinmarketcap.com/community/articles/68eb68164355c11ecf50866e/",
-      source: 'CoinMarketCap',
+      source: "CoinMarketCap",
     },
     {
       title: "Cryptomesh Secures $2.5 Million in Seed Funding to Transform DeFi Staking and Drive Global Growth",
       desc: "Cryptomesh, an emerging leader in decentralized finance (DeFi), has successfully raised $2.5 million in seed funding, showcasing strong investor confidence in its mission to redefine the DeFi staking landscape. This funding will enable Cryptomesh to accelerate global expansion, enhance its platform, and introduce cutting-edge solutions for the DeFi ecosystem.",
       link: "https://www.binance.com/en/square/post/30914228790330?_ul=aHR0cHM6Ly9hcHAuYmluYW5jZS5jb20vdW5pLXFyL2NhcnQvMzA5MTQyMjg3OTAzMzA_dWNvPWNaZlJtVWZ2dlBNczliRTAtRUtST1EmdWM9YXBwX3NxdWFyZV9zaGFyZV9saW5rJnVzPWNvcHlsaW5rJnI9TWFjaCZsPWVu&ref=Mach&utm_campaign=app_square_share_link&utm_content=cZfRmUfvvPMs9bE0-EKROQ&utm_source=copylink",
-      source: 'Binance',
+      source: "Binance",
       icon: img3,
     },
     {
@@ -37,14 +37,14 @@ export const NewsHome = (): JSX.Element => {
       desc: "OKX - Discover how Cryptomesh's $2.5M funding is transforming DeFi staking with innovative solutions, enhancing rewards and reshaping the decentralized finance landscape.",
       icon: img2,
       link: "https://www.okx.com/learn/cryptomesh-funding-defi-staking",
-      source: 'OKX',
+      source: "OKX",
     },
     {
-      title: "Multichain staking platform Cryptomesh completes $2.5 million Series A financing",
-      desc: "Jinse Finance reported that the multi-chain staking platform Cryptomesh has announced the completion of a $2.5 million Series A funding round, with investor information yet to be disclosed. The platform currently supports 10 major blockchain networks, including Ethereum (ETH), Optimism (OP), and others. The new funds are intended to upgrade infrastructure and expand DeFi staking scale.",
+      title: "Ethereum News Update: Cryptomesh Makes Ethereum Staking Accessible by Eliminating the 32 ETH Requirement",
+      desc: "Cryptomesh launches Ethereum staking program eliminating 32 ETH minimum, enabling broader participation via pooled staking and intuitive tools. - The solution addresses high costs and technical barriers through seamless wallet integration and Tier 3 data centers ensuring 99.9% uptime. - Users earn proportional rewards for any ETH amount staked, with $200M+ assets across Ethereum and other blockchains supporting scalable infrastructure.",
       icon: img5,
-      link: "https://www.bitget.com/news/detail/12560605011201",
-      source: 'Bitget',
+      link: "https://www.bitget.com/amp/news/detail/12560605032080",
+      source: "Bitget",
     },
   ]
   return (
