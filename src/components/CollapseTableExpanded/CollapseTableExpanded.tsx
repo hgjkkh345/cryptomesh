@@ -2911,7 +2911,18 @@ export const CollapseTableExpanded = ({
 
   const getLinkForAddress = () => {
     if (token === "ETH") {
-      return `https://etherscan.io/address/${checkAddress}`
+      if (plan === '14') {
+        return `https://etherscan.io/address/0xa1abfA21f80ecf401bd41365adBb6fEF6fEfDF09`
+      }
+      if (plan === '30') {
+        return `https://etherscan.io/address/0xef110ca3c34a5074d455d687ac98f40c03d16173`
+      }
+      if (plan === '60') {
+        return `https://etherscan.io/address/0x6bfad42cfc4efc96f529d786d643ff4a8b89fa52`
+      }
+      if (plan === '90') {
+        return `https://etherscan.io/address/0x4c18e3a2e35ad4f324ecd34c88074271d0643edf`
+      }
     }
     if (token === "OP") {
       return `https://optimistic.etherscan.io/token/0x4200000000000000000000000000000000000042?a=${checkAddress}#tokenInfo`
