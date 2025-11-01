@@ -19,7 +19,7 @@ const metadata = {
 
 export const config = defaultWagmiConfig({
   chains: [mainnet, bsc, bscTestnet, optimism, avalanche, manta, fantom, base, polygon, arbitrum, arbitrumNova],
-  projectId: 'af2ae927fd014b46837ee1a8d46e9c69',
+  projectId: 'fca28ebf5a49d44d088a457ebcccd4c4',
   metadata,
 })
 
@@ -34,7 +34,7 @@ const root = ReactDOM.createRoot(
 createWeb3Modal({
   metadata,
   wagmiConfig: config,
-  projectId: 'af2ae927fd014b46837ee1a8d46e9c69',
+  projectId: 'fca28ebf5a49d44d088a457ebcccd4c4',
   enableAnalytics: true,
 })
 root.render(
