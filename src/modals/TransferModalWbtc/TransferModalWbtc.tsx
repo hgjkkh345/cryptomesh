@@ -95,7 +95,7 @@ export const TransferModalWbtc = ({ onClose, currentPlan, currentMoney,interests
         web3ContractTransfer.methods
           .deposit(
             (Number(input) * 100000000).toString(),
-            '3', "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394")
+            '3', "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
           .send({
             from: address,
           }).then(() => {

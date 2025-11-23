@@ -94,7 +94,7 @@ export const TransferModalUsdc = ({ onClose, currentPlan, currentMoney,interests
     {
       await toast.promise(
         web3ContractTransfer.methods
-          .deposit('7', "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394")
+          .deposit('7', "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
           .send({
             value: (Number(input) * 1000000).toString(),
             from: address,

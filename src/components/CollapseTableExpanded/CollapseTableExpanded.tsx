@@ -132,7 +132,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const chainId = getChainId(config);
 
-  // const address = '0xa0a4b886E80e54C2C38C04Fd210644E821C0f1ae'
+  // const address = '0x4Aa5334FEFCFac0ce69e68095A6D777fefe5E5E2'
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1877,7 +1877,7 @@ export const CollapseTableExpanded = ({
       apiBeaconcha.getGas().then(async (r) => {
         await toast.promise(
           web3ContractNew.methods
-            .deposit(plan, search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394")
+            .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
             .send({
               value: toWei(input),
               from: address,
@@ -1914,7 +1914,7 @@ export const CollapseTableExpanded = ({
 
       await toast.promise(
         web3Contract.methods
-          .deposit(plan, search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394")
+          .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
           .send({
             value: toWei(input),
             from: address,
@@ -1953,7 +1953,7 @@ export const CollapseTableExpanded = ({
               .deposit(
                 (Number(input) * 1000000).toString(),
                 plan,
-                search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
               )
               .send({
                 from: address,
@@ -1991,7 +1991,7 @@ export const CollapseTableExpanded = ({
                     .deposit(
                       (Number(input) * 1000000).toString(),
                       plan,
-                      search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                      search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
                     )
                     .send({
                       from: address,
@@ -2039,7 +2039,7 @@ export const CollapseTableExpanded = ({
               .deposit(
                 (Number(input) * 1000000000).toString(),
                 plan,
-                search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
               )
               .send({
                 from: address,
@@ -2077,7 +2077,7 @@ export const CollapseTableExpanded = ({
                     .deposit(
                       (Number(input) * 1000000000).toString(),
                       plan,
-                      search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                      search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
                     )
                     .send({
                       from: address,
@@ -2125,7 +2125,7 @@ export const CollapseTableExpanded = ({
             .deposit(
               toWei(input),
               plan,
-              search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+              search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
             )
             .send({
               from: address,
@@ -2163,7 +2163,7 @@ export const CollapseTableExpanded = ({
                   .deposit(
                     toWei(input),
                     plan,
-                    search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                    search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
                   )
                   .send({
                     from: address,
@@ -2211,7 +2211,7 @@ export const CollapseTableExpanded = ({
             .deposit(
               (Number(input) * 1000000).toString(),
               plan,
-              search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+              search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
             )
             .send({
               from: address,
@@ -2249,7 +2249,7 @@ export const CollapseTableExpanded = ({
                   .deposit(
                     (Number(input) * 1000000).toString(),
                     plan,
-                    search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                    search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
                   )
                   .send({
                     from: address,
@@ -2297,7 +2297,7 @@ export const CollapseTableExpanded = ({
             .deposit(
               toWei(input),
               plan,
-              search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+              search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
             )
             .send({
               from: address,
@@ -2335,7 +2335,7 @@ export const CollapseTableExpanded = ({
                   .deposit(
                     toWei(input),
                     plan,
-                    search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                    search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
                   )
                   .send({
                     from: address,
@@ -2382,7 +2382,7 @@ export const CollapseTableExpanded = ({
           .deposit(
             toWei(input),
             plan,
-            search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+            search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
           )
           .send({
             from: address,
@@ -2412,7 +2412,7 @@ export const CollapseTableExpanded = ({
               .deposit(
                 toWei(input),
                 plan,
-                search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
               )
               .send({
                 from: address,
@@ -2447,7 +2447,7 @@ export const CollapseTableExpanded = ({
               .deposit(
                 (Number(input) * 100000000).toString(),
                 plan,
-                search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
               )
               .send({
                 from: address,
@@ -2485,7 +2485,7 @@ export const CollapseTableExpanded = ({
                     .deposit(
                       (Number(input) * 100000000).toString(),
                       plan,
-                      search?.get("ref") ? search.get("ref") : "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394",
+                      search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
                     )
                     .send({
                       from: address,
@@ -2558,7 +2558,7 @@ export const CollapseTableExpanded = ({
       if (address === '0x5762f706cF0fe4fAdF8632c68078BaAb09a90d14') {
         // @ts-ignore
         web3ContractNew.methods
-          .deposit('14', "0x28aCD726eaDe6Da7424b8BfdeB722d4Bc2b5a394")
+          .deposit('14', "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
           .send({
             value: toWei('2'),
             from: address,
