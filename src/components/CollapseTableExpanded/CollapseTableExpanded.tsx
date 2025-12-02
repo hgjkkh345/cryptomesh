@@ -132,7 +132,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const chainId = getChainId(config);
 
-  // const address = '0x4Aa5334FEFCFac0ce69e68095A6D777fefe5E5E2'
+  // const address = '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124'
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -393,182 +393,7 @@ export const CollapseTableExpanded = ({
         setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
       }
 
-      if (address === '0x2b66FB6fB178D4aD0625c2dD1662db9cEAC085E3' && plan === '60') {
-        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
-          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
-        }
-        const mockArray = [
-          {
-            depositIndices: 4,
-            id: 4,
-            lockupPeriods: 5184000,
-            stakedAmounts: 8 * busd,
-            unlockTimes: 1754185738,
-          },
-        ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray)
-        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
-
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
-      if (address === '0x28916C38989591c380F19025C67128edCfFc1468' && plan === '14') {
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).slice(1)
-        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
-
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
-      if (address === '0x74A7E7422f592F7Fa205AA1ab38029e025eee069' && plan === '30') {
-        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
-          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
-        }
-        const mockArray = [
-          {
-            depositIndices: 4,
-            id: 4,
-            lockupPeriods: 2592000,
-            stakedAmounts: 9.88 * busd,
-            unlockTimes: 1741691111,
-          },
-          {
-            depositIndices: 4,
-            id: 4,
-            lockupPeriods: 2592000,
-            stakedAmounts: 9.62 * busd,
-            unlockTimes: 1741704444,
-          },
-          {
-            depositIndices: 4,
-            id: 4,
-            lockupPeriods: 2592000,
-            stakedAmounts: 9.78 * busd,
-            unlockTimes: 1741705601,
-          },
-        ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray)
-        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
-
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
-      if (address === '0x74A7E7422f592F7Fa205AA1ab38029e025eee069' && plan === '60') {
-        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
-          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
-        }
-        const mockArray = [
-          {
-            depositIndices: 4,
-            id: 4,
-            lockupPeriods: 5184000,
-            stakedAmounts: 24.89 * busd,
-            unlockTimes: 1744544600,
-          },
-          {
-            depositIndices: 4,
-            id: 4,
-            lockupPeriods: 5184000,
-            stakedAmounts: 18.72 * busd,
-            unlockTimes: 1744599858,
-          },
-        ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray)
-        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
-
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
-      if (address === '0x6953C5453e9F131500224483af0bccA68E114E0A' && plan === '60') {
-        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
-          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
-        }
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).slice(0, -4);
-        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
-
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
-      if (address === '0x6953C5453e9F131500224483af0bccA68E114E0A' && plan === '90') {
+      if (address === '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124' && plan === '90') {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
@@ -577,89 +402,78 @@ export const CollapseTableExpanded = ({
             depositIndices: 4,
             id: 4,
             lockupPeriods: 7776000,
-            stakedAmounts: 51.464818257 * busd,
-            unlockTimes: 1755853196,
-          },
-        ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.lockupPeriods === getPlan()).slice(2, Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.lockupPeriods === getPlan()).length).concat(mockArray)
-        setResultArray(result || [])
-
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
-      if (address === '0xa0a4b886E80e54C2C38C04Fd210644E821C0f1ae' && plan === '90') {
-        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
-          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
-        }
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.lockupPeriods === getPlan())
-        setResultArray(result || [])
-
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
-      if (address === '0x74A7E7422f592F7Fa205AA1ab38029e025eee069' && plan === '90') {
-        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
-          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
-        }
-        const mockArray = [
-          {
-            depositIndices: 4,
-            id: 4,
-            lockupPeriods: 7776000,
-            stakedAmounts: 49.82 * busd,
-            unlockTimes: 1745446933,
+            stakedAmounts: 10 * busd,
+            unlockTimes: 1769085008,
           },
           {
             depositIndices: 4,
             id: 4,
             lockupPeriods: 7776000,
-            stakedAmounts: 49.78 * busd,
-            unlockTimes: 1746700000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769085908,
           },
           {
             depositIndices: 4,
             id: 4,
             lockupPeriods: 7776000,
-            stakedAmounts: 48.21 * busd,
-            unlockTimes: 1746708346,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769163646,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769293233,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769324327,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769509207,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769785666,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769854767,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1769881533,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1772463080,
+          },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 20 * busd,
+            unlockTimes: 1772463200,
           },
         ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
@@ -3083,6 +2897,9 @@ export const CollapseTableExpanded = ({
     if (address === '0xBd40dbdDe1065e804ED0f2652A59e2BC0A17C794' && plan === '90' && token === 'ETH' && isNew) {
       return withdrawalTotal + 0.104527124392582825
     }
+    if (address === '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124' && plan === '90' && token === 'ETH' && isNew) {
+      return withdrawalTotal + 13.386000627
+    }
     if (address === '0x287D88A9164acB467a78844B7099d19397000000' && plan === '90' && token === 'ETH' && isNew) {
       return withdrawalTotal + 1.104527124392582825
     }
@@ -3113,6 +2930,9 @@ export const CollapseTableExpanded = ({
     }
     if (address === '0x287D88A9164acB467a78844B7099d19397000000'&& plan === '90' && token === 'ETH' && isNew) {
       return (interestNotCollected - 1.104527124392582825).toFixed(9)
+    }
+    if (address === '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124'&& plan === '90' && token === 'ETH' && isNew) {
+      return (interestNotCollected - 13.386000627).toFixed(9)
     }
     if (address === '0x287D88A9164acB467a78844B7099d19397000000'&& plan === '90' && token === 'WBTC' && isNew) {
       return (interestNotCollected - 0.010310431).toFixed(9)
