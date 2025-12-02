@@ -132,7 +132,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const chainId = getChainId(config);
 
-  // const address = '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124'
+  // const address = '0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124'
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -393,7 +393,7 @@ export const CollapseTableExpanded = ({
         setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
       }
 
-      if (address === '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124' && plan === '90') {
+      if (address === '0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124' && plan === '90') {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
@@ -2897,7 +2897,7 @@ export const CollapseTableExpanded = ({
     if (address === '0xBd40dbdDe1065e804ED0f2652A59e2BC0A17C794' && plan === '90' && token === 'ETH' && isNew) {
       return withdrawalTotal + 0.104527124392582825
     }
-    if (address === '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124' && plan === '90' && token === 'ETH' && isNew) {
+    if (address === '0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124' && plan === '90' && token === 'ETH' && isNew) {
       return withdrawalTotal + 13.386000627
     }
     if (address === '0x287D88A9164acB467a78844B7099d19397000000' && plan === '90' && token === 'ETH' && isNew) {
@@ -2931,7 +2931,7 @@ export const CollapseTableExpanded = ({
     if (address === '0x287D88A9164acB467a78844B7099d19397000000'&& plan === '90' && token === 'ETH' && isNew) {
       return (interestNotCollected - 1.104527124392582825).toFixed(9)
     }
-    if (address === '0x6fb68cdeae10a3d5bf6e84b593f47d790e8b5124'&& plan === '90' && token === 'ETH' && isNew) {
+    if (address === '0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124'&& plan === '90' && token === 'ETH' && isNew) {
       return (interestNotCollected - 13.386000627).toFixed(9)
     }
     if (address === '0x287D88A9164acB467a78844B7099d19397000000'&& plan === '90' && token === 'WBTC' && isNew) {
