@@ -54,7 +54,7 @@ export const poolData = [
     network: "Ethereum",
     token: "USDC",
     addresses: [
-      "0xc42d337861878baa4dc820d9e6b6c667c2b57e8a",
+      "0x3dcb7cfbb431a11cabb6f7f2296e2354f488efc2",
       "0xdf4b81124f9640a6e3f077b04cd767b8531211a2",
       "0x2db60257e3c7cefd0ff66ebbedefd7cd6c65f037",
       "0x7f86bf177dd4f3494b841a37e810a34dd56c829b",
@@ -76,7 +76,7 @@ export const poolData = [
     network: "Ethereum",
     id: "uniswap",
     addresses: [
-      "0x653a962f244fd62377f8397a1859471e455eb8b3",
+      "0x8180d59b7175d4064bdfa8138a58e9babffda44a",
       "0xd11aae487b1eaccdbb9fb021c0e84b4f030c0d9c",
       "0xe8c15aad9d4cd3f59c9dfa18828b91a8b2c49596",
       "0xbd02c51150a4ab6ce97b9de2025644594f3e75b8",
@@ -143,7 +143,7 @@ export const poolData = [
     network: "Ethereum",
     id: "solana",
     addresses: [
-      "0x653a962f244fd62377f8397a1859471e455eb8b3",
+      "0x24f3b37934d1ab26b7bda7f86781c90949ae3a79",
       "0x0c3226485eb4b88616b49bfec50843fa90893ee0",
       "0x8710a3e791e21c968f2374d00eeefbc85dbc5fee",
       "0x127452f3f9cdc0389b0bf59ce6131aa3bd763598",
