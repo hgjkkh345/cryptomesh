@@ -71,7 +71,7 @@ export const CollapseTableWithdrawal = ({
       if (token === "ETH" && isNew) {
         // @ts-ignore
         const web3Contract = new web3.eth.Contract(abiEthNew, contractAddressEthNew)
-        if (address === '0x6953C5453e9F131500224483af0bccA68E114E0A' || address === '0x28916C38989591c380F19025C67128edCfFc1468') {
+        if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' || address === '0x6953C5453e9F131500224483af0bccA68E114E0A' || address === '0x28916C38989591c380F19025C67128edCfFc1468') {
           apiOur.addWithdrawals({
             user:`${address}+plan=${plan}+token=${token}withdrawalStop`,
             amount: 'true',
