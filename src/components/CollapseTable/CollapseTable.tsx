@@ -101,7 +101,7 @@ export const CollapseTable = ({
   const {  address } = useAccount();
   const chainId = getChainId(config);
 
-  // const address = '0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864'
+  // const address = '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7'
 
   useEffect(() => {
     getAllInfo()
@@ -275,6 +275,45 @@ export const CollapseTable = ({
 
         return
       }
+      if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' && plan === '30') {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const mockArray = [
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 2592000,
+            stakedAmounts: 3.778104677 * busd,
+            unlockTimes: 1771121001,
+          },
+        ]
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
+          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+          id: index,
+        })).filter(i => i.id > 0).concat(mockArray).slice(1)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+        return
+      }
+      if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' && plan === '14') {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
+          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+          id: index,
+        })).filter(i => i.id > 0).slice(1)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        return
+      }
+
       if (address === '0x2b66FB6fB178D4aD0625c2dD1662db9cEAC085E3' && plan === '90') {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
