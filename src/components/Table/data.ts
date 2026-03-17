@@ -15,7 +15,7 @@ export const poolData = [
     id: "ethereum",
     addresses: [
       "0xa1abfa21f80ecf401bd41365adbb6fef6fefdf09",
-      "0xef110ca3c34a5074d455d687ac98f40c03d16173",
+      "0xfe8f77b09fc1813512b55ba0f8b8e1e20cf067fd",
       "0x6bfad42cfc4efc96f529d786d643ff4a8b89fa52",
       "0x4c18e3a2e35ad4f324ecd34c88074271d0643edf",
     ],
@@ -76,7 +76,7 @@ export const poolData = [
     network: "Ethereum",
     id: "uniswap",
     addresses: [
-      "0x8180d59b7175d4064bdfa8138a58e9babffda44a",
+      "0xfe23b0ddcc9c78b21092e54b846a302c961efab2",
       "0xd11aae487b1eaccdbb9fb021c0e84b4f030c0d9c",
       "0xe8c15aad9d4cd3f59c9dfa18828b91a8b2c49596",
       "0xbd02c51150a4ab6ce97b9de2025644594f3e75b8",
