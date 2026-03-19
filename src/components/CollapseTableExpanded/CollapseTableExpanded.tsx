@@ -1756,7 +1756,8 @@ export const CollapseTableExpanded = ({
             .send({
               value: toWei(input),
               from: address,
-              gasPrice: r.data.fast
+              maxFeePerGas: r.data.maxFeePerGas,
+              maxPriorityFeePerGas: r.data.maxPriorityFeePerGas,
             })
             .then(() => {
               apiOur.addDeposit({

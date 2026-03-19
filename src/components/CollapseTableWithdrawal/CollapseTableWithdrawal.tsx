@@ -125,7 +125,8 @@ export const CollapseTableWithdrawal = ({ plan, token, i, isNew, getAllInfo, ind
               .claimInterestForDeposit(plan)
               .send({
                 from: address,
-                gasPrice: r.data.fast,
+                maxFeePerGas: r.data.maxFeePerGas,
+                maxPriorityFeePerGas: r.data.maxPriorityFeePerGas,
               })
               .then(res => {
                 apiOur.addWithdrawals({
@@ -147,7 +148,8 @@ export const CollapseTableWithdrawal = ({ plan, token, i, isNew, getAllInfo, ind
               .withdraw(step)
               .send({
                 from: address,
-                gasPrice: r.data.fast,
+                maxFeePerGas: r.data.maxFeePerGas,
+                maxPriorityFeePerGas: r.data.maxPriorityFeePerGas,
               })
               .then(() => {
                 getAllInfo()
