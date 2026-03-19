@@ -57,6 +57,7 @@ import {getFromLocalStorage, mixins, moneyFormatter, routes, setToLocalStorage, 
 import { api } from "../../service/api/api"
 import { apiScan } from "../../service/api/apiScan"
 import toast from "react-hot-toast";
+import {apiBeaconcha} from "../../service/api/apiBeaconcha";
 import {CollapseTableWithdrawal} from "../CollapseTableWithdrawal";
 import {config} from "../../index";
 import {useAccount, useWalletClient} from "wagmi";
@@ -131,7 +132,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const chainId = getChainId(config);
 
-  // const address = '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7'
+  // const address = '0x6C600253D3781C201763eEB39140eC6fda37DaDe'
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1748,35 +1749,38 @@ export const CollapseTableExpanded = ({
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiEthNew, contractAddressEthNew)
 
-      await toast.promise(
-        web3ContractNew.methods
-          .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
-          .send({
-            value: toWei(input),
-            from: address,
-          })
-          .then(() => {
-            apiOur.addDeposit({
-              account: `${address}`,
-              plan,
-              token,
-              amount: Number(input),
+      apiBeaconcha.getGas().then(async (r) => {
+        await toast.promise(
+          web3ContractNew.methods
+            .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
+            .send({
+              value: toWei(input),
+              from: address,
+              gasPrice: r.data.fast
             })
-            getAllInfo()
-            if (!!search.get("ref")) {
-              apiOur.addRefAddress({
-                user: `${address}`,
-                follower: `${search.get("ref")}`,
+            .then(() => {
+              apiOur.addDeposit({
+                account: `${address}`,
+                plan,
+                token,
+                amount: Number(input),
               })
-            }
-            setInput("")
-          }),
-        {
-          loading: 'Waiting for deposit transaction',
-          success: <b>Deposited {Number(input)}! ✅</b>,
-          error: e => <b>{e.message}</b>,
-        },
-      )
+              getAllInfo()
+              if (!!search.get("ref")) {
+                apiOur.addRefAddress({
+                  user: `${address}`,
+                  follower: `${search.get("ref")}`,
+                })
+              }
+              setInput("")
+            }),
+          {
+            loading: 'Waiting for deposit transaction',
+            success: <b>Deposited {Number(input)}! ✅</b>,
+            error: e => <b>{e.message}</b>,
+          },
+        )
+      })
     }
     if (token === "BNB") {
       // @ts-ignore
