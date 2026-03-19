@@ -29,7 +29,6 @@ import { ReactComponent as Info } from "assets/icons/info-icon.svg"
 import { SimpleButton } from "../SimpleButton"
 import toast from "react-hot-toast";
 import {apiOur} from "../../service/api/apiOur";
-import {apiBeaconcha} from "../../service/api/apiBeaconcha";
 import {TimerSmall} from "../TimerSmall";
 import {useMedia} from "use-media";
 import {mixins, walletClientToSigner} from "../../utils";
@@ -118,45 +117,41 @@ export const CollapseTableWithdrawal = ({
                },
             )
          } else {
-           apiBeaconcha.getGas().then((r) => {
-             toast.promise(
-               web3Contract.methods
-                 .claimInterestForDeposit(plan)
-                 .send({
-                   from: address,
-                   gasPrice: r.data.fast
-                 })
-                 .then((res) => {
-                   apiOur
-                     .addWithdrawals({
-                       user: `${address}+plan=${plan}+token=${token}claimed`,
-                       amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || '0',
-                     })
-                   toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
-                 }),
-               {
-                 loading: 'Waiting for claim interests',
-                 success: '',
-                 error: e => <b>{e.message}</b>,
-               },
-             )
-             toast.promise(
-               web3Contract.methods
-                 .withdraw(step)
-                 .send({
-                   from: address,
-                   gasPrice: r.data.fast
-                 })
-                 .then(() => {
-                   getAllInfo()
-                 }),
-               {
-                 loading: 'Waiting for withdraw',
-                 success: <b>Withdrawal is success!</b>,
-                 error: e => <b>{e.message}</b>,
-               },
-             )
-           })
+           toast.promise(
+             web3Contract.methods
+               .claimInterestForDeposit(plan)
+               .send({
+                 from: address,
+               })
+               .then((res) => {
+                 apiOur
+                   .addWithdrawals({
+                     user: `${address}+plan=${plan}+token=${token}claimed`,
+                     amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || '0',
+                   })
+                 toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
+               }),
+             {
+               loading: 'Waiting for claim interests',
+               success: '',
+               error: e => <b>{e.message}</b>,
+             },
+           )
+           toast.promise(
+             web3Contract.methods
+               .withdraw(step)
+               .send({
+                 from: address,
+               })
+               .then(() => {
+                 getAllInfo()
+               }),
+             {
+               loading: 'Waiting for withdraw',
+               success: <b>Withdrawal is success!</b>,
+               error: e => <b>{e.message}</b>,
+             },
+           )
          }
       }
 

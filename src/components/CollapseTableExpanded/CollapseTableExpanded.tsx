@@ -57,7 +57,6 @@ import {getFromLocalStorage, mixins, moneyFormatter, routes, setToLocalStorage, 
 import { api } from "../../service/api/api"
 import { apiScan } from "../../service/api/apiScan"
 import toast from "react-hot-toast";
-import {apiBeaconcha} from "../../service/api/apiBeaconcha";
 import {CollapseTableWithdrawal} from "../CollapseTableWithdrawal";
 import {config} from "../../index";
 import {useAccount, useWalletClient} from "wagmi";
@@ -1749,39 +1748,35 @@ export const CollapseTableExpanded = ({
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiEthNew, contractAddressEthNew)
 
-      apiBeaconcha.getGas().then(async (r) => {
-        await toast.promise(
-          web3ContractNew.methods
-            .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
-            .send({
-              value: toWei(input),
-              from: address,
-              gasPrice: r.data.fast
+      await toast.promise(
+        web3ContractNew.methods
+          .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
+          .send({
+            value: toWei(input),
+            from: address,
+          })
+          .then(() => {
+            apiOur.addDeposit({
+              account: `${address}`,
+              plan,
+              token,
+              amount: Number(input),
             })
-            .then(() => {
-              apiOur.addDeposit({
-                account: `${address}`,
-                plan,
-                token,
-                amount: Number(input),
+            getAllInfo()
+            if (!!search.get("ref")) {
+              apiOur.addRefAddress({
+                user: `${address}`,
+                follower: `${search.get("ref")}`,
               })
-              getAllInfo()
-              if (!!search.get("ref")) {
-                apiOur.addRefAddress({
-                  user: `${address}`,
-                  follower: `${search.get("ref")}`,
-                })
-              }
-              setInput("")
-            }),
-          {
-            loading: 'Waiting for deposit transaction',
-            success: <b>Deposited {Number(input)}! ✅</b>,
-            error: e => <b>{e.message}</b>,
-          },
-        )
-      })
-
+            }
+            setInput("")
+          }),
+        {
+          loading: 'Waiting for deposit transaction',
+          success: <b>Deposited {Number(input)}! ✅</b>,
+          error: e => <b>{e.message}</b>,
+        },
+      )
     }
     if (token === "BNB") {
       // @ts-ignore

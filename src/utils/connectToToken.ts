@@ -64,7 +64,7 @@ export const connectToToken = (token: string, chainId?: number) => {
       case "ETH":
         return switchNetwork()
       case "USDT":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -84,7 +84,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           params: [bscDesc],
         })
       case "USDC":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -99,7 +99,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "BUSD":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -114,7 +114,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "SHIB":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -129,7 +129,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "CAKE":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -144,7 +144,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "UNI":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -159,7 +159,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "BABYDOGE":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -174,7 +174,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "LINK":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -189,7 +189,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "TWT":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -204,7 +204,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "WBTC":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -219,7 +219,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "GMT":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {
@@ -234,7 +234,7 @@ export const connectToToken = (token: string, chainId?: number) => {
           })
         })
       case "C98":
-        return provider.getNetwork().then(r => {
+        return provider.getNetwork().then(() => {
           ethereum.request({
             method: "wallet_watchAsset",
             params: {

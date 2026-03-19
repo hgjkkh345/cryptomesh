@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 
 // Наш хук
 export default function useDebounce(value, delay) {

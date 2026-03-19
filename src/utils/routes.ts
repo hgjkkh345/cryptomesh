@@ -1,5 +1,3 @@
-import { CryptoIncubator } from "../pages/CryptoIncubator"
-
 export const routes = {
   index: "/",
 
