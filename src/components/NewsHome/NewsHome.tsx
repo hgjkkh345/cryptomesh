@@ -71,7 +71,7 @@ export const NewsHome = (): JSX.Element => {
         ))}
       </div>
       <div className='news-home-btn'>
-        <SimpleButton text='More News' href={routes.news} variant='colored'/>
+        3
       </div>
     </div>
   )
