@@ -127,12 +127,13 @@ export const CollapseTableExpanded = ({
   const [disabledStake, setDisabledStake] = useState(true)
   const busd = 1000000000000000000
 
-  const {  address } = useAccount();
-  const { data: walletClient } = useWalletClient({ chainId: 1 })
-  const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const chainId = getChainId(config);
+  const { address, connector } = useAccount()
+  const { data: walletClient } = useWalletClient({ chainId: chainId || 1 })
+  const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
+  const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312"
+  // const address = "0x6C600253D3781C201763eEB39140eC6fda37DaDe"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1834,6 +1835,19 @@ export const CollapseTableExpanded = ({
 
   const toWei = amount => Web3.utils.toWei(amount)
 
+  const getWalletProvider = () => {
+    // @ts-ignore
+    if (library?.provider) {
+      // @ts-ignore
+      return library.provider
+    }
+
+    // Fall back to the injected provider when the wagmi wallet client is not available
+    // for the currently selected chain.
+    // @ts-ignore
+    return window?.ethereum || null
+  }
+
   const buy = async () => {
     if (!input.length) {
       alert("Fill input value")
@@ -1845,46 +1859,70 @@ export const CollapseTableExpanded = ({
 
       return
     }
-    // @ts-ignore
-    const web3 = new Web3(library.provider)
+    const walletProvider = getWalletProvider()
+    if (!walletProvider) {
+      toast.error('Wallet provider is unavailable. Please reconnect your wallet.')
+      return
+    }
+
+    const web3 = new Web3(walletProvider as any)
 
     if (token === "ETH" && isNew) {
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiEthNew, contractAddressEthNew)
 
-      apiBeaconcha.getGas().then(async (r) => {
-        await toast.promise(
-          web3ContractNew.methods
-            .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
-            .send({
-              value: toWei(input),
-              from: address,
-              maxFeePerGas: r.data.maxFeePerGas,
-              maxPriorityFeePerGas: r.data.maxPriorityFeePerGas,
-            })
-            .then(() => {
-              apiOur.addDeposit({
-                account: `${address}`,
-                plan,
-                token,
-                amount: Number(input),
-              })
-              getAllInfo()
-              if (!!search.get("ref")) {
-                apiOur.addRefAddress({
-                  user: `${address}`,
-                  follower: `${search.get("ref")}`,
-                })
-              }
-              setInput("")
-            }),
-          {
-            loading: 'Waiting for deposit transaction',
-            success: <b>Deposited {Number(input)}! ✅</b>,
-            error: e => <b>{e.message}</b>,
-          },
-        )
-      })
+      const handleSuccess = () => {
+        apiOur.addDeposit({
+          account: `${address}`,
+          plan,
+          token,
+          amount: Number(input),
+        })
+        getAllInfo()
+        if (!!search.get("ref")) {
+          apiOur.addRefAddress({
+            user: `${address}`,
+            follower: `${search.get("ref")}`,
+          })
+        }
+        setInput("")
+      }
+
+      const depositMethod = web3ContractNew.methods
+        .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
+
+      const sendDeposit = (extraConfig = {}) => depositMethod
+        .send({
+          value: toWei(input),
+          from: address,
+          ...extraConfig,
+        })
+        .then(handleSuccess)
+
+      let depositPromise
+
+      if (isCoinbaseWallet) {
+        depositPromise = sendDeposit()
+      } else {
+        try {
+          const r = await apiBeaconcha.getGas()
+          depositPromise = sendDeposit({
+            maxFeePerGas: r.data.maxFeePerGas,
+            maxPriorityFeePerGas: r.data.maxPriorityFeePerGas,
+          })
+        } catch {
+          depositPromise = sendDeposit()
+        }
+      }
+
+      await toast.promise(
+        depositPromise,
+        {
+          loading: 'Waiting for deposit transaction',
+          success: <b>Deposited {Number(input)}! ✅</b>,
+          error: e => <b>{e.message}</b>,
+        },
+      )
     }
     if (token === "BNB") {
       // @ts-ignore
@@ -2508,8 +2546,8 @@ export const CollapseTableExpanded = ({
       return
     }
 
-    // @ts-ignore
-    const web3 = new Web3(library.provider)
+    const walletProvider = getWalletProvider()
+    const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
       if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' || address === '0x7Bef926CBB2AB49bFa34C7b56a579da85Fa0981c' || address === '0xa0a4b886E80e54C2C38C04Fd210644E821C0f1ae' || address === '0x28916C38989591c380F19025C67128edCfFc1468' || address === '0x6953C5453e9F131500224483af0bccA68E114E0A' || address === '0x374b823f93C5c577e630063d996Ab97528303bBa') {
         apiOur
@@ -2520,15 +2558,30 @@ export const CollapseTableExpanded = ({
         setDisableClaim(true)
         return
       }
-      if ((address === '0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e' || address === '0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864') && plan === '90') {
+      if (address === "0x6C600253D3781C201763eEB39140eC6fda37DaDe" && plan === '60') {
         apiOur
           .addWithdrawals({
             user: `${address}+plan=${plan}+token=${token}claim`,
-            amount: interestNotCollected.toString()
-          }).then(() => openClaimAnn())
+            amount: interestNotCollected.toString(),
+          })
+          .then(() => openClaimAnn())
         setDisableClaim(true)
         return
       }
+        if (
+          (address === "0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e" ||
+            address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864") &&
+          plan === "90"
+        ) {
+          apiOur
+            .addWithdrawals({
+              user: `${address}+plan=${plan}+token=${token}claim`,
+              amount: interestNotCollected.toString(),
+            })
+            .then(() => openClaimAnn())
+          setDisableClaim(true)
+          return
+        }
 
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiEthNew, contractAddressEthNew)
