@@ -78,7 +78,7 @@ With improved staking accessibility, expanded infrastructure, and continued ecos
 As adoption grows and new innovations emerge, Cryptomesh will remain focused on delivering secure, flexible, and scalable staking solutions for the global crypto community.<br/>
 
     </p>`,
-    date: 'March 20, 2026',
+    date: 'January 15, 2026',
     time: '6 min read time'
   },
   {
