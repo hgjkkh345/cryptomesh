@@ -9,7 +9,7 @@ export const routes = {
   privacy: "/privacy",
   cookies: "/cookies",
   referral: "/referral",
-  // audit: "/audit",
+  audit: "/audit",
   pool: "/pool",
   page: "/page",
   swap: "/swap",

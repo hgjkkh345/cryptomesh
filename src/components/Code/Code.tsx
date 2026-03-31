@@ -23,7 +23,7 @@ export const Code = (): JSX.Element => {
         </p>
         <div className="button-line">
           {/*<SimpleButton text='Github' href={hrefs.audit}/>*/}
-          <SimpleButton className='simple-button-first' text='Audit' href={hrefs.audit}/> </div>
+          <SimpleButton className='simple-button-first' text='Audit' link={hrefs.audit}/> </div>
       </div>
     </div>
   )
