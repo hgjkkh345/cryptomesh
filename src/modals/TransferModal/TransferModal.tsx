@@ -224,7 +224,7 @@ export const TransferModal = ({ onClose, currentPlan, currentMoney,interests, to
             ))}
           </div>
           <div className="transfer-modal-content-body-form">
-            <Input type="number" onChange={v => setInput(v)} value={input}
+            <Input type="number" onChange={v => setInput(normalizeDecimalInput(v))} value={input}
                    placeholder="Add funds" /> {showInterest()} + {currentMoney} = {(currentMoney + (Number(input) || 0) + ((address === '0xAc73cb15c88131251DCb6aCe582de951E9A4F48c' || address === '0x22A41A65aa87561725c87c7671e5E45cAaB1CC21' || address === '0x01067DdCE2D7922835A9F920F7878Df43F9c2f1d' || address === '0x5d8108C20700Bb0ac8a45F49F27b4f0C29946C62' || address === '0xAc73cb15c88131251DCb6aCe582de951E9A4F48c' || address === '0x1439CE179F99f00e4A1CDaD8Ed0be03B75f3FFE4') ? interests : 0))}
           </div>
           {error && <div className="red">{error}</div>}
@@ -250,3 +250,18 @@ export const TransferModal = ({ onClose, currentPlan, currentMoney,interests, to
     </div>
   )
 }
+  const normalizeDecimalInput = (value: string) => {
+    if (!value) {
+      return value
+    }
+    if (value === ".") {
+      return "0."
+    }
+    if (value.startsWith("-.")) {
+      return `-0${value.slice(1)}`
+    }
+    if (value.startsWith(".")) {
+      return `0${value}`
+    }
+    return value
+  }

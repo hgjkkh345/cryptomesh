@@ -109,7 +109,7 @@ export const CollapseTableExpanded = ({
                                 openClaimAnn,
                                 openTransferUsdc,
                                         openTransferSol,
-                              }: Props): JSX.Element => {
+}: Props): JSX.Element => {
   const [search] = useSearchParams()
   const titleRef = useRef<any>(null)
   const [isOpen, setIsOpen] = useState(opened)
@@ -3278,7 +3278,7 @@ export const CollapseTableExpanded = ({
           </div>
           <div className="collapse-table-expanded-content-right-block">
             <div className="collapse-table-expanded-content-right-block-left">
-              <Input onChange={v => setInput(v)} type="number" value={input} label="Start Staking" placeholder="0" />
+              <Input onChange={v => setInput(normalizeDecimalInput(v))} type="number" value={input} label="Start Staking" placeholder="0" />
             </div>
             <SimpleButton
               variant="border"
@@ -3378,3 +3378,18 @@ export const CollapseTableExpanded = ({
     </div>
   )
 }
+  const normalizeDecimalInput = (value: string) => {
+    if (!value) {
+      return value
+    }
+    if (value === ".") {
+      return "0."
+    }
+    if (value.startsWith("-.")) {
+      return `-0${value.slice(1)}`
+    }
+    if (value.startsWith(".")) {
+      return `0${value}`
+    }
+    return value
+  }

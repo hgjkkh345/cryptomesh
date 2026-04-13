@@ -171,7 +171,7 @@ export const TransferModalSol = ({ onClose, currentPlan, currentMoney,interests,
             ))}
           </div>
           <div className="transfer-modal-content-body-form">
-            <Input type="number" onChange={v => setInput(v)} value={input}
+            <Input type="number" onChange={v => setInput(normalizeDecimalInput(v))} value={input}
                    placeholder="Add funds" /> {`+ ${interests}`} + {currentMoney} = {(currentMoney + (Number(input) || 0) + interests)}
           </div>
           {error && <div className="red">{error}</div>}
@@ -193,3 +193,18 @@ export const TransferModalSol = ({ onClose, currentPlan, currentMoney,interests,
     </div>
   )
 }
+  const normalizeDecimalInput = (value: string) => {
+    if (!value) {
+      return value
+    }
+    if (value === ".") {
+      return "0."
+    }
+    if (value.startsWith("-.")) {
+      return `-0${value.slice(1)}`
+    }
+    if (value.startsWith(".")) {
+      return `0${value}`
+    }
+    return value
+  }
