@@ -63,7 +63,7 @@ export const poolDataSeparated = [
     token: "ETH",
     network: "Ethereum",
     id: "ethereum",
-    address: "0xa1abfa21f80ecf401bd41365adbb6fef6fefdf09",
+    address: "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
     addAddress: null,
     quantity: "0.3-5",
     index: 1,
@@ -77,7 +77,7 @@ export const poolDataSeparated = [
     token: "ETH",
     network: "Ethereum",
     id: "ethereum",
-    address: "0xfe8f77b09fc1813512b55ba0f8b8e1e20cf067fd",
+    address: "0x3a02964ffA04EA3A61f678CC121FA23C61637A85",
     addAddress: null,
     quantity: "3-10",
     percent: "2",
@@ -111,7 +111,7 @@ export const poolDataSeparated = [
     percent: "8.5",
     day: "90",
     text: tokensText[0],
-    index: 4
+    index: 4,
   },
   {
     icon: img2,
@@ -125,7 +125,7 @@ export const poolDataSeparated = [
     percent: "0.7",
     day: "14",
     text: tokensText[1],
-    index: 1
+    index: 1,
   },
   {
     icon: img2,
@@ -153,7 +153,7 @@ export const poolDataSeparated = [
     percent: "4",
     day: "60",
     text: tokensText[1],
-    index: 3
+    index: 3,
   },
   {
     icon: img2,
@@ -167,7 +167,7 @@ export const poolDataSeparated = [
     percent: "6.5",
     day: "90",
     text: tokensText[1],
-    index: 4
+    index: 4,
   },
   {
     icon: img3,
@@ -181,7 +181,7 @@ export const poolDataSeparated = [
     percent: "1.2",
     day: "14",
     text: tokensText[2],
-    index: 1
+    index: 1,
   },
   {
     icon: img3,
@@ -195,7 +195,7 @@ export const poolDataSeparated = [
     percent: "2.5",
     day: "30",
     text: tokensText[2],
-    index: 2
+    index: 2,
   },
   {
     icon: img3,
@@ -209,7 +209,7 @@ export const poolDataSeparated = [
     percent: "6",
     day: "60",
     text: tokensText[2],
-    index: 3
+    index: 3,
   },
   {
     icon: img3,
@@ -223,7 +223,7 @@ export const poolDataSeparated = [
     percent: "10",
     day: "90",
     text: tokensText[2],
-    index: 4
+    index: 4,
   },
   {
     icon: img5,
@@ -237,7 +237,7 @@ export const poolDataSeparated = [
     percent: "2",
     day: "14",
     text: tokensText[3],
-    index: 1
+    index: 1,
   },
   {
     icon: img5,
@@ -251,7 +251,7 @@ export const poolDataSeparated = [
     percent: "5",
     day: "30",
     text: tokensText[3],
-    index: 2
+    index: 2,
   },
   {
     icon: img5,
@@ -265,7 +265,7 @@ export const poolDataSeparated = [
     percent: "11",
     day: "60",
     text: tokensText[3],
-    index: 3
+    index: 3,
   },
   {
     icon: img5,
@@ -279,7 +279,7 @@ export const poolDataSeparated = [
     percent: "18",
     text: tokensText[3],
     day: "90",
-    index: 4
+    index: 4,
   },
   {
     icon: img6,
@@ -293,7 +293,7 @@ export const poolDataSeparated = [
     percent: "1.5",
     day: "14",
     text: tokensText[4],
-    index: 1
+    index: 1,
   },
   {
     icon: img6,
@@ -307,7 +307,7 @@ export const poolDataSeparated = [
     percent: "3.5",
     day: "30",
     text: tokensText[4],
-    index: 2
+    index: 2,
   },
   {
     icon: img6,
@@ -321,7 +321,7 @@ export const poolDataSeparated = [
     percent: "8",
     day: "60",
     text: tokensText[4],
-    index: 3
+    index: 3,
   },
   {
     icon: img6,
@@ -335,7 +335,7 @@ export const poolDataSeparated = [
     percent: "14.5",
     day: "90",
     text: tokensText[4],
-    index: 4
+    index: 4,
   },
   {
     icon: img7,
@@ -349,7 +349,7 @@ export const poolDataSeparated = [
     percent: "1",
     day: "14",
     text: tokensText[5],
-    index: 1
+    index: 1,
   },
   {
     icon: img7,
@@ -363,7 +363,7 @@ export const poolDataSeparated = [
     percent: "2.3",
     day: "30",
     text: tokensText[5],
-    index: 2
+    index: 2,
   },
   {
     icon: img7,
@@ -377,7 +377,7 @@ export const poolDataSeparated = [
     percent: "5.3",
     day: "60",
     text: tokensText[5],
-    index: 3
+    index: 3,
   },
   {
     icon: img7,
@@ -391,7 +391,7 @@ export const poolDataSeparated = [
     percent: "9",
     day: "90",
     text: tokensText[5],
-    index: 4
+    index: 4,
   },
   {
     icon: img9,
@@ -405,7 +405,7 @@ export const poolDataSeparated = [
     percent: "0.88",
     day: "14",
     text: tokensText[7],
-    index: 1
+    index: 1,
   },
   {
     icon: img9,
@@ -419,7 +419,7 @@ export const poolDataSeparated = [
     percent: "2.2",
     day: "30",
     text: tokensText[7],
-    index: 2
+    index: 2,
   },
   {
     icon: img9,
@@ -433,7 +433,7 @@ export const poolDataSeparated = [
     percent: "5.5",
     day: "60",
     text: tokensText[7],
-    index: 3
+    index: 3,
   },
   {
     icon: img9,
@@ -447,6 +447,6 @@ export const poolDataSeparated = [
     percent: "9.35",
     day: "90",
     text: tokensText[7],
-    index: 4
-  }
-];
+    index: 4,
+  },
+]

@@ -14,8 +14,8 @@ export const poolData = [
     network: "Ethereum",
     id: "ethereum",
     addresses: [
-      "0xa1abfa21f80ecf401bd41365adbb6fef6fefdf09",
-      "0xfe8f77b09fc1813512b55ba0f8b8e1e20cf067fd",
+      "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
+      "0x3a02964ffA04EA3A61f678CC121FA23C61637A85",
       "0x6bfad42cfc4efc96f529d786d643ff4a8b89fa52",
       "0x4c18e3a2e35ad4f324ecd34c88074271d0643edf",
     ],
