@@ -2943,10 +2943,10 @@ export const CollapseTableExpanded = ({
   const getLinkForAddress = () => {
     if (token === "ETH") {
       if (plan === '14') {
-        return `https://etherscan.io/address/0xa1abfA21f80ecf401bd41365adBb6fEF6fEfDF09`
+        return `https://etherscan.io/address/0x8adee124447435fe03e3cd24df3f4cae32e65a3e`
       }
       if (plan === '30') {
-        return `https://etherscan.io/address/0xef110ca3c34a5074d455d687ac98f40c03d16173`
+        return `https://etherscan.io/address/0x3a02964ffa04ea3a61f678cc121fa23c61637a85`
       }
       if (plan === '60') {
         return `https://etherscan.io/address/0x6bfad42cfc4efc96f529d786d643ff4a8b89fa52`
