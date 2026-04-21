@@ -2549,7 +2549,7 @@ export const CollapseTableExpanded = ({
     const walletProvider = getWalletProvider()
     const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
-      if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' || address === '0x7Bef926CBB2AB49bFa34C7b56a579da85Fa0981c' || address === '0xa0a4b886E80e54C2C38C04Fd210644E821C0f1ae' || address === '0x28916C38989591c380F19025C67128edCfFc1468' || address === '0x6953C5453e9F131500224483af0bccA68E114E0A' || address === '0x374b823f93C5c577e630063d996Ab97528303bBa') {
+      if (address === '0xDC5B7C63940d1c5C5278394D2c626195F5524428' || address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' || address === '0x7Bef926CBB2AB49bFa34C7b56a579da85Fa0981c' || address === '0xa0a4b886E80e54C2C38C04Fd210644E821C0f1ae' || address === '0x28916C38989591c380F19025C67128edCfFc1468' || address === '0x6953C5453e9F131500224483af0bccA68E114E0A' || address === '0x374b823f93C5c577e630063d996Ab97528303bBa') {
         apiOur
           .addWithdrawals({
             user: `${address}+plan=${plan}+token=${token}claim`,
