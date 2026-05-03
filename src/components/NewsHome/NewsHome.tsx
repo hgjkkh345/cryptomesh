@@ -1,24 +1,15 @@
 import React from "react"
 
-import img1 from "assets/images/cryptomesh-kucoin.png"
+import img1 from "assets/images/messari.png"
 import img2 from "assets/images/ccp-new.png"
 import img3 from "assets/images/cryptomesh-binance.png"
 import img4 from "assets/images/CoinMarketCap.png"
 import img5 from "assets/images/bitget.png"
 import img6 from "assets/images/phemex.png"
 import "./NewsHome.scss"
-import {SimpleButton} from "../SimpleButton";
-import {routes} from "../../utils";
 
 export const NewsHome = (): JSX.Element => {
   const blocks = [
-    {
-      title: "Cryptomesh Completes $2.5M A-Round Funding to Advance DeFi Staking Transition; TVL Reaches $150M",
-      desc: "In accordance with Biji.com, DeFi staking platform Cryptomesh has raised $2.5 million in its A-round funding, with undisclosed investors.",
-      link: "https://www.kucoin.com/news/flash/cryptomesh-completes-2-5m-a-round-funding-to-advance-defi-staking-transition-tvl-reaches-150m?lang=en_US&",
-      source: "Kukoin",
-      icon: img1,
-    },
     {
       title: "Cryptomesh: Transforming DeFi Staking",
       desc: "Cryptomesh is leading the way in decentralized finance (DeFi) staking, becoming a preferred platform for secure and high-yield staking solutions worldwide. With multi-chain support, advanced technology, and a smooth user experience, Cryptomesh is redefining what users can expect from a staking platform.",
@@ -32,6 +23,13 @@ export const NewsHome = (): JSX.Element => {
       link: "https://www.binance.com/en/square/post/30914228790330?_ul=aHR0cHM6Ly9hcHAuYmluYW5jZS5jb20vdW5pLXFyL2NhcnQvMzA5MTQyMjg3OTAzMzA_dWNvPWNaZlJtVWZ2dlBNczliRTAtRUtST1EmdWM9YXBwX3NxdWFyZV9zaGFyZV9saW5rJnVzPWNvcHlsaW5rJnI9TWFjaCZsPWVu&ref=Mach&utm_campaign=app_square_share_link&utm_content=cZfRmUfvvPMs9bE0-EKROQ&utm_source=copylink",
       source: "Binance",
       icon: img3,
+    },
+    {
+      title: "Cryptomesh · DeFi · Decentralized Liquid Staking",
+      desc: "Cryptomesh is a decentralized finance (DeFi) platform offering smart contract–based staking infrastructure and reward mechanisms across multiple blockchains. It supports staking on more than 10 networks including Ethereum, Aptos, and Optimism, and implements a bug bounty program (up to $100,000) to strengthen security.",
+      link: "https://messari.io/project/cryptomesh",
+      source: "Messari",
+      icon: img1,
     },
     {
       title: "How Cryptomesh’s $2.5M Funding is Revolutionizing DeFi Staking",
@@ -52,7 +50,7 @@ export const NewsHome = (): JSX.Element => {
       desc: "Cryptomesh's new Ethereum staking plan removes the 32 ETH minimum, allowing users to stake any amount with competitive rewards and robust security.",
       icon: img6,
       link: "https://phemex.com/news/article/cryptomesh-introduces-flexible-ethereum-staking-plan-29268",
-      source: 'Phemex',
+      source: "Phemex",
     },
   ]
   return (
