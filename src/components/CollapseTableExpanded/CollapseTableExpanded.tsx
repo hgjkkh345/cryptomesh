@@ -875,43 +875,6 @@ export const CollapseTableExpanded = ({
 
         return
       }
-      if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "30") {
-        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
-          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
-        }
-        const mockArray = [
-          {
-            depositIndices: 1,
-            id: 1,
-            lockupPeriods: 2592000,
-            stakedAmounts: 4.111016093 * busd,
-            unlockTimes: 1780400629,
-          },
-        ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
-          .map((i, index) => ({
-            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-            id: index,
-          }))
-          .concat(mockArray)
-          .slice(1)
-        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
-
-        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0
-        indexResult.forEach(iResult => {
-          var timestamp = iResult.unlockTimes * 1000 - Date.now()
-          timestamp /= 1000
-          var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
-          setInterestNotCollected(resultFinal)
-        })
-
-        return
-      }
       if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' && plan === '14') {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
@@ -2657,7 +2620,6 @@ export const CollapseTableExpanded = ({
     const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
       if (
-        address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" ||
         address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
         address === "0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7" ||
