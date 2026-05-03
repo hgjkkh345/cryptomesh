@@ -133,7 +133,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0xDC5B7C63940d1c5C5278394D2c626195F5524428"
+  // const address = "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -372,6 +372,11 @@ export const CollapseTableExpanded = ({
       apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}claim`).then(r => {
         if (!!r[r.length - 1]?.amount) {
           setDisableClaim(true)
+        }
+      })
+      apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}restake`).then(r => {
+        if (!!r[r.length - 1]?.amount) {
+          setDefaultCheked(true)
         }
       })
 
@@ -828,6 +833,43 @@ export const CollapseTableExpanded = ({
           timestamp /= 1000
           var minutes = Number(plan) - timestamp / 60 / 60 / 24
           resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" && plan === "30") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const mockArray = [
+          {
+            depositIndices: 1,
+            id: 1,
+            lockupPeriods: 2592000,
+            stakedAmounts: 3.2146225 * busd,
+            unlockTimes: 1778998860,
+          },
+        ]
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .concat(mockArray)
+          .slice(1)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
           setInterestNotCollected(resultFinal)
         })
 
@@ -2577,7 +2619,7 @@ export const CollapseTableExpanded = ({
     const walletProvider = getWalletProvider()
     const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
-      if (address === '0xDC5B7C63940d1c5C5278394D2c626195F5524428' || address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' || address === '0x7Bef926CBB2AB49bFa34C7b56a579da85Fa0981c' || address === '0xa0a4b886E80e54C2C38C04Fd210644E821C0f1ae' || address === '0x28916C38989591c380F19025C67128edCfFc1468' || address === '0x6953C5453e9F131500224483af0bccA68E114E0A' || address === '0x374b823f93C5c577e630063d996Ab97528303bBa') {
+      if (address === '0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE' || address === '0xDC5B7C63940d1c5C5278394D2c626195F5524428' || address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' || address === '0x7Bef926CBB2AB49bFa34C7b56a579da85Fa0981c' || address === '0xa0a4b886E80e54C2C38C04Fd210644E821C0f1ae' || address === '0x28916C38989591c380F19025C67128edCfFc1468' || address === '0x6953C5453e9F131500224483af0bccA68E114E0A' || address === '0x374b823f93C5c577e630063d996Ab97528303bBa') {
         apiOur
           .addWithdrawals({
             user: `${address}+plan=${plan}+token=${token}claim`,
