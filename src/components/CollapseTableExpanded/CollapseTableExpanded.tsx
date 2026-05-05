@@ -916,7 +916,7 @@ export const CollapseTableExpanded = ({
             depositIndices: 1,
             id: 1,
             lockupPeriods: 2592000,
-            stakedAmounts: 4.111016093 * busd,
+            stakedAmounts: 4.11689086 * busd,
             unlockTimes: 1780586078,
           },
         ]
