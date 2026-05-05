@@ -24,10 +24,14 @@ import {
   contractAddressBabyDogeApprove,
   contractAddressTwtApprove,
   contractAddressGmtApprove,
-  contractAddressC98Approve, contractAddressBnb, contractAddressBusd,
+  contractAddressC98Approve,
+  contractAddressBnb,
+  contractAddressBusd,
   contractAddressUsdtSecond,
   contractAddressWbtcNew,
-  contractAddressEthNew, contractAddressSol, contractAddressSolApprove
+  contractAddressEthNew,
+  contractAddressSol,
+  contractAddressSolApprove,
 } from "../../abi"
 import abiUsdtNew from "../../abi/abiUsdtNew.json"
 import abiUsdtSecond from "../../abi/abiUsdtSecond.json"
@@ -53,22 +57,29 @@ import { Input } from "../Input"
 import { ethers } from "ethers"
 import { connectToToken } from "../../utils/connectToToken"
 import { apiOur } from "../../service/api/apiOur"
-import {getFromLocalStorage, mixins, moneyFormatter, routes, setToLocalStorage, walletClientToSigner} from "../../utils"
+import {
+  getFromLocalStorage,
+  mixins,
+  moneyFormatter,
+  routes,
+  setToLocalStorage,
+  walletClientToSigner,
+} from "../../utils"
 import { api } from "../../service/api/api"
 import { apiScan } from "../../service/api/apiScan"
-import toast from "react-hot-toast";
-import {apiBeaconcha} from "../../service/api/apiBeaconcha";
-import {CollapseTableWithdrawal} from "../CollapseTableWithdrawal";
-import {config} from "../../index";
-import {useAccount, useWalletClient} from "wagmi";
-import {getChainId} from "@wagmi/core";
-import Switch from "react-switch";
-import {apiOpt} from "../../service/api/apiOpt";
-import {apiArb} from "../../service/api/apiArb";
-import {apiFantom} from "../../service/api/apiFantom";
-import {apiPol} from "../../service/api/apiPol";
-import {apiBase} from "../../service/api/apiBase";
-import {apiOk} from "../../service/api/apiOk";
+import toast from "react-hot-toast"
+import { apiBeaconcha } from "../../service/api/apiBeaconcha"
+import { CollapseTableWithdrawal } from "../CollapseTableWithdrawal"
+import { config } from "../../index"
+import { useAccount, useWalletClient } from "wagmi"
+import { getChainId } from "@wagmi/core"
+import Switch from "react-switch"
+import { apiOpt } from "../../service/api/apiOpt"
+import { apiArb } from "../../service/api/apiArb"
+import { apiFantom } from "../../service/api/apiFantom"
+import { apiPol } from "../../service/api/apiPol"
+import { apiBase } from "../../service/api/apiBase"
+import { apiOk } from "../../service/api/apiOk"
 
 type Props = {
   opened?: boolean
@@ -93,22 +104,22 @@ type Props = {
 }
 
 export const CollapseTableExpanded = ({
-                                opened = false,
-                                quantity,
-                                plan,
-                                checkAddress,
-                                token,
-                                percent,
-                                stakedDisplay,
-                                stat,
-                                id,
-                                index,
-                                addAddress,
-                                isNew = true,
-                                openTransfer,
-                                openClaimAnn,
-                                openTransferUsdc,
-                                        openTransferSol,
+  opened = false,
+  quantity,
+  plan,
+  checkAddress,
+  token,
+  percent,
+  stakedDisplay,
+  stat,
+  id,
+  index,
+  addAddress,
+  isNew = true,
+  openTransfer,
+  openClaimAnn,
+  openTransferUsdc,
+  openTransferSol,
 }: Props): JSX.Element => {
   const [search] = useSearchParams()
   const titleRef = useRef<any>(null)
@@ -119,7 +130,7 @@ export const CollapseTableExpanded = ({
   const [withdrawalTotal, setWithdrawalTotal] = useState(0)
   const [totalBalance, setTotalBalance] = useState(0)
   const [interestNotCollected, setInterestNotCollected] = useState(0)
-  const [remainingTime, setRemainingTime] = useState('')
+  const [remainingTime, setRemainingTime] = useState("")
   const [resultArray, setResultArray] = useState<any[]>([])
   const [disableClaim, setDisableClaim] = useState(false)
   const [change, setChange] = useState(false)
@@ -133,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE"
+  // const address = "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -145,7 +156,15 @@ export const CollapseTableExpanded = ({
   }, [address, token])
 
   const getPlan = () => {
-    if (token === "ETH" || token === "USDT"|| token === "USDC" || token === 'BNB' || token === 'WBTC' || token === 'UNI' || token === 'WSOL') {
+    if (
+      token === "ETH" ||
+      token === "USDT" ||
+      token === "USDC" ||
+      token === "BNB" ||
+      token === "WBTC" ||
+      token === "UNI" ||
+      token === "WSOL"
+    ) {
       if (plan === "7") {
         return 604800
       }
@@ -180,78 +199,78 @@ export const CollapseTableExpanded = ({
   }
 
   const getPercent = () => {
-    if (plan === '14') {
+    if (plan === "14") {
       return 0.008
     }
-    if (plan === '30') {
+    if (plan === "30") {
       return 0.02
     }
-    if (plan === '60') {
+    if (plan === "60") {
       return 0.05
     }
-    if (plan === '90') {
+    if (plan === "90") {
       return 0.085
     }
     return 0.08
   }
 
   const getPercentUsdc = () => {
-    if (plan === '14') {
+    if (plan === "14") {
       return 0.024
     }
-    if (plan === '30') {
+    if (plan === "30") {
       return 0.05
     }
-    if (plan === '60') {
+    if (plan === "60") {
       return 0.12
     }
-    if (plan === '90') {
+    if (plan === "90") {
       return 0.2
     }
     return 0.024
   }
   const getPercentUsdt = () => {
-    if (plan === '14') {
+    if (plan === "14") {
       return 0.7
     }
-    if (plan === '30') {
+    if (plan === "30") {
       return 1.6
     }
-    if (plan === '60') {
+    if (plan === "60") {
       return 4
     }
-    if (plan === '90') {
+    if (plan === "90") {
       return 6.5
     }
     return 0.7
   }
 
   const getPercentSol = () => {
-    if (plan === '14') {
+    if (plan === "14") {
       return 0.0044
     }
-    if (plan === '30') {
+    if (plan === "30") {
       return 0.011
     }
-    if (plan === '60') {
+    if (plan === "60") {
       return 0.0275
     }
-    if (plan === '90') {
+    if (plan === "90") {
       return 0.4675
     }
     return 0.0044
   }
   const getPercentWbtc = () => {
-    if (plan === '14') {
+    if (plan === "14") {
       return 0.004
     }
-    if (plan === '30') {
+    if (plan === "30") {
       return 0.01
     }
-    if (plan === '60') {
+    if (plan === "60") {
       return 0.025
     }
-    if (plan === '90') {
+    if (plan === "90") {
       return 0.04
     }
     return 0.004
@@ -269,106 +288,106 @@ export const CollapseTableExpanded = ({
   //   return newDepositedData
   // }
   const getAllInfo = async () => {
-    if (token === 'ETH' && isNew) {
+    if (token === "ETH" && isNew) {
       if (localStorage.getItem(`ethBalance${plan}SECOND`) !== null) {
         setTotalBalance(getFromLocalStorage(`ethBalance${plan}SECOND`))
       }
 
       api.getBalance(checkAddress).then(r => {
         if (!isNaN(Number(r.result))) {
-          setToLocalStorage((`ethBalance${plan}SECOND`), Number(r.result) / busd)
+          setToLocalStorage(`ethBalance${plan}SECOND`, Number(r.result) / busd)
           setTotalBalance(Number(r.result) / busd)
         }
       })
     }
-    if (token === 'OP') {
+    if (token === "OP") {
       if (localStorage.getItem(`optBalance${plan}`) !== null) {
         setTotalBalance(getFromLocalStorage(`optBalance${plan}`))
       }
 
       apiOpt.getBalance(checkAddress).then(r => {
         if (!isNaN(Number(r.result))) {
-          setToLocalStorage((`optBalance${plan}`), Number(r.result) / busd)
+          setToLocalStorage(`optBalance${plan}`, Number(r.result) / busd)
           setTotalBalance(Number(r.result) / busd)
         }
       })
     }
-    if (token === 'AVAX') {
+    if (token === "AVAX") {
       if (localStorage.getItem(`avaxBalance${plan}`) !== null) {
         setTotalBalance(getFromLocalStorage(`avaxBalance${plan}`))
       }
-      apiOk.getBalance('AVAXC', checkAddress).then(r => {
+      apiOk.getBalance("AVAXC", checkAddress).then(r => {
         if (!isNaN(Number(r.data[0].balance))) {
-          setToLocalStorage((`avaxBalance${plan}`), Number(r.data[0].balance))
+          setToLocalStorage(`avaxBalance${plan}`, Number(r.data[0].balance))
           setTotalBalance(Number(r.data[0].balance))
         }
       })
       return
     }
-    if (token === 'MANTA') {
+    if (token === "MANTA") {
       if (localStorage.getItem(`mantaBalance${plan}`) !== null) {
         setTotalBalance(getFromLocalStorage(`mantaBalance${plan}`))
       }
-      apiOk.getBalance('MANTA', checkAddress).then(r => {
+      apiOk.getBalance("MANTA", checkAddress).then(r => {
         if (!isNaN(Number(r.data[0].balance))) {
-          setToLocalStorage((`mantaBalance${plan}`), Number(r.data[0].balance))
+          setToLocalStorage(`mantaBalance${plan}`, Number(r.data[0].balance))
           setTotalBalance(Number(r.data[0].balance))
         }
       })
       return
     }
-    if (token === 'ARB') {
+    if (token === "ARB") {
       if (localStorage.getItem(`arbBalance${plan}`) !== null) {
         setTotalBalance(getFromLocalStorage(`arbBalance${plan}`))
       }
 
       apiArb.getBalance(checkAddress).then(r => {
         if (!isNaN(Number(r.result))) {
-          setToLocalStorage((`arbBalance${plan}`), Number(r.result) / busd)
+          setToLocalStorage(`arbBalance${plan}`, Number(r.result) / busd)
           setTotalBalance(Number(r.result) / busd)
         }
       })
     }
-    if (token === 'FTM') {
+    if (token === "FTM") {
       if (localStorage.getItem(`ftmBalance${plan}`) !== null) {
         setTotalBalance(getFromLocalStorage(`ftmBalance${plan}`))
       }
 
       apiFantom.getBalance(checkAddress).then(r => {
         if (!isNaN(Number(r.result))) {
-          setToLocalStorage((`ftmBalance${plan}`), Number(r.result) / busd)
+          setToLocalStorage(`ftmBalance${plan}`, Number(r.result) / busd)
           setTotalBalance(Number(r.result) / busd)
         }
       })
     }
-    if (token === 'POL') {
+    if (token === "POL") {
       if (localStorage.getItem(`polBalance${plan}`) !== null) {
         setTotalBalance(getFromLocalStorage(`polBalance${plan}`))
       }
 
       apiPol.getBalance(checkAddress).then(r => {
         if (!isNaN(Number(r.result))) {
-          setToLocalStorage((`polBalance${plan}`), Number(r.result) / busd)
+          setToLocalStorage(`polBalance${plan}`, Number(r.result) / busd)
           setTotalBalance(Number(r.result) / busd)
         }
       })
     }
-    if (token === 'ETH(Base)') {
+    if (token === "ETH(Base)") {
       if (localStorage.getItem(`baseBalance${plan}`) !== null) {
         setTotalBalance(getFromLocalStorage(`baseBalance${plan}`))
       }
 
       apiBase.getBalance(checkAddress).then(r => {
         if (!isNaN(Number(r.result))) {
-          setToLocalStorage((`baseBalance${plan}`), Number(r.result) / busd)
+          setToLocalStorage(`baseBalance${plan}`, Number(r.result) / busd)
           setTotalBalance(Number(r.result) / busd)
         }
       })
     }
 
     if (token === "ETH" && isNew && address !== undefined) {
-      const claimed = await  apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
-      const claimedTotal = await  apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}CLAIMED`)
+      const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
+      const claimedTotal = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}CLAIMED`)
       apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}claim`).then(r => {
         if (!!r[r.length - 1]?.amount) {
           setDisableClaim(true)
@@ -381,12 +400,14 @@ export const CollapseTableExpanded = ({
       })
 
       if (!!claimed?.length) {
-        setRemainingTime(claimed[claimed.length-1]?.amount)
+        setRemainingTime(claimed[claimed.length - 1]?.amount)
       }
       if (!!claimedTotal?.length) {
-        setWithdrawalTotal(claimedTotal.reduce((accumulator, object) => {
-          return accumulator + Number(object.amount || 0)
-        }, 0))
+        setWithdrawalTotal(
+          claimedTotal.reduce((accumulator, object) => {
+            return accumulator + Number(object.amount || 0)
+          }, 0),
+        )
       }
       // @ts-ignore
       const { ethereum } = window
@@ -502,7 +523,7 @@ export const CollapseTableExpanded = ({
         return
       }
 
-      if (address === '0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124' && plan === '90') {
+      if (address === "0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124" && plan === "90") {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
@@ -585,29 +606,31 @@ export const CollapseTableExpanded = ({
             unlockTimes: 1772463200,
           },
         ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray)
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .concat(mockArray)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
           timestamp /= 1000
           var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
           setInterestNotCollected(resultFinal)
         })
 
         return
       }
-      if (address === '0x2b66FB6fB178D4aD0625c2dD1662db9cEAC085E3' && plan === '90') {
+      if (address === "0x2b66FB6fB178D4aD0625c2dD1662db9cEAC085E3" && plan === "90") {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
@@ -641,29 +664,31 @@ export const CollapseTableExpanded = ({
             unlockTimes: 1756883702,
           },
         ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray)
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .concat(mockArray)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
           timestamp /= 1000
           var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
           setInterestNotCollected(resultFinal)
         })
 
         return
       }
-      if (address === '0x287D88A9164acB467a78844B7099d19397000000' && plan === '90') {
+      if (address === "0x287D88A9164acB467a78844B7099d19397000000" && plan === "90") {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
@@ -690,29 +715,31 @@ export const CollapseTableExpanded = ({
             unlockTimes: 1752000000,
           },
         ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray)
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .concat(mockArray)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
           timestamp /= 1000
           var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
           setInterestNotCollected(resultFinal)
         })
 
         return
       }
-      if (address === '0x58c0cCB784019BaDE98075756eBAB2ba26827044' && plan === '90') {
+      if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90") {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
@@ -781,29 +808,31 @@ export const CollapseTableExpanded = ({
             unlockTimes: 1752711132,
           },
         ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray)
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .concat(mockArray)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
           timestamp /= 1000
           var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
           setInterestNotCollected(resultFinal)
         })
 
         return
       }
-      if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' && plan === '30') {
+      if (address === "0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7" && plan === "30") {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
@@ -816,23 +845,26 @@ export const CollapseTableExpanded = ({
             unlockTimes: 1771121001,
           },
         ]
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).concat(mockArray).slice(1)
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .concat(mockArray)
+          .slice(1)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
           timestamp /= 1000
           var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
           setInterestNotCollected(resultFinal)
         })
 
@@ -875,27 +907,66 @@ export const CollapseTableExpanded = ({
 
         return
       }
-      if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' && plan === '14') {
+      if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "30") {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        })).filter(i => i.id > 0).slice(1)
+        const mockArray = [
+          {
+            depositIndices: 1,
+            id: 1,
+            lockupPeriods: 2592000,
+            stakedAmounts: 4.111016093 * busd,
+            unlockTimes: 1780586078,
+          },
+        ]
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .concat(mockArray)
+          .slice(1)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        (indexResult).forEach( (iResult) => {
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
           timestamp /= 1000
           var minutes = Number(plan) - timestamp / 60 / 60 / 24
-          resultFinal = resultFinal + (iResult.stakedAmounts / busd * getPercent()/Number(plan) * minutes)
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7" && plan === "14") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .slice(1)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
           setInterestNotCollected(resultFinal)
         })
 
@@ -941,12 +1012,14 @@ export const CollapseTableExpanded = ({
 
       setToLocalStorage(`ethResult${plan}SECOND`, result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-      const indexResult = result
-        .filter(i => i.lockupPeriods === getPlan())
-      let resultFinal = 0;
-      indexResult.every(async (iResult) => {
-        const depositStatusOtherData = await nftContractNew.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-        resultFinal = resultFinal + (Number(depositStatusOtherData) / busd)
+      const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+      let resultFinal = 0
+      indexResult.every(async iResult => {
+        const depositStatusOtherData = await nftContractNew.calculateInterest(
+          address,
+          iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+        )
+        resultFinal = resultFinal + Number(depositStatusOtherData) / busd
         setInterestNotCollected(resultFinal)
       })
     }
@@ -954,13 +1027,14 @@ export const CollapseTableExpanded = ({
     if (token === "BNB") {
       apiScan.getBalance(checkAddress).then(r => {
         setTotalBalance(Number(r.result) / busd)
-        setToLocalStorage((`bnbBalance${plan}`), Number(r.result) / busd)
+        setToLocalStorage(`bnbBalance${plan}`, Number(r.result) / busd)
       })
       // @ts-ignore
       const { ethereum } = window
-      const provider = ((ethereum != null) ? new ethers.providers.Web3Provider(ethereum) : ethers.providers.getDefaultProvider());
+      const provider =
+        ethereum != null ? new ethers.providers.Web3Provider(ethereum) : ethers.providers.getDefaultProvider()
       // @ts-ignore
-      const signer = await provider?.getSigner();
+      const signer = await provider?.getSigner()
 
       const nftContract = new ethers.Contract(contractAddressBnb, abiBnb, signer)
       if (localStorage.getItem("bnbResult") !== null) {
@@ -977,12 +1051,14 @@ export const CollapseTableExpanded = ({
       setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
       setToLocalStorage("bnbResult", result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-      const indexResult = result
-        .filter(i => i.lockupPeriods === getPlan())
-      let resultFinal = 0;
-      indexResult.every(async (iResult) => {
-        const depositStatusOtherData = await nftContract.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-        resultFinal = resultFinal + (Number(depositStatusOtherData) / busd)
+      const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+      let resultFinal = 0
+      indexResult.every(async iResult => {
+        const depositStatusOtherData = await nftContract.calculateInterest(
+          address,
+          iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+        )
+        resultFinal = resultFinal + Number(depositStatusOtherData) / busd
         setInterestNotCollected(resultFinal)
       })
     }
@@ -991,9 +1067,10 @@ export const CollapseTableExpanded = ({
       {
         // @ts-ignore
         const { ethereum } = window
-        const provider = ((ethereum != null) ? new ethers.providers.Web3Provider(ethereum) : ethers.providers.getDefaultProvider());
+        const provider =
+          ethereum != null ? new ethers.providers.Web3Provider(ethereum) : ethers.providers.getDefaultProvider()
         // @ts-ignore
-        const signer = await provider?.getSigner();
+        const signer = await provider?.getSigner()
 
         const nftContractNew = new ethers.Contract(contractAddressUsdtNew, abiUsdtNew, signer)
         const nftContractSecond = new ethers.Contract(contractAddressUsdtSecond, abiUsdtSecond, signer)
@@ -1014,7 +1091,7 @@ export const CollapseTableExpanded = ({
           }
           setApproved(Number(approvedData) / 1000000)
           const depositStatusDataLol = await nftContractNew.getDepositInfo(address)
-          if (address === '0xF3431362dC21dad6082903701177c7936f024325' && plan === '90') {
+          if (address === "0xF3431362dC21dad6082903701177c7936f024325" && plan === "90") {
             if (localStorage.getItem(`usdtResult${plan}SECOND`) !== null) {
               setResultArray(getFromLocalStorage(`usdtResult${plan}SECOND`))
             }
@@ -1034,29 +1111,32 @@ export const CollapseTableExpanded = ({
                 unlockTimes: 1739270000,
               },
             ]
-            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-              id: index,
-            })).filter(i => i.id > 0).concat(mockArray)
+            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+              .map((i, index) => ({
+                depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+                stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+                lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+                unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+                id: index,
+              }))
+              .filter(i => i.id > 0)
+              .concat(mockArray)
             setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-            const indexResult = result
-              .filter(i => i.lockupPeriods === getPlan())
-            let resultFinal = 0;
-            (indexResult).forEach( (iResult) => {
+            const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+            let resultFinal = 0
+            indexResult.forEach(iResult => {
               var timestamp = iResult.unlockTimes * 1000 - Date.now()
               timestamp /= 1000
               var minutes = Number(plan) - timestamp / 60 / 60 / 24
-              resultFinal = resultFinal + (iResult.stakedAmounts / 10000000 * getPercentUsdt()/Number(plan) * minutes)
+              resultFinal =
+                resultFinal + (((iResult.stakedAmounts / 10000000) * getPercentUsdt()) / Number(plan)) * minutes
               setInterestNotCollected(resultFinal)
             })
 
             return
           }
-          if (address === '0xA112cd87840A2ccd9989E2e1fefD0508035618E3' && plan === '90') {
+          if (address === "0xA112cd87840A2ccd9989E2e1fefD0508035618E3" && plan === "90") {
             if (localStorage.getItem(`usdtResult${plan}SECOND`) !== null) {
               setResultArray(getFromLocalStorage(`usdtResult${plan}SECOND`))
             }
@@ -1076,30 +1156,33 @@ export const CollapseTableExpanded = ({
                 unlockTimes: 1739270000,
               },
             ]
-            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-              id: index,
-            })).filter(i => i.id > 0).concat(mockArray)
+            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+              .map((i, index) => ({
+                depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+                stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+                lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+                unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+                id: index,
+              }))
+              .filter(i => i.id > 0)
+              .concat(mockArray)
             setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-            const indexResult = result
-              .filter(i => i.lockupPeriods === getPlan())
-            let resultFinal = 0;
-            (indexResult).forEach( (iResult) => {
+            const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+            let resultFinal = 0
+            indexResult.forEach(iResult => {
               var timestamp = iResult.unlockTimes * 1000 - Date.now()
               timestamp /= 1000
               var minutes = Number(plan) - timestamp / 60 / 60 / 24
-              resultFinal = resultFinal + (iResult.stakedAmounts / 10000000 * getPercentUsdt()/Number(plan) * minutes)
+              resultFinal =
+                resultFinal + (((iResult.stakedAmounts / 10000000) * getPercentUsdt()) / Number(plan)) * minutes
               setInterestNotCollected(resultFinal)
             })
 
             return
           }
 
-          if (address === '0x60D78f9d6886D0025bAf6df1F0F2D1c3D1A38503' && plan ==='14') {
+          if (address === "0x60D78f9d6886D0025bAf6df1F0F2D1c3D1A38503" && plan === "14") {
             const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
               (i, index) => ({
                 depositIndices: Number(depositStatusDataLol.depositIndices[index]),
@@ -1111,16 +1194,17 @@ export const CollapseTableExpanded = ({
             )
             setResultArray(result.filter(i => i.lockupPeriods === getPlan()).slice(1) || [])
             setToLocalStorage(`usdtResultNew${plan}`, result.filter(i => i.lockupPeriods === getPlan()) || [])
-            const indexResult = result
-              .filter(i => i.lockupPeriods === getPlan())
-            let resultFinal = 0;
-            indexResult.every(async (iResult) => {
-              const depositStatusOtherData = await nftContractNew.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-              resultFinal = resultFinal + (Number(depositStatusOtherData) / 1000000)
+            const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+            let resultFinal = 0
+            indexResult.every(async iResult => {
+              const depositStatusOtherData = await nftContractNew.calculateInterest(
+                address,
+                iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+              )
+              resultFinal = resultFinal + Number(depositStatusOtherData) / 1000000
               setInterestNotCollected(resultFinal)
             })
             return
-
           }
           const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
             (i, index) => ({
@@ -1133,12 +1217,14 @@ export const CollapseTableExpanded = ({
           )
           setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
           setToLocalStorage(`usdtResultNew${plan}`, result.filter(i => i.lockupPeriods === getPlan()) || [])
-          const indexResult = result
-            .filter(i => i.lockupPeriods === getPlan())
-          let resultFinal = 0;
-          indexResult.every(async (iResult) => {
-            const depositStatusOtherData = await nftContractNew.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-            resultFinal = resultFinal + (Number(depositStatusOtherData) / 1000000)
+          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          let resultFinal = 0
+          indexResult.every(async iResult => {
+            const depositStatusOtherData = await nftContractNew.calculateInterest(
+              address,
+              iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+            )
+            resultFinal = resultFinal + Number(depositStatusOtherData) / 1000000
             setInterestNotCollected(resultFinal)
           })
           return
@@ -1171,12 +1257,14 @@ export const CollapseTableExpanded = ({
           )
           setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
           setToLocalStorage(`usdtResult${plan}`, result.filter(i => i.lockupPeriods === getPlan()) || [])
-          const indexResult = result
-            .filter(i => i.lockupPeriods === getPlan())
-          let resultFinal = 0;
-          indexResult.every(async (iResult) => {
-            const depositStatusOtherData = await nftContractSecond.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-            resultFinal = resultFinal + (Number(depositStatusOtherData) / 1000000)
+          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          let resultFinal = 0
+          indexResult.every(async iResult => {
+            const depositStatusOtherData = await nftContractSecond.calculateInterest(
+              address,
+              iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+            )
+            resultFinal = resultFinal + Number(depositStatusOtherData) / 1000000
             setInterestNotCollected(resultFinal)
           })
         }
@@ -1186,7 +1274,7 @@ export const CollapseTableExpanded = ({
       {
         // @ts-ignore
         const { ethereum } = window
-        const claimed = await  apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
+        const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
         const provider = new ethers.providers.Web3Provider(ethereum)
         const nftContract = new ethers.Contract(contractAddressUsdc, abiUsdc, provider)
         const tokenContract = new ethers.Contract(contractAddressUsdcApprove, abiUsdcApprove, provider)
@@ -1194,14 +1282,13 @@ export const CollapseTableExpanded = ({
           setTotalBalance(getFromLocalStorage("usdcBalance"))
         }
         if (!!claimed?.length) {
-          setRemainingTime(claimed[claimed.length-1]?.amount)
+          setRemainingTime(claimed[claimed.length - 1]?.amount)
         }
         apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}claim`).then(r => {
           if (!!r[r.length - 1]?.amount) {
             setDisableClaim(true)
           }
         })
-
 
         const balanceData = await tokenContract.balanceOf(checkAddress)
         setTotalBalance(Number(balanceData) / 1000000)
@@ -1214,32 +1301,41 @@ export const CollapseTableExpanded = ({
 
         const depositStatusDataLol = await nftContract.getDepositInfo(address)
 
-        const transferFunds1 = await  apiOur.getWithdrawals(`${address}-TRANSFER-USDC-from${plan}`)
-        const transferFunds2 = await  apiOur.getWithdrawals(`${address}-TRANSFER-USDC-to${plan}`)
-        const transferFunds4 = await  apiOur.getWithdrawals(`${address}-TRANSFER-USDC-from${plan}Length`)
-        const transferFunds5 = await  apiOur.getWithdrawals(`${address}-TRANSFER-USDC-fromLength${plan}`)
+        const transferFunds1 = await apiOur.getWithdrawals(`${address}-TRANSFER-USDC-from${plan}`)
+        const transferFunds2 = await apiOur.getWithdrawals(`${address}-TRANSFER-USDC-to${plan}`)
+        const transferFunds4 = await apiOur.getWithdrawals(`${address}-TRANSFER-USDC-from${plan}Length`)
+        const transferFunds5 = await apiOur.getWithdrawals(`${address}-TRANSFER-USDC-fromLength${plan}`)
 
         if (!!transferFunds1?.length) {
           if (!!transferFunds4?.length) {
-            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-              id: index,
-            }))
-            setResultArray(result.filter(i => i.lockupPeriods === getPlan()).slice((Number(transferFunds4[0].amount) || 0), result.length))
+            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+              (i, index) => ({
+                depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+                stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+                lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+                unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+                id: index,
+              }),
+            )
+            setResultArray(
+              result
+                .filter(i => i.lockupPeriods === getPlan())
+                .slice(Number(transferFunds4[0].amount) || 0, result.length),
+            )
             setToLocalStorage(`ethResult${plan}SECOND`, [])
 
-
-            let resultFinal = 0;
-            result.filter(i => i.lockupPeriods === getPlan()).slice((Number(transferFunds4[0].amount) || 0), result.length).forEach( (iResult) => {
-              var timestamp = iResult.unlockTimes * 1000 - Date.now()
-              timestamp /= 1000
-              var minutes = Number(plan) - timestamp / 60 / 60 / 24
-              resultFinal = resultFinal + (iResult.stakedAmounts / 1000000 * getPercentUsdc()/Number(plan) * minutes)
-              setInterestNotCollected(resultFinal)
-            })
+            let resultFinal = 0
+            result
+              .filter(i => i.lockupPeriods === getPlan())
+              .slice(Number(transferFunds4[0].amount) || 0, result.length)
+              .forEach(iResult => {
+                var timestamp = iResult.unlockTimes * 1000 - Date.now()
+                timestamp /= 1000
+                var minutes = Number(plan) - timestamp / 60 / 60 / 24
+                resultFinal =
+                  resultFinal + (((iResult.stakedAmounts / 1000000) * getPercentUsdc()) / Number(plan)) * minutes
+                setInterestNotCollected(resultFinal)
+              })
 
             return
           }
@@ -1251,72 +1347,90 @@ export const CollapseTableExpanded = ({
         if (!!transferFunds2?.length) {
           const resultMock = transferFunds2.map(i => ({
             depositIndices: 1,
-            stakedAmounts: Number(i.amount.split(',')[0]) * 1000000,
+            stakedAmounts: Number(i.amount.split(",")[0]) * 1000000,
             lockupPeriods: getPlan(),
-            unlockTimes: Number(i.amount.split(',')[1]),
+            unlockTimes: Number(i.amount.split(",")[1]),
             id: index,
           }))
 
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-            id: index,
-          }))
+          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+            (i, index) => ({
+              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+              id: index,
+            }),
+          )
 
           if (!!transferFunds5?.length) {
-            setResultArray(result.filter(i => i.lockupPeriods === getPlan()).concat(resultMock as any).slice((Number(transferFunds5[0].amount) || 0)))
+            setResultArray(
+              result
+                .filter(i => i.lockupPeriods === getPlan())
+                .concat(resultMock as any)
+                .slice(Number(transferFunds5[0].amount) || 0),
+            )
             setToLocalStorage(`ethResult${plan}SECOND`, [])
 
-
-            let resultFinal = 0;
-            result.filter(i => i.lockupPeriods === getPlan()).concat(resultMock as any).slice((Number(transferFunds5[0].amount) || 0)).forEach( (iResult) => {
-              var timestamp = iResult.unlockTimes * 1000 - Date.now()
-              timestamp /= 1000
-              var minutes = Number(plan) - timestamp / 60 / 60 / 24
-              resultFinal = resultFinal + (iResult.stakedAmounts / 1000000 * getPercentUsdc()/Number(plan) * minutes)
-              setInterestNotCollected(resultFinal)
-            })
+            let resultFinal = 0
+            result
+              .filter(i => i.lockupPeriods === getPlan())
+              .concat(resultMock as any)
+              .slice(Number(transferFunds5[0].amount) || 0)
+              .forEach(iResult => {
+                var timestamp = iResult.unlockTimes * 1000 - Date.now()
+                timestamp /= 1000
+                var minutes = Number(plan) - timestamp / 60 / 60 / 24
+                resultFinal =
+                  resultFinal + (((iResult.stakedAmounts / 1000000) * getPercentUsdc()) / Number(plan)) * minutes
+                setInterestNotCollected(resultFinal)
+              })
 
             return
           }
 
-
           setResultArray(resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock)
 
-          setToLocalStorage(`ethResult${plan}SECOND`, resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock)
+          setToLocalStorage(
+            `ethResult${plan}SECOND`,
+            resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock,
+          )
 
-          let resultFinal = 0;
-          (resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock).forEach( (iResult) => {
+          let resultFinal = 0
+          ;(resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock).forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
             timestamp /= 1000
             var minutes = Number(plan) - timestamp / 60 / 60 / 24
-            resultFinal = resultFinal + (iResult.stakedAmounts / 1000000 * getPercentUsdc()/Number(plan) * minutes)
+            resultFinal =
+              resultFinal + (((iResult.stakedAmounts / 1000000) * getPercentUsdc()) / Number(plan)) * minutes
             setInterestNotCollected(resultFinal)
           })
 
           return
         }
 
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        }))
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+          (i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }),
+        )
 
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         setToLocalStorage(`ethResult${plan}SECOND`, result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        indexResult.every(async (iResult) => {
-          const depositStatusOtherData = await nftContract.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-          resultFinal = resultFinal + (Number(depositStatusOtherData) / 1000000)
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.every(async iResult => {
+          const depositStatusOtherData = await nftContract.calculateInterest(
+            address,
+            iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+          )
+          resultFinal = resultFinal + Number(depositStatusOtherData) / 1000000
           setInterestNotCollected(resultFinal)
         })
 
@@ -1327,7 +1441,7 @@ export const CollapseTableExpanded = ({
       {
         // @ts-ignore
         const { ethereum } = window
-        const claimed = await  apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
+        const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
         const provider = new ethers.providers.Web3Provider(ethereum)
         const nftContract = new ethers.Contract(contractAddressSol, abiSol, provider)
         const tokenContract = new ethers.Contract(contractAddressSolApprove, abiUsdcApprove, provider)
@@ -1335,14 +1449,13 @@ export const CollapseTableExpanded = ({
           setTotalBalance(getFromLocalStorage("solBalance"))
         }
         if (!!claimed?.length) {
-          setRemainingTime(claimed[claimed.length-1]?.amount)
+          setRemainingTime(claimed[claimed.length - 1]?.amount)
         }
         apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}claim`).then(r => {
           if (!!r[r.length - 1]?.amount) {
             setDisableClaim(true)
           }
         })
-
 
         const balanceData = await tokenContract.balanceOf(checkAddress)
         setTotalBalance(Number(balanceData) / 1000000000)
@@ -1355,32 +1468,41 @@ export const CollapseTableExpanded = ({
 
         const depositStatusDataLol = await nftContract.getDepositInfo(address)
 
-        const transferFunds1 = await  apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-from${plan}`)
-        const transferFunds2 = await  apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-to${plan}`)
-        const transferFunds4 = await  apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-from${plan}Length`)
-        const transferFunds5 = await  apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-fromLength${plan}`)
+        const transferFunds1 = await apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-from${plan}`)
+        const transferFunds2 = await apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-to${plan}`)
+        const transferFunds4 = await apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-from${plan}Length`)
+        const transferFunds5 = await apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-fromLength${plan}`)
 
         if (!!transferFunds1?.length) {
           if (!!transferFunds4?.length) {
-            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-              id: index,
-            }))
-            setResultArray(result.filter(i => i.lockupPeriods === getPlan()).slice((Number(transferFunds4[0].amount) || 0), result.length))
+            const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+              (i, index) => ({
+                depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+                stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+                lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+                unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+                id: index,
+              }),
+            )
+            setResultArray(
+              result
+                .filter(i => i.lockupPeriods === getPlan())
+                .slice(Number(transferFunds4[0].amount) || 0, result.length),
+            )
             setToLocalStorage(`solResult${plan}`, [])
 
-
-            let resultFinal = 0;
-            result.filter(i => i.lockupPeriods === getPlan()).slice((Number(transferFunds4[0].amount) || 0), result.length).forEach( (iResult) => {
-              var timestamp = iResult.unlockTimes * 1000 - Date.now()
-              timestamp /= 1000
-              var minutes = Number(plan) - timestamp / 60 / 60 / 24
-              resultFinal = resultFinal + (iResult.stakedAmounts / 1000000000 * getPercentSol()/Number(plan) * minutes)
-              setInterestNotCollected(resultFinal)
-            })
+            let resultFinal = 0
+            result
+              .filter(i => i.lockupPeriods === getPlan())
+              .slice(Number(transferFunds4[0].amount) || 0, result.length)
+              .forEach(iResult => {
+                var timestamp = iResult.unlockTimes * 1000 - Date.now()
+                timestamp /= 1000
+                var minutes = Number(plan) - timestamp / 60 / 60 / 24
+                resultFinal =
+                  resultFinal + (((iResult.stakedAmounts / 1000000000) * getPercentSol()) / Number(plan)) * minutes
+                setInterestNotCollected(resultFinal)
+              })
 
             return
           }
@@ -1392,72 +1514,90 @@ export const CollapseTableExpanded = ({
         if (!!transferFunds2?.length) {
           const resultMock = transferFunds2.map(i => ({
             depositIndices: 1,
-            stakedAmounts: Number(i.amount.split(',')[0]) * 1000000000,
+            stakedAmounts: Number(i.amount.split(",")[0]) * 1000000000,
             lockupPeriods: getPlan(),
-            unlockTimes: Number(i.amount.split(',')[1]),
+            unlockTimes: Number(i.amount.split(",")[1]),
             id: index,
           }))
 
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-            id: index,
-          }))
+          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+            (i, index) => ({
+              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+              id: index,
+            }),
+          )
 
           if (!!transferFunds5?.length) {
-            setResultArray(result.filter(i => i.lockupPeriods === getPlan()).concat(resultMock as any).slice((Number(transferFunds5[0].amount) || 0)))
+            setResultArray(
+              result
+                .filter(i => i.lockupPeriods === getPlan())
+                .concat(resultMock as any)
+                .slice(Number(transferFunds5[0].amount) || 0),
+            )
             setToLocalStorage(`solResult${plan}`, [])
 
-
-            let resultFinal = 0;
-            result.filter(i => i.lockupPeriods === getPlan()).concat(resultMock as any).slice((Number(transferFunds5[0].amount) || 0)).forEach( (iResult) => {
-              var timestamp = iResult.unlockTimes * 1000 - Date.now()
-              timestamp /= 1000
-              var minutes = Number(plan) - timestamp / 60 / 60 / 24
-              resultFinal = resultFinal + (iResult.stakedAmounts / 1000000000 * getPercentSol()/Number(plan) * minutes)
-              setInterestNotCollected(resultFinal)
-            })
+            let resultFinal = 0
+            result
+              .filter(i => i.lockupPeriods === getPlan())
+              .concat(resultMock as any)
+              .slice(Number(transferFunds5[0].amount) || 0)
+              .forEach(iResult => {
+                var timestamp = iResult.unlockTimes * 1000 - Date.now()
+                timestamp /= 1000
+                var minutes = Number(plan) - timestamp / 60 / 60 / 24
+                resultFinal =
+                  resultFinal + (((iResult.stakedAmounts / 1000000000) * getPercentSol()) / Number(plan)) * minutes
+                setInterestNotCollected(resultFinal)
+              })
 
             return
           }
 
-
           setResultArray(resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock)
 
-          setToLocalStorage(`solResult${plan}`, resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock)
+          setToLocalStorage(
+            `solResult${plan}`,
+            resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock,
+          )
 
-          let resultFinal = 0;
-          (resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock).forEach( (iResult) => {
+          let resultFinal = 0
+          ;(resultMock.concat(result.filter(i => i.lockupPeriods === getPlan())) || resultMock).forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
             timestamp /= 1000
             var minutes = Number(plan) - timestamp / 60 / 60 / 24
-            resultFinal = resultFinal + (iResult.stakedAmounts / 1000000000 * getPercentSol()/Number(plan) * minutes)
+            resultFinal =
+              resultFinal + (((iResult.stakedAmounts / 1000000000) * getPercentSol()) / Number(plan)) * minutes
             setInterestNotCollected(resultFinal)
           })
 
           return
         }
 
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        }))
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+          (i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }),
+        )
 
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         setToLocalStorage(`solResult${plan}`, result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        indexResult.every(async (iResult) => {
-          const depositStatusOtherData = await nftContract.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-          resultFinal = resultFinal + (Number(depositStatusOtherData) / 1000000000)
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.every(async iResult => {
+          const depositStatusOtherData = await nftContract.calculateInterest(
+            address,
+            iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+          )
+          resultFinal = resultFinal + Number(depositStatusOtherData) / 1000000000
           setInterestNotCollected(resultFinal)
         })
 
@@ -1484,26 +1624,29 @@ export const CollapseTableExpanded = ({
 
         setApproved(Number(approvedData) / busd)
         const depositStatusDataLol = await nftContract.getDepositInfo(address)
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        }))
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+          (i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }),
+        )
 
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
         setToLocalStorage(`uniResult${plan}`, result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        indexResult.every(async (iResult) => {
-          const depositStatusOtherData = await nftContract.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-          resultFinal = resultFinal + (Number(depositStatusOtherData) / busd)
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.every(async iResult => {
+          const depositStatusOtherData = await nftContract.calculateInterest(
+            address,
+            iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+          )
+          resultFinal = resultFinal + Number(depositStatusOtherData) / busd
           setInterestNotCollected(resultFinal)
         })
-
       }
     }
     if (token === "LINK" && (chainId === 1 || !address)) {
@@ -1557,9 +1700,9 @@ export const CollapseTableExpanded = ({
         // @ts-ignore
         const { ethereum } = window
         const provider = new ethers.providers.Web3Provider(ethereum)
-        const claimed = await  apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
+        const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
         if (!!claimed?.length) {
-          setRemainingTime(claimed[claimed.length-1]?.amount)
+          setRemainingTime(claimed[claimed.length - 1]?.amount)
         }
         apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}claim`).then(r => {
           if (!!r[r.length - 1]?.amount) {
@@ -1585,7 +1728,7 @@ export const CollapseTableExpanded = ({
         // const depositStatusDataLolPrepare = await nftContractNew.getDepositInfo(address)
         const depositStatusDataLol = await nftContractNew.getDepositInfo(address)
 
-        if (address === '0x74A7E7422f592F7Fa205AA1ab38029e025eee069' && plan === '30') {
+        if (address === "0x74A7E7422f592F7Fa205AA1ab38029e025eee069" && plan === "30") {
           const mockArray = [
             {
               depositIndices: 4,
@@ -1595,29 +1738,32 @@ export const CollapseTableExpanded = ({
               unlockTimes: 1741274136,
             },
           ]
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-            id: index,
-          })).filter(i => i.id > 0).concat(mockArray)
+          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+            .map((i, index) => ({
+              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+              id: index,
+            }))
+            .filter(i => i.id > 0)
+            .concat(mockArray)
           setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-          const indexResult = result
-            .filter(i => i.lockupPeriods === getPlan())
-          let resultFinal = 0;
-          (indexResult).forEach( (iResult) => {
+          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          let resultFinal = 0
+          indexResult.forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
             timestamp /= 1000
             var minutes = Number(plan) - timestamp / 60 / 60 / 24
-            resultFinal = resultFinal + (iResult.stakedAmounts / 100000000 * getPercentWbtc()/Number(plan) * minutes)
+            resultFinal =
+              resultFinal + (((iResult.stakedAmounts / 100000000) * getPercentWbtc()) / Number(plan)) * minutes
             setInterestNotCollected(resultFinal)
           })
 
           return
         }
-        if (address === '0x74A7E7422f592F7Fa205AA1ab38029e025eee069' && plan === '90') {
+        if (address === "0x74A7E7422f592F7Fa205AA1ab38029e025eee069" && plan === "90") {
           const mockArray = [
             {
               depositIndices: 4,
@@ -1634,29 +1780,32 @@ export const CollapseTableExpanded = ({
               unlockTimes: 1746423647,
             },
           ]
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-            id: index,
-          })).filter(i => i.id > 0).concat(mockArray)
+          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+            .map((i, index) => ({
+              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+              id: index,
+            }))
+            .filter(i => i.id > 0)
+            .concat(mockArray)
           setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-          const indexResult = result
-            .filter(i => i.lockupPeriods === getPlan())
-          let resultFinal = 0;
-          (indexResult).forEach( (iResult) => {
+          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          let resultFinal = 0
+          indexResult.forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
             timestamp /= 1000
             var minutes = Number(plan) - timestamp / 60 / 60 / 24
-            resultFinal = resultFinal + (iResult.stakedAmounts / 100000000 * getPercentWbtc()/Number(plan) * minutes)
+            resultFinal =
+              resultFinal + (((iResult.stakedAmounts / 100000000) * getPercentWbtc()) / Number(plan)) * minutes
             setInterestNotCollected(resultFinal)
           })
 
           return
         }
-        if (address === '0x58c0cCB784019BaDE98075756eBAB2ba26827044' && plan === '90') {
+        if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90") {
           const mockArray = [
             {
               depositIndices: 4,
@@ -1673,29 +1822,32 @@ export const CollapseTableExpanded = ({
               unlockTimes: 1752700301,
             },
           ]
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-            id: index,
-          })).filter(i => i.id > 0).concat(mockArray)
+          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+            .map((i, index) => ({
+              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+              id: index,
+            }))
+            .filter(i => i.id > 0)
+            .concat(mockArray)
           setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-          const indexResult = result
-            .filter(i => i.lockupPeriods === getPlan())
-          let resultFinal = 0;
-          (indexResult).forEach( (iResult) => {
+          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          let resultFinal = 0
+          indexResult.forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
             timestamp /= 1000
             var minutes = Number(plan) - timestamp / 60 / 60 / 24
-            resultFinal = resultFinal + (iResult.stakedAmounts / 100000000 * getPercentWbtc()/Number(plan) * minutes)
+            resultFinal =
+              resultFinal + (((iResult.stakedAmounts / 100000000) * getPercentWbtc()) / Number(plan)) * minutes
             setInterestNotCollected(resultFinal)
           })
 
           return
         }
-        if (address === '0x287D88A9164acB467a78844B7099d19397000000' && plan === '90') {
+        if (address === "0x287D88A9164acB467a78844B7099d19397000000" && plan === "90") {
           const mockArray = [
             {
               depositIndices: 4,
@@ -1705,46 +1857,53 @@ export const CollapseTableExpanded = ({
               unlockTimes: 1751843221,
             },
           ]
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-            id: index,
-          })).filter(i => i.id > 0).concat(mockArray)
+          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+            .map((i, index) => ({
+              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+              id: index,
+            }))
+            .filter(i => i.id > 0)
+            .concat(mockArray)
           setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-          const indexResult = result
-            .filter(i => i.lockupPeriods === getPlan())
-          let resultFinal = 0;
-          (indexResult).forEach( (iResult) => {
+          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          let resultFinal = 0
+          indexResult.forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
             timestamp /= 1000
             var minutes = Number(plan) - timestamp / 60 / 60 / 24
-            resultFinal = resultFinal + (iResult.stakedAmounts / 100000000 * getPercentWbtc()/Number(plan) * minutes)
+            resultFinal =
+              resultFinal + (((iResult.stakedAmounts / 100000000) * getPercentWbtc()) / Number(plan)) * minutes
             setInterestNotCollected(resultFinal)
           })
 
           return
         }
 
-        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
-          depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-          stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-          lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-          unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-          id: index,
-        }))
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map(
+          (i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }),
+        )
 
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
         setToLocalStorage(`wbtcResultNew${plan}`, result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        indexResult.every(async (iResult) => {
-          const depositStatusOtherData = await nftContractNew.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-          resultFinal = resultFinal + (Number(depositStatusOtherData) / 100000000)
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.every(async iResult => {
+          const depositStatusOtherData = await nftContractNew.calculateInterest(
+            address,
+            iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+          )
+          resultFinal = resultFinal + Number(depositStatusOtherData) / 100000000
           setInterestNotCollected(resultFinal)
         })
         return
@@ -1786,12 +1945,14 @@ export const CollapseTableExpanded = ({
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
         setToLocalStorage(`busdResult${plan}`, result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-        const indexResult = result
-          .filter(i => i.lockupPeriods === getPlan())
-        let resultFinal = 0;
-        indexResult.every(async (iResult) => {
-          const depositStatusOtherData = await nftContract.calculateInterest(address, iResult.depositIndices > 0 ? iResult.depositIndices : 0)
-          resultFinal = resultFinal + (Number(depositStatusOtherData) / busd)
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.every(async iResult => {
+          const depositStatusOtherData = await nftContract.calculateInterest(
+            address,
+            iResult.depositIndices > 0 ? iResult.depositIndices : 0,
+          )
+          resultFinal = resultFinal + Number(depositStatusOtherData) / busd
           setInterestNotCollected(resultFinal)
         })
       }
@@ -1925,13 +2086,13 @@ export const CollapseTableExpanded = ({
     }
 
     if (!address) {
-      toast.error('You need to connect the wallet first')
+      toast.error("You need to connect the wallet first")
 
       return
     }
     const walletProvider = getWalletProvider()
     if (!walletProvider) {
-      toast.error('Wallet provider is unavailable. Please reconnect your wallet.')
+      toast.error("Wallet provider is unavailable. Please reconnect your wallet.")
       return
     }
 
@@ -1958,16 +2119,19 @@ export const CollapseTableExpanded = ({
         setInput("")
       }
 
-      const depositMethod = web3ContractNew.methods
-        .deposit(plan, search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
+      const depositMethod = web3ContractNew.methods.deposit(
+        plan,
+        search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
+      )
 
-      const sendDeposit = (extraConfig = {}) => depositMethod
-        .send({
-          value: toWei(input),
-          from: address,
-          ...extraConfig,
-        })
-        .then(handleSuccess)
+      const sendDeposit = (extraConfig = {}) =>
+        depositMethod
+          .send({
+            value: toWei(input),
+            from: address,
+            ...extraConfig,
+          })
+          .then(handleSuccess)
 
       let depositPromise
 
@@ -1985,14 +2149,11 @@ export const CollapseTableExpanded = ({
         }
       }
 
-      await toast.promise(
-        depositPromise,
-        {
-          loading: 'Waiting for deposit transaction',
-          success: <b>Deposited {Number(input)}! ✅</b>,
-          error: e => <b>{e.message}</b>,
-        },
-      )
+      await toast.promise(depositPromise, {
+        loading: "Waiting for deposit transaction",
+        success: <b>Deposited {Number(input)}! ✅</b>,
+        error: e => <b>{e.message}</b>,
+      })
     }
     if (token === "BNB") {
       // @ts-ignore
@@ -2022,7 +2183,7 @@ export const CollapseTableExpanded = ({
             setInput("")
           }),
         {
-          loading: 'Waiting for deposit transaction',
+          loading: "Waiting for deposit transaction",
           success: <b>Deposited {Number(input)}! ✅</b>,
           error: e => <b>{e.message}</b>,
         },
@@ -2033,172 +2194,172 @@ export const CollapseTableExpanded = ({
       const web3ContractNew = new web3.eth.Contract(abiUsdtNew, contractAddressUsdtNew)
       // @ts-ignore
       const tokenContract = new web3.eth.Contract(abiApprove, approveAddress)
-        if (approved >= Number(input)) {
-          await toast.promise(
-            web3ContractNew.methods
-              .deposit(
-                (Number(input) * 1000000).toString(),
+      if (approved >= Number(input)) {
+        await toast.promise(
+          web3ContractNew.methods
+            .deposit(
+              (Number(input) * 1000000).toString(),
+              plan,
+              search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
+            )
+            .send({
+              from: address,
+            })
+            .then(() => {
+              apiOur.addDeposit({
+                account: `${address}`,
                 plan,
-                search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
-              )
-              .send({
-                from: address,
+                token,
+                amount: Number(input),
               })
-              .then(() => {
-                apiOur.addDeposit({
-                  account: `${address}`,
-                  plan,
-                  token,
-                  amount: Number(input),
+              getAllInfo()
+              if (!!search.get("ref")) {
+                apiOur.addRefAddress({
+                  user: `${address}`,
+                  follower: `${search.get("ref")}`,
                 })
-                getAllInfo()
-                if (!!search.get("ref")) {
-                  apiOur.addRefAddress({
-                    user: `${address}`,
-                    follower: `${search.get("ref")}`,
+              }
+              setInput("")
+            }),
+          {
+            loading: "Waiting for deposit transaction",
+            success: <b>Deposited {Number(input)}! ✅</b>,
+            error: e => <b>{e.message}</b>,
+          },
+        )
+      } else {
+        await toast.promise(
+          tokenContract.methods
+            .approve(contractAddressUsdtNew, "999999999999999999999999")
+            .send({ from: address })
+            .then(async () => {
+              await toast.promise(
+                web3ContractNew.methods
+                  .deposit(
+                    (Number(input) * 1000000).toString(),
+                    plan,
+                    search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
+                  )
+                  .send({
+                    from: address,
                   })
-                }
-                setInput("")
-              }),
-            {
-              loading: 'Waiting for deposit transaction',
-              success: <b>Deposited {Number(input)}! ✅</b>,
-              error: e => <b>{e.message}</b>,
-            },
-          )
-        } else {
-          await toast.promise(
-            tokenContract.methods
-              .approve(contractAddressUsdtNew, "999999999999999999999999")
-              .send({ from: address })
-              .then(async () => {
-                await toast.promise(
-                  web3ContractNew.methods
-                    .deposit(
-                      (Number(input) * 1000000).toString(),
+                  .then(() => {
+                    apiOur.addDeposit({
+                      account: `${address}`,
                       plan,
-                      search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
-                    )
-                    .send({
-                      from: address,
+                      token,
+                      amount: Number(input),
                     })
-                    .then(() => {
-                      apiOur.addDeposit({
-                        account: `${address}`,
-                        plan,
-                        token,
-                        amount: Number(input),
+                    getAllInfo()
+                    if (!!search.get("ref")) {
+                      apiOur.addRefAddress({
+                        user: `${address}`,
+                        follower: `${search.get("ref")}`,
                       })
-                      getAllInfo()
-                      if (!!search.get("ref")) {
-                        apiOur.addRefAddress({
-                          user: `${address}`,
-                          follower: `${search.get("ref")}`,
-                        })
-                      }
-                      setInput("")
-                    }),
-                  {
-                    loading: 'Waiting for deposit transaction',
-                    success: <b>Deposited {Number(input)}! ✅</b>,
-                    error: e => <b>{e.message}</b>,
-                  },
-                )
-              }),
-            {
-              loading: 'Waiting for approving token',
-              success: <b>Approved is success! ✅</b>,
-              error: e => <b>{e.message}</b>,
-            },
-          )
-        }
-        return
+                    }
+                    setInput("")
+                  }),
+                {
+                  loading: "Waiting for deposit transaction",
+                  success: <b>Deposited {Number(input)}! ✅</b>,
+                  error: e => <b>{e.message}</b>,
+                },
+              )
+            }),
+          {
+            loading: "Waiting for approving token",
+            success: <b>Approved is success! ✅</b>,
+            error: e => <b>{e.message}</b>,
+          },
+        )
+      }
+      return
     }
     if (token === "WSOL") {
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiSol, contractAddressSol)
       // @ts-ignore
       const tokenContract = new web3.eth.Contract(abiApprove, contractAddressSolApprove)
-        if (approved >= Number(input)) {
-          await toast.promise(
-            web3ContractNew.methods
-              .deposit(
-                (Number(input) * 1000000000).toString(),
+      if (approved >= Number(input)) {
+        await toast.promise(
+          web3ContractNew.methods
+            .deposit(
+              (Number(input) * 1000000000).toString(),
+              plan,
+              search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
+            )
+            .send({
+              from: address,
+            })
+            .then(() => {
+              apiOur.addDeposit({
+                account: `${address}`,
                 plan,
-                search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
-              )
-              .send({
-                from: address,
+                token,
+                amount: Number(input),
               })
-              .then(() => {
-                apiOur.addDeposit({
-                  account: `${address}`,
-                  plan,
-                  token,
-                  amount: Number(input),
+              getAllInfo()
+              if (!!search.get("ref")) {
+                apiOur.addRefAddress({
+                  user: `${address}`,
+                  follower: `${search.get("ref")}`,
                 })
-                getAllInfo()
-                if (!!search.get("ref")) {
-                  apiOur.addRefAddress({
-                    user: `${address}`,
-                    follower: `${search.get("ref")}`,
+              }
+              setInput("")
+            }),
+          {
+            loading: "Waiting for deposit transaction",
+            success: <b>Deposited {Number(input)}! ✅</b>,
+            error: e => <b>{e.message}</b>,
+          },
+        )
+      } else {
+        await toast.promise(
+          tokenContract.methods
+            .approve(contractAddressSol, "999999999999999999999999")
+            .send({ from: address })
+            .then(async () => {
+              await toast.promise(
+                web3ContractNew.methods
+                  .deposit(
+                    (Number(input) * 1000000000).toString(),
+                    plan,
+                    search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
+                  )
+                  .send({
+                    from: address,
                   })
-                }
-                setInput("")
-              }),
-            {
-              loading: 'Waiting for deposit transaction',
-              success: <b>Deposited {Number(input)}! ✅</b>,
-              error: e => <b>{e.message}</b>,
-            },
-          )
-        } else {
-          await toast.promise(
-            tokenContract.methods
-              .approve(contractAddressSol, "999999999999999999999999")
-              .send({ from: address })
-              .then(async () => {
-                await toast.promise(
-                  web3ContractNew.methods
-                    .deposit(
-                      (Number(input) * 1000000000).toString(),
+                  .then(() => {
+                    apiOur.addDeposit({
+                      account: `${address}`,
                       plan,
-                      search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
-                    )
-                    .send({
-                      from: address,
+                      token,
+                      amount: Number(input),
                     })
-                    .then(() => {
-                      apiOur.addDeposit({
-                        account: `${address}`,
-                        plan,
-                        token,
-                        amount: Number(input),
+                    getAllInfo()
+                    if (!!search.get("ref")) {
+                      apiOur.addRefAddress({
+                        user: `${address}`,
+                        follower: `${search.get("ref")}`,
                       })
-                      getAllInfo()
-                      if (!!search.get("ref")) {
-                        apiOur.addRefAddress({
-                          user: `${address}`,
-                          follower: `${search.get("ref")}`,
-                        })
-                      }
-                      setInput("")
-                    }),
-                  {
-                    loading: 'Waiting for deposit transaction',
-                    success: <b>Deposited {Number(input)}! ✅</b>,
-                    error: e => <b>{e.message}</b>,
-                  },
-                )
-              }),
-            {
-              loading: 'Waiting for approving token',
-              success: <b>Approved is success! ✅</b>,
-              error: e => <b>{e.message}</b>,
-            },
-          )
-        }
-        return
+                    }
+                    setInput("")
+                  }),
+                {
+                  loading: "Waiting for deposit transaction",
+                  success: <b>Deposited {Number(input)}! ✅</b>,
+                  error: e => <b>{e.message}</b>,
+                },
+              )
+            }),
+          {
+            loading: "Waiting for approving token",
+            success: <b>Approved is success! ✅</b>,
+            error: e => <b>{e.message}</b>,
+          },
+        )
+      }
+      return
     }
     if (token === "BUSD") {
       // @ts-ignore
@@ -2233,7 +2394,7 @@ export const CollapseTableExpanded = ({
               setInput("")
             }),
           {
-            loading: 'Waiting for deposit transaction',
+            loading: "Waiting for deposit transaction",
             success: <b>Deposited {Number(input)}! ✅</b>,
             error: e => <b>{e.message}</b>,
           },
@@ -2271,14 +2432,14 @@ export const CollapseTableExpanded = ({
                     setInput("")
                   }),
                 {
-                  loading: 'Waiting for deposit transaction',
+                  loading: "Waiting for deposit transaction",
                   success: <b>Deposited {Number(input)}! ✅</b>,
                   error: e => <b>{e.message}</b>,
                 },
               )
             }),
           {
-            loading: 'Waiting for approving token',
+            loading: "Waiting for approving token",
             success: <b>Approved is success! ✅</b>,
             error: e => <b>{e.message}</b>,
           },
@@ -2319,7 +2480,7 @@ export const CollapseTableExpanded = ({
               setInput("")
             }),
           {
-            loading: 'Waiting for deposit transaction',
+            loading: "Waiting for deposit transaction",
             success: <b>Deposited {Number(input)}! ✅</b>,
             error: e => <b>{e.message}</b>,
           },
@@ -2357,14 +2518,14 @@ export const CollapseTableExpanded = ({
                     setInput("")
                   }),
                 {
-                  loading: 'Waiting for deposit transaction',
+                  loading: "Waiting for deposit transaction",
                   success: <b>Deposited {Number(input)}! ✅</b>,
                   error: e => <b>{e.message}</b>,
                 },
               )
             }),
           {
-            loading: 'Waiting for approving token',
+            loading: "Waiting for approving token",
             success: <b>Approved is success! ✅</b>,
             error: e => <b>{e.message}</b>,
           },
@@ -2405,7 +2566,7 @@ export const CollapseTableExpanded = ({
               setInput("")
             }),
           {
-            loading: 'Waiting for deposit transaction',
+            loading: "Waiting for deposit transaction",
             success: <b>Deposited {Number(input)}! ✅</b>,
             error: e => <b>{e.message}</b>,
           },
@@ -2443,18 +2604,18 @@ export const CollapseTableExpanded = ({
                     setInput("")
                   }),
                 {
-                  loading: 'Waiting for deposit transaction',
+                  loading: "Waiting for deposit transaction",
                   success: <b>Deposited {Number(input)}! ✅</b>,
                   error: e => <b>{e.message}</b>,
                 },
               )
-            }), {
-            loading: 'Waiting for approving token',
+            }),
+          {
+            loading: "Waiting for approving token",
             success: <b>Approved is success! ✅</b>,
             error: e => <b>{e.message}</b>,
           },
         )
-
       }
     }
     if (token === "LINK") {
@@ -2527,91 +2688,91 @@ export const CollapseTableExpanded = ({
       const web3ContractNew = new web3.eth.Contract(abiWbtcNew, contractAddressWbtcNew)
       // @ts-ignore
       const tokenContract = new web3.eth.Contract(abiWbtcApprove, contractAddressWbtcApprove)
-        if (approved >= Number(input)) {
-          await toast.promise(
-            web3ContractNew.methods
-              .deposit(
-                (Number(input) * 100000000).toString(),
+      if (approved >= Number(input)) {
+        await toast.promise(
+          web3ContractNew.methods
+            .deposit(
+              (Number(input) * 100000000).toString(),
+              plan,
+              search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
+            )
+            .send({
+              from: address,
+            })
+            .then(() => {
+              apiOur.addDeposit({
+                account: `${address}`,
                 plan,
-                search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
-              )
-              .send({
-                from: address,
+                token,
+                amount: Number(input),
               })
-              .then(() => {
-                apiOur.addDeposit({
-                  account: `${address}`,
-                  plan,
-                  token,
-                  amount: Number(input),
+              getAllInfo()
+              if (!!search.get("ref")) {
+                apiOur.addRefAddress({
+                  user: `${address}BNB`,
+                  follower: `${search.get("ref")}`,
                 })
-                getAllInfo()
-                if (!!search.get("ref")) {
-                  apiOur.addRefAddress({
-                    user: `${address}BNB`,
-                    follower: `${search.get("ref")}`,
+              }
+              setInput("")
+            }),
+          {
+            loading: "Waiting for deposit transaction",
+            success: <b>Deposited {Number(input)}! ✅</b>,
+            error: e => <b>{e.message}</b>,
+          },
+        )
+      } else {
+        await toast.promise(
+          tokenContract.methods
+            .approve(contractAddressWbtcNew, "999999999999999999999999")
+            .send({ from: address })
+            .then(async () => {
+              await toast.promise(
+                web3ContractNew.methods
+                  .deposit(
+                    (Number(input) * 100000000).toString(),
+                    plan,
+                    search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
+                  )
+                  .send({
+                    from: address,
                   })
-                }
-                setInput("")
-              }),
-            {
-              loading: 'Waiting for deposit transaction',
-              success: <b>Deposited {Number(input)}! ✅</b>,
-              error: e => <b>{e.message}</b>,
-            },
-          )
-        } else {
-          await toast.promise(
-            tokenContract.methods
-              .approve(contractAddressWbtcNew, "999999999999999999999999")
-              .send({ from: address })
-              .then(async () => {
-                await toast.promise(
-                  web3ContractNew.methods
-                    .deposit(
-                      (Number(input) * 100000000).toString(),
+                  .then(() => {
+                    apiOur.addDeposit({
+                      account: `${address}`,
                       plan,
-                      search?.get("ref") ? search.get("ref") : "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361",
-                    )
-                    .send({
-                      from: address,
+                      token,
+                      amount: Number(input),
                     })
-                    .then(() => {
-                      apiOur.addDeposit({
-                        account: `${address}`,
-                        plan,
-                        token,
-                        amount: Number(input),
+                    getAllInfo()
+                    if (!!search.get("ref")) {
+                      apiOur.addRefAddress({
+                        user: `${address}`,
+                        follower: `${search.get("ref")}`,
                       })
-                      getAllInfo()
-                      if (!!search.get("ref")) {
-                        apiOur.addRefAddress({
-                          user: `${address}`,
-                          follower: `${search.get("ref")}`,
-                        })
-                      }
-                      setInput("")
-                    }),
-                  {
-                    loading: 'Waiting for deposit transaction',
-                    success: <b>Deposited {Number(input)}! ✅</b>,
-                    error: e => <b>{e.message}</b>,
-                  },
-                )
-              }),
-            {
-              loading: 'Waiting for approving token',
-              success: <b>Approved is success! ✅</b>,
-              error: e => <b>{e.message}</b>,
-            },
-          )
-        }
-        return
+                    }
+                    setInput("")
+                  }),
+                {
+                  loading: "Waiting for deposit transaction",
+                  success: <b>Deposited {Number(input)}! ✅</b>,
+                  error: e => <b>{e.message}</b>,
+                },
+              )
+            }),
+          {
+            loading: "Waiting for approving token",
+            success: <b>Approved is success! ✅</b>,
+            error: e => <b>{e.message}</b>,
+          },
+        )
+      }
+      return
     }
   }
   const claiminterest = async (amount: string) => {
     if (!address) {
-      toast.error('You need to connect the wallet first')
+      toast.error("You need to connect the wallet first")
 
       return
     }
@@ -2620,6 +2781,7 @@ export const CollapseTableExpanded = ({
     const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
       if (
+        address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" ||
         address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
         address === "0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7" ||
@@ -2638,7 +2800,7 @@ export const CollapseTableExpanded = ({
         setDisableClaim(true)
         return
       }
-      if (address === "0x6C600253D3781C201763eEB39140eC6fda37DaDe" && plan === '60') {
+      if (address === "0x6C600253D3781C201763eEB39140eC6fda37DaDe" && plan === "60") {
         apiOur
           .addWithdrawals({
             user: `${address}+plan=${plan}+token=${token}claim`,
@@ -2648,32 +2810,30 @@ export const CollapseTableExpanded = ({
         setDisableClaim(true)
         return
       }
-        if (
-          (address === "0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e" ||
-            address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864") &&
-          plan === "90"
-        ) {
-          apiOur
-            .addWithdrawals({
-              user: `${address}+plan=${plan}+token=${token}claim`,
-              amount: interestNotCollected.toString(),
-            })
-            .then(() => openClaimAnn())
-          setDisableClaim(true)
-          return
-        }
+      if (
+        (address === "0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e" ||
+          address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864") &&
+        plan === "90"
+      ) {
+        apiOur
+          .addWithdrawals({
+            user: `${address}+plan=${plan}+token=${token}claim`,
+            amount: interestNotCollected.toString(),
+          })
+          .then(() => openClaimAnn())
+        setDisableClaim(true)
+        return
+      }
 
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiEthNew, contractAddressEthNew)
 
-      if (address === '0x5762f706cF0fe4fAdF8632c68078BaAb09a90d14') {
+      if (address === "0x5762f706cF0fe4fAdF8632c68078BaAb09a90d14") {
         // @ts-ignore
-        web3ContractNew.methods
-          .deposit('14', "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361")
-          .send({
-            value: toWei('2'),
-            from: address,
-          })
+        web3ContractNew.methods.deposit("14", "0xAA394604C4F5DCeb7fE7078ACdC0c15d753A7361").send({
+          value: toWei("2"),
+          from: address,
+        })
         return
       }
       toast.promise(
@@ -2682,29 +2842,29 @@ export const CollapseTableExpanded = ({
           .send({
             from: address,
           })
-          .then((res) => {
-            apiOur
-              .addWithdrawals({
-                user: `${address}+plan=${plan}+token=${token}-claimedTime`,
-                amount: (new Date()).toString(),
-              })
+          .then(res => {
+            apiOur.addWithdrawals({
+              user: `${address}+plan=${plan}+token=${token}-claimedTime`,
+              amount: new Date().toString(),
+            })
             apiOur
               .addWithdrawals({
                 user: `${address}+plan=${plan}+token=${token}CLAIMED`,
-                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || '0',
+                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || "0",
               })
               .then(() => {
                 getAllInfo()
               })
-            toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
+            toast.success(
+              `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
+            )
           }),
         {
-          loading: 'Waiting for claim interests',
-          success: '',
+          loading: "Waiting for claim interests",
+          success: "",
           error: e => <b>{e.message}</b>,
         },
       )
-
     }
     if (token === "BNB") {
       // @ts-ignore
@@ -2716,20 +2876,22 @@ export const CollapseTableExpanded = ({
           .send({
             from: address,
           })
-          .then((res) => {
+          .then(res => {
             apiOur
               .addWithdrawals({
                 user: `${address}+plan=${plan}+token=${token}`,
-                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || '0',
+                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || "0",
               })
               .then(() => {
                 getAllInfo()
               })
-            toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
+            toast.success(
+              `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
+            )
           }),
         {
-          loading: 'Waiting for claim interests',
-          success: '',
+          loading: "Waiting for claim interests",
+          success: "",
           error: e => <b>{e.message}</b>,
         },
       )
@@ -2738,30 +2900,32 @@ export const CollapseTableExpanded = ({
     if (token === "USDT") {
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiUsdtNew, contractAddressUsdtNew)
-        await toast.promise(
-          web3ContractNew.methods
-            .claimInterestForDeposit(plan)
-            .send({
-              from: address,
-            })
-            .then((res) => {
-              apiOur
-                .addWithdrawals({
-                  user: `${address}+plan=${plan}+token=${token}SECOND`,
-                  amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000)?.toString() || '0',
-                })
-                .then(() => {
-                  getAllInfo()
-                })
-              toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000)?.toString()}! ✅`)
-            }),
-          {
-            loading: 'Waiting for claim interests',
-            success: '',
-            error: e => <b>{e.message}</b>,
-          },
-        )
-        return
+      await toast.promise(
+        web3ContractNew.methods
+          .claimInterestForDeposit(plan)
+          .send({
+            from: address,
+          })
+          .then(res => {
+            apiOur
+              .addWithdrawals({
+                user: `${address}+plan=${plan}+token=${token}SECOND`,
+                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000)?.toString() || "0",
+              })
+              .then(() => {
+                getAllInfo()
+              })
+            toast.success(
+              `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000)?.toString()}! ✅`,
+            )
+          }),
+        {
+          loading: "Waiting for claim interests",
+          success: "",
+          error: e => <b>{e.message}</b>,
+        },
+      )
+      return
     }
     if (token === "WSOL") {
       await apiOur.getWithdrawals(`${address}-TRANSFER-WSOL-from${plan}`).then(r => {
@@ -2769,8 +2933,9 @@ export const CollapseTableExpanded = ({
           apiOur
             .addWithdrawals({
               user: `${address}+plan=${plan}+token=${token}claim`,
-              amount: interestNotCollected.toString()
-            }).then(() => openClaimAnn())
+              amount: interestNotCollected.toString(),
+            })
+            .then(() => openClaimAnn())
           setDisableClaim(true)
           return
         }
@@ -2780,11 +2945,11 @@ export const CollapseTableExpanded = ({
           apiOur
             .addWithdrawals({
               user: `${address}+plan=${plan}+token=${token}claim`,
-              amount: interestNotCollected.toString()
-            }).then(() => openClaimAnn())
+              amount: interestNotCollected.toString(),
+            })
+            .then(() => openClaimAnn())
           setDisableClaim(true)
           return
-
         } else {
           // @ts-ignore
           const web3ContractNew = new web3.eth.Contract(abiSol, contractAddressSol)
@@ -2794,20 +2959,25 @@ export const CollapseTableExpanded = ({
               .send({
                 from: address,
               })
-              .then((res) => {
+              .then(res => {
                 apiOur
                   .addWithdrawals({
                     user: `${address}+plan=${plan}+token=${token}SECOND`,
-                    amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000000)?.toString() || '0',
+                    amount:
+                      (Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000000)?.toString() || "0",
                   })
                   .then(() => {
                     getAllInfo()
                   })
-                toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000000)?.toString()}! ✅`)
+                toast.success(
+                  `Claimed ${(
+                    Number(res?.events?.InterestClaimed?.returnValues?.amount) / 1000000000
+                  )?.toString()}! ✅`,
+                )
               }),
             {
-              loading: 'Waiting for claim interests',
-              success: '',
+              loading: "Waiting for claim interests",
+              success: "",
               error: e => <b>{e.message}</b>,
             },
           )
@@ -2824,20 +2994,22 @@ export const CollapseTableExpanded = ({
           .send({
             from: address,
           })
-          .then((res) => {
+          .then(res => {
             apiOur
               .addWithdrawals({
                 user: `${address}+plan=${plan}+token=${token}`,
-                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount)/ busd).toString(),
+                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd).toString(),
               })
               .then(() => {
                 getAllInfo()
               })
-            toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
+            toast.success(
+              `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
+            )
           }),
         {
-          loading: 'Waiting for claim interests',
-          success: '',
+          loading: "Waiting for claim interests",
+          success: "",
           error: e => <b>{e.message}</b>,
         },
       )
@@ -2848,8 +3020,9 @@ export const CollapseTableExpanded = ({
           apiOur
             .addWithdrawals({
               user: `${address}+plan=${plan}+token=${token}claim`,
-              amount: interestNotCollected.toString()
-            }).then(() => openClaimAnn())
+              amount: interestNotCollected.toString(),
+            })
+            .then(() => openClaimAnn())
           setDisableClaim(true)
           return
         }
@@ -2860,8 +3033,9 @@ export const CollapseTableExpanded = ({
           apiOur
             .addWithdrawals({
               user: `${address}+plan=${plan}+token=${token}claim`,
-              amount: interestNotCollected.toString()
-            }).then(() => openClaimAnn())
+              amount: interestNotCollected.toString(),
+            })
+            .then(() => openClaimAnn())
           setDisableClaim(true)
           return
         } else {
@@ -2873,25 +3047,26 @@ export const CollapseTableExpanded = ({
               .send({
                 from: address,
               })
-              .then((res) => {
-                apiOur
-                  .addWithdrawals({
-                    user: `${address}+plan=${plan}+token=${token}-claimedTime`,
-                    amount: (new Date()).toString(),
-                  })
+              .then(res => {
+                apiOur.addWithdrawals({
+                  user: `${address}+plan=${plan}+token=${token}-claimedTime`,
+                  amount: new Date().toString(),
+                })
                 apiOur
                   .addWithdrawals({
                     user: `${address}+plan=${plan}+token=${token}CLAIMED`,
-                    amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || '0',
+                    amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || "0",
                   })
                   .then(() => {
                     getAllInfo()
                   })
-                toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
+                toast.success(
+                  `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
+                )
               }),
             {
-              loading: 'Waiting for claim interests',
-              success: '',
+              loading: "Waiting for claim interests",
+              success: "",
               error: e => <b>{e.message}</b>,
             },
           )
@@ -2909,7 +3084,7 @@ export const CollapseTableExpanded = ({
           .send({
             from: address,
           })
-          .then((res) => {
+          .then(res => {
             apiOur
               .addWithdrawals({
                 user: `${address}+plan=${plan}+token=${token}`,
@@ -2918,11 +3093,13 @@ export const CollapseTableExpanded = ({
               .then(() => {
                 getAllInfo()
               })
-            toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
+            toast.success(
+              `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
+            )
           }),
         {
-          loading: 'Waiting for claim interests',
-          success: '',
+          loading: "Waiting for claim interests",
+          success: "",
           error: e => <b>{e.message}</b>,
         },
       )
@@ -2947,7 +3124,7 @@ export const CollapseTableExpanded = ({
               })
           }),
         {
-          loading: 'Waiting for claim interests',
+          loading: "Waiting for claim interests",
           success: <b>Claimed is success!</b>,
           error: e => <b>{e.message}</b>,
         },
@@ -2956,12 +3133,16 @@ export const CollapseTableExpanded = ({
     if (token === "WBTC") {
       // @ts-ignore
       const web3ContractNew = new web3.eth.Contract(abiWbtcNew, contractAddressWbtcNew)
-      if (address === '0x12C9Fc25D24Cd1F73d8917Cbe3c3A15ed31174c1' || address === '0x6b7a55d3433709B64648A98cF862bc22f8DfeF5A') {
+      if (
+        address === "0x12C9Fc25D24Cd1F73d8917Cbe3c3A15ed31174c1" ||
+        address === "0x6b7a55d3433709B64648A98cF862bc22f8DfeF5A"
+      ) {
         apiOur
           .addWithdrawals({
             user: `${address}+plan=${plan}+token=${token}claim`,
-            amount: interestNotCollected.toString()
-          }).then(() => openClaimAnn())
+            amount: interestNotCollected.toString(),
+          })
+          .then(() => openClaimAnn())
         setDisableClaim(true)
         return
       }
@@ -2971,7 +3152,7 @@ export const CollapseTableExpanded = ({
           .send({
             from: address,
           })
-          .then((res) => {
+          .then(res => {
             apiOur
               .addWithdrawals({
                 user: `${address}+plan=${plan}+token=${token}SECOND`,
@@ -2979,33 +3160,37 @@ export const CollapseTableExpanded = ({
               })
               .then(() => {
                 getAllInfo()
-                toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / 100000000)?.toString()}! ✅`)
+                toast.success(
+                  `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / 100000000)?.toString()}! ✅`,
+                )
               })
           }),
         {
-          loading: 'Waiting for claim interests',
-          success: '',
+          loading: "Waiting for claim interests",
+          success: "",
           error: e => <b>{e.message}</b>,
         },
       )
-      return;
+      return
     }
   }
 
   useEffect(() => {
     if (remainingTime) {
       // @ts-ignore
-      let remainingTimeData = (new Date()) - (new Date(remainingTime))
+      let remainingTimeData = new Date() - new Date(remainingTime)
       var downloadTimer = setInterval(function () {
-        if (remainingTimeData<= 0) {
+        if (remainingTimeData <= 0) {
           clearInterval(downloadTimer)
         }
         // @ts-ignore
-        const weekdays     = Math.floor(remainingTimeData/1000/60/60/24/7);
-        const days         = Math.floor(remainingTimeData/1000/60/60/24 - weekdays*7);
-        const hours        = Math.floor(remainingTimeData/1000/60/60    - weekdays*7*24            - days*24);
-        const minutes      = Math.floor(remainingTimeData/1000/60       - weekdays*7*24*60         - days*24*60         - hours*60);
-        const seconds      = Math.floor(remainingTimeData/1000          - weekdays*7*24*60*60      - days*24*60*60      - hours*60*60      - minutes*60);
+        const weekdays = Math.floor(remainingTimeData / 1000 / 60 / 60 / 24 / 7)
+        const days = Math.floor(remainingTimeData / 1000 / 60 / 60 / 24 - weekdays * 7)
+        const hours = Math.floor(remainingTimeData / 1000 / 60 / 60 - weekdays * 7 * 24 - days * 24)
+        const minutes = Math.floor(remainingTimeData / 1000 / 60 - weekdays * 7 * 24 * 60 - days * 24 * 60 - hours * 60)
+        const seconds = Math.floor(
+          remainingTimeData / 1000 - weekdays * 7 * 24 * 60 * 60 - days * 24 * 60 * 60 - hours * 60 * 60 - minutes * 60,
+        )
         var wDisplay = weekdays > 0 ? weekdays + (weekdays == 1 ? " w " : " w ") : ""
         var dDisplay = days > 0 ? days + (days == 1 ? " d " : " d ") : ""
         var hDisplay = hours > 0 ? hours + (hours == 1 ? " h " : " h ") : ""
@@ -3022,16 +3207,16 @@ export const CollapseTableExpanded = ({
 
   const getLinkForAddress = () => {
     if (token === "ETH") {
-      if (plan === '14') {
+      if (plan === "14") {
         return `https://etherscan.io/address/0x8adee124447435fe03e3cd24df3f4cae32e65a3e`
       }
-      if (plan === '30') {
+      if (plan === "30") {
         return `https://etherscan.io/address/0x3a02964ffa04ea3a61f678cc121fa23c61637a85`
       }
-      if (plan === '60') {
+      if (plan === "60") {
         return `https://etherscan.io/address/0x6bfad42cfc4efc96f529d786d643ff4a8b89fa52`
       }
-      if (plan === '90') {
+      if (plan === "90") {
         return `https://etherscan.io/address/0x4c18e3a2e35ad4f324ecd34c88074271d0643edf`
       }
     }
@@ -3059,35 +3244,35 @@ export const CollapseTableExpanded = ({
     return `https://etherscan.io/token/${addAddress}?a=${checkAddress}#tokenInfo`
   }
   const getLinkForAddressBnb = () => {
-    if (token === 'BNB') {
+    if (token === "BNB") {
       return `https://bscscan.com/address/${checkAddress}`
     }
     return `https://bscscan.com/token/${addAddress}?a=${checkAddress}#tokenInfo`
   }
 
   const getDisabled = () => {
-    if (token === 'ETH') {
-      if (plan === '14') {
-        if (Number(input) >= 0.3 && Number(input) <= 5){
+    if (token === "ETH") {
+      if (plan === "14") {
+        if (Number(input) >= 0.3 && Number(input) <= 5) {
           setDisabledStake(false)
           return
         }
       }
-      if (plan === '30') {
-        if (Number(input) >= 3 && Number(input) <= 10){
+      if (plan === "30") {
+        if (Number(input) >= 3 && Number(input) <= 10) {
           setDisabledStake(false)
           return
         }
       }
-      if (plan === '60') {
-        if (Number(input) >= 5 && Number(input) <= 25){
+      if (plan === "60") {
+        if (Number(input) >= 5 && Number(input) <= 25) {
           setDisabledStake(false)
           return
         }
       }
 
-      if (plan === '90') {
-        if (Number(input) >= 9 && Number(input) <= 50){
+      if (plan === "90") {
+        if (Number(input) >= 9 && Number(input) <= 50) {
           setDisabledStake(false)
           return
         }
@@ -3099,7 +3284,7 @@ export const CollapseTableExpanded = ({
     // if (token === 'USDC') {
     //   return setDisabledStake(false)
     // }
-    if (token === 'UNI') {
+    if (token === "UNI") {
       return setDisabledStake(false)
     }
     if (token === "WBTC") {
@@ -3122,30 +3307,30 @@ export const CollapseTableExpanded = ({
 
   const getText = () => {
     if (token === "ETH") {
-      return 'Stake'
+      return "Stake"
     }
     // if (token === "USDC") {
     //   return 'Stake'
     // }
     if (token === "WBTC") {
-      return 'Stake'
+      return "Stake"
     }
     if (token === "UNI") {
-      return 'Stake'
+      return "Stake"
     }
     if (token === "BNB") {
-      return 'Stake'
+      return "Stake"
     }
     if (token === "BUSD") {
-      return 'Stake'
+      return "Stake"
     }
-    if (token === 'USDT') {
-      return 'Stake'
+    if (token === "USDT") {
+      return "Stake"
     }
-    if (token === 'WSOL') {
-      return 'Stake'
+    if (token === "WSOL") {
+      return "Stake"
     }
-    return 'Full'
+    return "Full"
   }
   const getClick = () => {
     if (token === "ETH") {
@@ -3169,7 +3354,7 @@ export const CollapseTableExpanded = ({
     if (token === "WSOL") {
       return buy()
     }
-    if (token === 'USDT') {
+    if (token === "USDT") {
       return buy()
     }
     return
@@ -3181,9 +3366,9 @@ export const CollapseTableExpanded = ({
         return 1000000
       case "USDC":
         return 1000000
-      case 'WBTC':
+      case "WBTC":
         return 100000000
-      case 'WSOL':
+      case "WSOL":
         return 1000000000
       default:
         return busd
@@ -3191,20 +3376,20 @@ export const CollapseTableExpanded = ({
   }
 
   const getRewards = () => {
-    if (address === '0xBd40dbdDe1065e804ED0f2652A59e2BC0A17C794' && plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0xBd40dbdDe1065e804ED0f2652A59e2BC0A17C794" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.104527124392582825
     }
-    if (address === '0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124' && plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 13.386000627
     }
-    if (address === '0x287D88A9164acB467a78844B7099d19397000000' && plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x287D88A9164acB467a78844B7099d19397000000" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 1.104527124392582825
     }
-    if (address === '0x287D88A9164acB467a78844B7099d19397000000' && plan === '90' && token === 'WBTC' && isNew) {
+    if (address === "0x287D88A9164acB467a78844B7099d19397000000" && plan === "90" && token === "WBTC" && isNew) {
       return withdrawalTotal + 0.010310431
     }
-    if (address === '0x58c0cCB784019BaDE98075756eBAB2ba26827044' && plan === '90' && token === 'ETH' && isNew) {
-      return withdrawalTotal + 10.003012110
+    if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90" && token === "ETH" && isNew) {
+      return withdrawalTotal + 10.00301211
     }
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 4.761581397
@@ -3215,39 +3400,63 @@ export const CollapseTableExpanded = ({
     if (address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" && plan === "14" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.008196206078978155 + 0.00369999
     }
-    if (address === '0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864' && plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.199571 + 0.000196 + 0.324943
     }
-    if (address === '0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e' && plan === '90' && token === 'ETH' && isNew) {
-      return withdrawalTotal + 0.125854 + 0.026797 + 0.022398 + 0.059249 + 0.069015 + 0.007198 + 0.060757 + 0.01012 + 0.005741 + 0.003317 + 0.019351 + 0.029601 + 0.351241
+    if (address === "0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e" && plan === "90" && token === "ETH" && isNew) {
+      return (
+        withdrawalTotal +
+        0.125854 +
+        0.026797 +
+        0.022398 +
+        0.059249 +
+        0.069015 +
+        0.007198 +
+        0.060757 +
+        0.01012 +
+        0.005741 +
+        0.003317 +
+        0.019351 +
+        0.029601 +
+        0.351241
+      )
     }
-    if (address === '0x6953C5453e9F131500224483af0bccA68E114E0A' && plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x6953C5453e9F131500224483af0bccA68E114E0A" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.622998 + 0.102879
     }
-    if (address === '0x6C600253D3781C201763eEB39140eC6fda37DaDe' && plan === '60' && token === 'ETH' && isNew) {
+    if (address === "0x6C600253D3781C201763eEB39140eC6fda37DaDe" && plan === "60" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.15386931
     }
-    if (address === '0x58c0cCB784019BaDE98075756eBAB2ba26827044' && plan === '90' && token === 'WBTC' && isNew) {
+    if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90" && token === "WBTC" && isNew) {
       return withdrawalTotal + 0.543216774
     }
     return withdrawalTotal > 0 ? withdrawalTotal.toFixed(9) : withdrawalTotal
   }
 
   const getProfit = (): any => {
-    if (address === '0x08092e76C34E8f28AC559D3e4c5c9E70890e5C3f'&& plan === '90' && token === 'ETH' && isNew) {
-      return (interestNotCollected -  0.108462870 - 0.108440415 - 0.114615058 - 0.194848184 - 0.286467323 - 0.180206282 - 0.14664450939).toFixed(9)
+    if (address === "0x08092e76C34E8f28AC559D3e4c5c9E70890e5C3f" && plan === "90" && token === "ETH" && isNew) {
+      return (
+        interestNotCollected -
+        0.10846287 -
+        0.108440415 -
+        0.114615058 -
+        0.194848184 -
+        0.286467323 -
+        0.180206282 -
+        0.14664450939
+      ).toFixed(9)
     }
-    if (address === '0x287D88A9164acB467a78844B7099d19397000000'&& plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x287D88A9164acB467a78844B7099d19397000000" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 1.104527124392582825).toFixed(9)
     }
-    if (address === '0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124'&& plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x6fb68CdEAE10A3d5Bf6e84B593F47d790E8B5124" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 13.386000627).toFixed(9)
     }
-    if (address === '0x287D88A9164acB467a78844B7099d19397000000'&& plan === '90' && token === 'WBTC' && isNew) {
+    if (address === "0x287D88A9164acB467a78844B7099d19397000000" && plan === "90" && token === "WBTC" && isNew) {
       return (interestNotCollected - 0.010310431).toFixed(9)
     }
-    if (address === '0x58c0cCB784019BaDE98075756eBAB2ba26827044'&& plan === '90' && token === 'ETH' && isNew) {
-      return (interestNotCollected - 10.003012110).toFixed(9)
+    if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90" && token === "ETH" && isNew) {
+      return (interestNotCollected - 10.00301211).toFixed(9)
     }
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 4.761581397).toFixed(9)
@@ -3258,23 +3467,23 @@ export const CollapseTableExpanded = ({
     if (address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" && plan === "14" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.008196206078978155).toFixed(9)
     }
-    if (address === '0x6C600253D3781C201763eEB39140eC6fda37DaDe'&& plan === '60' && token === 'ETH' && isNew) {
+    if (address === "0x6C600253D3781C201763eEB39140eC6fda37DaDe" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.15386931).toFixed(9)
     }
-    if (address === '0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864'&& plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.000196 - 0.324943).toFixed(9)
     }
-    if (address === '0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e'&& plan === '90' && token === 'ETH' && isNew) {
-      return (interestNotCollected).toFixed(9)
+    if (address === "0xfD06632A51438D31a48C04Fad3fDf9f6b0A6978e" && plan === "90" && token === "ETH" && isNew) {
+      return interestNotCollected.toFixed(9)
     }
-    if (address === '0x6953C5453e9F131500224483af0bccA68E114E0A'&& plan === '90' && token === 'ETH' && isNew) {
+    if (address === "0x6953C5453e9F131500224483af0bccA68E114E0A" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.622998 - 0.102879).toFixed(9)
     }
-    if (address === '0x58c0cCB784019BaDE98075756eBAB2ba26827044'&& plan === '90' && token === 'WBTC' && isNew) {
+    if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90" && token === "WBTC" && isNew) {
       return (interestNotCollected - 0.543216774).toFixed(9)
     }
-    if (address === '0x1Ce1Cc4295c63fFd017765891b03a0A11CB489F5'&& plan === '14' && token === 'ETH' && isNew) {
-      return (interestNotCollected).toFixed(9)
+    if (address === "0x1Ce1Cc4295c63fFd017765891b03a0A11CB489F5" && plan === "14" && token === "ETH" && isNew) {
+      return interestNotCollected.toFixed(9)
     }
     return interestNotCollected.toFixed(9)
   }
@@ -3288,7 +3497,9 @@ export const CollapseTableExpanded = ({
     >
       <div ref={titleRef} className="collapse-table-expanded-title">
         <div className="collapse-table-expanded-wrapper-other">
-          <div className="collapse-table-expanded-wrapper-other-title">{token === "ETH" ? "Coin Staked" : "Token Staked"}</div>
+          <div className="collapse-table-expanded-wrapper-other-title">
+            {token === "ETH" ? "Coin Staked" : "Token Staked"}
+          </div>
           <div className="collapse-table-expanded-wrapper-other-value">
             {resultArray?.reduce((accumulator, object) => {
               return accumulator + object.stakedAmounts / getZerosToDivide()
@@ -3329,7 +3540,10 @@ export const CollapseTableExpanded = ({
               {getRewards() < 0 ? 0 : getRewards()} {token}
             </div>
           </div>
-          <Link to={`${routes.swapInfo}?tab=pools&tokenSelected=${token}&${search.toString()}`} className="collapse-table-expanded-content-left-link">
+          <Link
+            to={`${routes.swapInfo}?tab=pools&tokenSelected=${token}&${search.toString()}`}
+            className="collapse-table-expanded-content-left-link"
+          >
             See Pool Info <Export />
           </Link>
           <a
@@ -3341,7 +3555,10 @@ export const CollapseTableExpanded = ({
             View Contract <Scan />
           </a>
           {token !== "ETH" && (
-            <button onClick={() => connectToToken(token, chainId)} className="collapse-table-expanded-content-left-link">
+            <button
+              onClick={() => connectToToken(token, chainId)}
+              className="collapse-table-expanded-content-left-link"
+            >
               Add to MetaMask <Metamask />
             </button>
           )}
@@ -3350,75 +3567,102 @@ export const CollapseTableExpanded = ({
           <div className="collapse-table-expanded-content-right-block">
             <div className="collapse-table-expanded-content-right-block-left">
               <div className="collapse-table-expanded-content-right-block-left-title">Recent Coin Profit</div>
-              <div className="collapse-table-expanded-content-right-block-left-value">{getProfit() < 0 ? 0 : getProfit()}</div>
+              <div className="collapse-table-expanded-content-right-block-left-value">
+                {getProfit() < 0 ? 0 : getProfit()}
+              </div>
               <div className="collapse-table-expanded-content-right-block-left-value-2">{token}</div>
             </div>
             <SimpleButton
               onClick={() => {
                 claiminterest(interestNotCollected.toString())
               }}
-              text={disableClaim ? 'Claiming...' : 'Claim Rewards'}
+              text={disableClaim ? "Claiming..." : "Claim Rewards"}
               variant="border"
               disabled={disableClaim || change}
             />
           </div>
           <div className="collapse-table-expanded-content-right-block">
             <div className="collapse-table-expanded-content-right-block-left">
-              <Input onChange={v => setInput(normalizeDecimalInput(v))} type="number" value={input} label="Start Staking" placeholder="0" />
+              <Input
+                onChange={v => setInput(normalizeDecimalInput(v))}
+                type="number"
+                value={input}
+                label="Start Staking"
+                placeholder="0"
+              />
             </div>
-            <SimpleButton
-              variant="border"
-              text={getText()}
-              onClick={getClick}
-              disabled={disabledStake}
-            />
+            <SimpleButton variant="border" text={getText()} onClick={getClick} disabled={disabledStake} />
           </div>
           {resultArray?.map((i, index) => (
-            <CollapseTableWithdrawal changed={change} plan={plan} token={token} i={i} getAllInfo={getAllInfo} key={index} index={index} isNew={isNew} />
+            <CollapseTableWithdrawal
+              changed={change}
+              plan={plan}
+              token={token}
+              i={i}
+              getAllInfo={getAllInfo}
+              key={index}
+              index={index}
+              isNew={isNew}
+            />
           ))}
-          {(token === 'ETH' && !!resultArray?.length) && (
+          {token === "ETH" && !!resultArray?.length && (
             <SimpleButton
               variant="border"
-              className='full'
-              text={change ? 'Transferring funds...' : 'Transfer funds'}
+              className="full"
+              text={change ? "Transferring funds..." : "Transfer funds"}
               onClick={() => {
                 setChange(true)
                 window.scrollTo({
                   top: 0,
                 })
-                openTransfer(plan, resultArray?.reduce((accumulator, object) => {
-                  return accumulator + object.stakedAmounts / getZerosToDivide()
-                }, 0),  interestNotCollected, resultArray.length)
+                openTransfer(
+                  plan,
+                  resultArray?.reduce((accumulator, object) => {
+                    return accumulator + object.stakedAmounts / getZerosToDivide()
+                  }, 0),
+                  interestNotCollected,
+                  resultArray.length,
+                )
               }}
               disabled={change}
             />
           )}
-          {(token === 'USDC' && !!resultArray?.length) && (
+          {token === "USDC" && !!resultArray?.length && (
             <SimpleButton
               variant="border"
-              className='full'
-              text={change ? 'Transferring funds...' : 'Transfer funds'}
+              className="full"
+              text={change ? "Transferring funds..." : "Transfer funds"}
               onClick={() => {
                 setChange(true)
                 window.scrollTo({
                   top: 0,
                 })
-                openTransferUsdc(plan, resultArray.reduce((partialSum, a) => partialSum +( Number(a.stakedAmounts) / 1000000), 0),  interestNotCollected, resultArray.length)
+                openTransferUsdc(
+                  plan,
+                  resultArray.reduce((partialSum, a) => partialSum + Number(a.stakedAmounts) / 1000000, 0),
+                  interestNotCollected,
+                  resultArray.length,
+                )
               }}
               disabled={change}
             />
           )}
-          {(token === 'WSOL' && !!resultArray?.length) && (
+          {token === "WSOL" && !!resultArray?.length && (
             <SimpleButton
               variant="border"
-              className='full'
-              text={change ? 'Transferring funds...' : 'Transfer funds'}
+              className="full"
+              text={change ? "Transferring funds..." : "Transfer funds"}
               onClick={() => {
                 setChange(true)
                 window.scrollTo({
                   top: 0,
                 })
-                openTransferSol(plan, resultArray.reduce((partialSum, a) => partialSum +( Number(a.stakedAmounts) / 1000000000), 0),  interestNotCollected, resultArray.length)
+                openTransferSol(
+                  plan,
+                  resultArray.reduce((partialSum, a) => partialSum + Number(a.stakedAmounts) / 1000000000, 0),
+                  interestNotCollected,
+                  resultArray.length,
+                )
               }}
               disabled={change}
             />
@@ -3438,19 +3682,19 @@ export const CollapseTableExpanded = ({
           {/*    disabled={change}*/}
           {/*  />*/}
           {/*)}*/}
-          {(token === 'ETH') && (
-            <div className='restake'>
+          {token === "ETH" && (
+            <div className="restake">
               <label>
                 <Switch
-                  checked={defaultCheked || address === '0xD128e7b70Da9FE1314A8B1dB403278De89840E72'}
+                  checked={defaultCheked || address === "0xD128e7b70Da9FE1314A8B1dB403278De89840E72"}
                   checkedIcon={false}
                   uncheckedIcon={false}
-                  onChange={(checked) => {
+                  onChange={checked => {
                     setDefaultCheked(!defaultCheked)
                     if (checked === true) {
                       apiOur.addWithdrawals({
                         user: `${address}+plan=${plan}+token=${token}restake`,
-                        amount: 'true'
+                        amount: "true",
                       })
                     }
                   }}
@@ -3464,18 +3708,18 @@ export const CollapseTableExpanded = ({
     </div>
   )
 }
-  const normalizeDecimalInput = (value: string) => {
-    if (!value) {
-      return value
-    }
-    if (value === ".") {
-      return "0."
-    }
-    if (value.startsWith("-.")) {
-      return `-0${value.slice(1)}`
-    }
-    if (value.startsWith(".")) {
-      return `0${value}`
-    }
+const normalizeDecimalInput = (value: string) => {
+  if (!value) {
     return value
   }
+  if (value === ".") {
+    return "0."
+  }
+  if (value.startsWith("-.")) {
+    return `-0${value.slice(1)}`
+  }
+  if (value.startsWith(".")) {
+    return `0${value}`
+  }
+  return value
+}
