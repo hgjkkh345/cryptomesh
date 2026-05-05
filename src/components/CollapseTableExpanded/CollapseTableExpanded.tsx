@@ -911,13 +911,40 @@ export const CollapseTableExpanded = ({
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .slice(1)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
         const mockArray = [
           {
             depositIndices: 1,
             id: 1,
-            lockupPeriods: 2592000,
-            stakedAmounts: 4.11689086 * busd,
-            unlockTimes: 1780586078,
+            lockupPeriods: 5184000,
+            stakedAmounts: 9.14336443 * busd,
+            unlockTimes: 1783187278,
           },
         ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
@@ -929,7 +956,7 @@ export const CollapseTableExpanded = ({
             id: index,
           }))
           .concat(mockArray)
-          .slice(1)
+          .slice(2)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
