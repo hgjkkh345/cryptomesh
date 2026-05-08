@@ -2808,7 +2808,7 @@ export const CollapseTableExpanded = ({
     const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
       if (
-        address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" ||
+        (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === '14') ||
         address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" ||
         address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
