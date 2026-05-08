@@ -999,6 +999,34 @@ export const CollapseTableExpanded = ({
 
         return
       }
+      if (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "14") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .slice(3)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
       if (address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" && plan === "14") {
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
@@ -3430,6 +3458,9 @@ export const CollapseTableExpanded = ({
     }
     if (address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" && plan === "14" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.008196206078978155 + 0.00369999 + 0.007929893503530653
+    }
+    if (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "14" && token === "ETH" && isNew) {
+      return withdrawalTotal + 0.011363
     }
     if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.199571 + 0.000196 + 0.324943
