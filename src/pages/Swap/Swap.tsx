@@ -12,7 +12,7 @@ export const Swap = (): JSX.Element => {
         <h3 className="swap-other-content-title">Lightning cryptocurrency exchange</h3>
         <div className="swap-other-content-data">
           <iframe
-            src="https://simpleswap.io/?from=btc&to=eth&amount=1"
+            src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=false&amount=0.1&backgroundColor=000000&darkMode=true&from=btc&horizontal=false&lang=en-US&locales=true&logo=false&primaryColor=00C26F&to=eth&toTheMoon=true"
             height="660px"
             width="100%"
           />
