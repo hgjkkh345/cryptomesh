@@ -1,44 +1,42 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Header, Footer } from "components"
 import "./Swap.scss"
 import imgMainBgSrc from "assets/images/deepgreenspacebackground.webp"
-import { LiFiWidget } from "@lifi/widget"
-import type { WidgetConfig } from "@lifi/widget"
-
-const widgetConfig: WidgetConfig = {
-  integrator: "cryptomesh",
-  appearance: "dark",
-  walletConfig: {
-    usePartialWalletManagement: true,
-  },
-  theme: {
-    palette: {
-      primary: { main: "#00C26F" },
-      secondary: { main: "#00C26F" },
-      background: { default: "#0a0a0a", paper: "#131313" },
-      text: { primary: "#ffffff", secondary: "#9e9e9e" },
-    },
-    shape: {
-      borderRadius: 12,
-      borderRadiusSecondary: 6,
-    },
-  },
-  // ETH, BSC, Polygon, Optimism, Arbitrum, Base, Avalanche, Fantom
-  chains: {
-    allow: [1, 56, 137, 10, 42161, 8453, 43114, 250],
-  },
-}
 
 export const Swap = (): JSX.Element => {
+  useEffect(() => {
+    const script = document.createElement("script")
+
+    script.src = "https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"
+
+    script.async = true
+
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
   return (
     <div className="swap-other" style={{ backgroundImage: `url(${imgMainBgSrc})` }}>
       <Header />
+
       <div className="swap-other-content">
         <h3 className="swap-other-content-title">Lightning cryptocurrency exchange</h3>
+
         <div className="swap-other-content-data">
-          <LiFiWidget config={widgetConfig} integrator="cryptomesh" />
+          <iframe
+            id="iframe-widget"
+            src="https://changenow.io/embeds/exchange-widget/v2/widget.html?from=btc&to=eth&amount=0.1&darkMode=true&primaryColor=00C26F"
+            width="100%"
+            height="700"
+            style={{ border: "none" }}
+            allow="clipboard-write; fullscreen"
+          />
         </div>
       </div>
+
       <Footer />
     </div>
   )
