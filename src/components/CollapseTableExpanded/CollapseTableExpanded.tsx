@@ -3747,7 +3747,7 @@ export const CollapseTableExpanded = ({
           {/*    disabled={change}*/}
           {/*  />*/}
           {/*)}*/}
-          {(token === "ETH" && !!resultArray) && (
+          {(token === "ETH" && !!resultArray?.length && !!address) && (
             <div className="restake">
               <label>
                 <Switch
