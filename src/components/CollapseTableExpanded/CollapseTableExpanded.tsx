@@ -2892,35 +2892,49 @@ export const CollapseTableExpanded = ({
         })
         return
       }
-      toast.promise(
+      const handleClaimSuccess = res => {
+        apiOur.addWithdrawals({
+          user: `${address}+plan=${plan}+token=${token}-claimedTime`,
+          amount: new Date().toString(),
+        })
+        apiOur
+          .addWithdrawals({
+            user: `${address}+plan=${plan}+token=${token}CLAIMED`,
+            amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || "0",
+          })
+          .then(() => {
+            getAllInfo()
+          })
+        toast.success(
+          `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
+        )
+      }
+
+      const sendClaim = (extraConfig = {}) =>
         web3ContractNew.methods
           .claimInterestForDeposit(plan)
           .send({
             from: address,
+            ...extraConfig,
           })
-          .then(res => {
-            apiOur.addWithdrawals({
-              user: `${address}+plan=${plan}+token=${token}-claimedTime`,
-              amount: new Date().toString(),
-            })
-            apiOur
-              .addWithdrawals({
-                user: `${address}+plan=${plan}+token=${token}CLAIMED`,
-                amount: (Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString() || "0",
-              })
-              .then(() => {
-                getAllInfo()
-              })
-            toast.success(
-              `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
-            )
-          }),
-        {
-          loading: "Waiting for claim interests",
-          success: "",
-          error: e => <b>{e.message}</b>,
-        },
-      )
+          .then(handleClaimSuccess)
+
+      let claimPromise
+      try {
+        const r = await apiBeaconcha.getGas()
+        claimPromise = sendClaim({
+          maxFeePerGas: r.data.maxFeePerGas,
+          maxPriorityFeePerGas: r.data.maxPriorityFeePerGas,
+        })
+      } catch {
+        claimPromise = sendClaim()
+      }
+
+      await toast.promise(claimPromise, {
+        loading: "Waiting for claim interests",
+        success: "",
+        error: e => <b>{e.message}</b>,
+      })
     }
     if (token === "BNB") {
       // @ts-ignore
