@@ -3465,6 +3465,9 @@ export const CollapseTableExpanded = ({
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 4.761581397
     }
+    if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "90" && token === "ETH" && isNew) {
+      return withdrawalTotal + 0.313269395622598131
+    }
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "60" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.095171865
     }
@@ -3534,6 +3537,9 @@ export const CollapseTableExpanded = ({
     }
     if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 10.00301211).toFixed(9)
+    }
+    if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "90" && token === "ETH" && isNew) {
+      return (interestNotCollected - 0.313269395622598131).toFixed(9)
     }
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 4.761581397).toFixed(9)
