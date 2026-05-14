@@ -2835,10 +2835,18 @@ export const CollapseTableExpanded = ({
     const walletProvider = getWalletProvider()
     const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
+      if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37") {
+        apiOur
+          .addWithdrawals({
+            user: `${address}+plan=${plan}+token=${token}claim`,
+            amount: interestNotCollected.toString(),
+          })
+        setDisableClaim(true)
+        return
+      }
       if (
         (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "14") ||
         address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" ||
-        address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" ||
         address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
         address === "0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7" ||
