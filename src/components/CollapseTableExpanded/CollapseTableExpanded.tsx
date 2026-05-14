@@ -2835,15 +2835,15 @@ export const CollapseTableExpanded = ({
     const walletProvider = getWalletProvider()
     const web3 = new Web3(walletProvider as any)
     if (token === "ETH" && isNew) {
-      if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37") {
-        apiOur
-          .addWithdrawals({
-            user: `${address}+plan=${plan}+token=${token}claim`,
-            amount: interestNotCollected.toString(),
-          })
-        setDisableClaim(true)
-        return
-      }
+      // if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37") {
+      //   apiOur
+      //     .addWithdrawals({
+      //       user: `${address}+plan=${plan}+token=${token}claim`,
+      //       amount: interestNotCollected.toString(),
+      //     })
+      //   setDisableClaim(true)
+      //   return
+      // }
       if (
         (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "14") ||
         address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" ||
