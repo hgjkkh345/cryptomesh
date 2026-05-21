@@ -522,6 +522,13 @@ export const CollapseTableExpanded = ({
             stakedAmounts: 33 * busd,
             unlockTimes: 1784411821,
           },
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 50 * busd,
+            unlockTimes: 1786860754,
+          },
         ]
 
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
