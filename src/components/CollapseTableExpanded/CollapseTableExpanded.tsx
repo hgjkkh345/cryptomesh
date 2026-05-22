@@ -409,9 +409,7 @@ export const CollapseTableExpanded = ({
           }, 0),
         )
       }
-      // @ts-ignore
-      const { ethereum } = window
-      const provider = new ethers.providers.Web3Provider(ethereum)
+      const provider = ethers.providers.getDefaultProvider()
 
       const nftContractNew = new ethers.Contract(contractAddressEthNew, abiEthNew, provider)
 
@@ -1198,17 +1196,12 @@ export const CollapseTableExpanded = ({
 
     if (token === "USDT") {
       {
-        // @ts-ignore
-        const { ethereum } = window
-        const provider =
-          ethereum != null ? new ethers.providers.Web3Provider(ethereum) : ethers.providers.getDefaultProvider()
-        // @ts-ignore
-        const signer = await provider?.getSigner()
+        const provider = ethers.providers.getDefaultProvider()
 
-        const nftContractNew = new ethers.Contract(contractAddressUsdtNew, abiUsdtNew, signer)
-        const nftContractSecond = new ethers.Contract(contractAddressUsdtSecond, abiUsdtSecond, signer)
+        const nftContractNew = new ethers.Contract(contractAddressUsdtNew, abiUsdtNew, provider)
+        const nftContractSecond = new ethers.Contract(contractAddressUsdtSecond, abiUsdtSecond, provider)
 
-        const tokenContract = new ethers.Contract(approveAddress, abiApprove, signer)
+        const tokenContract = new ethers.Contract(approveAddress, abiApprove, provider)
         if (isNew) {
           if (localStorage.getItem("usdtBalanceNew") !== null) {
             setTotalBalance(getFromLocalStorage("usdtBalanceNew"))
@@ -1405,10 +1398,8 @@ export const CollapseTableExpanded = ({
     }
     if (token === "USDC" && (chainId === 1 || !address)) {
       {
-        // @ts-ignore
-        const { ethereum } = window
         const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
-        const provider = new ethers.providers.Web3Provider(ethereum)
+        const provider = ethers.providers.getDefaultProvider()
         const nftContract = new ethers.Contract(contractAddressUsdc, abiUsdc, provider)
         const tokenContract = new ethers.Contract(contractAddressUsdcApprove, abiUsdcApprove, provider)
         if (localStorage.getItem("usdcBalance") !== null) {
@@ -1572,10 +1563,8 @@ export const CollapseTableExpanded = ({
     }
     if (token === "WSOL" && (chainId === 1 || !address)) {
       {
-        // @ts-ignore
-        const { ethereum } = window
         const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
-        const provider = new ethers.providers.Web3Provider(ethereum)
+        const provider = ethers.providers.getDefaultProvider()
         const nftContract = new ethers.Contract(contractAddressSol, abiSol, provider)
         const tokenContract = new ethers.Contract(contractAddressSolApprove, abiUsdcApprove, provider)
         if (localStorage.getItem("solBalance") !== null) {
@@ -1739,9 +1728,7 @@ export const CollapseTableExpanded = ({
     }
     if (token === "UNI" && (chainId === 1 || !address)) {
       {
-        // @ts-ignore
-        const { ethereum } = window
-        const provider = new ethers.providers.Web3Provider(ethereum)
+        const provider = ethers.providers.getDefaultProvider()
 
         const nftContract = new ethers.Contract(contractAddressUni, abiUni, provider)
 
@@ -1784,9 +1771,7 @@ export const CollapseTableExpanded = ({
     }
     if (token === "LINK" && (chainId === 1 || !address)) {
       {
-        // @ts-ignore
-        const { ethereum } = window
-        const provider = new ethers.providers.Web3Provider(ethereum)
+        const provider = ethers.providers.getDefaultProvider()
 
         const nftContract = new ethers.Contract(contractAddressLink, abiLink, provider)
 
@@ -1830,9 +1815,7 @@ export const CollapseTableExpanded = ({
     }
     if (token === "WBTC") {
       {
-        // @ts-ignore
-        const { ethereum } = window
-        const provider = new ethers.providers.Web3Provider(ethereum)
+        const provider = ethers.providers.getDefaultProvider()
         const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
         if (!!claimed?.length) {
           setRemainingTime(claimed[claimed.length - 1]?.amount)
