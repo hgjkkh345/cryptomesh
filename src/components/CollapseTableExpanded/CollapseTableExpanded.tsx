@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x3E0Df92236874DaBC0f829f3560396EF03d45fc4"
+  // const address = "0xA00636165AE7A974220530aE1b2a9d511d5e06D5"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -416,7 +416,10 @@ export const CollapseTableExpanded = ({
       const nftContractNew = new ethers.Contract(contractAddressEthNew, abiEthNew, provider)
 
       const depositStatusDataLol = await nftContractNew.getDepositInfo(address)
-      if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+      if (
+        localStorage.getItem(`ethResult${plan}SECOND`) !== null &&
+        address !== "0xA00636165AE7A974220530aE1b2a9d511d5e06D5"
+      ) {
         setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
       }
 
