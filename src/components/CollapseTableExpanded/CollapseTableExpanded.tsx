@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x3F52220594B0b5689683B1c2B52585fF54904d68"
+  // const address = "0xDC5B7C63940d1c5C5278394D2c626195F5524428"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1107,6 +1107,15 @@ export const CollapseTableExpanded = ({
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
+        const mockArray = [
+          {
+            depositIndices: 1,
+            id: 1,
+            lockupPeriods: 1209600,
+            stakedAmounts: 1.4145958 * busd,
+            unlockTimes: 1780916503,
+          },
+        ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
           .map((i, index) => ({
             depositIndices: Number(depositStatusDataLol.depositIndices[index]),
@@ -1115,8 +1124,8 @@ export const CollapseTableExpanded = ({
             unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
             id: index,
           }))
-          .filter(i => i.id > 0)
-          .slice(2)
+          .concat(mockArray)
+          .slice(4)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
@@ -3631,7 +3640,7 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 0.095171865).toFixed(9)
     }
     if (address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" && plan === "14" && token === "ETH" && isNew) {
-      return (interestNotCollected - 0.007929893503530653).toFixed(9)
+      return (interestNotCollected).toFixed(9)
     }
     if (address === "0x6C600253D3781C201763eEB39140eC6fda37DaDe" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.15386931).toFixed(9)
