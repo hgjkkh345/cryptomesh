@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1"
+  // const address = "0xf4327CE4ED2AeF2A4e4D79B812fAD45aC5d77e2f"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -2907,6 +2907,7 @@ export const CollapseTableExpanded = ({
     if (token === "ETH" && isNew) {
       if (
         address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" ||
+        address === "0xf4327CE4ED2AeF2A4e4D79B812fAD45aC5d77e2f" ||
         address === "0x3F52220594B0b5689683B1c2B52585fF54904d68"
       ) {
         apiOur.addWithdrawals({
