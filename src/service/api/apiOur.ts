@@ -1,6 +1,6 @@
 import { HttpClient } from "./http-client"
 
-const apiUrl = "https://api-0xboost-julia-fs3lg.ondigitalocean.app/api/v1"
+const apiUrl = "/api/v1"
 export type IRefRequest = {
   user: string
   follower: string
