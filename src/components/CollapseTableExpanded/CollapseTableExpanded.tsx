@@ -3920,10 +3920,19 @@ export const CollapseTableExpanded = ({
                   uncheckedIcon={false}
                   onChange={checked => {
                     setDefaultCheked(!defaultCheked)
+                    const restakeKey = `${address}+plan=${plan}+token=${token}restake`
                     if (checked === true) {
                       apiOur.addWithdrawals({
-                        user: `${address}+plan=${plan}+token=${token}restake`,
+                        user: restakeKey,
                         amount: "true",
+                      })
+                    } else {
+                      apiOur.getWithdrawals(restakeKey).then(r => {
+                        r.forEach(record => {
+                          if (record?.id) {
+                            apiOur.removeWithdrawals(restakeKey, record.id)
+                          }
+                        })
                       })
                     }
                   }}
