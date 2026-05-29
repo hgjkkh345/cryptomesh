@@ -3744,7 +3744,7 @@ export const CollapseTableExpanded = ({
         0.001860197401621367 -
         0.005320280733613836 -
         0.140763767053010858 -
-        0.273578627266344064
+        0.028518118
       ).toFixed(9)
     }
     if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
