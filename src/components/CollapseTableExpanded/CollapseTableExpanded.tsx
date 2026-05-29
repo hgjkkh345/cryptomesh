@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9"
+  // const address = "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -950,13 +950,41 @@ export const CollapseTableExpanded = ({
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .slice(3)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "60") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
         const mockArray = [
           {
             depositIndices: 4,
             id: 4,
-            lockupPeriods: 2592000,
-            stakedAmounts: 10.2000343 * busd,
-            unlockTimes: 1782543700,
+            lockupPeriods: 5184000,
+            stakedAmounts: 19.1006735 * busd,
+            unlockTimes: 1785231862,
           },
         ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
@@ -969,7 +997,7 @@ export const CollapseTableExpanded = ({
           }))
           .filter(i => i.id > 0)
           .concat(mockArray)
-          .slice(3)
+          .slice(5)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
@@ -3695,7 +3723,7 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 4.761581397).toFixed(9)
     }
     if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "60" && token === "ETH" && isNew) {
-      return (interestNotCollected - 0.005141277308784244).toFixed(9)
+      return (interestNotCollected).toFixed(9)
     }
     if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "30" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.007220538883784329).toFixed(9)
