@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x3F52220594B0b5689683B1c2B52585fF54904d68"
+  // const address = "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -2956,7 +2956,7 @@ export const CollapseTableExpanded = ({
         return
       }
       if (
-        (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "14") ||
+        (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9") ||
         (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60") ||
         address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
@@ -3597,7 +3597,14 @@ export const CollapseTableExpanded = ({
       return withdrawalTotal + 0.095171865
     }
     if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60" && token === "ETH" && isNew) {
-      return withdrawalTotal + 0.003998935195649388 + 0.001860197401621367 + 0.005320280733613836 + 0.140763767053010858
+      return (
+        withdrawalTotal +
+        0.003998935195649388 +
+        0.001860197401621367 +
+        0.005320280733613836 +
+        0.140763767053010858 +
+        0.273578627266344064
+      )
     }
     if (address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" && plan === "14" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.008196206078978155 + 0.00369999 + 0.007929893503530653
@@ -3696,7 +3703,8 @@ export const CollapseTableExpanded = ({
         0.003998935195649388 -
         0.001860197401621367 -
         0.005320280733613836 -
-        0.140763767053010858
+        0.140763767053010858 -
+        0.273578627266344064
       ).toFixed(9)
     }
     if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
