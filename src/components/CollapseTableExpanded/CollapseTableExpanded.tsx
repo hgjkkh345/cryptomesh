@@ -415,8 +415,7 @@ export const CollapseTableExpanded = ({
 
       const depositStatusDataLol = await nftContractNew.getDepositInfo(address)
       if (
-        localStorage.getItem(`ethResult${plan}SECOND`) !== null &&
-        address !== "0xA00636165AE7A974220530aE1b2a9d511d5e06D5"
+        address !== "0x83c622d78FF673a895dd70D0C52fC12179d49bdb"
       ) {
         setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
       }
@@ -1294,7 +1293,9 @@ export const CollapseTableExpanded = ({
       }))
       setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
-      setToLocalStorage(`ethResult${plan}SECOND`, result.filter(i => i.lockupPeriods === getPlan()) || [])
+      if (address !== "0x83c622d78FF673a895dd70D0C52fC12179d49bdb") {
+        setToLocalStorage(`ethResult${plan}SECOND`, result.filter(i => i.lockupPeriods === getPlan()) || [])
+      }
 
       const indexResult = result.filter(i => i.lockupPeriods === getPlan())
       let resultFinal = 0
