@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9"
+  // const address = "0x83c622d78FF673a895dd70D0C52fC12179d49bdb"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -3696,7 +3696,7 @@ export const CollapseTableExpanded = ({
       return withdrawalTotal + 4.761581397
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "90" && token === "ETH" && isNew) {
-      return withdrawalTotal + 0.044924050900560994 + 0.002858839051189244
+      return withdrawalTotal + 0.044924050900560994 + 0.002858839051189244 + 0.091680363325004676
     }
     if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.313269395622598131 + 0.241320200729936011 + 0.44839493048439223 + 0.579463599324130514
@@ -3731,7 +3731,8 @@ export const CollapseTableExpanded = ({
         0.001491753229052967 +
         0.142441411 +
         0.095481674303638357 +
-        1.171934307599873221
+        1.171934307599873221 +
+        0.680505193661641718
       )
     }
     if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
@@ -3802,7 +3803,7 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 0.579463599324130514).toFixed(9)
     }
     if (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "90" && token === "ETH" && isNew) {
-      return (interestNotCollected).toFixed(9)
+      return (interestNotCollected - 0.680505193661641718).toFixed(9)
     }
     if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.189884750721780222 - 0.148098362422849034).toFixed(9)
@@ -3814,7 +3815,7 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 4.761581397).toFixed(9)
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "90" && token === "ETH" && isNew) {
-      return (interestNotCollected - 0.044924050900560994 - 0.002858839051189244).toFixed(9)
+      return (interestNotCollected - 0.044924050900560994 - 0.002858839051189244 - 0.091680363325004676).toFixed(9)
     }
     if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected).toFixed(9)
