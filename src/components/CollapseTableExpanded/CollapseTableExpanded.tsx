@@ -1163,7 +1163,7 @@ export const CollapseTableExpanded = ({
             id: 1,
             lockupPeriods: 5184000,
             stakedAmounts: 9.14336443 * busd,
-            unlockTimes: 1783187278,
+            unlockTimes: 1788466172,
           },
         ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
@@ -3835,13 +3835,7 @@ export const CollapseTableExpanded = ({
     }
     if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60" && token === "ETH" && isNew) {
       return (
-        interestNotCollected -
-        0.003998935195649388 -
-        0.001860197401621367 -
-        0.005320280733613836 -
-        0.140763767053010858 -
-        0.028518118 -
-        0.223337217223921929
+        interestNotCollected
       ).toFixed(9)
     }
     if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
