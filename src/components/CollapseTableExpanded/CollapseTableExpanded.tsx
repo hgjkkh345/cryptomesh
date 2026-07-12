@@ -139,7 +139,7 @@ export const CollapseTableExpanded = ({
   const busd = 1000000000000000000
 
   const chainId = getChainId(config);
-  const { address, connector } = useAccount()
+  const { address , connector } = useAccount()
   const { data: walletClient } = useWalletClient({ chainId: chainId || 1 })
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
@@ -3696,7 +3696,15 @@ export const CollapseTableExpanded = ({
       return withdrawalTotal + 4.761581397
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "90" && token === "ETH" && isNew) {
-      return withdrawalTotal + 0.044924050900560994 + 0.002858839051189244 + 0.091680363325004676 + 0.070966060515148632 + 0.059992238477143609
+      return (
+        withdrawalTotal +
+        0.044924050900560994 +
+        0.002858839051189244 +
+        0.091680363325004676 +
+        0.070966060515148632 +
+        0.059992238477143609 +
+        0.068882003902142241
+      )
     }
     if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.313269395622598131 + 0.241320200729936011 + 0.44839493048439223 + 0.579463599324130514
@@ -3821,7 +3829,9 @@ export const CollapseTableExpanded = ({
         0.044924050900560994 -
         0.002858839051189244 -
         0.091680363325004676 -
-        0.070966060515148632 - 0.059992238477143609
+        0.070966060515148632 -
+        0.059992238477143609 -
+        0.068882003902142241
       ).toFixed(9)
     }
     if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "60" && token === "ETH" && isNew) {
