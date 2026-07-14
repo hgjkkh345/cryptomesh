@@ -70,6 +70,7 @@ export const CollapseTableWithdrawal = ({ plan, token, i, isNew, getAllInfo, ind
         address === "0x6953C5453e9F131500224483af0bccA68E114E0A" ||
         address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
+address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" ||
         address === "0x28916C38989591c380F19025C67128edCfFc1468"
       ) {
         apiOur
