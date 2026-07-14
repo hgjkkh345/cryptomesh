@@ -1283,7 +1283,30 @@ export const CollapseTableExpanded = ({
 
         return
       }
+if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14") {
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .slice(40)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
       const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
         depositIndices: Number(depositStatusDataLol.depositIndices[index]),
         stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
