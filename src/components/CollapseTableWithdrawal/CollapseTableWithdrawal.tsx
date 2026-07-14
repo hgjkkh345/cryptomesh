@@ -907,13 +907,7 @@ address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" ||
     }
   }
 
-  useEffect(() => {
-    apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}withdrawalStop`).then(r => {
-      if (!!r?.length) {
-        setDisableWithdrawal(true)
-      }
-    })
-  }, [address])
+
 
   return (
     <div
