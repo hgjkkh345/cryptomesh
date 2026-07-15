@@ -101,7 +101,7 @@ export const CollapseTable = ({
   const {  address } = useAccount();
   const chainId = getChainId(config);
 
-  // const address = '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7'
+  // const address = "0x83c622d78FF673a895dd70D0C52fC12179d49bdb"
 
   useEffect(() => {
     getAllInfo()
@@ -273,6 +273,21 @@ export const CollapseTable = ({
         })).filter(i => i.id > 0).concat(mockArray)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
+        return
+      }
+      if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14") {
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .slice(40)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
         return
       }
       if (address === '0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7' && plan === '30') {
