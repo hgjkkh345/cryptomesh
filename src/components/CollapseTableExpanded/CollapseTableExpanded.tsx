@@ -3726,7 +3726,8 @@ if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14") {
         0.091680363325004676 +
         0.070966060515148632 +
         0.059992238477143609 +
-        0.068882003902142241
+        0.068882003902142241 +
+        0.055639395980550947
       )
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14" && token === "ETH" && isNew) {
@@ -3850,7 +3851,7 @@ if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14") {
       return (interestNotCollected - 4.761581397).toFixed(9)
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "90" && token === "ETH" && isNew) {
-      return (interestNotCollected).toFixed(9)
+      return (interestNotCollected - 0.055639395980550947).toFixed(9)
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.002403287517859769).toFixed(9)
