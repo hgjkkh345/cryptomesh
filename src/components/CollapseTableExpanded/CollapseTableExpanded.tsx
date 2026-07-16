@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0xDC5B7C63940d1c5C5278394D2c626195F5524428"
+  // const address = "0x3F52220594B0b5689683B1c2B52585fF54904d68"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1000,6 +1000,15 @@ export const CollapseTableExpanded = ({
         if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
           setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
         }
+        const mockArray = [
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 2592000,
+            stakedAmounts: 9.6978538 * busd,
+            unlockTimes: 1786781168,
+          },
+        ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
           .map((i, index) => ({
             depositIndices: Number(depositStatusDataLol.depositIndices[index]),
@@ -1009,7 +1018,8 @@ export const CollapseTableExpanded = ({
             id: index,
           }))
           .filter(i => i.id > 0)
-          .slice(3)
+          .concat(mockArray)
+          .slice(7)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
@@ -1283,7 +1293,7 @@ export const CollapseTableExpanded = ({
 
         return
       }
-if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14") {
+      if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14") {
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
           .map((i, index) => ({
             depositIndices: Number(depositStatusDataLol.depositIndices[index]),
