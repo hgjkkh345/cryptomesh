@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x1701e35C187dA957041e11A4bfCC7966214eFFCd"
+  // const address = "0x83c622d78FF673a895dd70D0C52fC12179d49bdb"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -3738,7 +3738,8 @@ export const CollapseTableExpanded = ({
         0.070966060515148632 +
         0.059992238477143609 +
         0.068882003902142241 +
-        0.055639395980550947
+        0.055639395980550947 +
+        0.057467152562958924
       )
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14" && token === "ETH" && isNew) {
@@ -3862,7 +3863,7 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 4.761581397).toFixed(9)
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "90" && token === "ETH" && isNew) {
-      return (interestNotCollected - 0.055639395980550947).toFixed(9)
+      return (interestNotCollected - 0.055639395980550947 - 0.057467152562958924).toFixed(9)
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "14" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.002403287517859769).toFixed(9)
