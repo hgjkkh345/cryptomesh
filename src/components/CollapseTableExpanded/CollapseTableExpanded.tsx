@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB"
+  // const address = "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1007,6 +1007,44 @@ export const CollapseTableExpanded = ({
             lockupPeriods: 2592000,
             stakedAmounts: 9.6978538 * busd,
             unlockTimes: 1786781168,
+          },
+        ]
+        const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
+          .map((i, index) => ({
+            depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+            stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+            lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+            unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+            id: index,
+          }))
+          .filter(i => i.id > 0)
+          .concat(mockArray)
+          .slice(7)
+        setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "30") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const mockArray = [
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 2592000,
+            stakedAmounts: 10.2207852 * busd,
+            unlockTimes: 1787750362,
           },
         ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
