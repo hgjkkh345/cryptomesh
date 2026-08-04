@@ -144,7 +144,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0xDC5B7C63940d1c5C5278394D2c626195F5524428"
+  // const address = "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -3767,6 +3767,9 @@ export const CollapseTableExpanded = ({
     if (address === "0x3E0Df92236874DaBC0f829f3560396EF03d45fc4" && plan === "90" && token === "ETH" && isNew) {
       return withdrawalTotal + 4.761581397
     }
+    if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "30" && token === "ETH" && isNew) {
+      return withdrawalTotal + 0.037531708
+    }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "90" && token === "ETH" && isNew) {
       return (
         withdrawalTotal +
@@ -3887,6 +3890,9 @@ export const CollapseTableExpanded = ({
     }
     if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.579463599324130514).toFixed(9)
+    }
+    if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "30" && token === "ETH" && isNew) {
+      return (interestNotCollected - 0.037531708).toFixed(9)
     }
     if (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected).toFixed(9)
