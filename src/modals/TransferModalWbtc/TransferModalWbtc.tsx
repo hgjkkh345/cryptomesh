@@ -103,7 +103,7 @@ export const TransferModalWbtc = ({ onClose, currentPlan, currentMoney,interests
             apiOur
               .addWithdrawals({
                 user: `${address}-TRANSFER-WBTC-to${selectedPlan}`,
-                amount: `${(Number(input) + currentMoney + interests + selectedPoolAmountResult)},${((24 * 60 * 60 * Number(selectedPlan)) + (Date.now() / 1000))}`
+                amount: `${(Number(input) + currentMoney + selectedPoolAmountResult)},${((24 * 60 * 60 * Number(selectedPlan)) + (Date.now() / 1000))}`
               })
             apiOur
               .addWithdrawals({
@@ -125,7 +125,7 @@ export const TransferModalWbtc = ({ onClose, currentPlan, currentMoney,interests
             apiOur
               .addWithdrawals({
                 user: `${address}-TRANSFER-WBTC-to${selectedPlan}`,
-                amount: `${(Number(input) + currentMoney + interests + selectedPoolAmountResult)},${((24 * 60 * 60 * Number(selectedPlan)) + (Date.now() / 1000))}`
+                amount: `${(Number(input) + currentMoney + selectedPoolAmountResult)},${((24 * 60 * 60 * Number(selectedPlan)) + (Date.now() / 1000))}`
               })
             apiOur
               .addWithdrawals({
@@ -173,7 +173,7 @@ export const TransferModalWbtc = ({ onClose, currentPlan, currentMoney,interests
           </div>
           <div className="transfer-modal-content-body-form">
             <Input type="number" onChange={v => setInput(normalizeDecimalInput(v))} value={input}
-                   placeholder="Add funds" /> {`+ ${interests}`} + {currentMoney} = {(currentMoney + (Number(input) || 0) + interests)}
+                   placeholder="Add funds" /> + {currentMoney} = {(currentMoney + (Number(input) || 0) + interests)}
           </div>
           {error && <div className="red">{error}</div>}
         </div>

@@ -120,6 +120,7 @@ export const CollapseTableExpanded = ({
   openClaimAnn,
   openTransferUsdc,
   openTransferSol,
+  openTransferWbtc,
 }: Props): JSX.Element => {
   const [search] = useSearchParams()
   const titleRef = useRef<any>(null)
@@ -144,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0xDC5B7C63940d1c5C5278394D2c626195F5524428"
+  // const address = "0x29BBe091603f2994Dcf6e5008C9F8AFF1D8Cf57D"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1460,7 +1461,10 @@ export const CollapseTableExpanded = ({
 
     if (token === "USDT") {
       {
-        const provider = library && chainId === 1 ? library : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
+        const provider =
+          library && chainId === 1
+            ? library
+            : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
 
         const nftContractNew = new ethers.Contract(contractAddressUsdtNew, abiUsdtNew, provider)
         const nftContractSecond = new ethers.Contract(contractAddressUsdtSecond, abiUsdtSecond, provider)
@@ -1663,7 +1667,10 @@ export const CollapseTableExpanded = ({
     if (token === "USDC" && (chainId === 1 || !address)) {
       {
         const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
-        const provider = library && chainId === 1 ? library : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
+        const provider =
+          library && chainId === 1
+            ? library
+            : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
         const nftContract = new ethers.Contract(contractAddressUsdc, abiUsdc, provider)
         const tokenContract = new ethers.Contract(contractAddressUsdcApprove, abiUsdcApprove, provider)
         if (localStorage.getItem("usdcBalance") !== null) {
@@ -1828,7 +1835,10 @@ export const CollapseTableExpanded = ({
     if (token === "WSOL" && (chainId === 1 || !address)) {
       {
         const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
-        const provider = library && chainId === 1 ? library : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
+        const provider =
+          library && chainId === 1
+            ? library
+            : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
         const nftContract = new ethers.Contract(contractAddressSol, abiSol, provider)
         const tokenContract = new ethers.Contract(contractAddressSolApprove, abiUsdcApprove, provider)
         if (localStorage.getItem("solBalance") !== null) {
@@ -1992,7 +2002,10 @@ export const CollapseTableExpanded = ({
     }
     if (token === "UNI" && (chainId === 1 || !address)) {
       {
-        const provider = library && chainId === 1 ? library : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
+        const provider =
+          library && chainId === 1
+            ? library
+            : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
 
         const nftContract = new ethers.Contract(contractAddressUni, abiUni, provider)
 
@@ -2035,7 +2048,10 @@ export const CollapseTableExpanded = ({
     }
     if (token === "LINK" && (chainId === 1 || !address)) {
       {
-        const provider = library && chainId === 1 ? library : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
+        const provider =
+          library && chainId === 1
+            ? library
+            : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
 
         const nftContract = new ethers.Contract(contractAddressLink, abiLink, provider)
 
@@ -2079,7 +2095,10 @@ export const CollapseTableExpanded = ({
     }
     if (token === "WBTC") {
       {
-        const provider = library && chainId === 1 ? library : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
+        const provider =
+          library && chainId === 1
+            ? library
+            : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
         const claimed = await apiOur.getWithdrawals(`${address}+plan=${plan}+token=${token}-claimedTime`)
         if (!!claimed?.length) {
           setRemainingTime(claimed[claimed.length - 1]?.amount)
@@ -3175,7 +3194,7 @@ export const CollapseTableExpanded = ({
         return
       }
       if (
-        (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9") ||
+        address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" ||
         (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60") ||
         address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
@@ -3244,9 +3263,7 @@ export const CollapseTableExpanded = ({
           .then(() => {
             getAllInfo()
           })
-        toast.success(
-          `Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`,
-        )
+        toast.success(`Claimed ${(Number(res?.events?.InterestClaimed?.returnValues?.amount) / busd)?.toString()}! ✅`)
       }
 
       const sendClaim = (extraConfig = {}) =>
@@ -3931,10 +3948,10 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 0.579463599324130514).toFixed(9)
     }
     if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "30" && token === "ETH" && isNew) {
-      return (interestNotCollected).toFixed(9)
+      return interestNotCollected.toFixed(9)
     }
     if (address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" && plan === "90" && token === "ETH" && isNew) {
-      return (interestNotCollected).toFixed(9)
+      return interestNotCollected.toFixed(9)
     }
     if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.189884750721780222 - 0.148098362422849034).toFixed(9)
@@ -3952,24 +3969,22 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 0.002403287517859769).toFixed(9)
     }
     if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "60" && token === "ETH" && isNew) {
-      return (interestNotCollected).toFixed(9)
+      return interestNotCollected.toFixed(9)
     }
     if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "30" && token === "ETH" && isNew) {
-      return (interestNotCollected).toFixed(9)
+      return interestNotCollected.toFixed(9)
     }
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.095171865).toFixed(9)
     }
     if (address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" && plan === "14" && token === "ETH" && isNew) {
-      return (interestNotCollected).toFixed(9)
+      return interestNotCollected.toFixed(9)
     }
     if (address === "0x6C600253D3781C201763eEB39140eC6fda37DaDe" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.15386931).toFixed(9)
     }
     if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60" && token === "ETH" && isNew) {
-      return (
-        interestNotCollected
-      ).toFixed(9)
+      return interestNotCollected.toFixed(9)
     }
     if (address === "0x9041fa2b75Bf0f556A726c6EEDaE2049cdE01864" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.000196 - 0.324943).toFixed(9)
@@ -4168,22 +4183,27 @@ export const CollapseTableExpanded = ({
               disabled={change}
             />
           )}
-          {/*{(token === 'WBTC' && !!resultArray?.length) && (*/}
-          {/*  <SimpleButton*/}
-          {/*    variant="border"*/}
-          {/*    className='full'*/}
-          {/*    text={change ? 'Transferring funds...' : 'Transfer funds'}*/}
-          {/*    onClick={() => {*/}
-          {/*      setChange(true)*/}
-          {/*      window.scrollTo({*/}
-          {/*        top: 0,*/}
-          {/*      })*/}
-          {/*      openTransferWbtc(plan, resultArray.reduce((partialSum, a) => partialSum +( Number(a.stakedAmounts) / 100000000), 0),  interestNotCollected, resultArray.length)*/}
-          {/*    }}*/}
-          {/*    disabled={change}*/}
-          {/*  />*/}
-          {/*)}*/}
-          {(token === "ETH" && !!resultArray?.length && !!address) && (
+          {token === "WBTC" && !!resultArray?.length && (
+            <SimpleButton
+              variant="border"
+              className="full"
+              text={change ? "Transferring funds..." : "Transfer funds"}
+              onClick={() => {
+                setChange(true)
+                window.scrollTo({
+                  top: 0,
+                })
+                openTransferWbtc(
+                  plan,
+                  resultArray.reduce((partialSum, a) => partialSum + Number(a.stakedAmounts) / 100000000, 0),
+                  interestNotCollected,
+                  resultArray.length,
+                )
+              }}
+              disabled={change}
+            />
+          )}
+          {token === "ETH" && !!resultArray?.length && !!address && (
             <div className="restake">
               <label>
                 <Switch
