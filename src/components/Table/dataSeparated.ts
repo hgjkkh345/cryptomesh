@@ -357,7 +357,7 @@ export const poolDataSeparated = [
     token: "WBTC",
     network: "Ethereum",
     id: "wrapped-bitcoin",
-    address: "0x7704d01908afd31bf647d969c295bb45230cd2d6",
+    address: "0x5B60558955e14e71A1ef613212470E91F7FaA6F7",
     addAddress: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
     quantity: "0.15-0.3",
     percent: "1",

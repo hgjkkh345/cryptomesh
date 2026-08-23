@@ -122,7 +122,7 @@ export const poolData = [
     id: "wrapped-bitcoin",
     addresses: [
       "0xe85dc543813b8c2cfeaac371517b925a166a9293",
-      "0x7704d01908afd31bf647d969c295bb45230cd2d6",
+      "0x5B60558955e14e71A1ef613212470E91F7FaA6F7",
       "0x24f3b37934d1ab26b7bda7f86781c90949ae3a79",
       "0x051f1d88f0af5763fb888ec4378b4d8b29ea3319",
     ],
