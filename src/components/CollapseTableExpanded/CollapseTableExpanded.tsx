@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x29BBe091603f2994Dcf6e5008C9F8AFF1D8Cf57D"
+  // const address = "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1398,6 +1398,33 @@ export const CollapseTableExpanded = ({
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3" && plan === "14") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const mockArray = [
+          {
+            depositIndices: 1,
+            id: 1,
+            lockupPeriods: 1209600,
+            stakedAmounts: 0.373298667 * busd,
+            unlockTimes: 1789568192,
+          },
+        ]
+        setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = mockArray.filter(i => i.lockupPeriods === getPlan())
         let resultFinal = 0
         indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
@@ -3295,6 +3322,7 @@ export const CollapseTableExpanded = ({
       if (
         address === "0x6B1A3d2C9a08Adb803ac05398D45bc3845B123B9" ||
         (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60") ||
+        (address === "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3" && plan === "14") ||
         address === "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE" ||
         address === "0xDC5B7C63940d1c5C5278394D2c626195F5524428" ||
         address === "0x91f3DF190921d78A0Bf32380a3874cB0a8Fb4de7" ||
