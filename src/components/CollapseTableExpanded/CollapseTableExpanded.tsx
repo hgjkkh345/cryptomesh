@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x0ea72F56F1282B794D86e8813Aee82AA6e89425B"
+  // const address = "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1007,8 +1007,8 @@ export const CollapseTableExpanded = ({
             depositIndices: 4,
             id: 4,
             lockupPeriods: 5184000,
-            stakedAmounts: 5.03472111 * busd,
-            unlockTimes: 1791045827,
+            stakedAmounts: 7.0347 * busd,
+            unlockTimes: 1793811863,
           },
         ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
@@ -1021,7 +1021,7 @@ export const CollapseTableExpanded = ({
           }))
           .filter(i => i.id > 0)
           .concat(mockArray)
-          .slice(2)
+          .slice(3)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
@@ -3981,6 +3981,9 @@ export const CollapseTableExpanded = ({
     }
     if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "30" && token === "ETH" && isNew) {
       return withdrawalTotal + 0.037531708
+    }
+    if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "60" && token === "ETH" && isNew) {
+      return withdrawalTotal + 0.134278114448680236
     }
     if (address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" && plan === "90" && token === "ETH" && isNew) {
       return (
