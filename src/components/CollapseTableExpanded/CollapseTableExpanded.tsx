@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3"
+  // const address = "0x0ea72F56F1282B794D86e8813Aee82AA6e89425B"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1204,6 +1204,33 @@ export const CollapseTableExpanded = ({
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0x0ea72F56F1282B794D86e8813Aee82AA6e89425B" && plan === "90") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const mockArray = [
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 9.72041783 * busd,
+            unlockTimes: 1796386669,
+          },
+        ]
+        setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = mockArray.filter(i => i.lockupPeriods === getPlan())
         let resultFinal = 0
         indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
@@ -3310,6 +3337,7 @@ export const CollapseTableExpanded = ({
         address === "0xf4327CE4ED2AeF2A4e4D79B812fAD45aC5d77e2f" ||
         address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" ||
         address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" ||
+        address === "0x0ea72F56F1282B794D86e8813Aee82AA6e89425B" ||
         address === "0x3F52220594B0b5689683B1c2B52585fF54904d68"
       ) {
         apiOur.addWithdrawals({
