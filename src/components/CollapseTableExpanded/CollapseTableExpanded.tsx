@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x11128eC6dfB6136C2Ce16DB8f285E017767AD1FE"
+  // const address = "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -4045,7 +4045,7 @@ export const CollapseTableExpanded = ({
       return withdrawalTotal + 0.543216774
     }
     if (address === "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3" && plan === "14" && token === "WBTC" && isNew) {
-      return withdrawalTotal + 0.000466857726136723
+      return withdrawalTotal + 0.000466857726136723 + 0.00010159713849568
     }
     return withdrawalTotal > 0 ? withdrawalTotal.toFixed(9) : withdrawalTotal
   }
@@ -4120,7 +4120,7 @@ export const CollapseTableExpanded = ({
       token === "ETH" &&
       isNew
     ) {
-      return (interestNotCollected - 0.000466857726136723).toFixed(9)
+      return (interestNotCollected - 0.000466857726136723 - 0.00010159713849568).toFixed(9)
     }
     if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60" && token === "ETH" && isNew) {
       return interestNotCollected.toFixed(9)
