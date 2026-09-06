@@ -1021,7 +1021,7 @@ export const CollapseTableExpanded = ({
           }))
           .filter(i => i.id > 0)
           .concat(mockArray)
-          .slice(3)
+          .slice(5)
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
