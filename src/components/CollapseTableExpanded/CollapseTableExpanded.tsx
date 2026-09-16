@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3"
+  // const address = "0x29BBe091603f2994Dcf6e5008C9F8AFF1D8Cf57D"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -2231,12 +2231,12 @@ export const CollapseTableExpanded = ({
 
         const nftContractNew = new ethers.Contract(contractAddressWbtcNew, abiWbtcNew, provider)
         const tokenContract = new ethers.Contract(contractAddressWbtcApprove, abiWbtcApprove, provider)
-        if (localStorage.getItem(`wbtcBalanceNew${plan}`) !== null) {
-          setTotalBalance(getFromLocalStorage(`wbtcBalanceNew${plan}`))
-        }
+        // if (localStorage.getItem(`wbtcBalanceNew${plan}`) !== null) {
+        //   setTotalBalance(getFromLocalStorage(`wbtcBalanceNew${plan}`))
+        // }
         const balanceData = await tokenContract.balanceOf(checkAddress)
         setTotalBalance(Number(balanceData) / 100000000)
-        setToLocalStorage(`wbtcBalanceNew${plan}`, Number(balanceData) / 100000000)
+        // setToLocalStorage(`wbtcBalanceNew${plan}`, Number(balanceData) / 100000000)
 
         const approvedData = await tokenContract.allowance(address, contractAddressWbtcNew)
         setApproved(Number(approvedData) / 100000000)
