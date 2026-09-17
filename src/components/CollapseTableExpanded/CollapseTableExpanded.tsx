@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3"
+  // const address = "0x1701e35C187dA957041e11A4bfCC7966214eFFCd"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -805,6 +805,33 @@ export const CollapseTableExpanded = ({
         setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
 
         const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+        let resultFinal = 0
+        indexResult.forEach(iResult => {
+          var timestamp = iResult.unlockTimes * 1000 - Date.now()
+          timestamp /= 1000
+          var minutes = Number(plan) - timestamp / 60 / 60 / 24
+          resultFinal = resultFinal + (((iResult.stakedAmounts / busd) * getPercent()) / Number(plan)) * minutes
+          setInterestNotCollected(resultFinal)
+        })
+
+        return
+      }
+      if (address === "0x1701e35C187dA957041e11A4bfCC7966214eFFCd" && plan === "90") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const mockArray = [
+          {
+            depositIndices: 4,
+            id: 4,
+            lockupPeriods: 7776000,
+            stakedAmounts: 80.2566166 * busd,
+            unlockTimes: 1795200839,
+          },
+        ]
+        setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
+
+        const indexResult = mockArray.filter(i => i.lockupPeriods === getPlan())
         let resultFinal = 0
         indexResult.forEach(iResult => {
           var timestamp = iResult.unlockTimes * 1000 - Date.now()
@@ -3366,6 +3393,7 @@ export const CollapseTableExpanded = ({
         address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" ||
         address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" ||
         address === "0x0ea72F56F1282B794D86e8813Aee82AA6e89425B" ||
+        address === "0x1701e35C187dA957041e11A4bfCC7966214eFFCd" ||
         address === "0x3F52220594B0b5689683B1c2B52585fF54904d68"
       ) {
         apiOur.addWithdrawals({
@@ -4141,6 +4169,9 @@ export const CollapseTableExpanded = ({
     }
     if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 10.00301211).toFixed(9)
+    }
+    if (address === "0x1701e35C187dA957041e11A4bfCC7966214eFFCd" && plan === "90" && token === "ETH" && isNew) {
+      return (interestNotCollected - 1.947024488).toFixed(9)
     }
     if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.579463599324130514).toFixed(9)
