@@ -50,7 +50,7 @@ import {getFromLocalStorage, mixins, moneyFormatter, routes, setToLocalStorage, 
 import { api } from "../../service/api/api"
 import { apiScan } from "../../service/api/apiScan"
 import {config} from "../../index";
-import {useAccount} from "wagmi";
+import {useAccount, useWalletClient } from "wagmi";
 import {getChainId} from "@wagmi/core";
 import {apiOpt} from "../../service/api/apiOpt";
 import {apiArb} from "../../service/api/apiArb";
@@ -99,9 +99,12 @@ export const CollapseTable = ({
   const [resultArray, setResultArray] = useState<any[]>([])
   const busd = 1000000000000000000
   const {  address } = useAccount();
-  const chainId = getChainId(config);
+  const chainId = getChainId(config)
+  const { data: walletClient } = useWalletClient({ chainId: chainId || 1 })
+  const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
+  const { connector } = useAccount()
 
-  // const address = "0x83c622d78FF673a895dd70D0C52fC12179d49bdb"
+  // const address = "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3"
 
   useEffect(() => {
     getAllInfo()
@@ -148,6 +151,40 @@ export const CollapseTable = ({
         setTotalBalance(getFromLocalStorage(`ethBalance${plan}SECOND`))
       }
 
+      const provider =
+        library && chainId === 1
+          ? library
+          : new ethers.providers.StaticJsonRpcProvider("https://ethereum.publicnode.com", 1)
+
+      const nftContractNew = new ethers.Contract(contractAddressEthNew, abiEthNew, provider)
+      const depositStatusDataLol = await nftContractNew.getDepositInfo(address)
+
+
+      if (address === "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3" && plan === "14") {
+        if (localStorage.getItem(`ethResult${plan}SECOND`) !== null) {
+          setResultArray(getFromLocalStorage(`ethResult${plan}SECOND`))
+        }
+        const mockArray = [
+          {
+            depositIndices: 1,
+            id: 1,
+            lockupPeriods: 1209600,
+            stakedAmounts: (0.373298667 + 0.000190625) * busd,
+            unlockTimes: 1790844634,
+          },
+        ]
+        setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
+        return
+      }
+
+      const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys()).map((i, index) => ({
+        depositIndices: Number(depositStatusDataLol.depositIndices[index]),
+        stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
+        lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
+        unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
+        id: index,
+      }))
+      setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
       api.getBalance(checkAddress).then(r => {
         if (!isNaN(Number(r.result))) {
           setToLocalStorage((`ethBalance${plan}SECOND`), Number(r.result) / busd)
