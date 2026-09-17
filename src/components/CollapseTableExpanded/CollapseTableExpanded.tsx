@@ -1473,8 +1473,8 @@ export const CollapseTableExpanded = ({
             depositIndices: 1,
             id: 1,
             lockupPeriods: 1209600,
-            stakedAmounts: 0.373298667 * busd,
-            unlockTimes: 1789568192,
+            stakedAmounts: (0.373298667 + 0.000190625) * busd,
+            unlockTimes: 1790844634,
           },
         ]
         setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
@@ -4191,14 +4191,7 @@ if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "60" &&
       isNew
     ) {
       return (
-        interestNotCollected -
-        0.000466857726136723 -
-        0.00010159713849568 -
-        0.000104150594328443 -
-        0.000315979625269552 -
-        0.000505264664414147 -
-        0.000603542676886107 -
-        0.000863355676108463
+        interestNotCollected
       ).toFixed(9)
     }
     if (address === "0x9cC12B332727b9945af387f3Be43c522eD8b8Fb1" && plan === "60" && token === "ETH" && isNew) {
