@@ -825,7 +825,7 @@ export const CollapseTableExpanded = ({
             depositIndices: 4,
             id: 4,
             lockupPeriods: 7776000,
-            stakedAmounts: 80.2566166 * busd,
+            stakedAmounts: 79.9 * busd,
             unlockTimes: 1795200839,
           },
         ]
@@ -4171,7 +4171,7 @@ export const CollapseTableExpanded = ({
       return (interestNotCollected - 10.00301211).toFixed(9)
     }
     if (address === "0x1701e35C187dA957041e11A4bfCC7966214eFFCd" && plan === "90" && token === "ETH" && isNew) {
-      return (interestNotCollected - 1.947024488).toFixed(9)
+      return (interestNotCollected - 1.58234748).toFixed(9)
     }
     if (address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" && plan === "90" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.579463599324130514).toFixed(9)
