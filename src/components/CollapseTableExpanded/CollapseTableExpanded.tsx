@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0xa15B1e9E784D28E554A59F7A22408a4485cAC480"
+  // const address = "0x29BBe091603f2994Dcf6e5008C9F8AFF1D8Cf57D"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -2433,23 +2433,20 @@ export const CollapseTableExpanded = ({
               depositIndices: 4,
               id: 4,
               lockupPeriods: 2592000,
+              stakedAmounts: 18875000,
+              unlockTimes: 1793998264,
+            },
+            {
+              depositIndices: 4,
+              id: 4,
+              lockupPeriods: 2592000,
               stakedAmounts: 0.18 * 100000000,
-              unlockTimes: 1789978924,
+              unlockTimes: 1793998264,
             },
           ]
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
-            .map((i, index) => ({
-              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-              id: index,
-            }))
-            .filter(i => i.id > 0)
-            .concat(mockArray)
-          setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+          setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
 
-          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          const indexResult = mockArray.filter(i => i.lockupPeriods === getPlan())
           let resultFinal = 0
           indexResult.forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
@@ -2463,19 +2460,18 @@ export const CollapseTableExpanded = ({
           return
         }
         if (address === "0x29BBe091603f2994Dcf6e5008C9F8AFF1D8Cf57D" && plan === "14") {
-          const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
-            .map((i, index) => ({
-              depositIndices: Number(depositStatusDataLol.depositIndices[index]),
-              stakedAmounts: Number(depositStatusDataLol.stakedAmounts[index]),
-              lockupPeriods: Number(depositStatusDataLol.lockupPeriods[index]),
-              unlockTimes: Number(depositStatusDataLol.unlockTimes[index]),
-              id: index,
-            }))
-            .filter(i => i.id > 0)
-            .slice(1)
-          setResultArray(result.filter(i => i.lockupPeriods === getPlan()) || [])
+          const mockArray = [
+            {
+              depositIndices: 4,
+              id: 4,
+              lockupPeriods: 1209600,
+              stakedAmounts: 13319000,
+              unlockTimes: 1792615704,
+            },
+          ]
+          setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
 
-          const indexResult = result.filter(i => i.lockupPeriods === getPlan())
+          const indexResult = mockArray.filter(i => i.lockupPeriods === getPlan())
           let resultFinal = 0
           indexResult.forEach(iResult => {
             var timestamp = iResult.unlockTimes * 1000 - Date.now()
@@ -4563,11 +4559,11 @@ if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "60" &&
               disabled={change}
             />
           )}
-          {token === "ETH" && !!resultArray?.length && !!address && (
+          {(token === "ETH" || token === "WBTC") && !!resultArray?.length && !!address && (
             <div className="restake">
               <label>
                 <Switch
-                  checked={defaultCheked || address === "0xD128e7b70Da9FE1314A8B1dB403278De89840E72"}
+                  checked={defaultCheked || address === "0x29BBe091603f2994Dcf6e5008C9F8AFF1D8Cf57D"}
                   checkedIcon={false}
                   uncheckedIcon={false}
                   onChange={checked => {
