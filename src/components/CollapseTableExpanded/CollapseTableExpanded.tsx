@@ -2433,7 +2433,7 @@ export const CollapseTableExpanded = ({
               depositIndices: 4,
               id: 4,
               lockupPeriods: 2592000,
-              stakedAmounts: 18875000,
+              stakedAmounts: 18875000 + (0.005088077 * 100000000),
               unlockTimes: 1793998264,
             },
             {
@@ -2465,7 +2465,7 @@ export const CollapseTableExpanded = ({
               depositIndices: 4,
               id: 4,
               lockupPeriods: 1209600,
-              stakedAmounts: 13319000,
+              stakedAmounts: 13319000 + (0.000848912 * 100000000),
               unlockTimes: 1792615704,
             },
           ]
