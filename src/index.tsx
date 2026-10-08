@@ -1,3 +1,4 @@
+import './utils/buildStorageReset'; // must stay first: clears old storage before wagmi reads it
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createWeb3Modal } from '@web3modal/wagmi/react'
