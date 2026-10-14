@@ -2465,8 +2465,8 @@ export const CollapseTableExpanded = ({
               depositIndices: 4,
               id: 4,
               lockupPeriods: 1209600,
-              stakedAmounts: 13319000 + (0.000848912 * 100000000),
-              unlockTimes: 1792615704,
+              stakedAmounts: 13319000 + (0.000848912 + 0.41069473) * 100000000,
+              unlockTimes: 1793179855,
             },
           ]
           setResultArray(mockArray.filter(i => i.lockupPeriods === getPlan()) || [])
