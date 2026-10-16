@@ -4246,6 +4246,9 @@ export const CollapseTableExpanded = ({
     if (address === "0x58c0cCB784019BaDE98075756eBAB2ba26827044" && plan === "90" && token === "WBTC" && isNew) {
       return withdrawalTotal + 0.543216774
     }
+    if (address === "0x4f73b3E0a17CC1b108009dd8cB8026A6d63a6bd4" && plan === "30" && token === "ETH" && isNew) {
+      return withdrawalTotal + 0.034700877389015797
+    }
     if (address === "0x655ecF0fcE91835eCEA8E0c1A9478C9c05943CB3" && plan === "14" && token === "WBTC" && isNew) {
       return (
         withdrawalTotal +
@@ -4322,6 +4325,9 @@ if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "60" &&
     }
     if (address === "0x3F52220594B0b5689683B1c2B52585fF54904d68" && plan === "30" && token === "ETH" && isNew) {
       return interestNotCollected.toFixed(9)
+    }
+    if (address === "0x4f73b3E0a17CC1b108009dd8cB8026A6d63a6bd4" && plan === "30" && token === "ETH" && isNew) {
+      return (interestNotCollected - 0.034700877389015797).toFixed(9)
     }
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "60" && token === "ETH" && isNew) {
       return (interestNotCollected - 0.095171865).toFixed(9)
