@@ -3504,6 +3504,7 @@ export const CollapseTableExpanded = ({
       if (
         address === "0xD7e1cC28c8c247e53932d4b3c95cc1495b30Ac37" ||
         address === "0xf4327CE4ED2AeF2A4e4D79B812fAD45aC5d77e2f" ||
+        address === "0x4f73b3E0a17CC1b108009dd8cB8026A6d63a6bd4" ||
         address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" ||
         address === "0x83c622d78FF673a895dd70D0C52fC12179d49bdb" ||
         address === "0x0ea72F56F1282B794D86e8813Aee82AA6e89425B" ||
