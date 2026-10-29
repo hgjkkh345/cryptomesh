@@ -145,7 +145,7 @@ export const CollapseTableExpanded = ({
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
 
-  // const address = "0x4f73b3E0a17CC1b108009dd8cB8026A6d63a6bd4"
+  // const address = "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB"
 
   useEffect(() => {
     if (opened !== undefined) {
@@ -1062,8 +1062,8 @@ export const CollapseTableExpanded = ({
             depositIndices: 4,
             id: 4,
             lockupPeriods: 7776000,
-            stakedAmounts: 9.0347 * busd,
-            unlockTimes: 1796458823,
+            stakedAmounts: 9.48899467 * busd,
+            unlockTimes: 1801058936,
           },
         ]
         const result = Array.from(Array(Number(depositStatusDataLol.depositIndices?.length)).keys())
