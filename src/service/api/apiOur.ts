@@ -1,6 +1,6 @@
 import { HttpClient } from "./http-client"
 
-const apiUrl = "/api/v1"
+const apiUrl = process.env.REACT_APP_API_URL || "/api/v1"
 export type IRefRequest = {
   user: string
   follower: string
