@@ -144,7 +144,6 @@ export const CollapseTableExpanded = ({
   const { data: walletClient } = useWalletClient({ chainId: chainId || 1 })
   const library = walletClient ? walletClientToSigner(walletClient)?.provider : null
   const isCoinbaseWallet = connector?.id === "coinbaseWallet" || connector?.name?.toLowerCase()?.includes("coinbase")
-
   // const address = "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB"
 
   useEffect(() => {
