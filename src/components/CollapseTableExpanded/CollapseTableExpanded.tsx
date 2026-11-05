@@ -4333,11 +4333,7 @@ if (address === "0x4b780c618371A538B7fC4a1a5D2D92531c792CcB" && plan === "60" &&
     }
     if (address === "0x4f73b3E0a17CC1b108009dd8cB8026A6d63a6bd4" && plan === "60" && token === "ETH" && isNew) {
       return (
-        interestNotCollected -
-        0.001414199664198342 -
-        0.002437337098624953 -
-        0.014386585520792934 -
-        0.032037471025080754
+        interestNotCollected
       ).toFixed(9)
     }
     if (address === "0xAcD1Fa19fcB25F32C03DC306AB052842a4566312" && plan === "60" && token === "ETH" && isNew) {
