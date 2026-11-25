@@ -15,9 +15,9 @@ export const poolData = [
     id: "ethereum",
     addresses: [
       "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
-      "0xdAae6964C699628d931800f54C9e50251233aF84",
+      "0x3Ad2FCd6a2ce246e890826c9BcCa20f06CE11083",
       "0x6bfad42cfc4efc96f529d786d643ff4a8b89fa52",
-      "0x4c18e3a2e35ad4f324ecd34c88074271d0643edf",
+      "0x2752ceb98e64a2423f79Ab552D71fdbeE72EF4a5",
     ],
     quantity: ["0.3-5", "3-10", "5-25", "9-50"],
     percents: ["0.8", "2", "5", "8.5"],
