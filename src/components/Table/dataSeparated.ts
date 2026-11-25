@@ -77,7 +77,7 @@ export const poolDataSeparated = [
     token: "ETH",
     network: "Ethereum",
     id: "ethereum",
-    address: "0x3a02964ffA04EA3A61f678CC121FA23C61637A85",
+    address: "0xdAae6964C699628d931800f54C9e50251233aF84",
     addAddress: null,
     quantity: "3-10",
     percent: "2",
